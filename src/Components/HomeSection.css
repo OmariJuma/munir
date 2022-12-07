@@ -1,0 +1,14 @@
+img{
+    position: absolute;
+    z-index:-1;
+    align-self: center;
+    height:95vh;
+    width:100vw;
+    
+}
+
+@media screen and (max-width: 767Px) {
+   img {
+      height:50vh;
+    }
+  }

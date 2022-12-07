@@ -1,6 +1,8 @@
 :root{
   --priColor:rgb(22, 102, 213);
+  --priVariant:rgb(104, 151, 217);
   --dark:rgb(2, 2, 2);
+  --redish:rgb(221, 124, 124);
   --red:rgb(238, 18, 18);
   --white:#fff;
   --margins:20px;
@@ -8,7 +10,7 @@
   --borderRadius2:15px;
 }
 body{
-  background-color:var(--priColor);
+  background-color:var(--white);
 
 }
 

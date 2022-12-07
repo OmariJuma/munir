@@ -6,7 +6,7 @@ import { FaShoppingCart} from "react-icons/fa";
 import './NavBar.css';
 const NavBar = () => {
   return (
-    <Navbar  expand="lg" className="na">
+    <Navbar  expand="lg" className="sticky-top na">
     <Container>
       <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,7 +24,7 @@ const NavBar = () => {
         </Nav>
       </Navbar.Collapse>
     </Container>
-    <span className="cartIcon"><FaShoppingCart /></span>
+    <span className="cartIcon top right"><FaShoppingCart /></span>
   </Navbar>  );
 };
 export default NavBar;

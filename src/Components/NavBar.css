@@ -1,9 +1,11 @@
-.na{
-  background-color: lightcyan;  
+.na {
+  background-color: transparent;
 }
-.cartIcon{
-  position:absolute;
+.cartIcon {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 100px;
   margin-top: auto;
-  color:red;
-
+  color: rgb(227, 130, 26);
 }
