@@ -1,0 +1,27 @@
+:root{
+  --priColor:rgb(22, 102, 213);
+  --dark:rgb(2, 2, 2);
+  --red:rgb(238, 18, 18);
+  --white:#fff;
+  --margins:20px;
+  --borderRadius:10px;
+  --borderRadius2:15px;
+}
+body{
+  background-color:var(--priColor);
+
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
