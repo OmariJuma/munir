@@ -1,5 +1,6 @@
 .na {
   background-color: transparent;
+ 
 }
 .cartIcon {
   position: absolute;
@@ -9,3 +10,5 @@
   margin-top: auto;
   color: rgb(227, 130, 26);
 }
+.linkie{
+  color:white;}

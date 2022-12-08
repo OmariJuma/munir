@@ -1,8 +1,14 @@
 import landing from "../assets/images/ld.jpg";
+import benz from '../assets/images/benzo.mp4'
 import "./HomeSection.css";
 
 const HomeSection = () => {
-    return ( <img src={landing}/> 
+    return ( <video src={benz} autoPlay='true' muted='true' loop='true'/>
+    
+    
+  
+        
+        //<img src={landing}/> 
     
     );
 }
