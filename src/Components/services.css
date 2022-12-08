@@ -1,0 +1,24 @@
+.bg{
+    position: relative;
+    margin-top: 75vh;
+    background-color: var(--priVariant);
+    justify-content: center;
+}
+h1{
+    display: block;
+}
+#no1{
+    margin-top: 20vh;
+    margin-left: 5vw;
+}
+#no2{
+    margin-top: 10vh;
+    margin-left: 37vw;
+
+}
+
+#no3{
+    margin-top: 10vh;
+    margin-left: 67vw;
+
+}

@@ -8,7 +8,8 @@
 } */
 video{
   width:100vw;
-  height:90vh;
+  height:100vh;
+  top:-80px;
   position: absolute;
   z-index: -1;
 }
@@ -16,11 +17,4 @@ video{
    /* img {
       height:50vh;
     } */
-    video{
-      width:100vw;
-      height:90vh;
-      position: absolute;
-      z-index: -1;
-    }
-    
   }

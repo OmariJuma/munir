@@ -1,5 +1,5 @@
 import landing from "../assets/images/ld.jpg";
-import benz from '../assets/images/benzo.mp4'
+import benz from '../assets/images/benzoCut.mp4'
 import "./HomeSection.css";
 
 const HomeSection = () => {
