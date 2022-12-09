@@ -1,7 +1,6 @@
 .bg{
     position: relative;
     margin-top: 75vh;
-    background-color: var(--priVariant);
     justify-content: center;
 }
 h1{
@@ -12,13 +11,60 @@ h1{
     margin-left: 5vw;
 }
 #no2{
-    margin-top: 10vh;
+    margin-top: -5vh;
     margin-left: 37vw;
 
 }
 
 #no3{
-    margin-top: 10vh;
+    margin-top: -5vh;
     margin-left: 67vw;
 
+}
+.card:hover{
+    transform: scale(1.1);
+transition: 0.3s ease-in-out;
+background-color: #8fb9e5;
+}
+body {	
+	background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FEE140, #FA709A );
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+body:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #21D4FD,rgb(190, 183, 183), rgb(224, 57, 57) );
+}
+
+
+
+html {
+	margin: 0;
+	font-family: 'Muli', sans-serif;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	margin: 0;
+	font-size: 1.15rem;
+	line-height: 1.4em;
+}
+
+
+main,header {
+	box-sizing: border-box;
+}
+
+main {
+	background-color: #f7f7f7;
+	padding: 20px;
+	border-radius: 10px;
+	color: #6b6b6b;
+	margin: 40px 0;
 }

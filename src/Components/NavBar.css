@@ -2,6 +2,9 @@
   background-color: transparent;
  
 }
+.nav-active{
+  background-color: brown;
+}
 .cartIcon {
   position: absolute;
   z-index: 1;
