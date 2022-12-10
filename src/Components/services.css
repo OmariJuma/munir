@@ -7,23 +7,27 @@
 h1{
     display: block;
 }
-/* #no1{
-    margin-top: 20vh;
-    margin-left: 5vw;
-}
-#no2{
-    margin-top: -5vh;
-    margin-left: 37vw;
 
+.card img{
+	height:250px;
 }
 
-#no3{
-    margin-top: -5vh;
-    margin-left: 67vw;
+.card{
+	height:480px;
+}
+.card:nth-child(even){
+	border-radius:  var(--borderRadius) 50px;
+}
 
-} */
+.card button{
+	background-color: var(--orange);
+	margin-bottom: 24px;
+}
+.card button:hover{
+	background-color: var(--red);
+}
 .card:hover{
-	background-color: #8fb9e5;
+	background-color: var(--redish);
     transform: scale(1.05);
 transition: 0.0003s ease-in;
 
@@ -41,7 +45,7 @@ body:before{
 	bottom: 0;
 	width: 100%;
 	z-index: -1;
-	background: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgb(98, 158, 207) 0%, rgba(0,112,218,1) 90% );
+	background: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgb(146, 174, 197) 0%, rgba(0,112,218,1) 90% );
 }
 
 

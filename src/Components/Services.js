@@ -1,6 +1,9 @@
 import './services.css';
+import '../App.css';
 import Rim from '../assets/images/landing.jpeg'
 import Card from "react-bootstrap/Card";
+import { Button } from 'react-bootstrap';
+import {FaArrowRight} from 'react-icons/fa'
 const Services = () => {
     return (<div className="container-fluid bg row" id='container'>
         <h1 className='text-center'>Services We Provide</h1>
@@ -14,6 +17,7 @@ const Services = () => {
           bulk of the card's content.
         </Card.Text>
       </Card.Body>
+      <Button>See more<span bg="success"><FaArrowRight/></span></Button>
     </Card>
     <Card style={{ width: '18rem'}} className="md-4 xl-3" id='no2'>
     <Card.Title className='text-center bb'>Tires</Card.Title>
@@ -25,6 +29,7 @@ const Services = () => {
           bulk of the card's content.
         </Card.Text>
       </Card.Body>
+      <Button className='warning' bg="warning">See more<span bg="success"><FaArrowRight/></span></Button>
     </Card>
     
     <Card style={{ width: '18rem'}} className="md-4 xl-3" id='no3'>
@@ -37,6 +42,7 @@ const Services = () => {
           bulk of the card's content.
         </Card.Text>
       </Card.Body>
+      <Button>See more<span bg="success"><FaArrowRight/></span></Button>
     </Card>
 
 
