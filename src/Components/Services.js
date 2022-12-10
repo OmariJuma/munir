@@ -1,12 +1,12 @@
 import './services.css';
-import Spare from '../assets/images/spare.png'
+import Rim from '../assets/images/landing.jpeg'
 import Card from "react-bootstrap/Card";
 const Services = () => {
-    return (<div className="container-fluid bg " id='container'>
+    return (<div className="container-fluid bg row" id='container'>
         <h1 className='text-center'>Services We Provide</h1>
-<Card style={{ width: '300px'}} className="md-6 xl-6" id="no1" >
-<Card.Title className='text-center'>Card Title</Card.Title>
-      <Card.Img  src={Spare}/>
+<Card style={{ width: '300px'}} className="md-4 xl-3" id="no1" >
+<Card.Title className='text-center'>Rims</Card.Title>
+      <Card.Img  src={Rim}/>
       <Card.Body>
         
         <Card.Text>
@@ -15,9 +15,9 @@ const Services = () => {
         </Card.Text>
       </Card.Body>
     </Card>
-    <Card style={{ width: '18rem'}} className="md-6 xl-6" id='no2'>
-    <Card.Title className='text-center bb'>Card Title</Card.Title>
-      <Card.Img  src={Spare}/>
+    <Card style={{ width: '18rem'}} className="md-4 xl-3" id='no2'>
+    <Card.Title className='text-center bb'>Tires</Card.Title>
+      <Card.Img  src={Rim}/>
       <Card.Body>
         
         <Card.Text>
@@ -27,9 +27,9 @@ const Services = () => {
       </Card.Body>
     </Card>
     
-    <Card style={{ width: '18rem'}} className="md-6 xl-6" id='no3'>
-    <Card.Title className='text-center'>Card Title</Card.Title>
-      <Card.Img  src={Spare}/>
+    <Card style={{ width: '18rem'}} className="md-4 xl-3" id='no3'>
+    <Card.Title className='text-center'>Tyres</Card.Title>
+      <Card.Img  src={Rim}/>
       <Card.Body>
         
         <Card.Text>

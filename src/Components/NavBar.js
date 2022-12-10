@@ -8,6 +8,7 @@ const NavBar = () => {
   const navbar = document.querySelector('.na');
 window.onscroll = () => {
     if (window.scrollY > 300) {
+      navbar.classList.toggle();
         navbar.classList.add('nav-active');
     } else {
         navbar.classList.remove('nav-active');

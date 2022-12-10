@@ -2,11 +2,12 @@
     position: relative;
     margin-top: 75vh;
     justify-content: center;
+	gap:2rem;
 }
 h1{
     display: block;
 }
-#no1{
+/* #no1{
     margin-top: 20vh;
     margin-left: 5vw;
 }
@@ -20,14 +21,15 @@ h1{
     margin-top: -5vh;
     margin-left: 67vw;
 
-}
+} */
 .card:hover{
-    transform: scale(1.1);
-transition: 0.3s ease-in-out;
-background-color: #8fb9e5;
+	background-color: #8fb9e5;
+    transform: scale(1.05);
+transition: 0.0003s ease-in;
+
 }
 body {	
-	background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FEE140, #FA709A );
+	background: linear-gradient(to bottom, rgba(45,116,213,1) 11.2%, rgba(121,137,212,1) 91.2% );
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -39,7 +41,7 @@ body:before{
 	bottom: 0;
 	width: 100%;
 	z-index: -1;
-	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #21D4FD,rgb(190, 183, 183), rgb(224, 57, 57) );
+	background: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgb(98, 158, 207) 0%, rgba(0,112,218,1) 90% );
 }
 
 
