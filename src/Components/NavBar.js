@@ -1,8 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+// import NavDropdown from "react-bootstrap/NavDropdown";
 import { FaShoppingCart } from "react-icons/fa";
+import "../App.css";
 import "./NavBar.css";
 const NavBar = () => {
   const navbar = document.querySelector('.na');
@@ -21,7 +22,7 @@ window.onscroll = () => {
       
     >
       <Container>
-        <Navbar.Brand href="#home" className="linkie">
+        <Navbar.Brand href="#home" className="linkie bt-2" >
           React-Bootstrap
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,7 +35,7 @@ window.onscroll = () => {
               Home
             </Nav.Link>
             <Nav.Link href="#home" className="linkie">
-              Prodcuts
+              Products
             </Nav.Link>
             {/* <NavDropdown title={<p classsName="linkie">Hi</p>} id="basic-nav-dropdown" bg='success'> */}
             {/* <NavDropdown.Item href="#action/3.2" > */}

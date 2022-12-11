@@ -14,9 +14,10 @@ h1{
 
 .card{
 	height:480px;
+
 }
 .card:nth-child(even){
-	border-radius:  var(--borderRadius) 50px;
+	border-radius:var(--borderRadius) ;
 }
 
 .card button{
@@ -27,9 +28,9 @@ h1{
 	background-color: var(--red);
 }
 .card:hover{
-	background-color: var(--redish);
+	box-shadow: 0 0 20px 5px rgb(81, 73, 73);
     transform: scale(1.05);
-transition: 0.0003s ease-in;
+transition: 0.005s ease-in;
 
 }
 body {	

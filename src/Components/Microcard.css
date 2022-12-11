@@ -1,0 +1,10 @@
+.above-card{
+    background-color:white;
+    border-radius: var(--borderRadius2);
+    z-index: 1;
+    margin-top: -15px;
+    position: absolute;
+    padding: 5px;
+    margin-left: -15px;
+    
+}

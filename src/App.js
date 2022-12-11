@@ -4,6 +4,7 @@ import NavBar from "./Components/NavBar";
 import HomeSection from "./Components/HomeSection";
 import Cardie from "./Components/Cardie";
 import Services from "./Components/Services";
+import Products from "./Components/Products";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <NavBar />
       <Cardie/>
       <Services/>
+      <Products/>
         {/* <Crsl /> */}
     </div>
   );

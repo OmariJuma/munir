@@ -5,6 +5,16 @@
 .nav-active{
   background-color: brown;
 }
+.nav-link:hover{
+  background-color: var(--priVariant);
+  color:white;
+  font-weight: 500;
+}
+
+.navbar-brand:hover{
+  color:white;
+  background-color: var(--priBluish);
+}
 .cartIcon {
   position: absolute;
   z-index: 1;
