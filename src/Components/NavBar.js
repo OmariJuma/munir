@@ -18,7 +18,7 @@ window.onscroll = () => {
   return (
     <Navbar
       expand="lg"
-      className="sticky-top na linkie"
+      className="na linkie"
       
     >
       <Container>
