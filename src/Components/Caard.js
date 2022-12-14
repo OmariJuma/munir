@@ -12,7 +12,7 @@ const Caard = (props) => {
   return (
     <>
       {!product && (
-        <Card style={{ width: "300px" }} className="md-4 xl-3 ">
+        <Card style={{ width: "300px" }}>
           <Microcard title={props.title} />
           <Card.Img src={Rim} />
           <Card.Body>
@@ -28,7 +28,7 @@ const Caard = (props) => {
         </Card>
       )}
       {product && (
-        <Card style={{ width: "300px" }} className="md-3 xl-4">
+        <Card style={{ width: "300px" }}>
           <Microcard title={props.title} />
           <Card.Img src={Rim} />
           <Card.Body>

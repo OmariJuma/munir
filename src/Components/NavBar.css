@@ -1,3 +1,8 @@
+/* .navbar{
+  position:absolute;
+  z-index: 4;
+} */
+
 .nav-active{
   background-color: brown;
 }
@@ -13,7 +18,7 @@
 }
 .cartIcon {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   top: 20px;
   right: 100px;
   margin-top: auto;

@@ -1,10 +1,11 @@
 .bg{
-    position: relative;
+    margin: auto;
     margin-top: 75vh;
     justify-content: center;
 	gap:2rem;
 }
 h1{
+	padding-top: 3rem;
     display: block;
 }
 

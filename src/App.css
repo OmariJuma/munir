@@ -1,3 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
 :root{
   --priColor:rgb(22, 102, 213);
   --priVariant:rgb(104, 151, 217);

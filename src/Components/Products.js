@@ -2,7 +2,6 @@ import "./Products.css";
 import "./services.css";
 import Caard from "./Caard";
 
-
 const Products = () => {
   const productArray = [
     {
@@ -38,24 +37,23 @@ const Products = () => {
       price: 4500,
     },
   ];
-  return (<>
-    <h1>Products</h1>
-    <div className="d-flex justify-content-center cont md-4 lg-3" >
-     
-      {productArray.map((prod) => (
-        <div key={prod.id} >
+  return (
+    <div className="cont">
+      <h1 className="text-center" >Products</h1>
+      <div className="row">
+        {productArray.map((prod) => (
           <Caard
+            key={prod.id}
+            className="li col-sm-1 col-md-6 col-lg-3 col-xxl-3"
             title={prod.name}
             price={prod.price}
             offer={prod.offer}
             description={prod.desc}
             product={true}
-            className='lg-4 md-3'
           />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-    </>
   );
 };
 
