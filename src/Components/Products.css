@@ -1,5 +1,5 @@
-#id{
-    display: flex;
-    grid-row: 1;
-    grid-column: 1fr 1fr 1fr;
+.cont{
+    gap:2rem;
+    margin-top: 3rem;
+ height:250px
 }

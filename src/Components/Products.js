@@ -38,9 +38,10 @@ const Products = () => {
       price: 4500,
     },
   ];
-  return (
-    <div className="container-flex row bg" id="cont">
-      <h1>Products</h1>
+  return (<>
+    <h1>Products</h1>
+    <div className="d-flex justify-content-center cont md-4 lg-3" >
+     
       {productArray.map((prod) => (
         <div key={prod.id} >
           <Caard
@@ -54,6 +55,7 @@ const Products = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 
