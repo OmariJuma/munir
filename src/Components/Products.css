@@ -2,8 +2,13 @@
   margin-top: 5rem;
   height: 250px;
 }
-.cont div {
+.cont .card {
        
   margin: auto;
   margin-bottom: 2rem;
+}
+
+h1{
+  margin-top: 3rem;
+  display: block;
 }
