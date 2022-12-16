@@ -1,14 +1,16 @@
 import Rim from "../assets/images/landing.jpeg";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
-import { FaArrowRight, FaStar } from "react-icons/fa";
+import { FaArrowRight} from "react-icons/fa";
 import Microcard from "./Microcard";
 import "./Caard.css";
+import Rating from "./UI/Rating";
 
 const Caard = (props) => {
   const product = props.product;
-  const fiveStar = 5;
+  const rating = 1;
   const zeroStar = 0;
+
   return (
     <>
       {!product && (
@@ -33,24 +35,9 @@ const Caard = (props) => {
           <Card.Img src={Rim} />
           <Card.Body>
             <Card.Text>
+            <Rating/>
               {props.text}
-              <div className="star">
-                <span>
-                  <FaStar />
-                </span>
-                <span>
-                  <FaStar />
-                </span>
-                <span>
-                  <FaStar />
-                </span>
-                <span>
-                  <FaStar />
-                </span>
-                <span>
-                  <FaStar />
-                </span>
-              </div>
+              
             </Card.Text>
           </Card.Body>
         </Card>
