@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <Navbar
       expand="lg"
-      className="navbar bg-primary navbar-dark navbar-expand-sm navbar-right sticky-top "
+      className="navbar bg-primary navbar-expand-sm navbar-right sticky-top "
       
     >
       <Container>
