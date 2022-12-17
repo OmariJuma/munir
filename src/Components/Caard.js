@@ -1,4 +1,4 @@
-import Rim from "../assets/images/landing.jpeg";
+import Rim from "../assets/images/rim2.jpeg";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import { FaArrowRight} from "react-icons/fa";

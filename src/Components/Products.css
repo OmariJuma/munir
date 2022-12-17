@@ -14,7 +14,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
   align-content: stretch;
-  bottom: 3rem;
+  top: 2rem;
   background-color:var(--dark);
   width: auto;}  
   .productsTitle a{
