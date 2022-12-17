@@ -7,8 +7,22 @@
   margin: auto;
   margin-bottom: 2rem;
 }
+.productsTitle{
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  align-content: stretch;
+  bottom: 3rem;
+  background-color:var(--dark);
+  width: auto;}  
+  .productsTitle a{
 
-h1{
+    margin-bottom: 20px;
+  }
+  
+
+/* h1{
   margin-top: 3rem;
-  display: block;
-}
+} */

@@ -1,23 +1,21 @@
-import { useState } from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
-import './Rating.css';
+import "./Rating.css";
+import ReactStars from "react-rating-stars-component";
+import React from "react";
 const Rating = (props) => {
-  //   var r = props.rating;
-  const [rating,setRating]=useState(0);
-  const [hover, setHover] = useState(0);
-<div className="star-rating">
-      {[...Array(5)].map((star, index) => {
-        index += 1;
-        return (
-          <button
-            type="button"
-            key={index}
-            className={index <= rating ? "on" : "off"}
-            onClick={() => setRating(index)}
-          >
-            <span className="star">&#9733;</span>
-          </button>
-        );
-      })}
-    </div>};
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
+  return (
+    <ReactStars
+      count={5}
+      onChange={ratingChanged}
+      size={24}
+      isHalf={true}
+      emptyIcon={<i className="far fa-star"></i>}
+      halfIcon={<i className="fa fa-star-half-alt"></i>}
+      fullIcon={<i className="fa fa-star"></i>}
+      activeColor="rgb(233, 125, 16)"
+    />
+  );
+};
 export default Rating;

@@ -36,7 +36,11 @@ const Caard = (props) => {
           <Card.Body>
             <Card.Text>
             <Rating/>
-              {props.text}
+              {props.description}
+              <div className="priceNstrike">
+              <strong >KSH {props.price}</strong>
+              <s>KSH {props.offer}</s>
+              </div>
               
             </Card.Text>
           </Card.Body>

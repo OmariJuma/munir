@@ -1,6 +1,7 @@
 import "./Products.css";
 import "./services.css";
 import Caard from "./Caard";
+import { FaArrowRight } from "react-icons/fa";
 
 const Products = () => {
   const productArray = [
@@ -39,7 +40,8 @@ const Products = () => {
   ];
   return (
     <div className="cont">
-      <h1 className="text-center" >Products</h1>
+      <div className="productsTitle"><h1 className="text-center" >Products</h1> <a href=''>See more<span><FaArrowRight/></span></a></div>
+      
       <div className="row">
         {productArray.map((prod) => (
           <Caard

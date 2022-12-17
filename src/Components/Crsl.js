@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./Carousel.css";
-import borek from "../assets/images/borek.jpg";
+import borek from "../assets/images/WhatsApp Image 2022-12-05 at 07.52.30 (2).jpeg";
 import guy from "../assets/images/guy.jpeg";
 
 const Crsl = () => {

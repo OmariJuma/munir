@@ -2,3 +2,15 @@
     margin-left: 35%;
     margin-bottom: 10%;
 }
+.priceNstrike{
+    display: flex;
+    gap:4rem;
+   
+}
+.priceNstrike strong{
+    color:var(--priColor);
+   
+}
+.priceNstrike s{
+    color:var(--red)
+}

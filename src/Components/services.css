@@ -1,14 +1,26 @@
+.holder{
+	margin-top: 3rem;
+}
+
 .bg{
     margin: auto;
     margin-top: 75vh;
     justify-content: center;
 	gap:2rem;
 }
-h1{
-	padding-top: 3rem;
-    display: block;
+.servicesTitle{
+		display: flex;
+		position: relative;
+		justify-content: space-around;
+		align-items: flex-end;
+		flex-wrap: wrap;
+		align-content: stretch;
+		bottom: 3rem;
+		background-color:var(--dark);
+		width: auto; 
+		top:29rem;
+	  
 }
-
 .card img{
 	height:250px;
 }
