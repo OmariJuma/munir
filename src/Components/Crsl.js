@@ -9,7 +9,10 @@ import wheel2 from "../assets/images/wheel2.jpeg";
 import wheel3 from "../assets/images/wheel3.jpeg";
 import wheel4 from "../assets/images/wheel4.jpeg";
 import wheels5guy from "../assets/images/wheels5.jpeg";
-// import guy from "../assets/images/guy.jpeg";
+import gdyr from "../assets/images/goodyear1.jpeg";
+import gdyr2 from "../assets/images/goodyear2.jpeg";
+import wal from "../assets/images/walmart.jpeg";
+import rima from "../assets/images/rima.jpeg";
 
 const Crsl = () => {
   return (
@@ -17,7 +20,7 @@ const Crsl = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={rim1}
+          src={wal}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -28,7 +31,7 @@ const Crsl = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={wheel1}
+          src={gdyr}
           alt="The first wheel picture"
         />
 
@@ -40,7 +43,7 @@ const Crsl = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={wheel2}
+          src={gdyr2}
           alt="Second wheel in the slider"
         />
 
@@ -54,7 +57,7 @@ const Crsl = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={wheel2}
+          src={rima}
           alt="Second wheel in the slider"
         />
 

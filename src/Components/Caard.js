@@ -30,6 +30,7 @@ const Caard = (props) => {
         </Card>
       )}
       {product && (
+     
         <Card style={{ width: "300px" }}>
           <Microcard title={props.title} />
           <Card.Img src={Rim} />
