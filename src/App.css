@@ -1,3 +1,6 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,12 +9,13 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 
 
 :root{
-  --priColor:rgb(22, 102, 213);
+  --priColor:#39BCE5;
   --priVariant:rgb(104, 151, 217);
   --priBluish:#8fb9e5;
   --dark:rgb(212, 212, 212);
