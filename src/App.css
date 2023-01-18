@@ -11,7 +11,14 @@ html {
   box-sizing: border-box;
   font-family: 'Space Grotesk', sans-serif;
 }
-
+p{
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  
+}
 
 
 :root{

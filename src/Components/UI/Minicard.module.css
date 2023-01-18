@@ -1,0 +1,90 @@
+.mini {
+  position: absolute;
+  /* z-index: 5; */
+}
+.p,
+.p1,
+.p2 {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+.mini img {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  left: -250px;
+  top: 120px;
+}
+.p {
+  position: relative;
+  width: 70px;
+  height: 55px;
+  left: -250px;
+  top: 130px;
+}
+.mini .ic {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  left: 0px;
+  top: 120px;
+}
+.p2 {
+  position: relative;
+
+  width: 55px;
+  height: 55px;
+  left: 0px;
+  top: 130px;
+}
+.mini .ic1 {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  left: 250px;
+  top: 120px;
+}
+.p3 {
+  position: relative;
+
+  width: 55px;
+  height: 55px;
+  left: 250px;
+  top: 130px;
+}
+
+@media screen and (max-width:500px){
+    .mini img {
+        left: -100px;
+        top: 130px;
+      }
+      .p {
+        left: -100px;
+        top: 140px;
+      }
+      .mini .ic {
+        left: 0px;
+        top: 130px;
+      }
+      .p2 {
+        left: 0px;
+        top: 140px;
+      }
+      
+      .mini .ic1 {
+        left: 100px;
+        top: 140px;
+      }
+      .p3 {
+      
+        width: 55px;
+        height: 55px;
+        left: 100px;
+        top: 150px;
+      }
+      
+    
+}

@@ -1,74 +1,15 @@
-import Carousel from "react-bootstrap/Carousel";
-import "./Carousel.css";
-import fitting2 from "../assets/images/fitting2.jpeg";
-import rim1 from "../assets/images/rim1.jpeg";
-import rim2 from "../assets/images/rim2.jpeg";
-import rims from "../assets/images/rims.jpeg";
-import wheel1 from "../assets/images/wheel1.jpeg";
-import wheel2 from "../assets/images/wheel2.jpeg";
-import wheel3 from "../assets/images/wheel3.jpeg";
-import wheel4 from "../assets/images/wheel4.jpeg";
-import wheels5guy from "../assets/images/wheels5.jpeg";
-import gdyr from "../assets/images/goodyear1.jpeg";
-import gdyr2 from "../assets/images/goodyear2.jpeg";
-import wal from "../assets/images/walmart.jpeg";
-import rima from "../assets/images/rima.jpeg";
-
+import styles from"./Carousel.module.css";
+import bugatti from "./../assets/images/buggati.webp";
+import bugatti2 from "./../assets/images/hh.webp";
+import MiniCard from "./UI/MiniCard";
 const Crsl = () => {
   return (
-<Carousel fade>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={wal}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={gdyr}
-          alt="The first wheel picture"
-        />
-
-        <Carousel.Caption>
-          <h3>Awesome classy wheels for your vehicle</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={gdyr2}
-          alt="Second wheel in the slider"
-        />
-
-        <Carousel.Caption>
-          <h3>Our products are cheap... like this one here</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={rima}
-          alt="Second wheel in the slider"
-        />
-
-        <Carousel.Caption>
-          <h3>Why go to a store when we have when we have a vast collection?</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-    </Carousel>  );
+    <div className={styles.contain}>
+      <img src={bugatti} alt="the home screen" id={styles.def} />
+      <img src={bugatti2} alt="the home screen" id={styles.sub} />
+      <h1>Muneer Automotive, The home of Tires & Rims</h1>
+      <MiniCard/>
+    </div>
+  );
 };
 export default Crsl;
