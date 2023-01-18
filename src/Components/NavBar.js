@@ -7,6 +7,7 @@ import { FaRegUserCircle, FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
+import Input from "./UI/Input";
 const NavBar = () => {
   return (
     <Navbar
@@ -36,17 +37,7 @@ const NavBar = () => {
             activeKey="/home"
           >
             <Nav.Item>
-              <div id="searchCont">
-                <input
-                  type="search"
-                  id="search"
-                  placeholder="am looking for..."
-                  autoComplete="off"
-                />
-                <Button className="sBtn" type="submit" variant="primary">
-                  <FaSearch/>
-                </Button>
-              </div>
+              <Input id="search"/>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">Home</Nav.Link>
