@@ -36,8 +36,8 @@ const NavBar = () => {
             className="justify-content-center"
             activeKey="/home"
           >
-            <Nav.Item>
-              <Input id="search"/>
+            <Nav.Item id="search">
+              <Input />
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">Home</Nav.Link>

@@ -20,7 +20,7 @@
   position: absolute;
   display: flex;
   top: 20px;
-  right: 80px;
+  right: 30px;
 }
 
 .linkie {
@@ -42,8 +42,8 @@
   width: 200px;
   margin: auto;
   border-radius: 10px;
-  /* margin-right: 70px; */
   border: 2px black;
+  display:none;
 }
 input[type="text"] {
   padding-left: 10px;
@@ -62,7 +62,6 @@ input::placeholder {
   #search {
     margin: auto;
     display: flex;
-    margin-bottom: 30px;
     justify-content: center;
   }
   .cartIcon {
@@ -92,7 +91,16 @@ input::placeholder {
   @media screen and (min-width: 769px) {
     .navbar-nav {
       display: flex;
-      gap: 2rem;
+      /* gap: 2rem; */
     }
-  }
+    #search{
+      display: none;
+    }
+    .cartIcon {
+      position:absolute;
+      display: flex;
+      top: 20px;
+      right: 20px;
+    }
+    }
 }
