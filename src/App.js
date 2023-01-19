@@ -10,7 +10,7 @@ function App() {
     <div className="Container-fluid">
       <NavBar />
       <Crsl />
-      {/* <Services/> */}
+      <Services/>
       {/* <Products/> */}
     </div>
   );

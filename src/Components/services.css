@@ -2,7 +2,6 @@
 .bg{
     margin: auto;
     justify-content: center;
-	gap:2rem;
 }
 .servicesTitle{
 		display: flex;
@@ -12,30 +11,10 @@
 		flex-wrap: wrap;
 		align-content: stretch;
 		bottom: 3rem;
-		background-color:var(--dark);
 		width: auto; 
 		top:2rem;
+		margin-bottom: 4rem;
 	  
-}
-.card img{
-	height:250px;
-}
-
-.card{
-	height:auto;
-top:4rem;
-background: linear-gradient(to bottom, rgba(45,116,213,1) 11.2%, rgba(121,137,212,1) 91.2% );
-background-repeat: no-repeat;
-
-
-}
-.card:nth-child(even){
-	border-radius:var(--borderRadius) ;
-}
-
-.card button{
-	background-color: var(--orange);
-	margin-bottom: 24px;
 }
 .card button:hover{
 	background-color: var(--red);
@@ -47,39 +26,15 @@ transition: 0.005s ease-in;
 
 }
 
-/* .card:before{
-	content:'';
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	width: 100%;
-	z-index: -1;
-	background: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgb(146, 174, 197) 0%, rgba(0,112,218,1) 90% );
-} */
+@media screen and (max-width:768px) {
+	.bg{gap:2rem;}
 
-
-
-html {
-	margin: 0;
-	font-family: 'Muli', sans-serif;
-	text-rendering: optimizeLegibility;
 }
+@media screen and (min-width:769px) {
+	.bg{gap:2rem;}
 
-body {
-	margin: 0;
-	font-size: 1.15rem;
-	line-height: 1.4em;
 }
 
 
-main,header {
-	box-sizing: border-box;
-}
 
-main {
-	background-color: #f7f7f7;
-	padding: 20px;
-	border-radius: 10px;
-	color: #6b6b6b;
-	margin: 40px 0;
-}
+
