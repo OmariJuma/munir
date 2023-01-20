@@ -3,6 +3,7 @@ import NavBar from "./Components/NavBar";
 import Crsl from "./Components/Crsl";
 import Services from "./Components/Services";
 import Products from "./Components/Products";
+import Success from "./Components/Success";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Crsl />
       <Services/>
+      <Success/>
       {/* <Products/> */}
     </div>
   );
