@@ -3,6 +3,11 @@
     margin: auto;
     justify-content: center;
 }
+.row>*{
+	width:auto;
+	padding:0;
+
+}
 .servicesTitle{
 		display: flex;
 		position: relative;
@@ -16,16 +21,6 @@
 		margin-bottom: 4rem;
 	  
 }
-.card button:hover{
-	background-color: var(--red);
-}
-.card:hover{
-	box-shadow: 0 0 5px 5px rgb(81, 73, 73);
-    transform: scale(1.0005);
-transition: 0.005s ease-in;
-
-}
-
 @media screen and (max-width:768px) {
 	.bg{gap:2rem;}
 

@@ -15,10 +15,10 @@ const Caard = (props) => {
   return (
     <>
       {!product && (
-        <>
-          {/* <Microcard ttle={props.title} /> */}
-          <ICard txt={props.text} style={{width:"250px"}}/>
-        </>
+        <div className="pop">
+          <Microcard title={props.title} un={props.un} />
+          <ICard image={props.image} txt={props.text} header={true} style={{width:"250px"}}/>
+        </div>
       )}
       {product && (
         <Card>

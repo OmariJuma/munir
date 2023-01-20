@@ -14,3 +14,8 @@
 .priceNstrike s{
     color:var(--red)
 }
+.pop:hover{
+    transform: scale(1.08025);
+    transition: 0.03s ease-in-out;
+    
+}

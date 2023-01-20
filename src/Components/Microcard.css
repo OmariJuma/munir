@@ -1,10 +1,34 @@
+.suContainer {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: auto;
+    border-radius: 15px;
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+top: -16px;
+  }
+  .mc1{right:40px;
+  }
+  .mc2{
+    right:35px;
+  }
+  .mc3{right:90px;}
+  .mc4{right:40px;}
+  
 .above-card{
-    background-color:white;
+    position: absolute;
+       text-align: center;
+    /* display: flex; */
+    transform: translate(50%,50%);
+    background-color:var(--priColor);
     border-radius: var(--borderRadius2);
     z-index: 1;
-    margin-top: -15px;
-    position: absolute;
+    /* margin-top: -15px; */
+    /* position: absolute; */
     padding: 5px;
-    margin-left: -15px;
+    /* margin-left: -15px; */
     
 }
