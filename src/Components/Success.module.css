@@ -4,10 +4,11 @@
     display: flex;
     justify-content: center;
     gap:10px;
+    margin-bottom: 2rem;
 }
 .myContainer img{
     width:150px;
     height:300PX;
-    border-radius: 15px;
-    margin-bottom: 2rem;
+    border-radius: 5px;
+    /* margin-bottom: 2rem; */
 }
