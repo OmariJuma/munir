@@ -1,0 +1,26 @@
+.cont {
+  margin-top: 5rem;
+  height: 250px;
+}
+.cont .card {
+       
+  margin-bottom: 2rem;
+}
+.productsTitle{
+  display:flex;
+  position: relative;
+  top: 2rem;
+  background-color:var(--dark);
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-bottom: 5rem;
+}  
+.singleProduct{
+  text-align: center;
+  margin: auto;
+  margin-top: 3rem;
+
+  display: flex;
+  justify-content: center;
+  gap:1rem;
+border-radius: 15px;}

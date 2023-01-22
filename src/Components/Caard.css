@@ -1,3 +1,30 @@
+#aboveCardContainer{
+    position:unset;
+    text-align: center;
+    margin: auto;
+    border-radius: 15px;
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+top: -16px;
+ 
+
+}
+#aboveCard{
+    position: absolute;
+    text-align: center;
+ background-color:white;
+ color: black;
+padding:10px;
+ border-radius: var(--borderRadius2);
+ z-index: 1;
+ border-top: 2px solid var(--priColor);
+ /* max-width:100px; */
+
+}
+
+
 .star{
     margin-left: 35%;
     margin-bottom: 10%;
@@ -17,5 +44,37 @@
 .pop:hover{
     transform: scale(1.08025);
     transition: 0.03s ease-in-out;
+    
+}
+.products .card{
+    width:150px;
+    height:fit-content;
+    border: 1px solid orange;
+}
+.products .card img{
+    width:150px;
+    height:250px;
+    padding:5px;
+}
+
+@media screen and (min-width:768px ){
+    .products .card{
+         width:280px;
+         height: fit-content;
+     }
+     .products .card img{
+        height:300px;
+        width:280px;
+
+    }
+    
+ }
+@media screen and (max-width:334px ){
+    .products .card{
+        max-width:140px;
+    }
+    .products .card img{
+        width:140px;
+    }
     
 }

@@ -14,6 +14,7 @@ const Services = () => {
       >
         Services We Provide
       </h1>
+      {/* <p>As a tyre and wheel sellers we provide a wide range of service namely:</p> */}
       <div className="container-fluid bg row" id="container">
         <Caard
           un={"mc1"}

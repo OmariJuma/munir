@@ -18,7 +18,7 @@ function App() {
 
       <Success/>
 
-      {/* <Products/> */}
+      <Products/>
     </div>
   );
 }
