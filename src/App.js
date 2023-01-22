@@ -4,6 +4,8 @@ import Crsl from "./Components/Crsl";
 import Services from "./Components/Services";
 import Products from "./Components/Products";
 import Success from "./Components/Success";
+import WhyUs from "./Components/WhyUs";
+
 
 
 function App() {
@@ -12,7 +14,10 @@ function App() {
       <NavBar />
       <Crsl />
       <Services/>
+      <WhyUs/>
+
       <Success/>
+
       {/* <Products/> */}
     </div>
   );

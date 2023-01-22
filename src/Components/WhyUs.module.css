@@ -1,3 +1,19 @@
+.whyus{
+    text-align: center;
+}
+.whyus p{
+    margin-top: 2rem;
+}
+/* .whyus:nth-child(1){
+    color:black;
+    background-color: grey;
+    opacity: 0.8;
+} */
+
+.whyus img{
+width:250px;
+height:300px;
+}
 #pop1:hover{
     transform: scale(1.08025);
     transition: 0.03s ease-in-out;

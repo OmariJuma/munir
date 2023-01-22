@@ -1,9 +1,10 @@
-import ICard from "./UI/ICard";
 import { v4 as uuidv4 } from "uuid";
-import ig from "./../assets/images/money.jpg";
+import { Card } from "react-bootstrap";
+import ig from "./../assets/images/notes.jpg";
 import client from "./../assets/images/client.png";
 import call from "./../assets/images/realPhone.png";
-import mechanic from "./../assets/images/mechanic.png";
+import mechanic from "./../assets/images/spanners.png";
+import Row from 'react-bootstrap/Row';
 
 import styles from "./WhyUs.module.css";
 const WhyUs = (props) => {
@@ -16,30 +17,42 @@ const WhyUs = (props) => {
     },
     {
       id: uuidv4(),
-      title: "Affordable Prices",
-      text: "We provide you with very low and discounted prices therefore you can buy more for less ",
+      title: "Qualified & Friendly Mechanics",
+      text: "Our mechanics are highly qualified with years of experience. Moreover, they are so friendly hence you won't be bored at all.",
       image: mechanic,
     },
     {
       id: uuidv4(),
-      title: "Affordable Prices",
-      text: "We provide you with very low and discounted prices therefore you can buy more for less ",
+      title: "24/7 Customer support",
+      text: "Need someone to talk to ASAP? Just dial the phone number and one of our agents will talk to you. You can also check us out on social media. click on the icons on the right and explore our social media handles",
       image: call,
     },
     {
       id: uuidv4(),
-      title: "Affordable Prices",
-      text: "We provide you with very low and discounted prices therefore you can buy more for less ",
+      title: "1450+ Happy Clients",
+      text: "... Be the next one",
       image: client,
     },
   ];
 
-  return (
-    <>
+  return (<div>
+          <h2>Why Us</h2>
+
+     <Row xs={1} md={2} className="g-2" style={{justifyContent:'center',gap:'2rem'}}>
+
       {reasons.map((i) => (
-        <ICard key={i.id} text={i.text} image={i.image} id={styles.pop1}/>
+        <Card className={`${"bg-dark text-white"} ${styles.whyus}`} key={i.id}>
+          <Card.Img src={i.image} alt="Card image" />
+          <Card.ImgOverlay>
+            <Card.Title>{i.title}</Card.Title>
+            <Card.Text>
+              {i.text}
+            </Card.Text>
+          </Card.ImgOverlay>
+        </Card>
       ))}
-    </>
+      </Row>
+</div>
   );
 };
 

@@ -4,17 +4,18 @@ import after from "./../assets/images/fitting2.jpeg";
 import { CardGroup, Card } from "react-bootstrap";
 const Success = () => {
   return (
-    <div className="container">
+    <div className="container" style={{textAlign:"center"}}>
       <h2>Success Stories</h2>
-      <div class="row">
+      <strong>Below are some of the pictures of our clients' vehicles before and after coming to us </strong>
+      <div class="row" style={{marginTop:'2rem'}}>
         <div class={`${"col-sm"} ${styles.myContainer}`}>
           <Card>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>Before</Card.Title>
           <img src={b4} alt="" />
           </Card>
           <Card>
 
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>After</Card.Title>
 
           <img src={after} alt="" />
           </Card>
@@ -22,12 +23,12 @@ const Success = () => {
         </div>
         <div class={`${"col-sm"} ${styles.myContainer}`}>
           <Card>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>Before</Card.Title>
           <img src={b4} alt="" />
           </Card>
           <Card>
 
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>After</Card.Title>
 
           <img src={after} alt="" />
           </Card>
@@ -35,12 +36,12 @@ const Success = () => {
         </div>
         <div class={`${"col-sm"} ${styles.myContainer}`}>
           <Card>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>Before</Card.Title>
           <img src={b4} alt="" />
           </Card>
           <Card>
 
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>After</Card.Title>
 
           <img src={after} alt="" />
           </Card>

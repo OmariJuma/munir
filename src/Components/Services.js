@@ -1,11 +1,10 @@
 import "./services.css";
 import "../App.css";
 import Caard from "./Caard";
-import side from"./../assets/images/frontside.png";
-import many from"./../assets/images/many.png";
-import head from"./../assets/images/head.png";
-import square from"./../assets/images/_square.jpg";
-import WhyUs from "./WhyUs";
+import tyres from "./../assets/images/wheels5.jpeg";
+import rims from "./../assets/images/many.avif";
+import fitting from "./../assets/images/fitting.jpeg";
+import booking from "./../assets/images/date.jpg";
 const Services = () => {
   return (
     <div className="container holder">
@@ -17,47 +16,37 @@ const Services = () => {
       </h1>
       <div className="container-fluid bg row" id="container">
         <Caard
-        un={'mc1'}
+          un={"mc1"}
           className="col-sm-6 col-md-6 col-lg-6"
           title="Tyres"
-          text="Some quick example text to build on the card title and make up the
-bulk of the card's content."
+          text="We provide high quality and durable tyres at very pocket friendly prices"
           product={false}
-          image={side}
-        />
-        <Caard un={'mc2'}
-          title="Rims"
-          className="col-sm-6 col-md-6 col-lg-6"
-          text="Some quick example text to build on the card title and make up the
-bulk of the card's content."
-          product={false}
-          image={many}
+          image={tyres}
         />
         <Caard
-         un={'mc3'}
+          un={"mc2"}
+          title="Rims"
+          className="col-sm-6 col-md-6 col-lg-6"
+          text="We provide high quality and durable rims at very affordable price"
+          product={false}
+          image={rims}
+        />
+        <Caard
+          un={"mc3"}
           title="Fitting rims and tires"
           className="col-sm-6 col-md-6 col-lg-6"
-          text="Some quick example text to build on the card title and make up the
-bulk of the card's content."
+          text="We fit tires and rims free of charge"
           product={false}
-          image={square}
+          image={fitting}
         />
-                <Caard
-                 un={'mc4'}
+        <Caard
+          un={"mc4"}
           title="Booking"
           className="col-sm-6 col-md-6 col-lg-6"
-          text="Some quick example text to build on the card title and make up the
-bulk of the card's content."
+          text="Do you need assistance? Stress no further. Click the button below to get assisted"
           product={false}
-          image={head}
+          image={booking}
         />
-
-      </div>
-      <h2>Why Us</h2>
-
-      <div className="container-fluid bg row" id="container">
-
-      <WhyUs/>
       </div>
     </div>
   );
