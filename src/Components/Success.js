@@ -7,8 +7,8 @@ const Success = () => {
     <div className="container" style={{textAlign:"center"}}>
       <h2>Success Stories</h2>
       <strong>Below are some of the pictures of our clients' vehicles before and after coming to us </strong>
-      <div class="row" style={{marginTop:'2rem'}}>
-        <div class={`${"col-sm"} ${styles.myContainer}`}>
+      <div className="row" style={{marginTop:'2rem'}}>
+        <div className={`${"col-sm"} ${styles.myContainer}`}>
           <Card>
           <Card.Title>Before</Card.Title>
           <img src={b4} alt="" />
@@ -21,7 +21,7 @@ const Success = () => {
           </Card>
 
         </div>
-        <div class={`${"col-sm"} ${styles.myContainer}`}>
+        <div className={`${"col-sm"} ${styles.myContainer}`}>
           <Card>
           <Card.Title>Before</Card.Title>
           <img src={b4} alt="" />
@@ -34,7 +34,7 @@ const Success = () => {
           </Card>
 
         </div>
-        <div class={`${"col-sm"} ${styles.myContainer}`}>
+        <div className={`${"col-sm"} ${styles.myContainer}`}>
           <Card>
           <Card.Title>Before</Card.Title>
           <img src={b4} alt="" />

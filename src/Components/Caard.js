@@ -34,8 +34,9 @@ const Caard = (props) => {
             </div>
             <Card.Img src={props.image} />
             <Card.Body>
+            <Rating />
+
               <Card.Text>
-                <Rating />
                 {props.description}
                 <div className="priceNstrike">
                   <strong>KSH {props.price}</strong>

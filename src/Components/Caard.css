@@ -31,7 +31,7 @@ padding:10px;
 }
 .priceNstrike{
     display: flex;
-    gap:4rem;
+    gap:2rem;
    
 }
 .priceNstrike strong{
@@ -43,13 +43,19 @@ padding:10px;
 }
 .pop:hover{
     transform: scale(1.08025);
-    transition: 0.03s ease-in-out;
+    transition: 0.05s ease-in-out;
     
 }
 .products .card{
     width:150px;
     height:fit-content;
     border: 1px solid orange;
+}
+.products .card:hover{
+    transform: var(--scale1);
+    transition: var(--transition1);
+    box-shadow: 0 0 3px 3px orange;
+
 }
 .products .card img{
     width:150px;
@@ -59,12 +65,12 @@ padding:10px;
 
 @media screen and (min-width:768px ){
     .products .card{
-         width:280px;
+         width:250px;
          height: fit-content;
      }
      .products .card img{
         height:300px;
-        width:280px;
+        width:250px;
 
     }
     

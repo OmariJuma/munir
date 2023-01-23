@@ -54,6 +54,9 @@ h4{
   --margins:20px;
   --borderRadius:20px;
   --borderRadius2:15px;
+  --scale1: scale(1.03025);
+  --transition1: 0.4s ease-in-out;
+
 }
 body{
   background-color:var(--white);

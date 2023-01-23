@@ -44,6 +44,43 @@ const Products = () => {
       price: 4500,
       image: rimNtyre2,
     },
+    {
+      id: 5,
+      type: "Rim and tyre",
+      name: "Benz rim 5*3",
+      offer: "20%",
+      desc: "Some quick example text to build on the card title and make up ",
+      price: 4500,
+      image: rimNtyre2,
+    },
+    {
+      id: 6,
+      type: "Rim and tyre",
+      name: "Benz rim 5*3",
+      offer: "20%",
+      desc: "Some quick example text to build on the card title and make up ",
+      price: 4500,
+      image: rimNtyre2,
+    },
+    {
+      id: 7,
+      type: "Rim and tyre",
+      name: "Benz rim 5*3",
+      offer: "20%",
+      desc: "Some quick example text to build on the card title and make up ",
+      price: 4500,
+      image: rimNtyre2,
+    },
+    {
+      id: 8,
+      type: "Rim and tyre",
+      name: "Benz rim 5*3",
+      offer: "20%",
+      desc: "Some quick example text to build on the card title and make up ",
+      price: 4500,
+      image: rimNtyre2,
+    },
+
   ];
   return (
     <>
