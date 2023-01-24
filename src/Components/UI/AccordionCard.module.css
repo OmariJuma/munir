@@ -1,0 +1,46 @@
+#searchVideo{
+    width:400px;
+    height:400px;
+    position: absolute;
+    z-index:5;
+    right:0;
+    /* left:-40vw;
+    bottom: -15rem; */
+    border-radius: 50%;
+    margin-right: 5rem;
+  }
+  /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  
+    background-color: rgb(199, 195, 195);
+    color: #444;
+    cursor: pointer;
+    width:45vw;
+    
+    text-align: left;
+    border: 1px solid var(--priColor);
+    /* outline: none; */
+    transition: 0.4s;
+    /* margin-bottom: 10rem; */
+    border-radius: var(--borderRadius2);
+  }
+  .accordionTitle{    padding: 15px;
+  }
+  .accordionContent{
+    background-color: white;
+    padding:14px
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .accordion:hover {
+    background-color: var(--priVariant);
+  }
+  
+  .accordionIcon{
+    font-size: 30px;
+    color: black;
+    float: right;
+    margin-top: -10px;
+    /* margin-left: 5px; */
+  }
+  

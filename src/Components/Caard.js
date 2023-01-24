@@ -22,6 +22,7 @@ const Caard = (props) => {
             txt={props.text}
             header={true}
             style={{ width: "250px" }}
+            
           />
         </div>
       )}

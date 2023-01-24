@@ -5,7 +5,7 @@ import fb from './../../assets/images/wheel3.jpeg';
 const ICard = (props) => {
   return (
     <div className={styles.container1}>
-      <img src={`${props.image?props.image:fb}`} alt="" />
+      <img src={`${props.image?props.image:fb}`} alt="" loading="lazy"/>
       <p className={styles.centered}>{props.txt}</p>
       <a href="" className={styles.absBtn} variant="outline-primary">
         See more
