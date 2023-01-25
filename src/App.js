@@ -7,6 +7,7 @@ import Success from "./Components/Success";
 import WhyUs from "./Components/WhyUs";
 import Footer from "./Components/UI/Footer";
 import MySwiper from "./Components/UI/MySwiper";
+import BreadCrumb from "./Components/UI/BreadCrumb";
 
 
 
@@ -14,13 +15,15 @@ function App() {
   return (<>
     <div className="Container-fluid">
       <NavBar />
+      <BreadCrumb/>
       <Crsl />
+      <Products/>
+
       <Services/>
       <WhyUs/>
 
       <Success/>
 
-      <Products/>
       <MySwiper/>
     </div>
     <Footer/>

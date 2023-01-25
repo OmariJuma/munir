@@ -1,0 +1,15 @@
+#bread {
+  /* position: sticky;
+    z-index: 1000000; */
+  top: 3.5rem;
+  left: 0;
+  background-color: var(--priVariant);
+  padding: 5px;
+}
+#bread a {
+  font-weight: bold;
+  color: black;
+}
+#bread a:hover {
+  color: white;
+}
