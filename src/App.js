@@ -5,11 +5,13 @@ import Services from "./Components/Services";
 import Products from "./Components/Products";
 import Success from "./Components/Success";
 import WhyUs from "./Components/WhyUs";
+import Footer from "./Components/UI/Footer";
+import MySwiper from "./Components/UI/MySwiper";
 
 
 
 function App() {
-  return (
+  return (<>
     <div className="Container-fluid">
       <NavBar />
       <Crsl />
@@ -19,7 +21,10 @@ function App() {
       <Success/>
 
       <Products/>
+      <MySwiper/>
     </div>
+    <Footer/>
+    </>
   );
 }
 
