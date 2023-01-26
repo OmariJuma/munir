@@ -38,10 +38,10 @@ const WhyUs = (props) => {
   return (<div>
           <h2>Why Us</h2>
 
-     <Row xs={1} md={2} className="g-2" style={{justifyContent:'center',gap:'2rem'}}>
+     <div  className="row" style={{justifyContent:'center',gap:'2rem'}}>
 
       {reasons.map((i) => (
-        <Card className={`${"bg-dark text-white"} ${styles.whyus}`} key={i.id}>
+        <Card className={`${"text-white"} ${styles.whyus}`} key={i.id} style={{width:"250px",padding:"0"}}>
           <Card.Img src={i.image} alt="Card image" />
           <Card.ImgOverlay>
             <Card.Title>{i.title}</Card.Title>
@@ -51,7 +51,7 @@ const WhyUs = (props) => {
           </Card.ImgOverlay>
         </Card>
       ))}
-      </Row>
+      </div>
 </div>
   );
 };

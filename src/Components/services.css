@@ -3,10 +3,13 @@
     margin: auto;
     justify-content: center;
 } */
-.row>*{
+/* .row>*{
 	width:auto;
 	padding:0;
 
+} */
+.holder{
+	background-color: var(--dark);
 }
 .servicesTitle{
 		display: flex;
@@ -19,7 +22,22 @@
 		width: auto; 
 		top:2rem;
 		margin-bottom: 4rem;
+		color: var(--priColor);
 	  
+}
+/* .servicesTitle::before{
+	content: '::';
+	text-align: center;
+} */
+#textArea h2{
+	margin-bottom: 1rem;
+	color:red;
+}
+#lottie{
+	position: relative;
+	max-height: 300px;
+	max-width:300px;
+	/* right:-10vw; */
 }
 @media screen and (max-width:768px) {
 	.bg{gap:2rem;}
