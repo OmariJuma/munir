@@ -6,6 +6,7 @@ import tyre1 from "./../assets/images/goodyear2.jpeg";
 import rim1 from "./../assets/images/wheel1.jpeg";
 import rimNtyre1 from "./../assets/images/wheel2.jpeg";
 import rimNtyre2 from "./../assets/images/wheel3.jpeg";
+import { Col, Row } from "react-bootstrap";
 const Products = () => {
   const productArray = [
     {
@@ -83,7 +84,7 @@ const Products = () => {
 
   ];
   return (
-    <>
+    <section>
       <div className={styles.productsTitle}>
         <h4 className="text-center">Inventory</h4>
         <a href="" style={{ textAlign: "right" }}>
@@ -93,10 +94,10 @@ const Products = () => {
           </span>
         </a>
       </div>
-      <div className={"container"}>
-        <div className={`${"row"} ${styles.singleProduct}`}>
+      <div className="container-flex">
+        <Row className={`${styles.singleProduct}`}>
           {productArray.map((prod) => (
-            <div className="col-sm-6 col-md-6 col-lg-3 col-xxl-3">
+            <Col xs={5} md={3} lg={3} xxl={3}>
               <Caard
                 key={prod.id}
                 title={prod.name}
@@ -106,11 +107,11 @@ const Products = () => {
                 image={prod.image}
                 product={true}
               />
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
-    </>
+    </section>
   );
 };
 

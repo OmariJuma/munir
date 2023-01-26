@@ -1,33 +1,33 @@
-.cont {
+/* .cont {
   margin-top: 5rem;
   height: 250px;
 }
 .cont .card {
        
   margin-bottom: 2rem;
-}
-.productsTitle{
-  display:flex;
+} */
+.productsTitle {
+  display: flex;
   position: relative;
   top: 2rem;
-  background-color:var(--dark);
+  background-color: var(--dark);
   justify-content: space-between;
   padding: 1rem 2rem;
   margin-bottom: 5rem;
-}  
-.singleProduct{
+}
+.singleProduct {
   text-align: center;
-  margin: auto;
+  /* margin: auto; */
   margin-top: 3rem;
 
   display: flex;
   justify-content: center;
-  gap:1rem;
-border-radius: 15px;}
-@media screen and (min-width:768px) {
-
-  .productsTitle h4{
-position: relative;
-    left:45%;  }  
-
+  gap: 1.5rem;
+  border-radius: 15px;
+}
+@media screen and (min-width: 768px) {
+  .productsTitle h4 {
+    position: relative;
+    left: 45%;
+  }
 }
