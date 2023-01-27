@@ -22,12 +22,14 @@
 }
 
 .star {
+  width:10px;
+  height:15px;
   margin-left: 35%;
   margin-bottom: 10%;
 }
 .priceNstrike {
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 .priceNstrike strong {
   color: var(--white);
@@ -66,10 +68,16 @@
   }
 }
 @media screen and (max-width: 334px) {
+  p{
+    font-size: 12px;
+  }
+  h5{
+    font-size: 15px;
+  }
   .products .card {
     max-width: 140px;
   }
-  /* .products .card img {
-    width: 140px;
-  } */
+  .products .card img {
+    height: 180px;
+  }
 }
