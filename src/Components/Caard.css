@@ -21,20 +21,17 @@
   /* max-width:100px; */
 }
 
-.star {
-  width:10px;
-  height:15px;
-  margin-left: 35%;
-  margin-bottom: 10%;
-}
 .priceNstrike {
   display: flex;
-  /* gap: 2rem; */
+  gap: 1.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .priceNstrike strong {
-  color: var(--white);
+  color: black;
 }
 .priceNstrike s {
+  float: right;
   color: var(--red);
 }
 .pop:hover {

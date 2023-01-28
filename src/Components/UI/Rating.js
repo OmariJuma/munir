@@ -7,9 +7,11 @@ const Rating = (props) => {
   };
   return (
     <ReactStars
+    
+    value={3}
       count={5}
       onChange={ratingChanged}
-      size={15}
+      size={16}
       isHalf={true}
       emptyIcon={<i className="far fa-star"></i>}
       halfIcon={<i className="fa fa-star-half-alt"></i>}

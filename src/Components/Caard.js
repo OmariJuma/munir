@@ -28,24 +28,26 @@ const Caard = (props) => {
       )}
       {product && (
         <div className="products">
-          <Card style={{  marginBottom: '1.5rem'
+          <Card style={{textAlign:"left",marginBottom: '1.5rem'
 }}>
             <div id="aboveCardContainer">
               <h5 id="aboveCard">{props.title}</h5>
             </div>
             <Card.Img src={props.image} />
             <Card.Body>
-            <Rating />
 
-              <Card.Text>
+              <Card.Text style={{marginBottom:"2rem"}}>
                 {props.description}
                 <div className="priceNstrike">
                   <strong>KSH {props.price}</strong>
                   <s>KSH {props.offer}</s>
                 </div>
+                <Rating />
+
               </Card.Text>
+
             </Card.Body>
-            <ButtonCustom text='view product'/>
+            {/* <ButtonCustom text='view product'/> */}
           </Card>
         </div>
       )}

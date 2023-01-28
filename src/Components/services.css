@@ -22,29 +22,66 @@
 		width: auto; 
 		top:2rem;
 		margin-bottom: 4rem;
-		color: var(--priColor);
+		color: red;
 	  
 }
 /* .servicesTitle::before{
 	content: '::';
 	text-align: center;
 } */
-#textArea h2{
+.textArea h2{
 	margin-bottom: 1rem;
+	color:black;
+}.textArea h2:hover::after{
+	display: block;
+	content: '--------';
+	margin:-1rem 0 2rem 0;
+	width:40%;
+	height: 3px;
+	color:rgb(56, 54, 54);
+	/* transform: scaleX(1); */
+	animation: Rotate 1.5s linear infinite;
+}
+.textArea h2::before{
+	content: '// ';
 	color:red;
 }
+
+
+@keyframes Rotate {
+	0%{transform: translateX(0%);
+	opacity: 0;}
+	40%{transform: translateX(40%);
+	opacity: 0.5;}
+	80%{transform:translateX(80%);
+	opacity: 1;}
+	100%{
+		transform: translateX(100%);
+		opacity:0.5;
+	}
+}
 #lottie{
-	position: relative;
+	/* position: relative; */
 	max-height: 300px;
 	max-width:300px;
 	/* right:-10vw; */
 }
-@media screen and (max-width:768px) {
+.rimTypes{
+	display: flex;
+	justify-content: center;
+}
+/* This reverses the rendering order of the service at the third position*/
+@media screen and (min-width:769px) {
 	.bg{gap:2rem;}
 
 }
-@media screen and (min-width:769px) {
+@media screen and (max-width:768px) {
 	.bg{gap:2rem;}
+	#reverse{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	
 
 }
 
