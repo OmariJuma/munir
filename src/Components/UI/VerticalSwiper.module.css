@@ -1,0 +1,6 @@
+.container_{
+    width:90%;
+    height:60%;
+    background-color: var(--dark);
+    overflow-y: scroll;
+}

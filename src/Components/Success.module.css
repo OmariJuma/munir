@@ -1,28 +1,42 @@
-.myContainer{
+.myContainer {
+  text-align: center;
+  margin: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+  padding: 10px;
+  border-radius: 15px;
+}
+#cont{
+    margin-top: 2rem;
     text-align: center;
-    margin: auto;
-background-color: var(--priColor );
-    display: flex;
-    justify-content: center;
-    gap:10px;
-    margin-bottom: 2rem;
-    padding:10px;
-border-radius: 15px;}
-.myContainer:nth-child(odd){
-    background-color: var(--priVariant);
+    background-color: var(--dark);
+    padding:20px;
 }
-.myContainer img{
-    width:150px;
-    height:300PX;
-    border-radius: 5px;
-    /* margin-bottom: 2rem; */
+/* .myContainer:nth-child(odd) {
+  background-color: var(--priVariant);
+} */
+.myContainer img {
+  width: 150px;
+  height: 250px;
+  border-radius: 5px;
+  /* margin-bottom: 2rem; */
 }
-@media screen and (max-width:320px) {
-    .myContainer{padding:0;
-    background-color: white;}
-    .myContainer:nth-child(odd){
-        background-color: white;
-    }
-    
-    .card{padding:20px;}
+.card {
+background-color: #f9f9f9;  }
+
+@media screen and (max-width: 320px) {
+  .myContainer {
+    padding: 0;
+    background-color: white;
+  }
+  .myContainer:nth-child(odd) {
+    background-color: white;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }
