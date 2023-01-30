@@ -11,7 +11,7 @@ import { Button, Form } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <div className="my-5">
+    <div>
       <footer
         className="text-center text-lg-start text-dark"
         style={{ backgroundColor: "#ECEFF1" }}
@@ -230,18 +230,20 @@ const Footer = () => {
                   </span>{" "}
                   info@example.com
                 </p>
-                <p>
+                <a href="tel:+254722174444">
                   <span>
                     <FaPhone />
                   </span>{" "}
                   +254722174444
-                </p>
-                <p>
+                </a>
+                <br/>
+                <br/>
+                <a href="tel:+254707686784">
                   <span>
                     <FaPhone />
                   </span>{" "}
                   +254707686784
-                </p>
+                </a>
               </div>
               {/* <!-- Grid column --> */}
             </div>

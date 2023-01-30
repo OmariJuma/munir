@@ -9,7 +9,7 @@
 .productsTitle {
   display: flex;
   position: relative;
-  top: 2rem;
+  /* top: 2rem; */
   background-color: var(--dark);
   justify-content: space-between;
   padding: 1rem 2rem;
