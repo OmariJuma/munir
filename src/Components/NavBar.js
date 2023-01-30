@@ -8,55 +8,115 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
+import React from "react";
+import {
+  Link,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Crsl from "./../Components/Crsl";
+import Services from "./../Components/Services";
+import Products from "./../Components/Products";
+import Success from "./../Components/Success";
+import WhyUs from "./../Components/WhyUs";
+import MySwiper from "./../Components/UI/MySwiper";
+
 const NavBar = () => {
   return (
-    <Navbar
-      expand="lg"
-      className="navbar navbar-expand-sm navbar-right sticky-top "
-    >
-      <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span>
-            <GiHamburgerMenu />
-          </span>
-        </Navbar.Toggle>
+    <Router>
+      <Navbar
+        expand="lg"
+        className="navbar navbar-expand-sm navbar-right sticky-top "
+      >
+        <Container>
+          <Navbar.Toggle aria-controls="basic-navbar-nav">
+            <span>
+              <GiHamburgerMenu />
+            </span>
+          </Navbar.Toggle>
 
-        <Navbar.Brand href="#home" className="linkie bt-2">
-          Muneer Automotive
-        </Navbar.Brand>
-        <span className="cartIcon">
-          <FaRegUserCircle />
-        </span>
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          className="justify-content-center"
-        >
-          <Nav
-            variant="tabs"
+          <Navbar.Brand href="#home" className="linkie bt-2">
+            Muneer Automotive
+          </Navbar.Brand>
+          <span className="cartIcon">
+            <FaRegUserCircle />
+          </span>
+          <Navbar.Collapse
+            id="basic-navbar-nav"
             className="justify-content-center"
-            activeKey="/home"
           >
-            <Nav.Item id="search">
-              <Input />
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/home">Home</Nav.Link>
-            </Nav.Item>
-            <NavDropdown title="Products" id="nav-dropdown">
-              <NavDropdown.Item eventKey="4.1">Rims</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.2">Tyres</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4.3">Rims and Tyres</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Item>
-              <Nav.Link eventKey="link-2">Appointment</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-2">About us</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            <Nav
+              variant="tabs"
+              className="justify-content-center"
+              activeKey="/home"
+            >
+              <Nav.Item id="search">
+                <Input />
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link as={Link} to="/">
+                  Home
+                </Nav.Link>
+              </Nav.Item>
+              <NavDropdown title="Products" id="nav-dropdown">
+                <NavDropdown.Item as={Link} to="products/rims" eventKey="4.1">
+                  Rims
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="products/tyres" eventKey="4.2">
+                  Tyres
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="products/rimsNtyres"
+                  eventKey="4.3"
+                >
+                  Rims and Tyres
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Item>
+                <Nav.Link as={Link} to="booking" eventKey="link-2">
+                  Booking
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link as={Link} to="about-us" eventKey="link-2">
+                  About us
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="Container-fluid">
+                <Crsl />
+                <Products />
+
+                <Services />
+                <WhyUs />
+
+                <Success />
+
+                <MySwiper />
+              </div>
+            }
+          />
+          <Route path="products/rims" element={<WhyUs />} />
+
+          <Route path="products/tyres" element={<WhyUs />} />
+
+          <Route path="booking" element={<WhyUs />} />
+
+          <Route path="about-us" element={<WhyUs />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 export default NavBar;

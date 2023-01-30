@@ -224,12 +224,12 @@ const Footer = () => {
                   </span>{" "}
                   34 Kirinyaga Rd Next To Kenya Canvas, Nairobi Kenya
                 </p>
-                <p>
+                <a href="email:info@gmail.com">
                   <span>
                     <FaEnvelope />
                   </span>{" "}
                   info@example.com
-                </p>
+                </a>
                 <a href="tel:+254722174444">
                   <span>
                     <FaPhone />
