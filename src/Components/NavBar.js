@@ -22,6 +22,8 @@ import Products from "./../Components/Products";
 import Success from "./../Components/Success";
 import WhyUs from "./../Components/WhyUs";
 import MySwiper from "./../Components/UI/MySwiper";
+import MoreDetails from "./MoreDetails";
+import Error404 from "./Pages/Error404.js";
 
 const NavBar = () => {
   return (
@@ -106,14 +108,24 @@ const NavBar = () => {
                 <MySwiper />
               </div>
             }
+            errorElement={<Error404/>}
+            exact
           />
-          <Route path="products/rims" element={<WhyUs />} />
+          <Route path="products/rims" element={<WhyUs />} exact 
+                      errorElement={<Error404/>}
+                      />
 
-          <Route path="products/tyres" element={<WhyUs />} />
+          <Route path="products/tyres" element={<WhyUs />} exact             errorElement={<Error404/>}
+ />
+          <Route path="products/rimsNtyres" element={<MySwiper />} exact             errorElement={<Error404/>}
+/>
 
-          <Route path="booking" element={<WhyUs />} />
+          <Route path="booking" element={<WhyUs />} exact             errorElement={<Error404/>}
+/>
 
-          <Route path="about-us" element={<WhyUs />} />
+          <Route path="about-us" element={<WhyUs />} exact />
+          <Route path="products/details" element={<MoreDetails />} exact />
+          <Route path="*" exact element={<Error404/>}/>
         </Routes>
       </div>
     </Router>

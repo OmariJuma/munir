@@ -7,6 +7,7 @@ import rim1 from "./../assets/images/wheel1.jpeg";
 import rimNtyre1 from "./../assets/images/wheel2.jpeg";
 import rimNtyre2 from "./../assets/images/wheel3.jpeg";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Products = () => {
   const productArray = [
     {
@@ -94,7 +95,7 @@ const Products = () => {
           </span>
         </a>
       </div>
-      <div className="container-flex">
+      <Link to="products/details" className="container-flex">
         <Row className={`${styles.singleProduct}`}>
           {productArray.map((prod) => (
             <Col xs={5} md={3} lg={3} xxl={3}>
@@ -110,7 +111,7 @@ const Products = () => {
             </Col>
           ))}
         </Row>
-      </div>
+      </Link>
     </section>
   );
 };

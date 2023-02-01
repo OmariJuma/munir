@@ -1,3 +1,4 @@
+
 import Rim from "../assets/images/rim2.jpeg";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
@@ -6,28 +7,22 @@ import "./Caard.css";
 import Rating from "./UI/Rating";
 import ICard from "./UI/ICard";
 import ButtonCustom from "./UI/ButtonCustom";
+import MoreDetails from "./MoreDetails";
 
 const Caard = (props) => {
   const product = props.product;
   const rating = 1;
   const zeroStar = 0;
 
+  const onClickHandler=(e)=>{
+    // e.preventDefault()
+   return( <MoreDetails image={props.title} title={props.title} text={props.text} price={props.price} discount={props.offer}/>)
+  }
+
   return (
     <>
-      {!product && (
-        <div className="pop">
-          <Microcard title={props.title} un={props.un} />
-          <ICard
-            image={props.image}
-            txt={props.text}
-            header={true}
-            style={{ width: "250px" }}
-            
-          />
-        </div>
-      )}
       {product && (
-        <div className="products">
+        <a target={<MoreDetails/>} className="products" onClick={onClickHandler}>
           <Card style={{textAlign:"left",marginBottom: '1.5rem'
 }}>
             <div id="aboveCardContainer">
@@ -49,7 +44,7 @@ const Caard = (props) => {
             </Card.Body>
             {/* <ButtonCustom text='view product'/> */}
           </Card>
-        </div>
+        </a>
       )}
     </>
   );
