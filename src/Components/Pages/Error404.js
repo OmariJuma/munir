@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Error404.module.css";
 const Error404 = () => {
 if (status === 404) {
-        throw new Response(<h2><br/>404Not Found<br/></h2>);
+        throw new Response(<h2 ><br/>404Not Found<br/></h2>);
       }
   
     return (<div id={styles.errorpage}>

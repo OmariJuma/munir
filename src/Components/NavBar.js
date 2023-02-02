@@ -25,7 +25,24 @@ import MySwiper from "./../Components/UI/MySwiper";
 import MoreDetails from "./MoreDetails";
 import Error404 from "./Pages/Error404.js";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  // const data = {
+  //   key: props.key,
+  //   price: props.price,
+  //   title: props.title,
+  //   text: props.description,
+  //   offer: props.offer,
+  //   image: props.image,
+  // };
+
+
+  const passDataHandler=(data)=>{
+    console.log("In Navbar the values have been received");
+    window.da=data;
+console.log(data.title);
+const {title}=passDataHandler;
+console.log(title)
+  }
   return (
     <Router>
       <Navbar
@@ -98,7 +115,7 @@ const NavBar = () => {
             element={
               <div className="Container-fluid">
                 <Crsl />
-                <Products />
+                <Products onPassData={passDataHandler}/>
 
                 <Services />
                 <WhyUs />
@@ -108,24 +125,39 @@ const NavBar = () => {
                 <MySwiper />
               </div>
             }
-            errorElement={<Error404/>}
+            errorElement={<Error404 />}
             exact
           />
-          <Route path="products/rims" element={<WhyUs />} exact 
-                      errorElement={<Error404/>}
-                      />
+          <Route
+            path="products/rims"
+            element={<WhyUs />}
+            exact
+            errorElement={<Error404 />}
+          />
 
-          <Route path="products/tyres" element={<WhyUs />} exact             errorElement={<Error404/>}
- />
-          <Route path="products/rimsNtyres" element={<MySwiper />} exact             errorElement={<Error404/>}
-/>
+          <Route
+            path="products/tyres"
+            element={<WhyUs />}
+            exact
+            errorElement={<Error404 />}
+          />
+          <Route
+            path="products/rimsNtyres"
+            element={<MySwiper />}
+            exact
+            errorElement={<Error404 />}
+          />
 
-          <Route path="booking" element={<WhyUs />} exact             errorElement={<Error404/>}
-/>
+          <Route
+            path="booking"
+            element={<WhyUs />}
+            exact
+            errorElement={<Error404 />}
+          />
 
           <Route path="about-us" element={<WhyUs />} exact />
-          <Route path="products/details" element={<MoreDetails />} exact />
-          <Route path="*" exact element={<Error404/>}/>
+          <Route path="products/details" element={<MoreDetails data={window.da} />} exact />
+          <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>
     </Router>
