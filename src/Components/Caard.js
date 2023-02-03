@@ -20,16 +20,11 @@ const Caard = (props) => {
     offer: props.offer,
     image: props.image,
   };
-  const onClickHandler = (e) => {
-    // e.preventDefault()
-    <MoreDetails data={data}/>
-    props.onPassData(data);
-  };
 
   return (
     <>
       {product && (
-        <div className="products" onClick={onClickHandler}>
+        <div className="products">
           <Card style={{ textAlign: "left", marginBottom: "1.5rem" }}>
             <div id="aboveCardContainer">
               <h5 id="aboveCard">{props.title}</h5>

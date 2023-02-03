@@ -36,13 +36,7 @@ const NavBar = (props) => {
   // };
 
 
-  const passDataHandler=(data)=>{
-    console.log("In Navbar the values have been received");
-    window.da=data;
-console.log(data.title);
-const {title}=passDataHandler;
-console.log(title)
-  }
+  
   return (
     <Router>
       <Navbar
@@ -115,7 +109,7 @@ console.log(title)
             element={
               <div className="Container-fluid">
                 <Crsl />
-                <Products onPassData={passDataHandler}/>
+                <Products/>
 
                 <Services />
                 <WhyUs />
@@ -156,7 +150,7 @@ console.log(title)
           />
 
           <Route path="about-us" element={<WhyUs />} exact />
-          <Route path="products/details" element={<MoreDetails data={window.da} />} exact />
+          <Route path="products/details" element={<MoreDetails/>} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>

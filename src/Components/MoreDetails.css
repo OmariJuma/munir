@@ -1,0 +1,14 @@
+.more-details{
+display: flex;
+justify-content: center;
+}
+.more-details img{
+    width:60vw;
+max-height: 60vh;}
+#inp{
+    display: flex;
+    width:75%;
+    margin: auto;
+    margin-top: 1rem;
+
+}

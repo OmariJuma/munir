@@ -2,3 +2,6 @@ input[type='text']{
     background-color: #C9ECF8;
     opacity:0.7;
 }
+.inpt{
+    margin: 0 2rem;
+}

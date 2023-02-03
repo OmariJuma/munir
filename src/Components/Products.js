@@ -86,11 +86,6 @@ const Products = (props) => {
 
   ];
   //a function to get data from the child component
-  const passDataHandler=(data)=>{
-    const details={...data};
-    props.onPassData(details);
-    
-  }
   return (
     <div>
     <section>
@@ -108,7 +103,6 @@ const Products = (props) => {
           {productArray.map((prod) => (
             <Col xs={5} md={3} lg={3} xxl={3}>
               <Caard
-            onPassData={passDataHandler}
                 key={prod.id}
                 title={prod.name}
                 price={prod.price}
