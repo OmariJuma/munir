@@ -25,6 +25,9 @@
   gap: 1.5rem;
   border-radius: 15px;
 }
+a{
+  text-decoration: none;
+}
 @media screen and (min-width: 768px) {
   .productsTitle h4 {
     position: relative;

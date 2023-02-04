@@ -14,7 +14,7 @@ const ButtonCustom = (props) => {
           {props.text}
         </button>
       )}
-      {variant && <button id={styles.btn}>{props.text}</button>}
+      {variant && <button className={styles.variant} id={styles.btn}>{props.text}</button>}
     </>
   );
 };

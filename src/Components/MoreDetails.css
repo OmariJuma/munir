@@ -3,12 +3,37 @@ display: flex;
 justify-content: center;
 }
 .more-details img{
-    width:60vw;
-max-height: 60vh;}
+    width:50vw;
+max-height: 60vh;
+border-radius: var(--borderRadius);
+}
 #inp{
-    display: flex;
     width:75%;
     margin: auto;
     margin-top: 1rem;
 
+}
+.priceNstrike {
+    display: flex;
+    gap: 1.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .priceNstrike strong {
+    color: black;
+  }
+  .priceNstrike s {
+    float: right;
+    color: var(--red);
+  }
+  h6{
+    text-align: center;
+  }
+  
+@media screen and (max-width:596px) {
+    .more-details img{
+        width:95vw;
+    max-height: 60vh;
+padding:0 7px 10px 0;}
+    
 }

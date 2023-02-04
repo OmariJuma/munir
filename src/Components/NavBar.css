@@ -1,11 +1,13 @@
 .navbar {
   background-color: #39bce5;
+  text-align: center;
   /* display: flex; */
   /* row-gap: 3rem; */
 }
 .nav-link {
   color: black;
 }
+
 .nav-link:hover {
   background-color: transparent;
   color: white;
@@ -39,7 +41,6 @@
     margin-left: 200px;
 } */
 #search {
-  width: 200px;
   margin: auto;
   border-radius: 10px;
   border: 2px black;
