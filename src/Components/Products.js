@@ -83,96 +83,94 @@ const Products = (props) => {
       price: 4500,
       image: rimNtyre2,
     },
-
   ];
   //a function to get data from the child component
   return (
     <div>
-    <section>
-      <div className={styles.productsTitle}>
-        <h4 className="text-center">Rims and Tyres</h4>
-        <a href="" style={{ textAlign: "right" }}>
-          See more
-          <span>
-            <FaArrowRight />
-          </span>
-        </a>
-      </div>
-      <Link to="products/details"  className="container-flex">
-        <Row className={`${styles.singleProduct}`}>
-          {productArray.map((prod) => (
-            <Col xs={5} md={3} lg={3} xxl={3}>
-              <Caard
-                key={prod.id}
-                title={prod.name}
-                price={prod.price}
-                offer={prod.offer}
-                description={prod.desc}
-                image={prod.image}
-                product={true}
-              />
-            </Col>
-          ))}
-        </Row>
-      </Link>
-    </section>
-    <section>
-      <div className={styles.productsTitle}>
-        <h4 className="text-center">Rims</h4>
-        <a href="" style={{ textAlign: "right" }}>
-          See more
-          <span>
-            <FaArrowRight />
-          </span>
-        </a>
-      </div>
-      <Link to="products/details" className="container-flex">
-        <Row className={`${styles.singleProduct}`}>
-          {productArray.map((prod) => (
-            <Col xs={5} md={3} lg={3} xxl={3}>
-              <Caard
-                key={prod.id}
-                title={prod.name}
-                price={prod.price}
-                offer={prod.offer}
-                description={prod.desc}
-                image={prod.image}
-                product={true}
-              />
-            </Col>
-          ))}
-        </Row>
-      </Link>
-    </section>
-    <section>
-      <div className={styles.productsTitle}>
-        <h4 className="text-center">Tyres</h4>
-        <a href="" style={{ textAlign: "right" }}>
-          See more
-          <span>
-            <FaArrowRight />
-          </span>
-        </a>
-      </div>
-      <Link to="products/details" className="container-flex">
-        <Row className={`${styles.singleProduct}`}>
-          {productArray.map((prod) => (
-            <Col xs={5} md={3} lg={3} xxl={3}>
-              <Caard
-                key={prod.id}
-                title={prod.name}
-                price={prod.price}
-                offer={prod.offer}
-                description={prod.desc}
-                image={prod.image}
-                product={true}
-              />
-            </Col>
-          ))}
-        </Row>
-      </Link>
-    </section>
-
+      <section>
+        <div className={styles.productsTitle}>
+          <h4 className="text-center">Rims and Tyres</h4>
+          <a href="" style={{ textAlign: "right" }}>
+            See more
+            <span>
+              <FaArrowRight />
+            </span>
+          </a>
+        </div>
+        <Link to="products/details" className="container-flex">
+          <Row className={`${styles.singleProduct}`}>
+            {productArray.map((prod) => (
+              <Col xs={5} md={3} lg={3} xxl={3}>
+                <Caard
+                  key={prod.id}
+                  title={prod.name}
+                  price={prod.price}
+                  offer={prod.offer}
+                  description={prod.desc}
+                  image={prod.image}
+                  product={true}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Link>
+      </section>
+      <section>
+        <div className={styles.productsTitle}>
+          <h4 className="text-center">Rims</h4>
+          <a href="" style={{ textAlign: "right" }}>
+            See more
+            <span>
+              <FaArrowRight />
+            </span>
+          </a>
+        </div>
+        <Link to="products/details" className="container-flex">
+          <Row className={`${styles.singleProduct}`}>
+            {productArray.map((prod) => (
+              <Col xs={5} md={3} lg={3} xxl={3}>
+                <Caard
+                  key={prod.id}
+                  title={prod.name}
+                  price={prod.price}
+                  offer={prod.offer}
+                  description={prod.desc}
+                  image={prod.image}
+                  product={true}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Link>
+      </section>
+      <section>
+        <div className={styles.productsTitle}>
+          <h4 className="text-center">Tyres</h4>
+          <a href="" style={{ textAlign: "right" }}>
+            See more
+            <span>
+              <FaArrowRight />
+            </span>
+          </a>
+        </div>
+        <div className="container-flex">
+          <Row className={`${styles.singleProduct}`}>
+            {productArray.map((prod) => (
+              <Col xs={5} md={3} lg={3} xxl={3}>
+                <Caard
+                  key={prod.id}
+                  title={prod.name}
+                  price={prod.price}
+                  offer={prod.offer}
+                  description={prod.desc}
+                  image={prod.image}
+                  product={true}
+                />
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </section>
     </div>
   );
 };

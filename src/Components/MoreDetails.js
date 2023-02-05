@@ -33,13 +33,13 @@ const MoreDetails = (props) => {
                 </div>
                 <Rating />
               </Card.Text>
+              <ButtonCustom text="Add To Cart" variant={true}/>
 
           </Card.Body>
           {/* <ButtonCustom text='view product'/> */}
         </Card>
         </Col>
       </Row>
-      <ButtonCustom text="Add To Cart" variant={true}/>
       <h6>Related items</h6>
     </div>
   );
