@@ -48,4 +48,8 @@ background-color: #f9f9f9;  }
   .card {
     padding: 20px;
   }
+  .myContainer img{
+    width: 120px;
+    margin: 5px;
+  }
 }
