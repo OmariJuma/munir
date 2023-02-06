@@ -35,8 +35,6 @@ const NavBar = (props) => {
   //   image: props.image,
   // };
 
-
-  
   return (
     <Router>
       <Navbar
@@ -109,7 +107,7 @@ const NavBar = (props) => {
             element={
               <div className="Container-fluid">
                 <Crsl />
-                <Products/>
+                <Products />
 
                 <Services />
                 <WhyUs />
@@ -150,7 +148,7 @@ const NavBar = (props) => {
           />
 
           <Route path="about-us" element={<WhyUs />} exact />
-          <Route path="products/details" element={<MoreDetails/>} exact />
+          <Route path="products/details" element={<MoreDetails />} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>

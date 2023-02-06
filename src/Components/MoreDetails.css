@@ -7,6 +7,10 @@ justify-content: center;
 max-height: 60vh;
 border-radius: var(--borderRadius);
 }
+.more-details .faicon{
+  color:var(--orange);
+  margin-right: 1rem;
+}
 #inp{
     width:75%;
     margin: auto;
@@ -20,6 +24,7 @@ border-radius: var(--borderRadius);
     margin-bottom: 0.5rem;
   }
   .priceNstrike strong {
+    font-size: large;
     color: black;
   }
   .priceNstrike s {
