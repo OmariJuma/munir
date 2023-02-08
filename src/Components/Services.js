@@ -7,6 +7,7 @@ import rims from "./../assets/images/many.avif";
 import fitting from "./../assets/images/fitting.jpeg";
 import booking from "./../assets/images/date.jpg";
 import lottie from "./../assets/images/animations/illustration.png";
+import lottie2 from "./../assets/images/animations/illustration2.png";
 import ButtonCustom from "./UI/ButtonCustom";
 const Services = () => {
   return (
@@ -61,7 +62,7 @@ Our enterprise has a variety of rims that you can choose from. </p>
             </div>
           </div>
           <div className="col-sm-12 col-md-4 col--lg-4">
-            <img src={lottie} id="lottie" alt="" />
+            <img src={lottie2} id="lottie" alt="" />
           </div>
 
         </div>

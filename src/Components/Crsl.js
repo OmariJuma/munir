@@ -8,7 +8,8 @@ const Crsl = () => {
     <div className={styles.contain}>
       <img src={bugatti} alt="the home screen" id={styles.def} />
       <img src={bugatti2} alt="the home screen" id={styles.sub} />
-      <h1>Muneer Automotive, The home of Tires & Rims</h1>
+      <h1 style={{  position: "absolute",  top: "2rem"
+}}>Muneer Automotive, The home of Tires & Rims</h1>
       <MiniCard/>
       <div className={styles.mini}> 
       <Input/>

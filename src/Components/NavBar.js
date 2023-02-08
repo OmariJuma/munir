@@ -24,6 +24,7 @@ import WhyUs from "./../Components/WhyUs";
 import MySwiper from "./../Components/UI/MySwiper";
 import MoreDetails from "./MoreDetails";
 import Error404 from "./Pages/Error404.js";
+import BookingPage from "./Pages/BookingPage";
 
 const NavBar = (props) => {
   // const data = {
@@ -142,7 +143,7 @@ const NavBar = (props) => {
 
           <Route
             path="booking"
-            element={<WhyUs />}
+            element={<BookingPage/>}
             exact
             errorElement={<Error404 />}
           />

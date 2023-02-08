@@ -1,0 +1,30 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#bookanime{
+    height: 500px;
+    max-width: fit-content;
+    opacity: 1;
+    }
+
+.titleHolder{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+.titleHolder img{
+    width:50px;
+    height: 50px;
+}
+@media screen and (max-width:767px) {
+    #bookanime{
+        height: 300px;
+        max-width: 300px;
+        }
+    
+    
+}

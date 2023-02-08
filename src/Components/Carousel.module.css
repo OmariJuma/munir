@@ -15,8 +15,6 @@ img {
   display: none;
 }
 h1 {
-  position: absolute;
-  top: 2rem;
   justify-content: center;
   font-family: "Space Grotesk";
   font-style: normal;

@@ -97,7 +97,7 @@ const Products = (props) => {
             </span>
           </a>
         </div>
-        <Link to="products/details" className="container-flex">
+        <div to="products/details" className="container-flex">
           <Row className={`${styles.singleProduct}`}>
             {productArray.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
@@ -113,7 +113,7 @@ const Products = (props) => {
               </Col>
             ))}
           </Row>
-        </Link>
+        </div>
       </section>
       <section>
         <div className={styles.productsTitle}>
@@ -125,7 +125,7 @@ const Products = (props) => {
             </span>
           </a>
         </div>
-        <Link to="products/details" className="container-flex">
+        <div className="container-flex">
           <Row className={`${styles.singleProduct}`}>
             {productArray.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
@@ -141,7 +141,7 @@ const Products = (props) => {
               </Col>
             ))}
           </Row>
-        </Link>
+        </div>
       </section>
       <section>
         <div className={styles.productsTitle}>
