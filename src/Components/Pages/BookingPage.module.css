@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 .titleHolder img{
     width:50px;
@@ -41,11 +41,28 @@
     left:30vw;
 
 }
-form{
+.frmBooking{
     background-color: #39BCE5;
     border-radius: var(--borderRadius);
-    padding: 40px;
+    padding: 20px;
+    position: relative;
+    margin: -5px 20px 20px 20px;
+    box-shadow: 0 0 5px 5px var(--dark);}
+    input[type='text'] {
+        background-color: white;
+        opacity: 1;
+      }
+      
+.img{
+    height:80vh;
 }
+#safety{
+    color:red;
+}
+#safety1{
+    color:#1BB55C;
+}
+
 @media screen and (max-width:767px) {
     #bookanime{
         height: 300px;

@@ -48,7 +48,6 @@
 }
 input[type="text"] {
   padding-left: 10px;
-  width: 30%;
   transition: width 0.15s ease-in-out;
 }
 input::placeholder {
