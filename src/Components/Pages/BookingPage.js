@@ -2,20 +2,23 @@ import styles from "./BookingPage.module.css";
 import Booked from "./../../assets/images/animations/booked.mp4";
 import Parking from "./../../assets/images/parking.jpg";
 import Parking1 from "./../../assets/images/parking1.jpg";
+import Care from "./../../assets/images/animations/customerCare.gif";
+import Cyber from "./../../assets/images/animations/cyber.gif";
 import date from "./../../assets/images/date.png";
 import calend from "./../../assets/images/icons/calend.png";
-import { Form, Button, Carousel, Col,Row } from "react-bootstrap";
-// import { Row, Col } from "react-bootstrap";
+import { Form, Button, Carousel, Col, Row } from "react-bootstrap";
+import { FaCheck,FaLock,FaClone,FaAward } from "react-icons/fa";
+import { MdMoneyOff } from "react-icons/md";
 const BookingPage = () => {
-  var currentDate=new Date();
-  var dd=String(currentDate.getDate()).padStart(2,'0');
-  var mm=String(currentDate.getMonth()+1).padStart(2,'0');
-  var yyyy=String(currentDate.getFullYear());
-currentDate=mm+'/'+dd+'/'+yyyy;
-console.log(currentDate);
-const onClickHandler=(e)=>{
-e.preventDefault()
-}
+  var currentDate = new Date();
+  var dd = String(currentDate.getDate()).padStart(2, "0");
+  var mm = String(currentDate.getMonth() + 1).padStart(2, "0");
+  var yyyy = String(currentDate.getFullYear());
+  currentDate = mm + "/" + dd + "/" + yyyy;
+  console.log(currentDate);
+  const onClickHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <Carousel>
@@ -50,95 +53,152 @@ e.preventDefault()
         </div>
         <Row>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Enter First name</Form.Label>
-          <Form.Control type="text" placeholder="John" />
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Enter First name</Form.Label>
+              <Form.Control type="text" placeholder="John" />
+            </Form.Group>
           </Col>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Enter Second Name</Form.Label>
-          <Form.Control type="text" placeholder="Doe" />
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Enter Second Name</Form.Label>
+              <Form.Control type="text" placeholder="Doe" />
+            </Form.Group>
           </Col>
         </Row>
 
         <Row>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Enter Your phone number</Form.Label>
-          <Form.Control type="number" placeholder="0712345678" />
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Enter Your phone number</Form.Label>
+              <Form.Control type="number" placeholder="0712345678" />
+            </Form.Group>
           </Col>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Enter Your Email</Form.Label>
-          <Form.Control type="email" placeholder="example@gmail.com" />
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Enter Your Email</Form.Label>
+              <Form.Control type="email" placeholder="example@gmail.com" />
+            </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Vehicle Make</Form.Label>
-          <Form.Control type="text" placeholder="e.g Toyota"/>
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Vehicle Make</Form.Label>
+              <Form.Control type="text" placeholder="e.g Toyota" />
+            </Form.Group>
           </Col>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Vehicle Model</Form.Label>
-          <Form.Control type="text" placeholder="e.g Aauris"/>
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Vehicle Model</Form.Label>
+              <Form.Control type="text" placeholder="e.g Aauris" />
+            </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Registration Number</Form.Label>
-          <Form.Control type="text" placeholder="e.g KCA 123A"/>
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Registration Number</Form.Label>
+              <Form.Control type="text" placeholder="e.g KCA 123A" />
+            </Form.Group>
           </Col>
           <Col md={6} lg={6} xxl={6}>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-          <Form.Label>Pick a date</Form.Label>
-          <Form.Control type="date" placeholder="(mm/dd/yy)"
-       min={currentDate} />
-        </Form.Group>
-
+            <Form.Group className="mb-3" controlId="formBasicInput">
+              <Form.Label>Pick a date</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder="(mm/dd/yy)"
+                min={currentDate}
+              />
+            </Form.Group>
           </Col>
         </Row>
-
 
         <Button variant="primary" type="submit" onClick={onClickHandler}>
           Submit
         </Button>
       </Form>
-      <h5>If you already have a booking <a>click here</a></h5>
-      <h2>Safety of your data <span id={styles.safety}>is our top priority</span></h2>
+      <h5>
+        If you already have a booking <a>click here</a>
+      </h5>
+      <h2>
+        Safety of your data <span id={styles.safety}>is our top priority</span>
+      </h2>
       <Row>
+      <Col xs={12} sm={6} md={6} lg={6}>
+          <img
+            src={Cyber}
+            alt="cyber security experts animation"
+            className={styles.gifs}
+          />
+        </Col>
+
         <Col xs={12} sm={6} md={6} lg={6}>
-          
-          </Col> 
-        <Col xs={12} sm={6} md={6} lg={6}>
-          
-          </Col> 
+          <ul>
+            <li>
+              <span>
+                <FaLock className={styles.icon}/>
+                Multi-level security checks{" "}
+              </span>
+            </li>
+            <li>
+              <span>
+                <FaClone className={styles.icon} />
+                Multiple data backups{" "}
+              </span>
+            </li>
+            <li>
+              <span>
+                <FaLock className={styles.icon}/>
+                Stringent data privacy policies{" "}
+              </span>
+            </li>
+          </ul>
+        </Col>
       </Row>
-      <h2><span id={styles.safety1}>Guaranteed Booking</span> with our qualified technicians</h2>
+      <h2>
+        <span id={styles.safety1}>Guaranteed Booking</span> with our qualified
+        technicians
+      </h2>
 
       <Row>
         <Col xs={12} sm={6} md={6} lg={6}>
-          
-          </Col> 
+          <ul>
+          <li>
+            <span>
+              <FaAward className={styles.icon}/>
+              5+ years of automobile experience
+            </span>
+          </li>
+          <li>
+            <span>
+              <FaCheck className={styles.icon}/>
+Proffessional service
+                       </span>
+          </li>
+          <li>
+            <span>
+              <FaAward className={styles.icon}/>
+              Excellent communication skills            </span>
+          </li>
+          <li>
+            <span>
+              <FaCheck className={styles.icon}/>
+              Excellent after sales support            </span>
+          </li>
+          <li>
+            <span>
+              <MdMoneyOff className={styles.icon}/>
+              Free Booking         </span>
+          </li>
+          </ul>
+        </Col>
         <Col xs={12} sm={6} md={6} lg={6}>
-          
-          </Col> 
+          <img
+            src={Care}
+            alt="cyber security experts animation"
+            className={styles.gifs}
+          />
+        </Col>
       </Row>
     </>
   );

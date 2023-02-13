@@ -62,7 +62,20 @@
 #safety1{
     color:#1BB55C;
 }
-
+li{
+    list-style-type:none;
+    line-height: 4;
+}
+.icon{
+color:#1BB55C;
+margin-right: 15px;
+}
+.gifs{
+    height:fit-content;
+}
+.gifs:nth-child(1){
+    border-radius:0 50% 50% 0;
+}
 @media screen and (max-width:767px) {
     #bookanime{
         height: 300px;
@@ -80,5 +93,13 @@
         }
         
     
+    
+}
+@media (min-width: 991.98px) {
+    ul{
+        margin-top: 3rem;
+
+        margin-left: 25%;
+    }
     
 }
