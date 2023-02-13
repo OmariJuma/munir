@@ -76,6 +76,37 @@ margin-right: 15px;
 .gifs:nth-child(1){
     border-radius:0 50% 50% 0;
 }
+/*Container for the carousel at the bottom of the page*/
+.contCrsl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contCrsl img{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+section header{
+    background-color: var(--dark);
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    height:50px;
+}
+.swiperSlide {
+    margin-top: 3rem;
+    height:max-content;
+    width:100%;
+    border:none;
+    border-radius: 15px;
+
+  }
+  .swiperSlide img{
+    max-height: 450px;
+  }
+
 @media screen and (max-width:767px) {
     #bookanime{
         height: 300px;

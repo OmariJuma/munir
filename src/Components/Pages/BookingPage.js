@@ -7,8 +7,30 @@ import Cyber from "./../../assets/images/animations/cyber.gif";
 import date from "./../../assets/images/date.png";
 import calend from "./../../assets/images/icons/calend.png";
 import { Form, Button, Carousel, Col, Row } from "react-bootstrap";
-import { FaCheck,FaLock,FaClone,FaAward } from "react-icons/fa";
+import { FaCheck, FaLock, FaClone, FaAward } from "react-icons/fa";
 import { MdMoneyOff } from "react-icons/md";
+import { Card } from "react-bootstrap";
+//
+import saf from "./../../assets/images/logos/saf.webp";
+import a8 from "./../../assets/images/before and after/a8.jpeg";
+import a7 from "./../../assets/images/before and after/a7.jpeg";
+import a6 from "./../../assets/images/before and after/a6.jpeg";
+import a5 from "./../../assets/images/before and after/a5.jpeg";
+import a4 from "./../../assets/images/before and after/a4.jpeg";
+import a3 from "./../../assets/images/before and after/a3.jpeg";
+import a2 from "./../../assets/images/before and after/a2.jpeg";
+import a1 from "./../../assets/images/before and after/a1.jpeg";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
 const BookingPage = () => {
   var currentDate = new Date();
   var dd = String(currentDate.getDate()).padStart(2, "0");
@@ -117,14 +139,14 @@ const BookingPage = () => {
           Submit
         </Button>
       </Form>
-      <h5>
+      <h6>
         If you already have a booking <a>click here</a>
-      </h5>
+      </h6>
       <h2>
         Safety of your data <span id={styles.safety}>is our top priority</span>
       </h2>
       <Row>
-      <Col xs={12} sm={6} md={6} lg={6}>
+        <Col xs={12} sm={6} md={6} lg={6}>
           <img
             src={Cyber}
             alt="cyber security experts animation"
@@ -136,7 +158,7 @@ const BookingPage = () => {
           <ul>
             <li>
               <span>
-                <FaLock className={styles.icon}/>
+                <FaLock className={styles.icon} />
                 Multi-level security checks{" "}
               </span>
             </li>
@@ -148,7 +170,7 @@ const BookingPage = () => {
             </li>
             <li>
               <span>
-                <FaLock className={styles.icon}/>
+                <FaLock className={styles.icon} />
                 Stringent data privacy policies{" "}
               </span>
             </li>
@@ -163,33 +185,36 @@ const BookingPage = () => {
       <Row>
         <Col xs={12} sm={6} md={6} lg={6}>
           <ul>
-          <li>
-            <span>
-              <FaAward className={styles.icon}/>
-              5+ years of automobile experience
-            </span>
-          </li>
-          <li>
-            <span>
-              <FaCheck className={styles.icon}/>
-Proffessional service
-                       </span>
-          </li>
-          <li>
-            <span>
-              <FaAward className={styles.icon}/>
-              Excellent communication skills            </span>
-          </li>
-          <li>
-            <span>
-              <FaCheck className={styles.icon}/>
-              Excellent after sales support            </span>
-          </li>
-          <li>
-            <span>
-              <MdMoneyOff className={styles.icon}/>
-              Free Booking         </span>
-          </li>
+            <li>
+              <span>
+                <FaAward className={styles.icon} />
+                5+ years of automobile experience
+              </span>
+            </li>
+            <li>
+              <span>
+                <FaCheck className={styles.icon} />
+                Proffessional service
+              </span>
+            </li>
+            <li>
+              <span>
+                <FaAward className={styles.icon} />
+                Excellent communication skills{" "}
+              </span>
+            </li>
+            <li>
+              <span>
+                <FaCheck className={styles.icon} />
+                Excellent after sales support{" "}
+              </span>
+            </li>
+            <li>
+              <span>
+                <MdMoneyOff className={styles.icon} />
+                Free Booking{" "}
+              </span>
+            </li>
           </ul>
         </Col>
         <Col xs={12} sm={6} md={6} lg={6}>
@@ -200,6 +225,144 @@ Proffessional service
           />
         </Col>
       </Row>
+      {/* <Carousel>
+        <Carousel.Item>
+<div className={styles.contCrsl}>
+  <img src={Parking1} alt=""/>
+  <strong>John Doe</strong>
+</div>
+</Carousel.Item>
+      </Carousel> */}
+      <section id="swiping">
+        <header>Our Happy Clients</header>
+
+        <Swiper
+        style={{padding:"0 10px"}}
+          slidesPerView={2}
+          spaceBetween={10}
+          slidesPerGroup={2}
+          grabCursor={true}
+          // autoplay={{
+          //   delay: 20000,
+          //   disableOnInteraction: false,
+          // }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a1} alt=" " />
+              <Card.Body>
+                <Card.Title>Ms. Beatrice</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+                <Card.Text>
+                  I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a2} alt=" " />
+              <Card.Body>
+                <Card.Title>Mr. Alex</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a3} alt=" " />
+              <Card.Body>
+                <Card.Title>Mr John</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a4} alt=" " />
+              <Card.Body>
+                <Card.Title>Mrs. Loice</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a5} alt=" " />
+              <Card.Body>
+                <Card.Title>Mr. Mohammed</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a6} alt=" " />
+              <Card.Body>
+                <Card.Title>Mrs. Holga</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a7} alt=" " />
+              <Card.Body>
+                <Card.Title>Mr. Jibril</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide className={styles.swiperSlide}>
+            <Card>
+              <img src={a8} alt=" " />
+              <Card.Body>
+                <Card.Title>Ms. Virginia</Card.Title>
+                <p>Bf Goodrich 255/15/16</p>
+                <Card.Text>
+                I am happy to have shopped with Muneer he provides good
+                  services plus amazing discounts{" "}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </SwiperSlide>
+        </Swiper>
+      </section>
     </>
   );
 };
