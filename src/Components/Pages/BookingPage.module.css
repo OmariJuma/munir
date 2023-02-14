@@ -1,136 +1,189 @@
-.container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#bookanime{
-    height: 500px;
-    max-width: fit-content;
-    opacity: 1;
-    }
+#bookanime {
+  height: 500px;
+  max-width: fit-content;
+  opacity: 1;
+}
 
-.titleHolder{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    /* gap: 1rem; */
+.titleHolder {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* gap: 1rem; */
 }
-.titleHolder img{
-    width:50px;
-    height: 50px;
+.titleHolder img {
+  width: 50px;
+  height: 50px;
 }
-#p,#p1{
-    position: relative;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgba(116,109,109,0.3);
-    font-size: medium;
-    width:300px;
-    font-weight: bold;
-    line-height: 21px;
-    
+#p,
+#p1 {
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(116, 109, 109, 0.3);
+  font-size: medium;
+  width: 300px;
+  font-weight: bold;
+  line-height: 21px;
 }
-#p{
-    top:-20rem;
-    right:30vw;
+#p {
+  top: -20rem;
+  right: 30vw;
+}
+#p1 {
+  top: -20rem;
+  left: 30vw;
+}
+.frmBooking {
+  background-color: #39bce5;
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  position: relative;
+  margin: -5px 20px 20px 20px;
+  box-shadow: 0 0 5px 5px var(--dark);
+}
+input[type="text"] {
+  background-color: white;
+  opacity: 1;
+}
 
+.img {
+  height: 80vh;
 }
-#p1{
-    top:-20rem;
-    left:30vw;
+#safety {
+  color: red;
+}
+#safety1 {
+  color: #1bb55c;
+}
+#link{
+    color:#1bb55c
+}
+#link:hover{
+    color:var(--priColor)
+}
 
+li {
+  list-style-type: none;
+  line-height: 4;
 }
-.frmBooking{
-    background-color: #39BCE5;
-    border-radius: var(--borderRadius);
-    padding: 20px;
-    position: relative;
-    margin: -5px 20px 20px 20px;
-    box-shadow: 0 0 5px 5px var(--dark);}
-    input[type='text'] {
-        background-color: white;
-        opacity: 1;
-      }
-      
-.img{
-    height:80vh;
+.icon {
+  color: #1bb55c;
+  margin-right: 15px;
 }
-#safety{
-    color:red;
+.gifs {
+  height: fit-content;
 }
-#safety1{
-    color:#1BB55C;
-}
-li{
-    list-style-type:none;
-    line-height: 4;
-}
-.icon{
-color:#1BB55C;
-margin-right: 15px;
-}
-.gifs{
-    height:fit-content;
-}
-.gifs:nth-child(1){
-    border-radius:0 50% 50% 0;
+.gifs:nth-child(1) {
+  border-radius: 0 50% 50% 0;
 }
 /*Container for the carousel at the bottom of the page*/
-.contCrsl{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contCrsl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.contCrsl img{
-    width:100px;
-    height:100px;
-    border-radius: 50%;
-    margin-right: 30px;
+.contCrsl img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
 }
-section header{
-    background-color: var(--dark);
-    font-weight: bold;
-    font-size: x-large;
-    text-align: center;
-    height:50px;
+section header {
+  background-color: var(--dark);
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+  height: 50px;
 }
 .swiperSlide {
+  margin-top: 3rem;
+  height: max-content;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+}
+.swiperSlide img{
+    justify-content: center;
+}
+ul{
     margin-top: 3rem;
-    height:max-content;
-    width:100%;
-    border:none;
-    border-radius: 15px;
 
+}
+#btn{
+width: 100%;
+box-shadow: 0 0 5px var(--dark);
+
+}
+
+ @media (min-width:2560px) {
+    .swiperSlide img {
+      width: 90%;
+      max-height: 800px;
+      margin-right: 5%;
+    }
   }
-  .swiperSlide img{
+  
+@media (max-width:1450px) {
+  .swiperSlide img {
     max-height: 450px;
   }
-
-@media screen and (max-width:767px) {
-    #bookanime{
-        height: 300px;
-        max-width: 300px;
-        }
-        #p{
-            right:0;
-            top:-19rem;
-        }
-        
-        
-        #p1{
-            left:0;
-            top:-6rem;
-        }
-        
-    
-    
+  #ulEven{
+    margin-left: 30%;
+    margin-top: 4rem;
+  }
 }
-@media (min-width: 991.98px) {
-    ul{
-        margin-top: 3rem;
-
-        margin-left: 25%;
-    }
+@media (max-width:1200px) {
+  .swiperSlide img {
+    max-height: 450px;
     
+  }
+  #ulEven{
+    margin-left: 30%;
+    margin-top: 4rem;
+
+  }
+
+}
+@media (max-width: 991.98px) {
+  .swiperSlide img {
+    width: 100%;
+    max-height: 400px;
+  }
+  #ulEven{
+    margin-left: 30%;
+    margin-top: 4rem;
+
+  }
+
+}
+@media (max-width: 768px) {
+  #bookanime {
+    height: 300px;
+    max-width: 300px;
+  }
+  #p {
+    right: 0;
+    top: -19rem;
+  }
+
+  #p1 {
+    left: 0;
+    top: -6rem;
+  }
+
+    ul{margin-left: 0;
+        margin-top: 0;}
+        #ulEven{
+            margin-left: 0;
+            margin-top: 0;
+          }
+        
+        
+  
 }

@@ -1,7 +1,7 @@
 import styles from "./BookingPage.module.css";
-import Booked from "./../../assets/images/animations/booked.mp4";
+// import Booked from "./../../assets/images/animations/booked.mp4";
 import Parking from "./../../assets/images/parking.jpg";
-import Parking1 from "./../../assets/images/parking1.jpg";
+// import Parking1 from "./../../assets/images/parking1.jpg";
 import Care from "./../../assets/images/animations/customerCare.gif";
 import Cyber from "./../../assets/images/animations/cyber.gif";
 import date from "./../../assets/images/date.png";
@@ -11,7 +11,6 @@ import { FaCheck, FaLock, FaClone, FaAward } from "react-icons/fa";
 import { MdMoneyOff } from "react-icons/md";
 import { Card } from "react-bootstrap";
 //
-import saf from "./../../assets/images/logos/saf.webp";
 import a8 from "./../../assets/images/before and after/a8.jpeg";
 import a7 from "./../../assets/images/before and after/a7.jpeg";
 import a6 from "./../../assets/images/before and after/a6.jpeg";
@@ -135,12 +134,12 @@ const BookingPage = () => {
           </Col>
         </Row>
 
-        <Button variant="primary" type="submit" onClick={onClickHandler}>
+        <Button variant="primary" id={styles.btn} type="submit" onClick={onClickHandler}>
           Submit
         </Button>
       </Form>
       <h6>
-        If you already have a booking <a>click here</a>
+        If you already have a booking <a href="/index" id={styles.link}>click here</a>
       </h6>
       <h2>
         Safety of your data <span id={styles.safety}>is our top priority</span>
@@ -184,7 +183,7 @@ const BookingPage = () => {
 
       <Row>
         <Col xs={12} sm={6} md={6} lg={6}>
-          <ul>
+          <ul id={styles.ulEven}>
             <li>
               <span>
                 <FaAward className={styles.icon} />
@@ -238,9 +237,9 @@ const BookingPage = () => {
 
         <Swiper
         style={{padding:"0 10px"}}
-          slidesPerView={2}
+      slidesPerView={2}
           spaceBetween={10}
-          slidesPerGroup={2}
+          slidesPerGroup={1}
           grabCursor={true}
           // autoplay={{
           //   delay: 20000,
@@ -256,8 +255,8 @@ const BookingPage = () => {
           className="mySwiper"
         >
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a1} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a1} alt="car  " />
               <Card.Body>
                 <Card.Title>Ms. Beatrice</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -269,8 +268,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a2} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a2} alt="car  " />
               <Card.Body>
                 <Card.Title>Mr. Alex</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -283,8 +282,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a3} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a3} alt="car  " />
               <Card.Body>
                 <Card.Title>Mr John</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -297,8 +296,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a4} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a4} alt="car  " />
               <Card.Body>
                 <Card.Title>Mrs. Loice</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -310,8 +309,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a5} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a5} alt="car  " />
               <Card.Body>
                 <Card.Title>Mr. Mohammed</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -323,8 +322,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a6} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a6} alt="car  " />
               <Card.Body>
                 <Card.Title>Mrs. Holga</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -336,8 +335,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a7} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a7} alt="car  " />
               <Card.Body>
                 <Card.Title>Mr. Jibril</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>
@@ -349,8 +348,8 @@ const BookingPage = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide className={styles.swiperSlide}>
-            <Card>
-              <img src={a8} alt=" " />
+            <Card style={{width:"100%"}}>
+              <img src={a8} alt="car  " />
               <Card.Body>
                 <Card.Title>Ms. Virginia</Card.Title>
                 <p>Bf Goodrich 255/15/16</p>

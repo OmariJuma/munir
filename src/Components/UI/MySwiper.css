@@ -33,7 +33,7 @@
     display: block;
     width:100%;
     height: fit-content;
-    max-height:300px;
+    max-height:350px;
     padding:20px;
     object-fit: cover;
   }
@@ -47,8 +47,8 @@
     content: '::';
     color:red;margin-right: 10px;
   }
-.card{
+/* .card{
     width:100%;
 
-  }
+  } */
 
