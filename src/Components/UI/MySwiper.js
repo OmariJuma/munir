@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -43,7 +42,7 @@ mx-auto"
       <Swiper
         slidesPerView={3}
         spaceBetween={10}
-        slidesPerGroup={3}
+        slidesPerGroup={1}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
@@ -58,34 +57,34 @@ mx-auto"
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={saf} alt=" " />
+          <img src={saf} alt="partner logo" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={falken} alt=" " />
+          <img src={falken} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={goodrich} alt=" " />
+          <img src={goodrich} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={bridgestone} alt=" " />
+          <img src={bridgestone} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={gtradial} alt=" " />
+          <img src={gtradial} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={irelli} alt=" " />
+          <img src={irelli} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={joyroad} alt=" " />
+          <img src={joyroad} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={maxis} alt=" " />
+          <img src={maxis} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={sailun} alt=" " />
+          <img src={sailun} alt="partner logo " />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={yana} alt=" " />
+          <img src={yana} alt="partner logo " />
         </SwiperSlide>
       </Swiper>
     </section>

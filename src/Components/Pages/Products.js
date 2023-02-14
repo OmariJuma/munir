@@ -1,14 +1,12 @@
 import styles from "./Products.module.css";
-import "./services.css";
-import Caard from "./Caard";
+import "./../services.css";
+import Caard from "../Caard";
 import { FaArrowRight } from "react-icons/fa";
-import tyre1 from "./../assets/images/goodyear2.jpeg";
-import rim1 from "./../assets/images/wheel1.jpeg";
-import rimNtyre1 from "./../assets/images/wheel2.jpeg";
-import rimNtyre2 from "./../assets/images/wheel3.jpeg";
+import tyre1 from "./../../assets/images/goodyear2.jpeg";
+import rim1 from "./../../assets/images/wheel1.jpeg";
+import rimNtyre1 from "./../../assets/images/wheel2.jpeg";
+import rimNtyre2 from "./../../assets/images/wheel3.jpeg";
 import { Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { propTypes } from "react-bootstrap/esm/Image";
 const Products = (props) => {
   const productArray = [
     {
@@ -90,7 +88,7 @@ const Products = (props) => {
       <section>
         <div className={styles.productsTitle}>
           <h4 className="text-center">Rims and Tyres</h4>
-          <a href="" style={{ textAlign: "right" }}>
+          <a href="#rim" style={{ textAlign: "right" }}>
             See more
             <span>
               <FaArrowRight />
@@ -118,7 +116,7 @@ const Products = (props) => {
       <section>
         <div className={styles.productsTitle}>
           <h4 className="text-center">Rims</h4>
-          <a href="" style={{ textAlign: "right" }}>
+          <a href="#rim" style={{ textAlign: "right" }}>
             See more
             <span>
               <FaArrowRight />
@@ -146,7 +144,7 @@ const Products = (props) => {
       <section>
         <div className={styles.productsTitle}>
           <h4 className="text-center">Tyres</h4>
-          <a href="" style={{ textAlign: "right" }}>
+          <a href="#rim" style={{ textAlign: "right" }}>
             See more
             <span>
               <FaArrowRight />

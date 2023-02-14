@@ -1,9 +1,8 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { FaRegUserCircle, FaSearch } from "react-icons/fa";
+import { FaRegUserCircle} from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
@@ -12,19 +11,19 @@ import React from "react";
 import {
   Link,
   BrowserRouter as Router,
-  Switch,
   Route,
   Routes,
 } from "react-router-dom";
 import Crsl from "./../Components/Crsl";
 import Services from "./../Components/Services";
-import Products from "./../Components/Products";
 import Success from "./../Components/Success";
 import WhyUs from "./../Components/WhyUs";
 import MySwiper from "./../Components/UI/MySwiper";
 import MoreDetails from "./MoreDetails";
 import Error404 from "./Pages/Error404.js";
 import BookingPage from "./Pages/BookingPage";
+import AboutUs from "./Pages/AboutUs";
+import Products from "./Pages/Products";
 
 const NavBar = (props) => {
   // const data = {
@@ -108,7 +107,7 @@ const NavBar = (props) => {
             element={
               <div className="Container-fluid">
                 <Crsl />
-                <Products />
+                <Products/>
 
                 <Services />
                 <WhyUs />
@@ -123,20 +122,20 @@ const NavBar = (props) => {
           />
           <Route
             path="products/rims"
-            element={<WhyUs />}
+            element={<Products/>}
             exact
             errorElement={<Error404 />}
           />
 
           <Route
             path="products/tyres"
-            element={<WhyUs />}
+            element={<Products/>}
             exact
             errorElement={<Error404 />}
           />
           <Route
             path="products/rimsNtyres"
-            element={<MySwiper />}
+            element={<Products />}
             exact
             errorElement={<Error404 />}
           />
@@ -148,7 +147,7 @@ const NavBar = (props) => {
             errorElement={<Error404 />}
           />
 
-          <Route path="about-us" element={<WhyUs />} exact />
+          <Route path="about-us" element={<AboutUs/>} exact />
           <Route path="products/details" element={<MoreDetails />} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
