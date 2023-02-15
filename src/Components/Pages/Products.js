@@ -82,7 +82,6 @@ const Products = (props) => {
       image: rimNtyre2,
     },
   ];
-  //a function to get data from the child component
   return (
     <div>
       <section>

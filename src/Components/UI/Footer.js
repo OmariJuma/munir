@@ -11,7 +11,7 @@ import { Button, Form } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <div>
+    <div style={{transition:"0.3ms ease-in"}}>
       <footer
         className="text-center text-lg-start text-dark"
         style={{ backgroundColor: "#ECEFF1" }}
