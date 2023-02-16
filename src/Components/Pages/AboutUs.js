@@ -2,6 +2,35 @@ import { Card, Row, Col } from "react-bootstrap";
 import styles from "./AboutUs.module.css";
 import ig from "./../../assets/images/wheel1.jpeg";
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import Services from "../Services";
+import MySwiper from "../UI/MySwiper";
+import Counter from "../UI/Counter";
+import { CountUp } from 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.js'
+
+function countStart(){
+  const $counters = document.querySelectorAll(".js-count-up"),
+        options = {
+          useEasing: true,
+          useGrouping: true,
+          separator: ",",
+          decimal: "."
+        };
+
+  $counters.forEach( (item) => {
+    const value = item.dataset.value;
+    const counter = new CountUp(item, value, options);
+    counter.start();
+  });
+}
+const Waypoint=()=>{}
+new Waypoint({
+  element: document.querySelector('.level'),
+  handler: function() {
+    countStart()
+    //this.destroy() //for once
+  },
+  offset: '50%'
+});
 
 const AboutUs = () => {
   return (
@@ -14,7 +43,7 @@ const AboutUs = () => {
             <Card.Title className={styles.title}>CEO & Founder</Card.Title>
 
             <Card.Body className={styles.desc}>
-              Mr. Mahmoud/ Mr. Mrefu, the founder of Muneer Automotive
+              Mr. Mahmoud/ Mr. Mrefu
             </Card.Body>
             <Card.Footer className={styles.socials}>
               <a href="www.facebook.com" target={"_blank"}>
@@ -117,6 +146,9 @@ const AboutUs = () => {
           </Card>
         </Col>
       </Row>
+      <Services/>
+      <MySwiper/>
+      <Counter/>
     </div>
   );
 };

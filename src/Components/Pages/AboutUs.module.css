@@ -1,82 +1,84 @@
-.div{
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    gap:1rem;
+.div {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
-#h1{
-    color:red;
+#h1 {
+  color: red;
 }
-#h1::before{
-    content: "::";
-    margin-right: 5px;
-    color:red;
+#h1::before {
+  content: "::";
+  margin-right: 5px;
+  color: red;
 }
-.card{
-    border-radius: var(--borderRadius2) var(--borderRadius2) 0 0;
+.card {
+  border-radius: var(--borderRadius2) var(--borderRadius2) 0 0;
+  margin-bottom: 3rem;
 }
-.card img{
-    height:250px;
-    padding:30px;
-    border-radius: 50%;
-    /* border:1px solid var(--orange); */
+.card img {
+  height: 250px;
+  padding: 30px;
+  border-radius: 50%;
+  /* border:1px solid var(--orange); */
 }
-.title{
-color:red;
-font-weight: bolder;
-text-align: center;
+.title {
+  color: red;
+  font-weight: bolder;
+  text-align: center;
 }
-.title::before{
-    content: '//';
-    color:red;
-    margin-right: 5px;
+.title::before {
+  content: "//";
+  color: red;
+  margin-right: 5px;
 }
-.desc{
-    text-align: center;
-    font-weight: bold;
+.desc {
+  text-align: center;
+  font-weight: bold;
 }
-.socials{
-    position: absolute;
-    z-index: 5;
-    top:100%;
-    width:100%;
-justify-content: center;
-gap:2rem;
-display:none;
-
+.socials {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+  display: none;
 }
-.card:hover{
-    transition: 200ms ease-in;
-    background-color: #f0eeed;
+.card:hover {
+  transition: 200ms ease-in;
+  background-color: #f0eeed;
 }
-.card:hover .socials{
-    display: flex;
-    background-color: var(--priColor);
-    border-bottom: 3px  var(--red);
-animation: moveY 300ms ease-in;
+.card:hover .socials {
+  display: flex;
+  background-color: var(--priColor);
+  border-bottom: 3px var(--red);
+  animation: moveY 300ms ease-in;
 }
-.icon{
-    width:60px;
-    height:60px;
+.icon {
+  width: 60px;
+  height: 60px;
 }
-.icon:hover{
-    color:red;
+.icon:hover {
+  color: red;
 }
 @keyframes moveY {
-    0%{
-        transform: translateY(-3rem);
-        opacity: 0;
-
-    }
-    /* 50%{
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  /* 50%{
         transform: translateY(-1.0rem);
         opacity: 0.5;
 
     } */
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media screen and (min-width:2500px) {
+    .card img{
+        height:550px;
     }
     
 }
