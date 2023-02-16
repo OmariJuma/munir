@@ -61,6 +61,41 @@
 .icon:hover {
   color: red;
 }
+#spanner {
+  height: 300px;
+}
+.count {
+  display: flex;
+  position: absolute;
+  z-index: 5;
+  color: white;
+  margin-top: -200px;
+}
+.count h6,.count span,.count h3 {
+  font-family: "Rajdhani";
+  font-weight: 700;
+text-align: center;
+
+}
+.count h3{
+  font-size: 40px;
+}
+.count h3::after{
+content: "+";
+margin-left: 10px;
+height:30px;
+color:red;
+}
+#journey{
+  text-align: center;
+  
+  margin-bottom: 2rem;
+}
+#journey::before {
+  content: "//";
+  color: red;
+  margin-right: 5px;
+}
 @keyframes moveY {
   0% {
     transform: translateY(-3rem);
@@ -76,9 +111,47 @@
     opacity: 1;
   }
 }
-@media screen and (min-width:2500px) {
-    .card img{
-        height:550px;
-    }
-    
+@media screen and (max-width:767px){
+  .count{
+     margin-top: -200px;
+ left:0;
+   }#spanner {
+     height: 500px;
+   }
+   
+ }
+ 
+@media screen and (max-width:768px){
+ .count{
+    margin-top: -400px;
+left:10%;
+  }#spanner {
+    height: 500px;
+  }
+  
+}
+@media screen and (min-width: 800px) {
+  .count{
+    margin-top: -250px;
+    left: 25%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .count{
+    margin-top: -250px;
+    left: 28%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .count{
+    margin-top: -250px;
+    left: 33%;
+  }
+}
+@media screen and (min-width: 2500px) {
+  .card img {
+    height: 550px;
+  }
 }
