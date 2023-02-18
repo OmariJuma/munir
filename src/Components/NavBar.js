@@ -39,7 +39,7 @@ const NavBar = (props) => {
     <Router>
       <Navbar
         expand="lg"
-        className="navbar navbar-expand-sm navbar-right sticky-top "
+        className="navbar navbar-expand-sm navbar-right "
       >
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -62,6 +62,7 @@ const NavBar = (props) => {
               variant="tabs"
               className="justify-content-center"
               activeKey="/home"
+              navbarScroll
             >
               <Nav.Item id="search">
                 <Input />

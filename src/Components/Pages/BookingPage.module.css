@@ -61,11 +61,11 @@ input[type="text"] {
 #safety1 {
   color: #1bb55c;
 }
-#link{
-    color:#1bb55c
+#link {
+  color: #1bb55c;
 }
-#link:hover{
-    color:var(--priColor)
+#link:hover {
+  color: var(--priColor);
 }
 
 li {
@@ -94,19 +94,8 @@ li {
   border-radius: 50%;
   margin-right: 30px;
 }
-section header {
-  background-color: var(--dark);
-  font-weight: bold;
-  font-size: x-large;
-  text-align: center;
-  height: 50px;
-}
-.swiperSlide {
+ul {
   margin-top: 3rem;
-  height: max-content;
-  width: 100%;
-  border: none;
-  border-radius: 15px;
 }
 .swiperSlide img{
     justify-content: center;
@@ -118,49 +107,25 @@ ul{
 #btn{
 width: 100%;
 box-shadow: 0 0 5px var(--dark);
-
 }
 
- @media (min-width:2560px) {
-    .swiperSlide img {
-      width: 90%;
-      max-height: 800px;
-      margin-right: 5%;
-    }
-  }
-  
-@media (max-width:1450px) {
-  .swiperSlide img {
-    max-height: 450px;
-  }
-  #ulEven{
+@media (max-width: 1450px) {
+  #ulEven {
     margin-left: 30%;
     margin-top: 4rem;
   }
 }
-@media (max-width:1200px) {
-  .swiperSlide img {
-    max-height: 450px;
-    
-  }
-  #ulEven{
+@media (max-width: 1200px) {
+  #ulEven {
     margin-left: 30%;
     margin-top: 4rem;
-
   }
-
 }
 @media (max-width: 991.98px) {
-  .swiperSlide img {
-    width: 100%;
-    max-height: 400px;
-  }
-  #ulEven{
+  #ulEven {
     margin-left: 30%;
     margin-top: 4rem;
-
   }
-
 }
 @media (max-width: 768px) {
   #bookanime {
@@ -177,13 +142,12 @@ box-shadow: 0 0 5px var(--dark);
     top: -6rem;
   }
 
-    ul{margin-left: 0;
-        margin-top: 0;}
-        #ulEven{
-            margin-left: 0;
-            margin-top: 0;
-          }
-        
-        
-  
+  ul {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  #ulEven {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }

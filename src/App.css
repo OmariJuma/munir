@@ -1,5 +1,4 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&family=Space+Grotesk:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&family=Space+Grotesk:wght@300;400&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -8,61 +7,57 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Space Grotesk','Rajdhani', sans-serif;
+  font-family: "Space Grotesk", "Rajdhani", sans-serif;
 }
-p{
-  font-family: 'Space Grotesk';
+p {
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  
 }
-h1{
- font-family: 'Space Grotesk';
-font-style: normal;
-font-weight: 700;
-font-size: 30px;
-line-height: 38px;
-text-align: center;
-}
-h2{
+h1 {
+  font-family: "Space Grotesk";
+  font-style: normal;
   font-weight: 700;
-font-size:28px;
-font-style: normal;
-text-align: center;
-margin:3rem 0;
-
+  font-size: 30px;
+  line-height: 38px;
+  text-align: center;
 }
-h3{
+h2 {
+  font-weight: 700;
+  font-size: 28px;
+  font-style: normal;
+  text-align: center;
+  margin: 3rem 0;
+}
+h3 {
   font-weight: bold;
 }
-h4{
+h4 {
   font-weight: bold;
 }
 
-:root{
-  --priColor:#39BCE5;
-  --priVariant:#a6deef;
-  --priBluish:#8fb9e5;
-  --dark:#D9D9D9;
-  --redish:rgb(243, 178, 178);
-  --red:rgb(254, 48, 48);
-  --orange:rgb(255, 139, 23);
-  --white:#fff;
-  --margins:20px;
-  --borderRadius:20px;
-  --borderRadius2:15px;
+:root {
+  --priColor: #39bce5;
+  --priVariant: #a6deef;
+  --priBluish: #8fb9e5;
+  --dark: #d9d9d9;
+  --redish: rgb(243, 178, 178);
+  --red: rgb(254, 48, 48);
+  --orange: rgb(255, 139, 23);
+  --white: #fff;
+  --margins: 20px;
+  --borderRadius: 20px;
+  --borderRadius2: 15px;
   --scale1: scale(1.03025);
   --transition1: 0.4s ease-in-out;
-
 }
-body,html{
-  background-color:var(--white);
+body {
+  background-color: var(--white);
   max-width: 100%;
-overflow-x: hidden;
+  overflow-x: hidden;
 }
-
 
 .App-header {
   background-color: #282c34;
@@ -74,11 +69,12 @@ overflow-x: hidden;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-a{
-  color:black
+a {
+  color: black;
 }
-a:hover{
-font-weight: bold;}
+a:hover {
+  font-weight: bold;
+}
 /* .swiper-pagination{
   margin-top: 3rem;
 } */

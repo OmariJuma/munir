@@ -11,7 +11,7 @@ import { Button, Form } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <div style={{transition:"0.3ms ease-in"}}>
+    <div style={{ transition: "0.3ms ease-in" }}>
       <footer
         className="text-center text-lg-start text-dark"
         style={{ backgroundColor: "#ECEFF1" }}
@@ -126,45 +126,40 @@ const Footer = () => {
                   }}
                 />
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/booking" className="text-dark">
                     Book an Appointment
                   </a>
                 </p>
 
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/tyres" className="text-dark">
                     Commercial Tyres
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/tyres" className="text-dark">
                     All Terrain Tyres
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/tyres" className="text-dark">
                     Mud Terrain Tyres
                   </a>
                 </p>
 
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/tyres" className="text-dark">
                     Highway Tyres/ Saloon Normal Tyres
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/tyres" className="text-dark">
                     Normal Rims{" "}
                   </a>
                 </p>
 
                 <p>
-                  <a href="#!" className="text-dark">
-                    Small-offset Rims
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/rims" className="text-dark">
                     Offset
                   </a>
                 </p>
@@ -184,22 +179,22 @@ const Footer = () => {
                   }}
                 />
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/" className="text-dark">
                     Home
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/products/tyres" className="text-dark">
                     Tyres
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="products/rims" className="text-dark">
                     Rims
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <a href="/about-us" className="text-dark">
                     About Us
                   </a>
                 </p>
@@ -218,26 +213,36 @@ const Footer = () => {
                     height: "2px",
                   }}
                 />
-                <p>
+                <br />
+
+                <a
+                  href="https://www.google.com/maps/place/Muneer+Auto+tyres+Limited/@-1.2799975,36.8234224,17z/data=!4m14!1m7!3m6!1s0x182f1176595e53e1:0xc94667e686bce87a!2sMuneer+Auto+tyres+Limited!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7!3m5!1s0x182f1176595e53e1:0xc94667e686bce87a!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7"
+                  target={"_blank"}
+                  // style={{textAlign:"center"}}
+                >
                   <span>
                     <FaMapMarkerAlt />
-                  </span>{" "}
-                  34 Kirinyaga Rd Next To Kenya Canvas, Nairobi Kenya
-                </p>
+                  </span>34 Kirinyaga Rd Next To Kenya Canvas, Nairobi Kenya
+                </a>
+                <br />
+<br />
                 <a href="email:info@gmail.com">
                   <span>
                     <FaEnvelope />
                   </span>{" "}
                   info@example.com
                 </a>
+                <br />
+                <br />
+
                 <a href="tel:+254722174444">
                   <span>
                     <FaPhone />
                   </span>{" "}
                   +254722174444
                 </a>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <a href="tel:+254707686784">
                   <span>
                     <FaPhone />
@@ -259,7 +264,7 @@ const Footer = () => {
         >
           © 2023 Copyright:
           <a className="text-dark" href="#">
-           Muneer Automotive
+            Muneer Automotive
           </a>
         </div>
         {/* <!-- Copyright --> */}
