@@ -40,5 +40,8 @@ border-radius: var(--borderRadius);
         width:95vw;
     max-height: 60vh;
 padding:0 7px 10px 0;}
+.priceNstrike strong {
+font-size: small;}
+
     
 }
