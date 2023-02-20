@@ -10,7 +10,8 @@ import Input from "./UI/Input";
 import React from "react";
 import {
   Link,
-  BrowserRouter as Router,
+  HashRouter as Router,
+  // BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
