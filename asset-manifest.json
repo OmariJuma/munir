@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/munir/static/css/main.ec5faf3b.css",
-    "main.js": "/munir/static/js/main.b18e5222.js",
+    "main.css": "/munir/static/css/main.4e385131.css",
+    "main.js": "/munir/static/js/main.b6c0441b.js",
     "static/js/787.892dc1aa.chunk.js": "/munir/static/js/787.892dc1aa.chunk.js",
     "static/media/spanners.png": "/munir/static/media/spanners.c56e8b1758e02cf76caa.png",
     "static/media/date.png": "/munir/static/media/date.3650bdcec7282758f7be.png",
@@ -50,12 +50,12 @@
     "static/media/joyroad.jfif": "/munir/static/media/joyroad.5d9741ecefcc4fb1727c.jfif",
     "static/media/bfgoodrich.jfif": "/munir/static/media/bfgoodrich.865dda433f05ec94eed4.jfif",
     "index.html": "/munir/index.html",
-    "main.ec5faf3b.css.map": "/munir/static/css/main.ec5faf3b.css.map",
-    "main.b18e5222.js.map": "/munir/static/js/main.b18e5222.js.map",
+    "main.4e385131.css.map": "/munir/static/css/main.4e385131.css.map",
+    "main.b6c0441b.js.map": "/munir/static/js/main.b6c0441b.js.map",
     "787.892dc1aa.chunk.js.map": "/munir/static/js/787.892dc1aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec5faf3b.css",
-    "static/js/main.b18e5222.js"
+    "static/css/main.4e385131.css",
+    "static/js/main.b6c0441b.js"
   ]
 }
