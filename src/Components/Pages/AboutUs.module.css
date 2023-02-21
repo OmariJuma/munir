@@ -1,4 +1,4 @@
-.div {
+.divi {
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -16,7 +16,7 @@
   margin-bottom: 3rem;
 }
 .card img {
-  height: 250px;
+  height: 300px;
   padding: 30px;
   border-radius: 50%;
   /* border:1px solid var(--orange); */
@@ -74,6 +74,10 @@
   color: white;
   margin-top: -200px;
 }
+.count div{
+  padding: 0;
+width:100%;
+}
 .count h6,.count span,.count h3 {
   font-family: "Rajdhani";
   font-weight: 700;
@@ -117,7 +121,7 @@ color:red;
 @media screen and (max-width:767px){
   .count{
      margin-top: -200px;
- left:0;
+ /* left:0; */
    }#spanner {
      height: 500px;
    }
@@ -126,7 +130,7 @@ color:red;
  @media screen and (max-width:768px){
  .count{
     margin-top: -400px;
-left:10%;
+/* left:10%; */
   }#spanner {
     height: 500px;
   }
@@ -135,7 +139,7 @@ left:10%;
 @media screen and (min-width: 800px) {
   .count{
     margin-top: -250px;
-    left: 25%;
+    /* left: 25%; */
   }
   
 }
@@ -143,14 +147,14 @@ left:10%;
 @media screen and (min-width: 1200px) {
   .count{
     margin-top: -250px;
-    left: 28%;
+    /* left: 28%; */
   }
 }
 
 @media screen and (min-width: 1400px) {
   .count{
     margin-top: -250px;
-    left: 33%;
+    /* left: 33%; */
   }
 }
 @media screen and (min-width: 2500px) {

@@ -21,7 +21,7 @@ const AboutUs = () => {
   return (
     <div>
       <h1 id={styles.h1}>Our Team</h1>
-      <Row className={styles.div}>
+      <Row className={styles.div} style={{margin:"auto"}}>
         <Col xm={12} sm={6} md={6} lg={3}>
           <Card className={styles.card}>
             <Card.Img src={ig} />

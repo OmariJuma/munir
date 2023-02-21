@@ -9,6 +9,12 @@ html {
   box-sizing: border-box;
   font-family: "Space Grotesk", "Rajdhani", sans-serif;
 }
+body,html {
+  background-color: var(--white);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 p {
   font-family: "Space Grotesk";
   font-style: normal;
@@ -52,11 +58,6 @@ h4 {
   --borderRadius2: 15px;
   --scale1: scale(1.03025);
   --transition1: 0.4s ease-in-out;
-}
-body {
-  background-color: var(--white);
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 .App-header {
