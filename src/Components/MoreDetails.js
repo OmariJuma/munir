@@ -4,7 +4,9 @@ import "./MoreDetails.css";
 import { Card, Carousel, Col, Row, ListGroup } from "react-bootstrap";
 import Rating from "./UI/Rating";
 import ButtonCustom, { ButtonCart } from "./UI/ButtonCustom";
-import { FaCheck, FaClock } from "react-icons/fa";
+import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
+import { SiNamecheap } from "react-icons/si";
+import { TbBrandSketch } from "react-icons/tb";
 const MoreDetails = (props) => {
   return (
     <div className="container" style={{ backgroundColor: "#f9f9f9" }}>
@@ -14,7 +16,7 @@ const MoreDetails = (props) => {
       </div>
 
       <Row className="more-details">
-        <Col xs={12} sm={12} md={7} lg={8}>
+        <Col xs={12} sm={12} md={6} lg={6}>
           <Carousel>
             <Carousel.Item>
               <img className="d-block w-100" src={i} alt="First slide" />
@@ -24,38 +26,42 @@ const MoreDetails = (props) => {
             </Carousel.Item>
           </Carousel>
         </Col>
-        <Col xs={12} sm={12} md={5} lg={4}>
+        <Col xs={12} sm={12} md={6} lg={6}>
           <Card>
             <Card.Body>
               <Card.Header>
-                <b>Name:</b> Bf-goodrich 14/356/16 <br />
+                <span className="faicon">
+                  <SiNamecheap />
+                </span>
+                <b style={{ marginRight: "1rem" }}>Name:</b> Bf-goodrich 14/356/16 <br />
               </Card.Header>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <b>Brand:</b> Bf-goodrich
+                  <span className="faicon">
+                    <TbBrandSketch />
+                  </span>
+                  <b style={{ marginRight: "1rem" }}>Brand:</b> Bf-goodrich
                   <br />
                 </ListGroup.Item>
-                <ListGroup.Item className="priceNstrike">
-                  <strong>KSH 24000</strong>
-                  <s>KSH 27000</s>
+                <ListGroup.Item>
+                  <span className="faicon" style={{gap:"0"}}>
+                    <FaMoneyBillWave />
+                  </span>
+                  <strong style={{ marginRight: "1rem" }}>KSH 24000</strong>
+                  <s style={{ color:"red"}}>KSH 27000</s>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b>
-                    Warranty
-                    <span className="faicon">
-                      <FaClock />
-                    </span>
-                  </b>
+                  <span className="faicon">
+                    <FaClock />
+                  </span>
+                  <b style={{ marginRight: "1rem" }}>Warranty</b>
                   5 years <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  {" "}
-                  <b>
-                    Instock{" "}
-                    <span className="faicon">
-                      <FaCheck />
-                    </span>
-                  </b>{" "}
+                  <span className="faicon">
+                    <FaCheck />
+                  </span>
+                  <b style={{ marginRight: "1rem" }}>Instock </b>
                   100 units left <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -79,7 +85,6 @@ const MoreDetails = (props) => {
                 fugiat in magna sunt velit nulla. Mollit laboris voluptate
                 consectetur consectetur minim velit dolor consectetur anim
                 veniam est ea sunt. Anim consequat tempor ea incididunt laboris.
-                
                 Laborum ipsum sint tempor ex id id cillum et dolor in elit
                 adipisicing. Eiusmod et culpa culpa aliqua voluptate sint esse
                 sunt tempor nostrud magna veniam cupidatat. Commodo eiusmod est

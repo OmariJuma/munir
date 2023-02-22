@@ -61,13 +61,13 @@ export const ButtonCart = (props) => {
             // className={styles.variant}
             id={styles.btn}
             onClick={() => {
-              return { ...cartItems-- };
+              return { ...cartItems };
             }}
           >
-            -
+           <p>-</p>
           </button>
         )}
-        {isAddedToCart && cartItems}
+        {isAddedToCart && <p style={{marginBottom:"0"}}>{cartItems}</p>}
         {isAddedToCart && (
           <button
             type="button"
@@ -75,7 +75,7 @@ export const ButtonCart = (props) => {
             id={styles.btn}
             onClick={() => {}}
           >
-            +
+           <p>+</p> 
           </button>
         )}
       </div>

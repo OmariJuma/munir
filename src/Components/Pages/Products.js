@@ -7,6 +7,7 @@ import rim1 from "./../../assets/images/wheel1.jpeg";
 import rimNtyre1 from "./../../assets/images/wheel2.jpeg";
 import rimNtyre2 from "./../../assets/images/wheel3.jpeg";
 import { Col, Row } from "react-bootstrap";
+import { useEffect } from "react";
 const Products = (props) => {
   const productArray = [
     {
@@ -82,6 +83,19 @@ const Products = (props) => {
       image: rimNtyre2,
     },
   ];
+
+      fetch("https://muneer-a787d-default-rtdb.firebaseio.com/products.json",{
+        method:"POST",
+        body:JSON.stringify(productArray),
+        headers:{
+          'Content-Type':'application/json'
+        }
+      }
+      )
+  
+ 
+
+
   return (
     <div>
       <section>
