@@ -150,7 +150,7 @@ const NavBar = (props) => {
           />
 
           <Route path="about-us" element={<AboutUs/>} exact />
-          <Route path="products/details" element={<MoreDetails />} exact />
+          <Route path="/details" element={<MoreDetails />} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>

@@ -8,6 +8,8 @@ import ICard from "./UI/ICard";
 import ButtonCustom from "./UI/ButtonCustom";
 import MoreDetails from "./MoreDetails";
 import { Link } from "react-router-dom";
+import { createPortal } from "react-dom";
+import ReactDOM from "react-dom";
 
 const Caard = (props) => {
   const product = props.product;
@@ -26,7 +28,7 @@ const Caard = (props) => {
     <>
       {product && (
         <div className="products">
-          <Link to="products/details">
+          <Link to="/details">
             <Card style={{ textAlign: "left", marginBottom: "1.5rem" }}>
               <div id="aboveCardContainer">
                 <h5 id="aboveCard">{props.title}</h5>

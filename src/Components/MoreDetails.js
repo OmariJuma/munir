@@ -19,10 +19,10 @@ const MoreDetails = (props) => {
         <Col xs={12} sm={12} md={6} lg={6}>
           <Carousel>
             <Carousel.Item>
-              <img className="d-block w-100" src={i} alt="First slide" />
+              <img className="d-block w-100" src={props.image} alt="First slide" />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={i} alt="Second slide" />
+              <img className="d-block w-100" src={props.image} alt="Second slide" />
             </Carousel.Item>
           </Carousel>
         </Col>
@@ -33,7 +33,7 @@ const MoreDetails = (props) => {
                 <span className="faicon">
                   <SiNamecheap />
                 </span>
-                <b style={{ marginRight: "1rem" }}>Name:</b> Bf-goodrich 14/356/16 <br />
+                <b style={{ marginRight: "1rem" }}>Name:</b> {props.name} <br />
               </Card.Header>
               <ListGroup variant="flush">
                 <ListGroup.Item>
@@ -47,8 +47,8 @@ const MoreDetails = (props) => {
                   <span className="faicon" style={{gap:"0"}}>
                     <FaMoneyBillWave />
                   </span>
-                  <strong style={{ marginRight: "1rem" }}>KSH 24000</strong>
-                  <s style={{ color:"red"}}>KSH 27000</s>
+                  <strong style={{ marginRight: "1rem" }}>KSH {props.price}</strong>
+                  <s style={{ color:"red"}}>KSH {props.offer}</s>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <span className="faicon">

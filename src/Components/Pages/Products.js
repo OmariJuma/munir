@@ -7,94 +7,87 @@ import rim1 from "./../../assets/images/wheel1.jpeg";
 import rimNtyre1 from "./../../assets/images/wheel2.jpeg";
 import rimNtyre2 from "./../../assets/images/wheel3.jpeg";
 import { Col, Row } from "react-bootstrap";
-import { getDatabase, onValue, ref, set } from "firebase/database";
+import { onValue, ref } from "firebase/database";
 import data from "./../../fire";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import MoreDetails from "../MoreDetails";
 const Products = (props) => {
-  const productArray = [
-    {
-      id: 1,
-      type: "tyre",
-      name: "Yana 4*4",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: tyre1,
-    },
-    {
-      id: 2,
-      type: "Rim",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rim1,
-    },
-    {
-      id: 3,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rimNtyre1,
-    },
-    {
-      id: 4,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rimNtyre2,
-    },
-    {
-      id: 5,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rimNtyre2,
-    },
-    {
-      id: 6,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rimNtyre2,
-    },
-    {
-      id: 7,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rimNtyre2,
-    },
-    {
-      id: 8,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-      image: rimNtyre2,
-    },
-  ];
-  const x = {
-    id: 1,
-    type: "tyre",
-    name: "Yana 4*4",
-    offer: "5300",
-    desc: "Some quick example text to build on the card title and make up ",
-    price: 4500,
-    image: tyre1,
-  };
-
+  const [productArray, setProductArray] = useState([]);
+  const [details, setDetails] = useState(false);
+  // [
+  //   {
+  //     id: 1,
+  //     type: "tyre",
+  //     name: "Yana 4*4",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: tyre1,
+  //   },
+  //   {
+  //     id: 2,
+  //     type: "Rim",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rim1,
+  //   },
+  //   {
+  //     id: 3,
+  //     type: "Rim and tyre",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rimNtyre1,
+  //   },
+  //   {
+  //     id: 4,
+  //     type: "Rim and tyre",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rimNtyre2,
+  //   },
+  //   {
+  //     id: 5,
+  //     type: "Rim and tyre",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rimNtyre2,
+  //   },
+  //   {
+  //     id: 6,
+  //     type: "Rim and tyre",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rimNtyre2,
+  //   },
+  //   {
+  //     id: 7,
+  //     type: "Rim and tyre",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rimNtyre2,
+  //   },
+  //   {
+  //     id: 8,
+  //     type: "Rim and tyre",
+  //     name: "Benz rim 5*3",
+  //     offer: "5300",
+  //     desc: "Some quick example text to build on the card title and make up ",
+  //     price: 4500,
+  //     image: rimNtyre2,
+  //   },
+  // ];
   //   fetch("https://muneer-a787d-default-rtdb.firebaseio.com/products/tires.json?print=silent",{
   //   method:"POST",
   //   body:JSON.stringify(x),
@@ -114,15 +107,18 @@ const Products = (props) => {
   //   });
   // }
   // writeUserData();
-const getData=()=>{
-  const db=data;
-  onValue(ref(db,"products/tyres/"),snapshot=>{
-    const data=snapshot.val();
-   data.map(i=>{console.log(i)})
-  })
+  useEffect(() => {
+    const db = data;
+    onValue(ref(db, "products/tyres/"), (snapshot) => {
+      setProductArray(snapshot.val());
+      console.log(snapshot.val() + "logging");
+    });
+  }, []);
 
-}
-getData();
+  const clickHandler = () => {
+    setDetails(true);
+  };
+
   return (
     <div>
       <section>
@@ -135,19 +131,21 @@ getData();
             </span>
           </a>
         </div>
-        <div to="products/details" className="container-flex">
+        <div className="container-flex">
           <Row className={`${styles.singleProduct}`}>
             {productArray.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
-                <Caard
-                  key={prod.id}
-                  title={prod.name}
-                  price={prod.price}
-                  offer={prod.offer}
-                  description={prod.desc}
-                  image={prod.image}
-                  product={true}
-                />
+                <div onClick={clickHandler}>
+                  <Caard
+                    key={prod.id}
+                    title={prod.name}
+                    price={prod.price}
+                    offer={prod.offer}
+                    description={prod.desc}
+                    image={prod.image}
+                    product={true}
+                  />
+                </div>
               </Col>
             ))}
           </Row>
