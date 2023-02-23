@@ -3,7 +3,7 @@ import Input from "../Components/UI/Input";
 import "./MoreDetails.css";
 import { Card, Carousel, Col, Row, ListGroup } from "react-bootstrap";
 import Rating from "./UI/Rating";
-import ButtonCustom, { ButtonCart } from "./UI/ButtonCustom";
+import { ButtonCart } from "./UI/ButtonCustom";
 import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { SiNamecheap } from "react-icons/si";
 import { TbBrandSketch } from "react-icons/tb";
@@ -19,10 +19,10 @@ const MoreDetails = (props) => {
         <Col xs={12} sm={12} md={6} lg={6}>
           <Carousel>
             <Carousel.Item>
-              <img className="d-block w-100" src={props.image} alt="First slide" />
+              <img className="d-block w-100" src={i} alt="First slide" />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={props.image} alt="Second slide" />
+              <img className="d-block w-100" src={i} alt="Second slide" />
             </Carousel.Item>
           </Carousel>
         </Col>

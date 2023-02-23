@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React from "react";
+import React, { useState } from "react";
 import {
   Link,
   HashRouter as Router,
@@ -25,7 +25,6 @@ import Error404 from "./Pages/Error404.js";
 import BookingPage from "./Pages/BookingPage";
 import AboutUs from "./Pages/AboutUs";
 import Products from "./Pages/Products";
-
 const NavBar = (props) => {
   // const data = {
   //   key: props.key,
@@ -35,7 +34,6 @@ const NavBar = (props) => {
   //   offer: props.offer,
   //   image: props.image,
   // };
-
   return (
     <Router>
       <Navbar
@@ -63,7 +61,6 @@ const NavBar = (props) => {
               variant="tabs"
               className="justify-content-center"
               activeKey="/home"
-              navbarScroll
             >
               <Nav.Item id="search">
                 <Input />

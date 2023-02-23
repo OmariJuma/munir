@@ -1,15 +1,8 @@
 import Rim from "../assets/images/rim2.jpeg";
 import Card from "react-bootstrap/Card";
-import { Button } from "react-bootstrap";
-import Microcard from "./Microcard";
 import "./Caard.css";
 import Rating from "./UI/Rating";
-import ICard from "./UI/ICard";
-import ButtonCustom from "./UI/ButtonCustom";
-import MoreDetails from "./MoreDetails";
 import { Link } from "react-router-dom";
-import { createPortal } from "react-dom";
-import ReactDOM from "react-dom";
 
 const Caard = (props) => {
   const product = props.product;
