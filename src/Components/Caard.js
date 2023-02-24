@@ -4,6 +4,7 @@ import "./Caard.css";
 import Rating from "./UI/Rating";
 import { Link } from "react-router-dom";
 
+
 const Caard = (props) => {
   const product = props.product;
   const rating = 1;

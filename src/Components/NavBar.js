@@ -98,7 +98,7 @@ const NavBar = (props) => {
             <button>
             <FaRegUserCircle />
             </button>
-            <button>
+            <button onClick={props.onShowCart}>
             <FaCartPlus/>
             </button>
 
@@ -159,6 +159,7 @@ const NavBar = (props) => {
         </Routes>
       </div>
     </Router>
+ 
   );
 };
 export default NavBar;

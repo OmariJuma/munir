@@ -19,6 +19,7 @@
   background-color: var(--priBluish);
 }
 .cartIcon {
+  display: flex;
   gap:1.5rem;
   background-color: white;
   border-radius: 15px;
@@ -57,23 +58,22 @@ input::placeholder {
 .nav-link:hover{
   color:black;
 }
-@media screen and (max-width: 281px) {
-navbar-brand{
-  font-size:25px;
-}
-.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;}
-/* .cartIcon{
-position: inherit;
-display: flex;
-top: 20px;
-right: 0px;} */
+@media screen and (min-width: 769px) {
+  .navbar-nav {
+    display: flex;
+    /* gap: 2rem; */
+  }
+  #search{
+    display: none;
+  }
+  .cartIcon {
+    gap:1.5rem;
+    background-color: white;
+    border-radius: 15px;
+    padding:0 10px;
+  }
+      }
 
-}
 @media screen and (max-width: 500px) {
   #searchCont {
     margin: auto;
@@ -84,12 +84,12 @@ right: 0px;} */
     justify-content: center;
   }
   .cartIcon {
-    position: inherit;
-    display: flex;
-    top: 20px;
-    right: 20px;
+    gap:1.5rem;
+    background-color: white;
+    border-radius: 15px;
+    padding:0 10px;
   }
-
+  
   .brand {
     align-content: center;
     justify-content: center;
@@ -108,7 +108,7 @@ right: 0px;} */
   .collapsing, .collapse,.navbar-collapse{
     animation: slide 1s ease;
 
-  }
+  }}
   @keyframes slide {
     0%{
       transform: translateY(300px);
@@ -119,19 +119,22 @@ right: 0px;} */
     }
     
   }
-  @media screen and (min-width: 769px) {
-    .navbar-nav {
-      display: flex;
-      /* gap: 2rem; */
-    }
-    #search{
-      display: none;
-    }
-    .cartIcon {
-      position:absolute;
-      display: flex;
-      top: 20px;
-      right: 20px;
-    }
-    }
+
+@media screen and (max-width: 374px) {
+  .cartIcon {
+    gap:0.5rem;
+    padding:0 7px;
+  }
+  .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;}
+/* .cartIcon{
+position: inherit;
+display: flex;
+top: 20px;
+right: 0px;} */
+
 }
