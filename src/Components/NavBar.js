@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { FaRegUserCircle} from "react-icons/fa";
+import { FaCartPlus, FaRegUserCircle} from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
@@ -40,7 +40,7 @@ const NavBar = (props) => {
         expand="lg"
         className="navbar navbar-expand-sm navbar-right "
       >
-        <Container>
+        <div className="container" style={{display:"flex",justifyContent:"space-around"}}>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span>
               <GiHamburgerMenu />
@@ -50,9 +50,6 @@ const NavBar = (props) => {
           <Navbar.Brand href="#home" className="linkie bt-2">
             Muneer Automotive
           </Navbar.Brand>
-          <span className="cartIcon">
-            <FaRegUserCircle />
-          </span>
           <Navbar.Collapse
             id="basic-navbar-nav"
             className="justify-content-center"
@@ -97,7 +94,17 @@ const NavBar = (props) => {
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
-        </Container>
+          <span className="cartIcon">
+            <button>
+            <FaRegUserCircle />
+            </button>
+            <button>
+            <FaCartPlus/>
+            </button>
+
+          </span>
+
+        </div>
       </Navbar>
       <div>
         <Routes>

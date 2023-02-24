@@ -19,10 +19,10 @@
   background-color: var(--priBluish);
 }
 .cartIcon {
-  position: absolute;
-  display: flex;
-  top: 20px;
-  right: 30px;
+  gap:1.5rem;
+  background-color: white;
+  border-radius: 15px;
+  padding:0 10px;
 }
 
 .linkie {
