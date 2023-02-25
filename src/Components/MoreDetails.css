@@ -30,9 +30,6 @@ border-radius: var(--borderRadius);
     float: right;
     color: var(--red);
   }
-  h6{
-    text-align: center;
-  }
   
 @media screen and (max-width:596px) {
     .more-details img{
