@@ -8,9 +8,22 @@ import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { SiNamecheap } from "react-icons/si";
 import { TbBrandSketch } from "react-icons/tb";
 import { useLocation, useNavigate } from "react-router";
+import { useContext } from "react";
+import CartContext from "./store/cart-context";
 const MoreDetails = (props) => {
   const location=useLocation()
   const state=location.state
+  const cartCtx=useContext(CartContext)
+  const price = `$${state.price.toFixed(2)}`;
+
+  const addToCartHandler = () => {
+    cartCtx.addItem({
+      id: state.key,
+      name: state.title,
+      price: state.price,
+    });
+  };
+
   return (
     <div className="container" style={{ backgroundColor: "#f9f9f9" }}>
       <div id="inp">
@@ -70,7 +83,7 @@ const MoreDetails = (props) => {
                 <ListGroup.Item>
                   <Rating />
                 </ListGroup.Item>
-                <ButtonCart text="Add To Cart" />
+                <ButtonCart text="Add To Cart" onAdd={addToCartHandler}/>
               </ListGroup>
             </Card.Body>
 

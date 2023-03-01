@@ -46,7 +46,7 @@ export const ButtonCart = (props) => {
           type="submit"
           className={styles.btnCart}
           id={styles.btn}
-          onClick={onClickHandler}
+          onClick={(e)=>{onClickHandler(e);props.onAdd(); }}
         >
           <span style={{ color: "var(--orange)", marginRight: "1rem" }}>
             <FaCartPlus />

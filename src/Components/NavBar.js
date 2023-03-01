@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React from "react";
+import React, { useContext } from "react";
 import {
   Link,
   HashRouter as Router,
@@ -24,7 +24,13 @@ import Error404 from "./Pages/Error404.js";
 import BookingPage from "./Pages/BookingPage";
 import AboutUs from "./Pages/AboutUs";
 import Products from "./Pages/Products";
+import CartContext from "./store/cart-context";
 const NavBar = (props) => {
+  const cartCtx = useContext(CartContext);
+  const { items } = cartCtx;
+  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
   return (
     <Router>
@@ -92,6 +98,7 @@ const NavBar = (props) => {
             </button>
             <button onClick={props.onShowCart}>
             <FaCartPlus/>
+            <span id="badge">{numberOfCartItems}</span>
             </button>
 
           </span>
