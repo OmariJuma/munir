@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
-import CartItem from "./Components/UI/CartItem";
+import CartProvider from "./Components/store/CartProvider";
+import Cart from "./Components/UI/Cart";
 import Footer from "./Components/UI/Footer";
 // import BreadCrumb from "./Components/UI/BreadCrumb";
 
@@ -16,13 +17,13 @@ const hideCart=()=>{
   setCartIsOpen(false)
 }
 
-  return (<>
+  return (<CartProvider>
       <NavBar onShowCart={showCart}/>
       {/* <BreadCrumb/> */}
     <Footer/>
-    {cartIsOpen&&<CartItem onHideCart={hideCart}/>}
+    {cartIsOpen&&<Cart onHideCart={hideCart}/>}
 
-    </>
+    </CartProvider>
   );
 }
 

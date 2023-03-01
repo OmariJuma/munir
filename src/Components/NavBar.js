@@ -1,4 +1,3 @@
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -7,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React, { useState } from "react";
+import React from "react";
 import {
   Link,
   HashRouter as Router,
@@ -26,22 +25,6 @@ import BookingPage from "./Pages/BookingPage";
 import AboutUs from "./Pages/AboutUs";
 import Products from "./Pages/Products";
 const NavBar = (props) => {
-  // const data = {
-  //   key: props.key,
-  //   price: props.price,
-  //   title: props.title,
-  //   text: props.description,
-  //   offer: props.offer,
-  //   image: props.image,
-  // };
-      const data={
-      id: 8,
-      type: "Rim and tyre",
-      name: "Benz rim 5*3",
-      offer: "5300",
-      desc: "Some quick example text to build on the card title and make up ",
-      price: 4500,
-    }
 
   return (
     <Router>
@@ -163,7 +146,7 @@ const NavBar = (props) => {
           />
 
           <Route path="about-us" element={<AboutUs/>} exact />
-          <Route path="/details" element={<MoreDetails />} exact />
+          <Route path="details" element={<MoreDetails/>} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>
