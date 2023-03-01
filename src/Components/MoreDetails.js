@@ -7,7 +7,10 @@ import { ButtonCart } from "./UI/ButtonCustom";
 import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { SiNamecheap } from "react-icons/si";
 import { TbBrandSketch } from "react-icons/tb";
+import { useLocation, useNavigate } from "react-router";
 const MoreDetails = (props) => {
+  const location=useLocation()
+  const state=location.state
   return (
     <div className="container" style={{ backgroundColor: "#f9f9f9" }}>
       <div id="inp">
@@ -19,10 +22,10 @@ const MoreDetails = (props) => {
         <Col xs={12} sm={12} md={6} lg={6}>
           <Carousel>
             <Carousel.Item>
-              <img className="d-block w-100" src={i} alt="First slide" />
+              <img className="d-block w-100" src={state.image} alt="First slide" />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={i} alt="Second slide" />
+              <img className="d-block w-100" src={state.image} alt="Second slide" />
             </Carousel.Item>
           </Carousel>
         </Col>
@@ -33,22 +36,22 @@ const MoreDetails = (props) => {
                 <span className="faicon">
                   <SiNamecheap />
                 </span>
-                <b style={{ marginRight: "1rem" }}>Name:</b> {props.name} <br />
+                <b style={{ marginRight: "1rem" }}>Name:</b> {state.title} <br />
               </Card.Header>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <span className="faicon">
                     <TbBrandSketch />
                   </span>
-                  <b style={{ marginRight: "1rem" }}>Brand:</b> Bf-goodrich
+                  <b style={{ marginRight: "1rem" }}>Brand:</b> {state.brand}
                   <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <span className="faicon" style={{gap:"0"}}>
                     <FaMoneyBillWave />
                   </span>
-                  <strong style={{ marginRight: "1rem" }}>KSH {props.price}</strong>
-                  <s style={{ color:"red"}}>KSH {props.offer}</s>
+                  <strong style={{ marginRight: "1rem" }}>KSH {state.price}</strong>
+                  <s style={{ color:"red"}}>KSH {state.offer}</s>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <span className="faicon">

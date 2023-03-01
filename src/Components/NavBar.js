@@ -34,6 +34,15 @@ const NavBar = (props) => {
   //   offer: props.offer,
   //   image: props.image,
   // };
+      const data={
+      id: 8,
+      type: "Rim and tyre",
+      name: "Benz rim 5*3",
+      offer: "5300",
+      desc: "Some quick example text to build on the card title and make up ",
+      price: 4500,
+    }
+
   return (
     <Router>
       <Navbar

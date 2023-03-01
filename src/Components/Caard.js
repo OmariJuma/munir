@@ -22,7 +22,7 @@ const Caard = (props) => {
     <>
       {product && (
         <div className="products">
-          <Link to="/details">
+          <Link to="details" state={data}>
             <Card style={{ textAlign: "left", marginBottom: "1.5rem" }}>
               <div id="aboveCardContainer">
                 <h5 id="aboveCard">{props.title}</h5>
