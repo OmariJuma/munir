@@ -22,13 +22,13 @@ const MoreDetails = (props) => {
       name: state.title,
       amount:amount,
       price: state.price,
+      image:state.image
     });
   };
 
   return (
     <div className="container" style={{ backgroundColor: "#f9f9f9" }}>
       <div id="inp">
-        {" "}
         <Input />
       </div>
 

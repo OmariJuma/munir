@@ -167,6 +167,7 @@ const Products = (props) => {
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
                   key={prod.id}
+                  id={prod.id}
                   title={prod.name}
                   price={prod.price}
                   offer={prod.offer}
@@ -195,6 +196,7 @@ const Products = (props) => {
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
                   key={prod.id}
+                  id={prod.id}
                   title={prod.name}
                   price={prod.price}
                   offer={prod.offer}

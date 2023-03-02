@@ -34,6 +34,7 @@ const Cart = (props) => {
           name={item.name}
           amount={item.amount}
           price={item.price}
+          image={item.image}
           onRemove={cartItemRemoveHandler.bind(null, item.id)}
           onAdd={cartItemAddHandler.bind(null, item)}
         />
@@ -44,7 +45,7 @@ const Cart = (props) => {
   return (
     <Modal onClose={props.onHideCart}>
       {cartItems}
-      <h4>You have no items in the cart</h4>
+     {!hasItems&&<h4>You have no items in the cart</h4>}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
@@ -53,8 +54,8 @@ const Cart = (props) => {
         <button className={classes["button--alt"]} onClick={props.onHideCart}>
           Close
         </button>
-        <button className={classes.button}>Order</button>
-      </div>
+        {hasItems&&<button className={classes.button}>Order</button>}
+      </div> 
     </Modal>
   );
 };
