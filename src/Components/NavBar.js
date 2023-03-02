@@ -152,7 +152,7 @@ const NavBar = (props) => {
           />
 
           <Route path="about-us" element={<AboutUs/>} exact />
-          <Route path="details" element={<MoreDetails onShowCart={props.showCart}/>} exact />
+          <Route path="details" element={<MoreDetails onShowCart={props.onShowCart}/>} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>
