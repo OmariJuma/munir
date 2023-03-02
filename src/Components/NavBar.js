@@ -28,8 +28,7 @@ import CartContext from "./store/cart-context";
 const NavBar = (props) => {
   const cartCtx = useContext(CartContext);
   const { items } = cartCtx;
-  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
-    return curNumber + item.amount;
+  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {return curNumber + item.amount;
   }, 0);
 
   return (
@@ -153,7 +152,7 @@ const NavBar = (props) => {
           />
 
           <Route path="about-us" element={<AboutUs/>} exact />
-          <Route path="details" element={<MoreDetails/>} exact />
+          <Route path="details" element={<MoreDetails onShowCart={props.showCart}/>} exact />
           <Route path="*" exact element={<Error404 />} />
         </Routes>
       </div>

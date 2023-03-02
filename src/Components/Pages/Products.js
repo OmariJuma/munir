@@ -111,10 +111,9 @@ const Products = (props) => {
     const db = data;
     onValue(ref(db, "products/tyres/"), (snapshot) => {
       setProductArray(snapshot.val());
-      console.log(snapshot.val() + "logging");
+
     });
   }, []);
-
   const clickHandler = () => {
     setDetails(true);
   };
@@ -138,6 +137,7 @@ const Products = (props) => {
                 <div onClick={clickHandler}>
                   <Caard
                     key={prod.id}
+                    id={prod.id}
                     title={prod.name}
                     price={prod.price}
                     offer={prod.offer}

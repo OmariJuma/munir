@@ -10,7 +10,7 @@ const Caard = (props) => {
   const rating = 1;
   const zeroStar = 0;
   const data = {
-    key: props.key,
+    id: props.id,
     price: props.price,
     title: props.title,
     text: props.description,

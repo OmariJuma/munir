@@ -11,15 +11,16 @@ import { useLocation, useNavigate } from "react-router";
 import { useContext } from "react";
 import CartContext from "./store/cart-context";
 const MoreDetails = (props) => {
-  const location=useLocation()
-  const state=location.state
-  const cartCtx=useContext(CartContext)
-  const price = `$${state.price.toFixed(2)}`;
+  const location = useLocation();
+  const state = location.state;
+  const cartCtx = useContext(CartContext);
+  const price = `${state.price.toFixed(2)}`;
 
-  const addToCartHandler = () => {
+  const addToCartHandler = (amount=1) => {
     cartCtx.addItem({
-      id: state.key,
+      id: state.id,
       name: state.title,
+      amount:amount,
       price: state.price,
     });
   };
@@ -35,10 +36,18 @@ const MoreDetails = (props) => {
         <Col xs={12} sm={12} md={6} lg={6}>
           <Carousel>
             <Carousel.Item>
-              <img className="d-block w-100" src={state.image} alt="First slide" />
+              <img
+                className="d-block w-100"
+                src={state.image}
+                alt="First slide"
+              />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={state.image} alt="Second slide" />
+              <img
+                className="d-block w-100"
+                src={state.image}
+                alt="Second slide"
+              />
             </Carousel.Item>
           </Carousel>
         </Col>
@@ -49,7 +58,8 @@ const MoreDetails = (props) => {
                 <span className="faicon">
                   <SiNamecheap />
                 </span>
-                <b style={{ marginRight: "1rem" }}>Name:</b> {state.title} <br />
+                <b style={{ marginRight: "1rem" }}>Name:</b> {state.title}{" "}
+                <br />
               </Card.Header>
               <ListGroup variant="flush">
                 <ListGroup.Item>
@@ -60,11 +70,13 @@ const MoreDetails = (props) => {
                   <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <span className="faicon" style={{gap:"0"}}>
+                  <span className="faicon" style={{ gap: "0" }}>
                     <FaMoneyBillWave />
                   </span>
-                  <strong style={{ marginRight: "1rem" }}>KSH {state.price}</strong>
-                  <s style={{ color:"red"}}>KSH {state.offer}</s>
+                  <strong style={{ marginRight: "1rem" }}>
+                    KSH {price}
+                  </strong>
+                  <s style={{ color: "red" }}>KSH {state.offer}</s>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <span className="faicon">
@@ -83,7 +95,7 @@ const MoreDetails = (props) => {
                 <ListGroup.Item>
                   <Rating />
                 </ListGroup.Item>
-                <ButtonCart text="Add To Cart" onAdd={addToCartHandler}/>
+                <ButtonCart text="Add To Cart" onShowCart={props.onShowCart} onAdd={addToCartHandler} />
               </ListGroup>
             </Card.Body>
 

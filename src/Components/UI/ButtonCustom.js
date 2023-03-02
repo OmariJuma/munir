@@ -60,10 +60,7 @@ export const ButtonCart = (props) => {
             type="button"
             // className={styles.variant}
             id={styles.btn}
-            onClick={() => {
-              return { ...cartItems };
-            }}
-          >
+            onClick={props.onShowCart}          >
            <p>-</p>
           </button>
         )}
@@ -73,7 +70,7 @@ export const ButtonCart = (props) => {
             type="button"
             // className={styles.variant}
             id={styles.btn}
-            onClick={() => {}}
+            onClick={props.onShowCart}
           >
            <p>+</p> 
           </button>
