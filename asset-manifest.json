@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/munir/static/css/main.72ce73b8.css",
-    "main.js": "/munir/static/js/main.44047693.js",
+    "main.css": "/munir/static/css/main.7f630c0e.css",
+    "main.js": "/munir/static/js/main.11824132.js",
     "static/js/787.892dc1aa.chunk.js": "/munir/static/js/787.892dc1aa.chunk.js",
     "static/media/spanners.png": "/munir/static/media/spanners.c56e8b1758e02cf76caa.png",
     "static/media/date.png": "/munir/static/media/date.3650bdcec7282758f7be.png",
@@ -54,12 +54,12 @@
     "static/media/tiktok.svg": "/munir/static/media/tiktok.d8d3db0787f6e40d7c438ece3821dc98.svg",
     "static/media/facebook.svg": "/munir/static/media/facebook.4abfcb5355e33829d534cb637cccec8c.svg",
     "index.html": "/munir/index.html",
-    "main.72ce73b8.css.map": "/munir/static/css/main.72ce73b8.css.map",
-    "main.44047693.js.map": "/munir/static/js/main.44047693.js.map",
+    "main.7f630c0e.css.map": "/munir/static/css/main.7f630c0e.css.map",
+    "main.11824132.js.map": "/munir/static/js/main.11824132.js.map",
     "787.892dc1aa.chunk.js.map": "/munir/static/js/787.892dc1aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72ce73b8.css",
-    "static/js/main.44047693.js"
+    "static/css/main.7f630c0e.css",
+    "static/js/main.11824132.js"
   ]
 }
