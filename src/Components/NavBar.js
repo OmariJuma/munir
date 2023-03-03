@@ -25,6 +25,8 @@ import BookingPage from "./Pages/BookingPage";
 import AboutUs from "./Pages/AboutUs";
 import Products from "./Pages/Products";
 import CartContext from "./store/cart-context";
+import logo from "./../assets/images/icons/Rlogo1.svg";
+
 const NavBar = (props) => {
   const cartCtx = useContext(CartContext);
   const { items } = cartCtx;
@@ -45,7 +47,7 @@ const NavBar = (props) => {
           </Navbar.Toggle>
 
           <Navbar.Brand href="#home" className="linkie bt-2">
-            Muneer Automotive
+            <img src={logo} alt="logo" id='muneerLogo'/>
           </Navbar.Brand>
           <Navbar.Collapse
             id="basic-navbar-nav"

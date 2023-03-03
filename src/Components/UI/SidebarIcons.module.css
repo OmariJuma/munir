@@ -1,0 +1,57 @@
+.iconContainer {
+  display: block;
+}
+#plus {
+  height: 80px;
+  width: 80px;
+  top: 80%;
+  right: 4vw;
+  z-index: 10;
+  position: fixed;
+}
+#plus:checked{
+    animation: plusrotate 0.05s ease;
+}
+@keyframes plusrotate {
+    0%{
+transform: rotate(-180deg);
+
+    }
+    50%{
+    transform: scale(0.5);
+    }
+    100%{
+        transform: scale(0) ;
+        transform:rotate(0deg);
+    }
+    
+}
+.iconContainer .iconBody {
+  animation: rotation 0.5s ease-in;
+  height: 70px;
+  width: 70px;
+  z-index: 10;
+  position: fixed;
+}
+#ic1 {
+  top: 50%;
+  right: 5vw;
+}
+#ic2 {
+  top: 60%;
+  right: 5vw;
+}
+#ic3 {
+  top:70%;
+  right: 5vw;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}

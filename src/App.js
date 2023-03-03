@@ -4,6 +4,7 @@ import NavBar from "./Components/NavBar";
 import CartProvider from "./Components/store/CartProvider";
 import Cart from "./Components/UI/Cart";
 import Footer from "./Components/UI/Footer";
+import SidebarIcons from "./Components/UI/SidebarIcons";
 // import BreadCrumb from "./Components/UI/BreadCrumb";
 
 
@@ -20,9 +21,10 @@ const hideCart=()=>{
   return (<CartProvider>
       <NavBar onShowCart={showCart}/>
       {/* <BreadCrumb/> */}
+      <SidebarIcons/>
+
     <Footer/>
     {cartIsOpen&&<Cart onHideCart={hideCart}/>}
-
     </CartProvider>
   );
 }
