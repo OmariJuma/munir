@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/munir/static/css/main.a019f7c2.css",
-    "main.js": "/munir/static/js/main.15108c81.js",
+    "main.css": "/munir/static/css/main.72ce73b8.css",
+    "main.js": "/munir/static/js/main.44047693.js",
     "static/js/787.892dc1aa.chunk.js": "/munir/static/js/787.892dc1aa.chunk.js",
     "static/media/spanners.png": "/munir/static/media/spanners.c56e8b1758e02cf76caa.png",
     "static/media/date.png": "/munir/static/media/date.3650bdcec7282758f7be.png",
     "static/media/parking.jpg": "/munir/static/media/parking.4c404e16424ac8243b33.jpg",
     "static/media/customerCare.gif": "/munir/static/media/customerCare.1c9b1f9172456bff1b80.gif",
     "static/media/auto.png": "/munir/static/media/auto.a19a6da6fa757c380a1f.png",
+    "static/media/Rlogo1.svg": "/munir/static/media/Rlogo1.b239e3bb32c79775b0761e670551eb35.svg",
     "static/media/a8.jpeg": "/munir/static/media/a8.cc10b1e94ce2a186a0b0.jpeg",
     "static/media/b8.jpeg": "/munir/static/media/b8.e9a1a3d862f35a559faf.jpeg",
     "static/media/b5.jpeg": "/munir/static/media/b5.c95cc7d3535ca6633ede.jpeg",
@@ -48,14 +49,17 @@
     "static/media/many.avif": "/munir/static/media/many.d383610aa8c683a33644.avif",
     "static/media/notes.jpg": "/munir/static/media/notes.b72c1e7036bdbfef40bd.jpg",
     "static/media/joyroad.jfif": "/munir/static/media/joyroad.5d9741ecefcc4fb1727c.jfif",
+    "static/media/icons8-instagram-100.svg": "/munir/static/media/icons8-instagram-100.e848687c5541975cc5d4cbf265d5c608.svg",
     "static/media/bfgoodrich.jfif": "/munir/static/media/bfgoodrich.865dda433f05ec94eed4.jfif",
+    "static/media/tiktok.svg": "/munir/static/media/tiktok.d8d3db0787f6e40d7c438ece3821dc98.svg",
+    "static/media/facebook.svg": "/munir/static/media/facebook.4abfcb5355e33829d534cb637cccec8c.svg",
     "index.html": "/munir/index.html",
-    "main.a019f7c2.css.map": "/munir/static/css/main.a019f7c2.css.map",
-    "main.15108c81.js.map": "/munir/static/js/main.15108c81.js.map",
+    "main.72ce73b8.css.map": "/munir/static/css/main.72ce73b8.css.map",
+    "main.44047693.js.map": "/munir/static/js/main.44047693.js.map",
     "787.892dc1aa.chunk.js.map": "/munir/static/js/787.892dc1aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a019f7c2.css",
-    "static/js/main.15108c81.js"
+    "static/css/main.72ce73b8.css",
+    "static/js/main.44047693.js"
   ]
 }
