@@ -2,29 +2,37 @@
   display: block;
 }
 #plus {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   top: 80%;
-  right: 4vw;
+  right: 1vw;
   z-index: 10;
   position: fixed;
 }
-#plus:checked{
-    animation: plusrotate 0.05s ease;
+.pop {
+  animation: plusrotate 0.5s ease;
+}
+.popout{
+  animation: plusrotateout 0.5s ease-out;
 }
 @keyframes plusrotate {
-    0%{
-transform: rotate(-180deg);
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 
-    }
-    50%{
-    transform: scale(0.5);
-    }
-    100%{
-        transform: scale(0) ;
-        transform:rotate(0deg);
-    }
-    
+}
+@keyframes plusrotateout {
+  100%{
+    transform: scale(1);
+
+  }
+  0% {
+    transform: scale(0);
+  }
+
 }
 .iconContainer .iconBody {
   animation: rotation 0.5s ease-in;
@@ -35,15 +43,15 @@ transform: rotate(-180deg);
 }
 #ic1 {
   top: 50%;
-  right: 5vw;
+  right: 1vw;
 }
 #ic2 {
   top: 60%;
-  right: 5vw;
+  right: 1vw;
 }
 #ic3 {
-  top:70%;
-  right: 5vw;
+  top: 70%;
+  right: 1vw;
 }
 @keyframes rotation {
   0% {

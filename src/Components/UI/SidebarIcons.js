@@ -11,7 +11,7 @@ const SidebarIcons = () => {
   };
   return (
     <div className={styles.iconContainer}>
-      <img src={icon} alt="" onClick={onClickHandler} id={styles.plus}/>
+  <img src={icon} alt="" onClick={onClickHandler} className={`${toggle?styles.pop:styles.popout}`} id={styles.plus}/>
       {toggle && (
         <div >
         <a href="https://www.facebook.com/" target={"_blank"} rel="noreferrer" > <img src={icon1} alt="facebook icon link " className={styles.iconBody} id={styles.ic1}/></a>
