@@ -1,7 +1,12 @@
-import { Form, Row, Col, Button } from "react-bootstrap";
+import { Form, Row, Col, Button, Alert } from "react-bootstrap";
 import styles from "./MyForm.module.css";
 import calend from "./../../assets/images/icons/calend.png";
 import { useState } from "react";
+import data from "./../../fire";
+import { set, ref } from "firebase/database";
+import uuid from "react-uuid";
+
+
 
 const MyForm = (props) => {
   const [bookingInfo, setBookingInfo] = useState({
@@ -12,31 +17,47 @@ const MyForm = (props) => {
     regNo: "",
     make: "",
     model: "",
-    date: currentDate,
+    date: "",
+    time:''
   });
   var currentDate = new Date();
   var dd = String(currentDate.getDate()).padStart(2, "0");
   var mm = String(currentDate.getMonth() + 1).padStart(2, "0");
   var yyyy = String(currentDate.getFullYear());
-  currentDate = mm + "/" + dd + "/" + yyyy;
-  console.log(currentDate);
+  currentDate = yyyy + "-" + mm + "-" + dd;
 
   const handleInputChange = (event) => {
     setBookingInfo({ ...bookingInfo, [event.target.name]: event.target.value });
   };
+const post=async() => {
+  const db = data;
+  set(ref(db, "/booking/" + `${uuid()}`), {
+    firtsName: bookingInfo.firstName,
+    secondName:bookingInfo.secondName,
+    email:bookingInfo.email,
+    regNo: bookingInfo.regNo,
+    make:bookingInfo.make,
+    model: bookingInfo.model,
+    date : bookingInfo.date ,
+    time:bookingInfo.time
+  });
+}
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
-      bookingInfo.firstName.trim().length >= 2 ||
-      bookingInfo.secondName.trim().length >= 2 ||
-      bookingInfo.email.trim().includes("@") ||
-      bookingInfo.regNo.trim().length >3||
-      bookingInfo.make.trim().length > 3 ||
-      bookingInfo.model.trim().length >3 ||
-      bookingInfo.date >= currentDate
+      bookingInfo.firstName.trim().length >= 2 &&
+      bookingInfo.secondName.trim().length >= 2 &&
+      bookingInfo.email.trim().includes("@").length !== 0 &&
+      bookingInfo.regNo.trim().length > 3 &&
+      bookingInfo.make.trim().length > 3 &&
+      bookingInfo.model.trim().length > 3 &&
+      bookingInfo.date >= currentDate&&
+      bookingInfo.time!==0
+
     ) {
-      console.log("booking success", bookingInfo);
+      post()
+      alert("Booking success");
       setBookingInfo({
         firstName: "",
         secondName: "",
@@ -45,9 +66,14 @@ const MyForm = (props) => {
         regNo: "",
         make: "",
         model: "",
-        date: currentDate,
-      });
-    } else { return alert("an error has occured");
+        date: "",
+        time:""
+      })
+
+    }
+    
+    else {
+      return alert("an error has occured");
     }
   };
   return (
@@ -57,6 +83,7 @@ const MyForm = (props) => {
           <img src={calend} alt="A calender icon" />
         </span>
         <h1>Schedule An Appointment</h1>
+
       </div>
       <Row>
         <Col md={6} lg={6} xxl={6}>
@@ -68,6 +95,8 @@ const MyForm = (props) => {
               placeholder="John"
               value={bookingInfo.firstName}
               onChange={handleInputChange}
+              minLength={3}
+              required
             />
           </Form.Group>
         </Col>
@@ -80,6 +109,8 @@ const MyForm = (props) => {
               onChange={handleInputChange}
               name="secondName"
               value={bookingInfo.secondName}
+              required
+              minLength={3}
             />
           </Form.Group>
         </Col>
@@ -95,6 +126,8 @@ const MyForm = (props) => {
               placeholder="0712345678"
               onChange={handleInputChange}
               value={bookingInfo.phoneNo}
+              minLength={9}
+              required
             />
           </Form.Group>
         </Col>
@@ -106,6 +139,8 @@ const MyForm = (props) => {
               placeholder="example@gmail.com"
               name="email"
               value={bookingInfo.email}
+              minLength={7}
+              required
               onChange={handleInputChange}
             />
           </Form.Group>
@@ -120,6 +155,8 @@ const MyForm = (props) => {
               name="make"
               placeholder="e.g Toyota"
               onChange={handleInputChange}
+              required
+              minLength={3}
               value={bookingInfo.make}
             />
           </Form.Group>
@@ -132,6 +169,8 @@ const MyForm = (props) => {
               name="model"
               placeholder="e.g Aauris"
               onChange={handleInputChange}
+              required
+              minLength={3}
               value={bookingInfo.model}
             />
           </Form.Group>
@@ -146,6 +185,8 @@ const MyForm = (props) => {
               name="regNo"
               placeholder="e.g KCA 123A"
               onChange={handleInputChange}
+              required
+              minLength={5}
               value={bookingInfo.regNo}
             />
           </Form.Group>
@@ -159,10 +200,24 @@ const MyForm = (props) => {
               placeholder="(mm/dd/yy)"
               min={currentDate}
               onChange={handleInputChange}
+              required
               value={bookingInfo.date}
             />
           </Form.Group>
         </Col>
+          <Form.Group className="mb-3" controlId="formBasicInput">
+            <Form.Label>Pick time</Form.Label>
+            <Form.Control
+              type="time"
+              name="time"
+              min={"08:00"}
+              max={"16:00"}
+              onChange={handleInputChange}
+              required
+              value={bookingInfo.time}
+            />
+          </Form.Group>
+
       </Row>
 
       <Button variant="primary" id={styles.btn} type="submit">
