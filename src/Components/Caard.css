@@ -48,14 +48,16 @@
   height: 250px;
   padding: 5px;
 }
-
+#cardBody{
+  padding: 5px;
+}
 @media screen and (min-width: 768px) {
   .products .card {
     /* width:250px; */
     height: fit-content;
   }
   .products .card img {
-    height: 300px;
+    height: 250px;
     /* width:250px; */
   }
   .products .card:hover {
@@ -64,6 +66,23 @@
     box-shadow: 0 0 3px 3px orange;
   }
   
+}
+@media screen and (max-width: 768px) {
+  .products .card img {
+    height: 200px;
+    /* width:250px; */
+  }
+  #aboveCard{
+    padding: 3px 5px;
+  } 
+  .priceNstrike{
+    gap:0.5rem;
+  }
+}
+@media screen and (max-width: 597px) {
+  .priceNstrike strong, .priceNstrike s{
+    font-size: 11px;
+  }
 }
 @media screen and (max-width: 334px) {
   p{
@@ -78,4 +97,8 @@
   .products .card img {
     height: 180px;
   }
+  .priceNstrike strong, .priceNstrike s{
+    font-size: 11px;
+  }
+
 }

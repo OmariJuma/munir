@@ -28,7 +28,7 @@ const Caard = (props) => {
                 <h5 id="aboveCard">{props.title}</h5>
               </div>
               <Card.Img src={props.image} />
-              <Card.Body>
+              <Card.Body id={"cardBody"}>
                 <Card.Text style={{ marginBottom: "2rem" }}>
                   {props.description}
                   <div className="priceNstrike">
