@@ -1,14 +1,13 @@
 import { Form, Row, Col, Button, Alert } from "react-bootstrap";
 import styles from "./MyForm.module.css";
 import calend from "./../../assets/images/icons/calend.png";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import data from "./../../fire";
 import { set, ref } from "firebase/database";
 import uuid from "react-uuid";
-
-
-
+import emailjs from '@emailjs/browser'
 const MyForm = (props) => {
+  const form = useRef();
   const [bookingInfo, setBookingInfo] = useState({
     firstName: "",
     secondName: "",
@@ -18,7 +17,7 @@ const MyForm = (props) => {
     make: "",
     model: "",
     date: "",
-    time:''
+    time: "",
   });
   var currentDate = new Date();
   var dd = String(currentDate.getDate()).padStart(2, "0");
@@ -29,19 +28,19 @@ const MyForm = (props) => {
   const handleInputChange = (event) => {
     setBookingInfo({ ...bookingInfo, [event.target.name]: event.target.value });
   };
-const post=async() => {
-  const db = data;
-  set(ref(db, "/booking/" + `${uuid()}`), {
-    firtsName: bookingInfo.firstName,
-    secondName:bookingInfo.secondName,
-    email:bookingInfo.email,
-    regNo: bookingInfo.regNo,
-    make:bookingInfo.make,
-    model: bookingInfo.model,
-    date : bookingInfo.date ,
-    time:bookingInfo.time
-  });
-}
+  const post = async () => {
+    const db = data;
+    set(ref(db, "/booking/" + `${uuid()}`), {
+      firtsName: bookingInfo.firstName,
+      secondName: bookingInfo.secondName,
+      email: bookingInfo.email,
+      regNo: bookingInfo.regNo,
+      make: bookingInfo.make,
+      model: bookingInfo.model,
+      date: bookingInfo.date,
+      time: bookingInfo.time,
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,11 +51,23 @@ const post=async() => {
       bookingInfo.regNo.trim().length > 3 &&
       bookingInfo.make.trim().length > 3 &&
       bookingInfo.model.trim().length > 3 &&
-      bookingInfo.date >= currentDate&&
-      bookingInfo.time!==0
-
+      bookingInfo.date >= currentDate &&
+      bookingInfo.time !== 0
     ) {
-      post()
+      post();
+      emailjs
+        .sendForm(
+          "service_14tu8ej",
+          "template_5dq8ibe",
+          form.current,
+          "YUE9-soFT-BCwlqAu"
+        )
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        })
+        .catch((err) => {
+          console.log("FAILED...", err);
+        });
       alert("Booking success");
       setBookingInfo({
         firstName: "",
@@ -67,23 +78,24 @@ const post=async() => {
         make: "",
         model: "",
         date: "",
-        time:""
-      })
-
-    }
-    
-    else {
+        time: "",
+      });
+    } else {
       return alert("an error has occured");
     }
   };
   return (
-    <Form className={styles.frmBooking} role="form" onSubmit={handleSubmit}>
+    <Form
+      ref={form}
+      className={styles.frmBooking}
+      role="form"
+      onSubmit={handleSubmit}
+    >
       <div className={styles.titleHolder}>
         <span>
           <img src={calend} alt="A calender icon" />
         </span>
         <h1>Schedule An Appointment</h1>
-
       </div>
       <Row>
         <Col md={6} lg={6} xxl={6}>
@@ -205,19 +217,18 @@ const post=async() => {
             />
           </Form.Group>
         </Col>
-          <Form.Group className="mb-3" controlId="formBasicInput">
-            <Form.Label>Pick time</Form.Label>
-            <Form.Control
-              type="time"
-              name="time"
-              min={"08:00"}
-              max={"16:00"}
-              onChange={handleInputChange}
-              required
-              value={bookingInfo.time}
-            />
-          </Form.Group>
-
+        <Form.Group className="mb-3" controlId="formBasicInput">
+          <Form.Label>Pick time</Form.Label>
+          <Form.Control
+            type="time"
+            name="time"
+            min={"08:00"}
+            max={"16:00"}
+            onChange={handleInputChange}
+            required
+            value={bookingInfo.time}
+          />
+        </Form.Group>
       </Row>
 
       <Button variant="primary" id={styles.btn} type="submit">
