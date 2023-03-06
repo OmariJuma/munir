@@ -4,6 +4,9 @@ import bugatti2 from "./../assets/images/hh.webp";
 import MiniCard from "./UI/MiniCard";
 import Input from "./UI/Input";
 import { Carousel } from "react-bootstrap";
+import Mahmoud from "./../assets/images/People/Mr Mahmoud.jpeg"
+import Mahmoud2 from "./../assets/images/People/Mr Mahmoud2.jpeg"
+import Mahmoud3 from "./../assets/images/People/Mr Mahmoud01.jpeg"
 const Crsl = () => {
   return (
     <Carousel>
@@ -21,21 +24,13 @@ const Crsl = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={bugatti} alt="the home screen" id={styles.def} />
-        <img src={bugatti2} alt="the home screen" id={styles.sub} />
+        <div style={{display:"flex"}}>
+        <img src={Mahmoud3} alt="the home screen"  id={styles.def}/>
+        <img src={Mahmoud3} alt="the home screen" id={styles.sub} />
+        </div>
         <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={bugatti} alt="the home screen" id={styles.def} />
-        <img src={bugatti2} alt="the home screen" id={styles.sub} />
-        <Carousel.Caption>
-          <h5>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3 id={styles.ceoTitle}>CE0 Mr Mahmoud</h3>
+          <p id={styles.ceoText}>Hi I hope you are doing fine, this is our business, come and lets do business together. I promise you'll enjoy our services</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
