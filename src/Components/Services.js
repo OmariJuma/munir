@@ -1,11 +1,5 @@
-import { Button, Row } from "react-bootstrap";
 import "./services.css";
 import "../App.css";
-import Caard from "./Caard";
-import tyres from "./../assets/images/wheels5.jpeg";
-import rims from "./../assets/images/many.avif";
-import fitting from "./../assets/images/fitting.jpeg";
-import booking from "./../assets/images/date.jpg";
 import lottie from "./../assets/images/animations/illustration.png";
 import lottie2 from "./../assets/images/animations/illustration2.png";
 import ButtonCustom from "./UI/ButtonCustom";

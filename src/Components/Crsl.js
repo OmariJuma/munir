@@ -4,8 +4,6 @@ import bugatti2 from "./../assets/images/hh.webp";
 import MiniCard from "./UI/MiniCard";
 import Input from "./UI/Input";
 import { Carousel } from "react-bootstrap";
-import Mahmoud from "./../assets/images/People/Mr Mahmoud.jpeg"
-import Mahmoud2 from "./../assets/images/People/Mr Mahmoud2.jpeg"
 import Mahmoud3 from "./../assets/images/People/Mr Mahmoud01.jpeg"
 const Crsl = () => {
   return (

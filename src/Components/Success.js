@@ -16,7 +16,7 @@ import a7 from "./../assets/images/before and after/a7.jpeg";
 import b7 from "./../assets/images/before and after/b7.jpeg";
 import a8 from "./../assets/images/before and after/a8.jpeg";
 import b8 from "./../assets/images/before and after/b8.jpeg";
-import { CardGroup, Card } from "react-bootstrap";
+import {Card } from "react-bootstrap";
 const Success = () => {
   const b4Naft = [
     { id: uuidv4(), a: a1, b: b1 },
