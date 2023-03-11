@@ -1,9 +1,7 @@
-import Rim from "../assets/images/rim2.jpeg";
 import Card from "react-bootstrap/Card";
 import "./Caard.css";
 import Rating from "./UI/Rating";
 import { Link } from "react-router-dom";
-
 
 const Caard = (props) => {
   const product = props.product;
@@ -13,9 +11,12 @@ const Caard = (props) => {
     id: props.id,
     price: props.price,
     title: props.title,
-    text: props.description,
+    description: props.description,
     offer: props.offer,
     image: props.image,
+    brand: props.brand,
+    material: props.material,
+    units: props.units,
   };
 
   return (

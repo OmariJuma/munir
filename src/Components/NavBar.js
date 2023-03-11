@@ -46,7 +46,7 @@ const NavBar = (props) => {
             </span>
           </Navbar.Toggle>
 
-          <Navbar.Brand href="#home" className="linkie bt-2">
+          <Navbar.Brand href="/" className="linkie bt-2">
             <img src={logo} alt="logo" id='muneerLogo'/>
           </Navbar.Brand>
           <Navbar.Collapse
@@ -56,7 +56,7 @@ const NavBar = (props) => {
             <Nav
               variant="tabs"
               className="justify-content-center"
-              activeKey="/home"
+              activeKey="/"
             >
               <Nav.Item id="search">
                 <Input />
@@ -67,27 +67,27 @@ const NavBar = (props) => {
                 </Nav.Link>
               </Nav.Item>
               <NavDropdown title="Products" id="nav-dropdown">
-                <NavDropdown.Item as={Link} to="products/rims" eventKey="4.1">
+                <NavDropdown.Item as={Link} to="/products/rims" eventKey="4.1">
                   Rims
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="products/tyres" eventKey="4.2">
+                <NavDropdown.Item as={Link} to="/products/tyres" eventKey="4.2">
                   Tyres
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
-                  to="products/rimsNtyres"
+                  to="/products"
                   eventKey="4.3"
                 >
                   Rims and Tyres
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Item>
-                <Nav.Link as={Link} to="booking" eventKey="link-2">
+                <Nav.Link as={Link} to="/booking" eventKey="link-2">
                   Booking
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={Link} to="about-us" eventKey="link-2">
+                <Nav.Link as={Link} to="/about-us" eventKey="link-2">
                   About us
                 </Nav.Link>
               </Nav.Item>
@@ -123,39 +123,39 @@ const NavBar = (props) => {
                 <MySwiper />
               </div>
             }
-            errorElement={<Error404 />}
+            errorElement={<Error404/>}
             exact
           />
           <Route
-            path="products/rims"
+            path="/products/rims"
             element={<Products/>}
             exact
-            errorElement={<Error404 />}
+            errorElement={<Error404/>}
           />
 
           <Route
-            path="products/tyres"
+            path="/products/tyres"
             element={<Products/>}
             exact
-            errorElement={<Error404 />}
+            errorElement={<Error404/>}
           />
           <Route
-            path="products/rimsNtyres"
-            element={<Products />}
+            path="/products"
+            element={<Products/>}
             exact
-            errorElement={<Error404 />}
+            errorElement={<Error404/>}
           />
 
           <Route
-            path="booking"
+            path="/booking"
             element={<BookingPage/>}
             exact
-            errorElement={<Error404 />}
+            errorElement={<Error404/>}
           />
 
-          <Route path="about-us" element={<AboutUs/>} exact />
-          <Route path="/details" element={<MoreDetails onShowCart={props.onShowCart}/>} exact />
-          <Route path="*" exact element={<Error404 />} />
+          <Route path="/about-us" element={<AboutUs/>} exact />
+          <Route path="/details" element={<MoreDetails onShowCart={props.onShowCart}/>} exact/>
+          <Route path="*" exact element={<Error404/>} />
         </Routes>
       </div>
     </Router>

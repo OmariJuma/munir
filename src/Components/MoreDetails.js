@@ -1,4 +1,3 @@
-import i from "./../assets/images/rim2.jpeg";
 import Input from "../Components/UI/Input";
 import "./MoreDetails.css";
 import { Card, Carousel, Col, Row, ListGroup } from "react-bootstrap";
@@ -7,7 +6,7 @@ import { ButtonCart } from "./UI/ButtonCustom";
 import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { SiNamecheap } from "react-icons/si";
 import { TbBrandSketch } from "react-icons/tb";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 import { useContext } from "react";
 import CartContext from "./store/cart-context";
 const MoreDetails = (props) => {
@@ -16,13 +15,13 @@ const MoreDetails = (props) => {
   const cartCtx = useContext(CartContext);
   const price = `${state.price.toFixed(2)}`;
 
-  const addToCartHandler = (amount=1) => {
+  const addToCartHandler = (amount = 1) => {
     cartCtx.addItem({
       id: state.id,
       name: state.title,
-      amount:amount,
+      amount: amount,
       price: state.price,
-      image:state.image
+      image: state.image,
     });
   };
 
@@ -73,9 +72,7 @@ const MoreDetails = (props) => {
                   <span className="faicon" style={{ gap: "0" }}>
                     <FaMoneyBillWave />
                   </span>
-                  <strong style={{ marginRight: "1rem" }}>
-                    KSH {price}
-                  </strong>
+                  <strong style={{ marginRight: "1rem" }}>KSH {price}</strong>
                   <s style={{ color: "red" }}>KSH {state.offer}</s>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -90,12 +87,16 @@ const MoreDetails = (props) => {
                     <FaCheck />
                   </span>
                   <b style={{ marginRight: "1rem" }}>Instock </b>
-                  100 units left <br />
+                  {state.units} <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Rating />
                 </ListGroup.Item>
-                <ButtonCart text="Add To Cart" onShowCart={props.onShowCart} onAdd={addToCartHandler} />
+                <ButtonCart
+                  text="Add To Cart"
+                  onShowCart={props.onShowCart}
+                  onAdd={addToCartHandler}
+                />
               </ListGroup>
             </Card.Body>
 
@@ -108,16 +109,7 @@ const MoreDetails = (props) => {
           <Card style={{ marginTop: "2rem" }}>
             <Card.Body>
               <Card.Header>product Details</Card.Header>
-              <Card.Text>
-                Consequat cupidatat consequat mollit nostrud. Elit id ullamco
-                fugiat in magna sunt velit nulla. Mollit laboris voluptate
-                consectetur consectetur minim velit dolor consectetur anim
-                veniam est ea sunt. Anim consequat tempor ea incididunt laboris.
-                Laborum ipsum sint tempor ex id id cillum et dolor in elit
-                adipisicing. Eiusmod et culpa culpa aliqua voluptate sint esse
-                sunt tempor nostrud magna veniam cupidatat. Commodo eiusmod est
-                adipisicing et irure proident ullamco laboris aliqua.
-              </Card.Text>
+              <Card.Text>{state.description}</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -131,7 +123,8 @@ const MoreDetails = (props) => {
                   <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b style={{ margin: "0 1rem 0 0" }}>Dimensions</b>14/356/16
+                  <b style={{ margin: "0 1rem 0 0" }}>Dimensions</b>
+                  {state.description}
                   <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -139,7 +132,8 @@ const MoreDetails = (props) => {
                   <br />
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <b style={{ margin: "0 1rem 0 0" }}> Material</b> Rubber
+                  <b style={{ margin: "0 1rem 0 0" }}> Material</b>{" "}
+                  {state.material}
                   <br />
                 </ListGroup.Item>
                 <ListGroup.Item>

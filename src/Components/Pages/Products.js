@@ -2,126 +2,35 @@ import styles from "./Products.module.css";
 import "./../services.css";
 import Caard from "../Caard";
 import { FaArrowRight } from "react-icons/fa";
-import tyre1 from "./../../assets/images/goodyear2.jpeg";
-import rim1 from "./../../assets/images/wheel1.jpeg";
-import rimNtyre1 from "./../../assets/images/wheel2.jpeg";
-import rimNtyre2 from "./../../assets/images/wheel3.jpeg";
 import { Col, Row } from "react-bootstrap";
-import { onValue, ref } from "firebase/database";
-import data from "./../../fire";
 import { useEffect, useState } from "react";
-import MoreDetails from "../MoreDetails";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Products = (props) => {
+const Products = () => {
   const [productArray, setProductArray] = useState([]);
+  const [rims, setRims] = useState([]);
+  const [tyres, setTyres] = useState([]);
   const [details, setDetails] = useState(false);
-  // [
-  //   {
-  //     id: 1,
-  //     type: "tyre",
-  //     name: "Yana 4*4",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: tyre1,
-  //   },
-  //   {
-  //     id: 2,
-  //     type: "Rim",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rim1,
-  //   },
-  //   {
-  //     id: 3,
-  //     type: "Rim and tyre",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rimNtyre1,
-  //   },
-  //   {
-  //     id: 4,
-  //     type: "Rim and tyre",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rimNtyre2,
-  //   },
-  //   {
-  //     id: 5,
-  //     type: "Rim and tyre",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rimNtyre2,
-  //   },
-  //   {
-  //     id: 6,
-  //     type: "Rim and tyre",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rimNtyre2,
-  //   },
-  //   {
-  //     id: 7,
-  //     type: "Rim and tyre",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rimNtyre2,
-  //   },
-  //   {
-  //     id: 8,
-  //     type: "Rim and tyre",
-  //     name: "Benz rim 5*3",
-  //     offer: "5300",
-  //     desc: "Some quick example text to build on the card title and make up ",
-  //     price: 4500,
-  //     image: rimNtyre2,
-  //   },
-  // ];
-  //   fetch("https://muneer-a787d-default-rtdb.firebaseio.com/products/tires.json?print=silent",{
-  //   method:"POST",
-  //   body:JSON.stringify(x),
-  //   headers:{"Content-Type":"application/json"}
-  // })
-  // function writeUserData() {
-  //   const db = data;
-  //   productArray.map((d) => {
-  //     set(ref(db, "products/tyres/" +d.id), {
-  //       type: d.type,
-  //       name: d.name,
-  //       offer: d.offer,
-  //       desc: d.desc,
-  //       price: d.price,
-  //       image: d.image,
-  //     });
-  //   });
-  // }
-  // writeUserData();
   useEffect(() => {
-    const db = data;
-    onValue(ref(db, "products/tyres/"), (snapshot) => {
-      setProductArray(snapshot.val());
-
-    });
       const getProductsData = async () => {
         axios.get('http://localhost:8080/api/products/allproducts')
-        .then((res)=>console.log(res.data))
+        .then((res)=>console.log(setProductArray(res.data)))
+          
+      }
+      const getRims = async () => {
+        axios.get('http://localhost:8080/api/products/getProductsInOneCategory/rim')
+        .then((res)=>console.log(setRims(res.data)))
+          
+      }
+      const getTyres = async () => {
+        axios.get('http://localhost:8080/api/products/getProductsInOneCategory/tyre')
+        .then((res)=>console.log(setTyres(res.data)))
           
       }
       getProductsData()
-  
+      getRims()
+      getTyres()
 
 
   }, []);
@@ -133,12 +42,12 @@ const Products = (props) => {
       <section>
         <div className={styles.productsTitle}>
           <h4 className="text-center">Rims and Tyres</h4>
-          <a href="#rim" style={{ textAlign: "right" }}>
+          <Link to="/products" style={{ textAlign: "right" }}>
             See more
             <span>
               <FaArrowRight />
             </span>
-          </a>
+          </Link>
         </div>
         <div className="container-flex">
           <Row className={`${styles.singleProduct}`}>
@@ -150,9 +59,12 @@ const Products = (props) => {
                     id={prod.id}
                     title={prod.name}
                     price={prod.price}
-                    offer={prod.offer}
-                    description={prod.desc}
+                    offer={1.1*prod.price}
+                    description={prod.description}
                     image={prod.image}
+                    brand={prod.brand}
+                    material={prod.material}
+                    units={prod.units}
                     product={true}
                   />
                 </div>
@@ -164,26 +76,29 @@ const Products = (props) => {
       <section>
         <div className={styles.productsTitle}>
           <h4 className="text-center">Rims</h4>
-          <a href="#rim" style={{ textAlign: "right" }}>
+          <Link to="/products/rims" style={{ textAlign: "right" }}>
             See more
             <span>
               <FaArrowRight />
             </span>
-          </a>
+          </Link>
         </div>
         <div className="container-flex">
           <Row className={`${styles.singleProduct}`}>
-            {productArray.map((prod) => (
+            {rims.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
-                  key={prod.id}
-                  id={prod.id}
-                  title={prod.name}
-                  price={prod.price}
-                  offer={prod.offer}
-                  description={prod.desc}
-                  image={prod.image}
-                  product={true}
+                    key={prod.id}
+                    id={prod.id}
+                    title={prod.name}
+                    price={prod.price}
+                    offer={1.1*prod.price}
+                    description={prod.description}
+                    image={prod.image}
+                    brand={prod.brand}
+                    material={prod.material}
+                    units={prod.units}
+                    product={true}
                 />
               </Col>
             ))}
@@ -193,26 +108,29 @@ const Products = (props) => {
       <section>
         <div className={styles.productsTitle}>
           <h4 className="text-center">Tyres</h4>
-          <a href="#rim" style={{ textAlign: "right" }}>
+          <Link to="/products/tyres" style={{ textAlign: "right" }}>
             See more
             <span>
               <FaArrowRight />
             </span>
-          </a>
+          </Link>
         </div>
         <div className="container-flex">
           <Row className={`${styles.singleProduct}`}>
-            {productArray.map((prod) => (
+            {tyres.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
-                  key={prod.id}
-                  id={prod.id}
-                  title={prod.name}
-                  price={prod.price}
-                  offer={prod.offer}
-                  description={prod.desc}
-                  image={prod.image}
-                  product={true}
+                    key={prod.id}
+                    id={prod.id}
+                    title={prod.name}
+                    price={prod.price}
+                    offer={1.1*prod.price}
+                    description={prod.description}
+                    image={prod.image}
+                    brand={prod.brand}
+                    material={prod.material}
+                    units={prod.units}
+                    product={true}
                 />
               </Col>
             ))}

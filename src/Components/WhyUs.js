@@ -4,7 +4,6 @@ import ig from "./../assets/images/notes.jpg";
 import client from "./../assets/images/client.png";
 import call from "./../assets/images/realPhone.png";
 import mechanic from "./../assets/images/spanners.png";
-import Row from 'react-bootstrap/Row';
 
 import styles from "./WhyUs.module.css";
 const WhyUs = (props) => {
