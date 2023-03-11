@@ -11,6 +11,8 @@ import { onValue, ref } from "firebase/database";
 import data from "./../../fire";
 import { useEffect, useState } from "react";
 import MoreDetails from "../MoreDetails";
+import axios from "axios";
+
 const Products = (props) => {
   const [productArray, setProductArray] = useState([]);
   const [details, setDetails] = useState(false);
@@ -113,11 +115,19 @@ const Products = (props) => {
       setProductArray(snapshot.val());
 
     });
+      const getProductsData = async () => {
+        axios.get('http://localhost:8080/api/products/allproducts')
+        .then((res)=>console.log(res.data))
+          
+      }
+      getProductsData()
+  
+
+
   }, []);
   const clickHandler = () => {
     setDetails(true);
   };
-
   return (
     <div>
       <section>
