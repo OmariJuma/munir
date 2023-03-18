@@ -67,3 +67,7 @@
     background-color: #8a2b06;
     color: white;
   }
+  .imgNtitle{
+    display: flex;
+    gap:1rem;
+  }

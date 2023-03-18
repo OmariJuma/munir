@@ -31,7 +31,7 @@ const MoreDetails = (props) => {
         <Input />
       </div>
 
-      <Row className="more-details">
+      <Row className="more-details" id="start">
         <Col xs={12} sm={12} md={6} lg={6}>
           <Carousel>
             <Carousel.Item>

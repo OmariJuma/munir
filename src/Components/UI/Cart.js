@@ -16,7 +16,7 @@ const Cart = (props) => {
   // );
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `Kes ${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -47,7 +47,7 @@ const Cart = (props) => {
       {cartItems}
      {!hasItems&&<h4>You have no items in the cart</h4>}
       <div className={classes.total}>
-        <span>Total Amount</span>
+        <span>Total:</span>
         <span>{totalAmount}</span>
       </div>
       <div className={classes.actions}>

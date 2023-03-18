@@ -127,37 +127,30 @@ const AboutUs = () => {
       </Row>
       <Services />
 <WhyUs/>
-      <div className={styles.content}>
-        <img id={styles.spanner} src={C} alt="spanners" />
-        <div className={styles.count}>
-          <Row>
-          <Col xm={12} sm={12} md={12}>
-          <h4 id={styles.journey}>Its our journey</h4>
-            </Col><br/>
-
-            <Col xm={12} sm={12} md={6}>
-            <h3><CountUp end={100} enableScrollSpy /></h3> 
-            <h6>Monthly</h6>
-            </Col>
-            <Col xm={12} sm={12} md={6}>
-            <h3><CountUp end={100} enableScrollSpy /></h3> 
-            <h6>Monthly</h6>
-
-            </Col>
-            <Col xm={12} sm={12} md={6}>
-            <h3><CountUp end={100} enableScrollSpy /></h3> 
-            <h6>Monthly</h6>
-
-            </Col>
-            <Col xm={12} sm={12} md={6}>
-            <h3> <span id="counter" /></h3> 
-            <h6>Monthly</h6>
-
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <p id={styles.loc}>Find us today</p>
+<Card className={`${styles.overlayDiv} "bg-dark text-white text-center justify-center "`}>
+      <Card.Img src={C} alt="Card image" id={styles.img}/>
+      <Card.ImgOverlay>
+  <Col xm={12} sm={12} md={12}>
+  <h4 id={styles.journey}>Its our journey</h4>
+    </Col><br/>
+    <Col xm={12} sm={12} md={12}>
+    <h3><CountUp end={100} enableScrollSpy /></h3> 
+    <h6>Monthly</h6>
+    </Col>
+    <Col xm={12} sm={12} md={12}>
+    <h3><CountUp end={100} enableScrollSpy /></h3> 
+    <h6>Monthly</h6>
+    </Col>
+    <Col xm={12} sm={12} md={12}>
+    <h3><CountUp end={100} enableScrollSpy /></h3> 
+    <h6>Monthly</h6>
+    </Col>
+    <Col xm={12} sm={12} md={12}>
+    <h3> <span id="counter" /></h3> 
+    <h6>Monthly</h6>
+    </Col>
+      </Card.ImgOverlay>
+    </Card>      <p id={styles.loc}>Find us today</p>
       <h4 id={styles.h4}>Our location</h4>
 
       <p id={styles.a}

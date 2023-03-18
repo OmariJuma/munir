@@ -13,26 +13,24 @@ const Products = () => {
   const [tyres, setTyres] = useState([]);
   const [details, setDetails] = useState(false);
   useEffect(() => {
-      const getProductsData = async () => {
-        axios.get('http://localhost:8080/api/products/allproducts')
-        .then((res)=>console.log(setProductArray(res.data)))
-          
-      }
-      const getRims = async () => {
-        axios.get('http://localhost:8080/api/products/getProductsInOneCategory/rim')
-        .then((res)=>console.log(setRims(res.data)))
-          
-      }
-      const getTyres = async () => {
-        axios.get('http://localhost:8080/api/products/getProductsInOneCategory/tyre')
-        .then((res)=>console.log(setTyres(res.data)))
-          
-      }
-      getProductsData()
-      getRims()
-      getTyres()
-
-
+    const getProductsData = async () => {
+      axios
+        .get("http://localhost:8080/api/products/allproducts")
+        .then((res) => setProductArray(res.data));
+    };
+    const getRims = async () => {
+      axios
+        .get("http://localhost:8080/api/products/getProductsInOneCategory/rim")
+        .then((res) => setRims(res.data));
+    };
+    const getTyres = async () => {
+      axios
+        .get("http://localhost:8080/api/products/getProductsInOneCategory/tyre")
+        .then((res) => setTyres(res.data));
+    };
+    getProductsData();
+    getRims();
+    getTyres();
   }, []);
   const clickHandler = () => {
     setDetails(true);
@@ -59,7 +57,7 @@ const Products = () => {
                     id={prod.id}
                     title={prod.name}
                     price={prod.price}
-                    offer={1.1*prod.price}
+                    offer={1.1 * prod.price}
                     description={prod.description}
                     image={prod.image}
                     brand={prod.brand}
@@ -88,17 +86,17 @@ const Products = () => {
             {rims.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
-                    key={prod.id}
-                    id={prod.id}
-                    title={prod.name}
-                    price={prod.price}
-                    offer={1.1*prod.price}
-                    description={prod.description}
-                    image={prod.image}
-                    brand={prod.brand}
-                    material={prod.material}
-                    units={prod.units}
-                    product={true}
+                  key={prod.id}
+                  id={prod.id}
+                  title={prod.name}
+                  price={prod.price}
+                  offer={1.1 * prod.price}
+                  description={prod.description}
+                  image={prod.image}
+                  brand={prod.brand}
+                  material={prod.material}
+                  units={prod.units}
+                  product={true}
                 />
               </Col>
             ))}
@@ -120,17 +118,17 @@ const Products = () => {
             {tyres.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
-                    key={prod.id}
-                    id={prod.id}
-                    title={prod.name}
-                    price={prod.price}
-                    offer={1.1*prod.price}
-                    description={prod.description}
-                    image={prod.image}
-                    brand={prod.brand}
-                    material={prod.material}
-                    units={prod.units}
-                    product={true}
+                  key={prod.id}
+                  id={prod.id}
+                  title={prod.name}
+                  price={prod.price}
+                  offer={1.1 * prod.price}
+                  description={prod.description}
+                  image={prod.image}
+                  brand={prod.brand}
+                  material={prod.material}
+                  units={prod.units}
+                  product={true}
                 />
               </Col>
             ))}
