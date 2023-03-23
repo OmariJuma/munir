@@ -19,6 +19,7 @@ import maxis from "./../../assets/images/logos/maxis.png";
 import sailun from "./../../assets/images/logos/sailun.png";
 import yana from "./../../assets/images/logos/yana.jpg";
 import saf from "./../../assets/images/logos/saf.webp";
+import { v4 } from 'uuid'
 
 const MySwiper = () => {
   return (
@@ -56,34 +57,34 @@ mx-auto"
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={saf} alt="partner logo" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={falken} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={goodrich} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={bridgestone} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={gtradial} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={irelli} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={joyroad} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={maxis} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={sailun} alt="partner logo " />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide key={v4()}>
           <img src={yana} alt="partner logo " />
         </SwiperSlide>
       </Swiper>

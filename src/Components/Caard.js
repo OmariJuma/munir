@@ -31,7 +31,7 @@ const Caard = (props) => {
               <Card.Img src={props.image} />
               <Card.Body id={"cardBody"}>
                 <Card.Text style={{ marginBottom: "2rem" }}>
-                  {props.description}
+                  {props.description.slice(0, 25)}...
                   <div className="priceNstrike">
                     <strong>KSH {props.price}</strong>
                     <s>KSH {props.offer}</s>

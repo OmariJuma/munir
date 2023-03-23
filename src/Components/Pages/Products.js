@@ -6,6 +6,7 @@ import { Col, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { v4 } from 'uuid'
 
 const Products = () => {
   const [productArray, setProductArray] = useState([]);
@@ -15,17 +16,17 @@ const Products = () => {
   useEffect(() => {
     const getProductsData = async () => {
       axios
-        .get("http://localhost:8080/api/products/allproducts")
+        .get("https://test.muneerautomotive.co.ke/api/products/allproducts")
         .then((res) => setProductArray(res.data));
     };
     const getRims = async () => {
       axios
-        .get("http://localhost:8080/api/products/getProductsInOneCategory/rim")
+        .get("/api/products/getProductsInOneCategory/rim")
         .then((res) => setRims(res.data));
     };
     const getTyres = async () => {
       axios
-        .get("http://localhost:8080/api/products/getProductsInOneCategory/tyre")
+        .get("/api/products/getProductsInOneCategory/tyre")
         .then((res) => setTyres(res.data));
     };
     getProductsData();
@@ -53,7 +54,7 @@ const Products = () => {
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <div onClick={clickHandler}>
                   <Caard
-                    key={prod.id}
+                    key={v4()}
                     id={prod.id}
                     title={prod.name}
                     price={prod.price}
@@ -86,7 +87,7 @@ const Products = () => {
             {rims.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
-                  key={prod.id}
+                  key={v4()}
                   id={prod.id}
                   title={prod.name}
                   price={prod.price}
@@ -118,7 +119,7 @@ const Products = () => {
             {tyres.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <Caard
-                  key={prod.id}
+                  key={v4()}
                   id={prod.id}
                   title={prod.name}
                   price={prod.price}
