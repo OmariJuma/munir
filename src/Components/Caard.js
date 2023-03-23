@@ -13,7 +13,7 @@ const Caard = (props) => {
     title: props.title,
     description: props.description,
     offer: props.offer,
-    image: props.image,
+    image: `https://test.muneerautomotive.co.ke/${props.image}`,
     brand: props.brand,
     material: props.material,
     units: props.units,

@@ -16,17 +16,17 @@ const Products = () => {
   useEffect(() => {
     const getProductsData = async () => {
       axios
-        .get("/api/products/allproducts")
+        .get("https://test.muneerautomotive.co.ke/api/products/allproducts")
         .then((res) => setProductArray(res.data));
     };
     const getRims = async () => {
       axios
-        .get("/api/products/getProductsInOneCategory/rim")
+        .get("https://test.muneerautomotive.co.ke/api/products/getProductsInOneCategory/rim")
         .then((res) => setRims(res.data));
     };
     const getTyres = async () => {
       axios
-        .get("/api/products/getProductsInOneCategory/tyre")
+        .get("https://test.muneerautomotive.co.ke/api/products/getProductsInOneCategory/tyre")
         .then((res) => setTyres(res.data));
     };
     getProductsData();
