@@ -28,7 +28,7 @@ const Caard = (props) => {
               <div id="aboveCardContainer">
                 <h5 id="aboveCard">{props.title}</h5>
               </div>
-              <Card.Img src={props.image} />
+              <Card.Img src={`https://test.muneerautomotive.co.ke/${props.image}`}/>
               <Card.Body id={"cardBody"}>
                 <Card.Text style={{ marginBottom: "2rem" }}>
                   {props.description.slice(0, 25)}...

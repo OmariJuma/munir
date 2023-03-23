@@ -1,6 +1,8 @@
 import styles from "./ButtonCustom.module.css";
 import { FaCartPlus } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const ButtonCustom = (props) => {
   const variant = props.variant;
@@ -8,23 +10,24 @@ const ButtonCustom = (props) => {
   return (
     <>
       {!variant && (
-        <button
-          type="button"
+        <Link
           style={{ color: "red", border: "2px solid red" }}
           id={styles.btn}
+         to="/products/tyres"
         >
           {props.text}
-        </button>
+        </Link>
       )}
       {variant && (
-        <button
-          type="button"
+        <Link
           className={styles.variant}
           id={styles.btn}
+          to="/products/rims"
+
           onClick={onClickHandler}
         >
           {props.text}
-        </button>
+        </Link>
       )}
     </>
   );

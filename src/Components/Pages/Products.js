@@ -16,7 +16,7 @@ const Products = () => {
   useEffect(() => {
     const getProductsData = async () => {
       axios
-        .get("https://test.muneerautomotive.co.ke/api/products/allproducts")
+        .get("/api/products/allproducts")
         .then((res) => setProductArray(res.data));
     };
     const getRims = async () => {
@@ -58,7 +58,7 @@ const Products = () => {
                     id={prod.id}
                     title={prod.name}
                     price={prod.price}
-                    offer={1.1 * prod.price}
+                    offer={Math.floor(1.1 * prod.price)}
                     description={prod.description}
                     image={prod.image}
                     brand={prod.brand}
@@ -91,7 +91,7 @@ const Products = () => {
                   id={prod.id}
                   title={prod.name}
                   price={prod.price}
-                  offer={1.1 * prod.price}
+                  offer={Math.floor(1.1 * prod.price)}
                   description={prod.description}
                   image={prod.image}
                   brand={prod.brand}
@@ -123,7 +123,7 @@ const Products = () => {
                   id={prod.id}
                   title={prod.name}
                   price={prod.price}
-                  offer={1.1 * prod.price}
+                  offer={Math.floor(1.1 * prod.price)}
                   description={prod.description}
                   image={prod.image}
                   brand={prod.brand}

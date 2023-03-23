@@ -109,24 +109,6 @@ const NavBar = (props) => {
       <div>
         <Routes>
           <Route
-            path="/"
-            element={
-              <div className="Container-fluid">
-                <Crsl />
-                <Products/>
-
-                <Services />
-                <WhyUs />
-
-                <Success />
-
-                <MySwiper />
-              </div>
-            }
-            errorElement={<Error404/>}
-            exact
-          />
-          <Route
             path="/products/rims"
             element={<Products/>}
             exact
@@ -154,8 +136,27 @@ const NavBar = (props) => {
           />
 
           <Route path="/about-us" element={<AboutUs/>} exact />
-          <Route path="/details" element={<MoreDetails onShowCart={props.onShowCart}/>} exact/>
+          <Route path="details" element={<MoreDetails onShowCart={props.onShowCart}/>} exact/>
           <Route path="*" exact element={<Error404/>} />
+          <Route
+            path="/"
+            element={
+              <div className="Container-fluid">
+                <Crsl />
+                <Products/>
+
+                <Services />
+                <WhyUs />
+
+                <Success />
+
+                <MySwiper />
+              </div>
+            }
+            errorElement={<Error404/>}
+            exact
+          />
+
         </Routes>
       </div>
     </Router>
