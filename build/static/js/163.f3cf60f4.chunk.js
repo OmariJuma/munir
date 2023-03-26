@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmuneer_app=self.webpackChunkmuneer_app||[]).push([[163],{1365:function(e,r,t){t.r(r),t.d(r,{default:function(){return s}});var n=t(1087),c={},i=t.p+"static/media/Error404.ade3a4e16fdc00ec6144.png",a=t(184),s=function(){return(0,a.jsxs)("div",{id:c.errorpage,children:[(0,a.jsx)("img",{style:{height:"100%"},src:i,alt:"error 404"}),(0,a.jsx)(n.rU,{to:"/",style:{textAlign:"center"},children:"Click here to return to the homepage"})]})}}}]);
+//# sourceMappingURL=163.f3cf60f4.chunk.js.map
