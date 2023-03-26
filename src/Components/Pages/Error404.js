@@ -8,11 +8,8 @@ const Error404 = () => {
 //       }
   
     return (<div id={styles.errorpage}>
-<img style={{height:"90%"}} src={e404} alt="error 404"/>
-<p>The page you are looking for does not exist</p>
-<Link to="/" >homepage</Link>
-<Link to="products/rims" >rims</Link>
-<Link to="/products/tyres" >tyres</Link>
+<img style={{height:"100%"}} src={e404} alt="error 404"/>
+<Link to="/" style={{textAlign:"center"}}>Click here to return to the homepage</Link>
     </div>  );
 }
  

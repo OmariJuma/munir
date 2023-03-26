@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./Components/NavBar";
 import CartProvider from "./Components/store/CartProvider";
 import Cart from "./Components/UI/Cart";
+import ErrorBoundary from "./Components/UI/ErrorBoundary";
 import Footer from "./Components/UI/Footer";
 import SidebarIcons from "./Components/UI/SidebarIcons";
 import Spinner from "./Components/UI/Spinner";
@@ -19,6 +20,7 @@ function App() {
   };
 
   return (
+    <ErrorBoundary>
     <CartProvider>
       <Suspense fallback={<Spinner />}>
         <NavBar onShowCart={showCart} />
@@ -29,6 +31,7 @@ function App() {
         {cartIsOpen && <Cart onHideCart={hideCart} />}
       </Suspense>
     </CartProvider>
+    </ErrorBoundary>
   );
 }
 

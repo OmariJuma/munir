@@ -28,11 +28,12 @@ margin: auto;
 }
 #ceoTitle{
   color:var(--orange);
+  opacity: 1;
 }
 
 #ceoText{
   font-size:14px;
-}
+  opacity: 1;}
 @media screen and (max-width: 500px) {
   #def {
     display: none;

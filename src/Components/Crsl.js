@@ -27,7 +27,7 @@ const Crsl = () => {
         <img src={Mahmoud3} alt="the home screen" id={styles.sub} />
         </div>
         <Carousel.Caption>
-          <h3 id={styles.ceoTitle}>CE0 Mr Mahmoud</h3>
+          <h3 id={styles.ceoTitle}>CE0 Mr Mrefu</h3>
           <p id={styles.ceoText}>Hi I hope you are doing fine, this is our business, come and lets do business together. I promise you'll enjoy our services</p>
         </Carousel.Caption>
       </Carousel.Item>
