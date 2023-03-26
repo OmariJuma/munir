@@ -1,7 +1,6 @@
 import {
   FaFacebookF,
   FaTwitter,
-  FaGoogle,
   FaTiktok,
   FaPhone,
   FaEnvelope,
@@ -29,25 +28,20 @@ const Footer = () => {
 
           {/* <!-- Right --> */}
           <div>
-            <a href="" className="text-white me-4">
+            <a href="https://www.tiktok.com/@mahmudawadh2" target="_blank" rel="noreferrer" className="text-white me-4">
               <span>
                 <FaTiktok />
               </span>
             </a>
 
-            <a href="" className="text-white me-4">
+            <a href="www.facebook.com" target="_blank" rel="noreferrer" className="text-white me-4">
               <span>
                 <FaFacebookF />
               </span>
             </a>
-            <a href="" className="text-white me-4">
+            <a href="www.twitter.com" target="_blank" rel="noreferrer" className="text-white me-4">
               <span>
                 <FaTwitter />
-              </span>
-            </a>
-            <a href="" className="text-white me-4">
-              <span>
-                <FaGoogle />
               </span>
             </a>
           </div>
@@ -153,7 +147,7 @@ const Footer = () => {
                   </a>
                 </p>
                 <p>
-                  <a href="/products/tyres" className="text-dark">
+                  <a href="/products/rims" className="text-dark">
                     Normal Rims{" "}
                   </a>
                 </p>
@@ -189,7 +183,7 @@ const Footer = () => {
                   </a>
                 </p>
                 <p>
-                  <a href="products/rims" className="text-dark">
+                  <a href="/products/rims" className="text-dark">
                     Rims
                   </a>
                 </p>
@@ -217,8 +211,7 @@ const Footer = () => {
 
                 <a
                   href="https://www.google.com/maps/place/Muneer+Auto+tyres+Limited/@-1.2799975,36.8234224,17z/data=!4m14!1m7!3m6!1s0x182f1176595e53e1:0xc94667e686bce87a!2sMuneer+Auto+tyres+Limited!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7!3m5!1s0x182f1176595e53e1:0xc94667e686bce87a!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7"
-                  target={"_blank"}
-                  // style={{textAlign:"center"}}
+                  target="_blank" rel="noreferrer"               
                 >
                   <span>
                     <FaMapMarkerAlt />
@@ -263,7 +256,7 @@ const Footer = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           © 2023 Copyright:
-          <a className="text-dark" href="#">
+          <a className="text-dark" href="/">
             Muneer Automotive
           </a>
         </div>

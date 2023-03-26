@@ -7,19 +7,31 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { v4 } from 'uuid'
+import Spinner from "../UI/Spinner";
+import NoInternet from "../UI/NoInternet";
 
 const Products = () => {
   const [productArray, setProductArray] = useState([]);
   const [rims, setRims] = useState([]);
   const [tyres, setTyres] = useState([]);
   const [details, setDetails] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
   useEffect(() => {
     const getProductsData = async () => {
+      setIsLoading(true);
       axios
         .get("https://test.muneerautomotive.co.ke/api/products/allproducts")
-        .then((res) => setProductArray(res.data));
+        .then((res) => {
+          setProductArray(res.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          setFailed(true)
+        });
     };
-    const getRims = async () => {
+        const getRims = async () => {
       axios
         .get("https://test.muneerautomotive.co.ke/api/products/getProductsInOneCategory/rim")
         .then((res) => setRims(res.data));
@@ -33,9 +45,6 @@ const Products = () => {
     getRims();
     getTyres();
   }, []);
-  const clickHandler = () => {
-    setDetails(true);
-  };
   return (
     <div>
       <section>
@@ -49,10 +58,12 @@ const Products = () => {
           </Link>
         </div>
         <div className="container-flex">
-          <Row className={`${styles.singleProduct}`}>
+          {isLoading && <Spinner/>}
+          {failed && <NoInternet/>}
+         {!isLoading&& <Row className={`${styles.singleProduct}`}>
             {productArray.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
-                <div onClick={clickHandler}>
+                <div>
                   <Caard
                     key={v4()}
                     id={prod.id}
@@ -69,7 +80,7 @@ const Products = () => {
                 </div>
               </Col>
             ))}
-          </Row>
+          </Row>}
         </div>
       </section>
       <section>
@@ -83,25 +94,29 @@ const Products = () => {
           </Link>
         </div>
         <div className="container-flex">
-          <Row className={`${styles.singleProduct}`}>
-            {rims.map((prod) => (
+        {isLoading && <Spinner/>}
+          {failed && <NoInternet/>}
+         {!isLoading&& <Row className={`${styles.singleProduct}`}>
+            {productArray.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
-                <Caard
-                  key={v4()}
-                  id={prod.id}
-                  title={prod.name}
-                  price={prod.price}
-                  offer={Math.floor(1.1 * prod.price)}
-                  description={prod.description}
-                  image={prod.image}
-                  brand={prod.brand}
-                  material={prod.material}
-                  units={prod.units}
-                  product={true}
-                />
+                <div>
+                  <Caard
+                    key={v4()}
+                    id={prod.id}
+                    title={prod.name}
+                    price={prod.price}
+                    offer={Math.floor(1.1 * prod.price)}
+                    description={prod.description}
+                    image={prod.image}
+                    brand={prod.brand}
+                    material={prod.material}
+                    units={prod.units}
+                    product={true}
+                  />
+                </div>
               </Col>
             ))}
-          </Row>
+          </Row>}
         </div>
       </section>
       <section>
@@ -115,25 +130,29 @@ const Products = () => {
           </Link>
         </div>
         <div className="container-flex">
-          <Row className={`${styles.singleProduct}`}>
-            {tyres.map((prod) => (
+        {isLoading && <Spinner/>}
+          {failed && <NoInternet/>}
+         {!isLoading&& <Row className={`${styles.singleProduct}`}>
+            {productArray.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
-                <Caard
-                  key={v4()}
-                  id={prod.id}
-                  title={prod.name}
-                  price={prod.price}
-                  offer={Math.floor(1.1 * prod.price)}
-                  description={prod.description}
-                  image={prod.image}
-                  brand={prod.brand}
-                  material={prod.material}
-                  units={prod.units}
-                  product={true}
-                />
+                <div>
+                  <Caard
+                    key={v4()}
+                    id={prod.id}
+                    title={prod.name}
+                    price={prod.price}
+                    offer={Math.floor(1.1 * prod.price)}
+                    description={prod.description}
+                    image={prod.image}
+                    brand={prod.brand}
+                    material={prod.material}
+                    units={prod.units}
+                    product={true}
+                  />
+                </div>
               </Col>
             ))}
-          </Row>
+          </Row>}
         </div>
       </section>
     </div>

@@ -6,10 +6,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React, { useContext } from "react";
+import React, { useContext ,lazy, Suspense} from "react";
 import {
   Link,
-  HashRouter as Router,
+  BrowserRouter as Router,
   // BrowserRouter as Router,
   Route,
   Routes,
@@ -19,13 +19,14 @@ import Services from "./../Components/Services";
 import Success from "./../Components/Success";
 import WhyUs from "./../Components/WhyUs";
 import MySwiper from "./../Components/UI/MySwiper";
-import MoreDetails from "./MoreDetails";
-import Error404 from "./Pages/Error404.js";
-import BookingPage from "./Pages/BookingPage";
-import AboutUs from "./Pages/AboutUs";
 import Products from "./Pages/Products";
 import CartContext from "./store/cart-context";
 import logo from "./../assets/images/icons/Rlogo1.svg";
+import Spinner from "./UI/Spinner";
+const MoreDetails = lazy(() => import("./MoreDetails"));
+const Error404 = lazy(() => import("./Pages/Error404.js"));
+const BookingPage = lazy(() => import("./Pages/BookingPage"));
+const AboutUs = lazy(() => import("./Pages/AboutUs"));
 
 const NavBar = (props) => {
   const cartCtx = useContext(CartContext);
@@ -34,6 +35,7 @@ const NavBar = (props) => {
   }, 0);
 
   return (
+    <Suspense fallback={<Spinner/>}>
     <Router>
       <Navbar
         expand="lg"
@@ -136,7 +138,7 @@ const NavBar = (props) => {
           />
 
           <Route path="/about-us" element={<AboutUs/>} exact />
-          <Route path="details" element={<MoreDetails onShowCart={props.onShowCart}/>} exact/>
+          <Route path="/details/:id" element={<MoreDetails onShowCart={props.onShowCart}/>} exact/>
           <Route path="*" exact element={<Error404/>} />
           <Route
             path="/"
@@ -160,6 +162,7 @@ const NavBar = (props) => {
         </Routes>
       </div>
     </Router>
+    </Suspense>
  
   );
 };

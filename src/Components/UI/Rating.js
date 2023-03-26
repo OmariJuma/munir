@@ -3,12 +3,11 @@ import ReactStars from "react-rating-stars-component";
 import React from "react";
 const Rating = (props) => {
   const ratingChanged = (newRating) => {
-    console.log(newRating);
+    // console.log(newRating);
   };
   return (
     <ReactStars
-    
-    value={3}
+      value={3}
       count={5}
       onChange={ratingChanged}
       size={16}

@@ -11,7 +11,7 @@ html {
 }
 body,html {
   background-color: var(--white);
-  max-width: 100%;
+  /* max-width: 100%; */
   overflow-x: hidden;
 }
 
