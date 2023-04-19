@@ -7,6 +7,7 @@ import ErrorBoundary from "./Components/UI/ErrorBoundary";
 import Footer from "./Components/UI/Footer";
 import SidebarIcons from "./Components/UI/SidebarIcons";
 import Spinner from "./Components/UI/Spinner";
+import SearchModal from "./Components/UI/SearchModal";
 // import BreadCrumb from "./Components/UI/BreadCrumb";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <CartProvider>
       <Suspense fallback={<Spinner />}>
         <NavBar onShowCart={showCart} />
+        <SearchModal/>
         {/* <BreadCrumb/> */}
         <SidebarIcons />
 

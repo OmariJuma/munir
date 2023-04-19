@@ -17,7 +17,7 @@ const Crsl = () => {
         <Carousel.Caption>
           <MiniCard />
           <div className={styles.mini}>
-            <Input />
+            <Input/>
           </div>
         </Carousel.Caption>
       </Carousel.Item>

@@ -1,11 +1,16 @@
 import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import styles from "./Input.module.css";
+import SearchModal from "./SearchModal";
+import { useState } from "react";
 
 const Input = () => {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <>
-      <InputGroup className={`${"mb-3"} ${styles.inpt}`}>
+      <InputGroup className={`${"mb-3"} ${styles.inpt}`} onMouseDown={()=>setModalShow(true)}
+>
         <FormControl
           type="text"
           aria-label="Search bar with button addon"
@@ -18,6 +23,9 @@ const Input = () => {
           </span>
         </Button>
       </InputGroup>
+     <SearchModal show={modalShow}
+        onHide={() => setModalShow(false)}/>
+    
     </>
   );
 };

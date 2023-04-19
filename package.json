@@ -4,6 +4,11 @@
   "proxy": "https://test.muneerautomotive.co.ke",
   "private": true,
   "homepage": "/",
+  "devServer": {
+    "allowedHosts": [
+      "localhost"
+    ]
+  },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@testing-library/jest-dom": "^5.16.5",
