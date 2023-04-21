@@ -1,4 +1,4 @@
-import { Button, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import styles from "./Input.module.css";
 import SearchModal from "./SearchModal";
@@ -11,7 +11,7 @@ const Input = () => {
     <>
       <InputGroup className={`${"mb-3"} ${styles.inpt}`} onMouseDown={()=>setModalShow(true)}
 >
-        <FormControl
+        <Form.Control
           type="text"
           aria-label="Search bar with button addon"
           aria-describedby="basic-addon1"

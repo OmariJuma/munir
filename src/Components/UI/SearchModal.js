@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import InputGroup from "react-bootstrap/InputGroup";
+import { Col, Form, Row } from "react-bootstrap";
+import { FaSearch } from "react-icons/fa";
 const SearchModal = (props) => {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
+  //implement an event that detects if a use is typing which then removes the popular searches
+  const [typing, setIsTyping] = useState(false);
+  const [value, setValue] = useState("");
+
+  const changeHandler = (e) => {
+    setIsTyping(true);
+    setValue(e.target.value);
+  };
   return (
-<Modal
+    <Modal
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      // dialogClassName="modal-90h"
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -17,61 +29,50 @@ const SearchModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <InputGroup className="mb-3" onChange={changeHandler}>
+          <Form.Control
+            placeholder="Am looking for..."
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <Button bg="primary" id="button-addon1">
+            <span>
+              <FaSearch />
+            </span>
+          </Button>
+        </InputGroup>
+       {!typing &&<>
+        <h4>Popular Searches</h4>
+        <Row>
+          <Col xs={4} md={3} lg={3}>
+            <a href="">Offset Rims</a>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            <a href="">Offset Rims</a>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            <a href="">Offset Rims</a>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            <a href="">Offset Rims</a>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            <a href="">Offset Rims</a>
+          </Col>
+          <Col xs={4} md={3} lg={3}>
+            <a href="">Offset Rims</a>
+          </Col>
+        </Row>
+        </>}
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
-    </Modal>      );
-    // <>
-    {/* <Button variant="primary" onClick={handleShow}>
+    </Modal>
+  );
+  // <>
+  {
+    /* <Button variant="primary" onClick={handleShow}>
       Launch demo modal
     </Button>
 
@@ -88,8 +89,8 @@ const SearchModal = (props) => {
           Save Changes
         </Button>
       </Modal.Footer>
-    </Modal> */}
+    </Modal> */
+  }
   // </>
-
 };
 export default SearchModal;
