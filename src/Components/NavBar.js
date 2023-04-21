@@ -40,6 +40,7 @@ const NavBar = (props) => {
       <Navbar
         expand="lg"
         className="navbar navbar-expand-sm navbar-right "
+        id="top"
       >
         <div className="container" style={{display:"flex",justifyContent:"space-around"}}>
           <Navbar.Toggle aria-controls="basic-navbar-nav">

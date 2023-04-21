@@ -29,7 +29,7 @@ function App() {
         {/* <BreadCrumb/> */}
         <SidebarIcons />
 
-        <Footer />
+        <Footer/>
         {cartIsOpen && <Cart onHideCart={hideCart} />}
       </Suspense>
     </CartProvider>

@@ -7,7 +7,7 @@ import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { SiNamecheap } from "react-icons/si";
 import { TbBrandSketch } from "react-icons/tb";
 import { useLocation } from "react-router";
-import { useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
 import CartContext from "./store/cart-context";
 const MoreDetails = (props) => {
   const location = useLocation();
@@ -25,8 +25,16 @@ const MoreDetails = (props) => {
     });
   };
 
+  const topRef = useRef(null);
+
+  // scroll to the top of the page on mount
+  useEffect(() => {
+    topRef.current.scrollIntoView({ behavior:"auto" });
+  }, []);
+
+
   return (
-    <div className="container" style={{ backgroundColor: "#f9f9f9" }}>
+    <div className="container" ref={topRef} style={{ backgroundColor: "#f9f9f9" }}>
       <div id="inp">
         <Input />
       </div>
