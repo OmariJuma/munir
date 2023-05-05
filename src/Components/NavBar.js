@@ -74,12 +74,12 @@ const NavBar = (props) => {
               id="offcanvasNavbar-expand-"
               aria-labelledby="offcanvasNavbarLabel-expand-"
                placement="start"
-               style={{width:"90vw"}}
+               style={{width:"90vw", backgroundColor:"#39bce5"}}
               onHide={() => setShow(false)}
 >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel-expand-">
-                  Muneer Automotive
+                <img src={logo} alt="logo" id="muneerLogo" />
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
