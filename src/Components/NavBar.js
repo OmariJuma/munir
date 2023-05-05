@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React, { useContext, lazy, Suspense, useRef } from "react";
+import React, { useContext, lazy, Suspense, useState } from "react";
 import {
   Link,
   BrowserRouter as Router,
@@ -23,43 +23,20 @@ import Products from "./Pages/Products";
 import CartContext from "./store/cart-context";
 import logo from "./../assets/images/icons/logo300by150.svg";
 import Spinner from "./UI/Spinner";
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const MoreDetails = lazy(() => import("./MoreDetails"));
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
 const AboutUs = lazy(() => import("./Pages/AboutUs"));
 
-const NavBar = (props) => {
-  const navButton = useRef(null);
-  const linksContainerRef = useRef(null);
 
-  //can you add a condition to the collapseNav function to check if the nav is collapsed or not and then collapse it if it is not collapsed and vice versa
-  //execute the function when the nav is clicked
-  //use the classList.contains method to check if the nav is collapsed or not
-  //use the classList.add method to add the collapsed class to the nav
-  //use the classList.remove method to remove the collapsed class from the nav
-  function collapseNav() {
-    if(!navButton.current.classList.contains("collapsed")){
-    navButton.current.classList.add("collapsed");
-    linksContainerRef.current.classList.remove("show");}
-    else{
-      navButton.current.classList.remove("collapsed");
-      linksContainerRef.current.classList.add("show");
-    }
-    
-  }
-  //should I handle the state globally or locally?
-  //I think I should handle the state globally because I want to access the state from different components
-  //I will use the useContext hook to handle the state globally
-  //I will create a context folder and inside it I will create a file called cart-context.js
-  //I will create a CartContext using the createContext method
-  //I will create a CartProvider component that will wrap the App component
-  //I will create a cartCtx constant and assign it the value returned from the useContext hook
-  //will it solve the of re-rendering the navigation bar when the i visit a new page?  yes it will solve the problem of re-rendering the navigation bar when I visit a new page because the navigation bar will not re-render when the state changes because the state is handled globally and not locally and the navigation bar is not a child of the CartProvider component so it will not re-render when the state changes
+const NavBar = (props) => {
+  const [show, setShow] =useState(false);
+  const handleOpenOffcanvas = () => setShow(true);
+  const handleCloseOffcanvas = () => setShow(false);
 
   const cartCtx = useContext(CartContext);
-  const { items } = cartCtx;
-
   const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
@@ -77,12 +54,12 @@ const NavBar = (props) => {
             style={{ display: "flex", justifyContent: "space-around" }}
           >
             <Navbar.Toggle
-              ref={navButton}
               aria-controls="basic-navbar-nav"
               data-bs-toggle="collapse"
-              data-bs-target="#basic-navbar-nav"
+              data-bs-target="#offcanvasNavbar-expand-"
               aria-expanded="false"
               aria-label="Toggle navigation"
+              onClick={handleOpenOffcanvas}
             >
               <span>
                 <GiHamburgerMenu />
@@ -92,11 +69,20 @@ const NavBar = (props) => {
             <Navbar.Brand href="/" className="linkie bt-2">
               <img src={logo} alt="logo" id="muneerLogo" />
             </Navbar.Brand>
-            <Navbar.Collapse
-              id="basic-navbar-nav"
-              className="justify-content-center"
-              ref={linksContainerRef}
-            >
+            <Navbar.Offcanvas
+              show={show}
+              id="offcanvasNavbar-expand-"
+              aria-labelledby="offcanvasNavbarLabel-expand-"
+               placement="start"
+               style={{width:"90vw"}}
+              onHide={() => setShow(false)}
+>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id="offcanvasNavbarLabel-expand-">
+                  Muneer Automotive
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
               <Nav
                 variant="tabs"
                 className="justify-content-center"
@@ -106,14 +92,14 @@ const NavBar = (props) => {
                   <Input />
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link as={Link} onClick={collapseNav} to="/">
+                  <Nav.Link as={Link} onClick={handleCloseOffcanvas} to="/">
                     Home
                   </Nav.Link>
                 </Nav.Item>
                 <NavDropdown title="Products" id="nav-dropdown">
                   <NavDropdown.Item
                     as={Link}
-                    onClick={collapseNav}
+                    onClick={handleCloseOffcanvas}
                     to="/products/rims"
                     eventKey="4.1"
                   >
@@ -121,7 +107,7 @@ const NavBar = (props) => {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    onClick={collapseNav}
+                    onClick={handleCloseOffcanvas}
                     to="/products/tyres"
                     eventKey="4.2"
                   >
@@ -130,7 +116,7 @@ const NavBar = (props) => {
                   <NavDropdown.Item
                     as={Link}
                     to="/products"
-                    onClick={collapseNav}
+                    onClick={handleCloseOffcanvas}
                     eventKey="4.3"
                   >
                     Rims and Tyres
@@ -140,7 +126,7 @@ const NavBar = (props) => {
                   <Nav.Link
                     as={Link}
                     to="/booking"
-                    onClick={collapseNav}
+                    onClick={handleCloseOffcanvas}
                     eventKey="link-2"
                   >
                     Booking
@@ -150,14 +136,18 @@ const NavBar = (props) => {
                   <Nav.Link
                     as={Link}
                     to="/about-us"
-                    onClick={collapseNav}
+                    onClick={handleCloseOffcanvas}
                     eventKey="link-2"
                   >
                     About us
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
-            </Navbar.Collapse>
+
+              </Offcanvas.Body>
+</Navbar.Offcanvas>
+            
+            
             <span className="cartIcon">
               <button>
                 <FaRegUserCircle />

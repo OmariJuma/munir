@@ -16,6 +16,12 @@
 .nav-link {
   color: black;
 }
+.offcanvas-body {
+  /* display: flex;
+  align-items: center; */
+  justify-content: center;
+  /* padding: 1rem 1rem; */
+}
 #muneerLogo{
   width:100px;
   height:100px;
