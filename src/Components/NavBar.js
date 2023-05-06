@@ -25,8 +25,7 @@ import logo from "./../assets/images/icons/logo300by150.svg";
 import Spinner from "./UI/Spinner";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Search from "./Pages/Search";
-
-const MoreDetails = lazy(() => import("./MoreDetails"));
+import MoreDetails from "./MoreDetails";
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
 const AboutUs = lazy(() => import("./Pages/AboutUs"));

@@ -14,6 +14,7 @@ const MoreDetails = (props) => {
   const state = location.state;
   const cartCtx = useContext(CartContext);
   const price = `${state.price.toFixed(2)}`;
+  const offer = `${state.offer.toFixed(2)}`;
 
   const addToCartHandler = (amount = 1) => {
     cartCtx.addItem({
@@ -80,8 +81,8 @@ const MoreDetails = (props) => {
                   <span className="faicon" style={{ gap: "0" }}>
                     <FaMoneyBillWave />
                   </span>
-                  <strong style={{ marginRight: "1rem" }}>KSH {price}</strong>
-                  <s style={{ color: "red" }}>KSH {state.offer}</s>
+                  <strong style={{ marginRight: "1rem", color:"green" }}>KSH {price}</strong>
+                  <s style={{ color: "red" }}>KSH {offer}</s>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <span className="faicon">

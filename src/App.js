@@ -1,15 +1,14 @@
-import { Suspense, useState } from "react";
+import { lazy,Suspense, useState } from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
 import CartProvider from "./Components/store/CartProvider";
 import Cart from "./Components/UI/Cart";
 import ErrorBoundary from "./Components/UI/ErrorBoundary";
-import Footer from "./Components/UI/Footer";
 import SidebarIcons from "./Components/UI/SidebarIcons";
 import Spinner from "./Components/UI/Spinner";
 import SearchModal from "./Components/UI/SearchModal";
 // import BreadCrumb from "./Components/UI/BreadCrumb";
-
+const Footer = lazy(() => import("./Components/UI/Footer"));
 function App() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
 
