@@ -1,24 +1,53 @@
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import styles from "./Input.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
+import Caard from "../Caard";
+import { Link } from "react-router-dom";
+const Input = (props) => {
+  const navigate = useNavigate();
+  const ref = useRef();
+  var key = "";
+  const [searchResults, setSearchResults] = useState([]);
+  var data={
+    id: "1",
+    price: "1",
+    title: "1",
+    description: "1",
+    offer: "",
+    image: "",  
+    brand: "",
+    material: "",
+    units: "",
+  }
 
-const Input = () => {
-  // const [modalShow, setModalShow] = useState(false);
-  const [typing, setIsTyping] = useState("");
-  const changeHandler = (e) => {
-    // console.log(e.target.value);
-    setIsTyping(e.target.value);
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    key = ref.current.value;
+    await axios
+      .get(`https://test.muneerautomotive.co.ke/api/products/product/${key}`)
+      .then((res) => {
+        // console.log(res.data);
+        setSearchResults(res.data);
+        data=res.data
+        navigate(`/search/${key}`, { state: data });
+
+        console.log(data);
+          
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
-
-const submitHandler=async(e)=>{
-  e.preventDefault();
-  await axios.get(`https://test.muneerautomotive.co.ke/api/products/product/${typing}`).then((res)=>{
-    console.log(res.data);
-  })
-}
-useEffect(() => {submitHandler()}, [typing])
+  useEffect(
+    (e) => {
+      submitHandler();
+    },
+    [key]
+  );
 
   return (
     <form onSubmit={submitHandler}>
@@ -28,17 +57,20 @@ useEffect(() => {submitHandler()}, [typing])
           aria-label="Search bar with button addon"
           aria-describedby="basic-addon1"
           placeholder="am looking for..."
-          onChange={changeHandler}
+          // onChange={changeHandler}
+          ref={ref}
         />
-        <Button type="submit" bg="primary" id="button-addon1">
+        <Button type="submit" bg="primary" id="button-addon1"
+        onClick={props.onClose}
+        >
           <span>
             <FaSearch />
           </span>
         </Button>
       </InputGroup>
-     {/* <SearchModal show={modalShow}
+      {/* <SearchModal show={modalShow}
         onHide={() => setModalShow(false)}/> */}
-    
+
     </form>
   );
 };

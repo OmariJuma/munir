@@ -24,6 +24,7 @@ import CartContext from "./store/cart-context";
 import logo from "./../assets/images/icons/logo300by150.svg";
 import Spinner from "./UI/Spinner";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Search from "./Pages/Search";
 
 const MoreDetails = lazy(() => import("./MoreDetails"));
 const Error404 = lazy(() => import("./Pages/Error404.js"));
@@ -89,7 +90,7 @@ const NavBar = (props) => {
                 activeKey="/"
               >
                 <Nav.Item id="search">
-                  <Input />
+                  <Input onClose={handleCloseOffcanvas}/>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link as={Link} onClick={handleCloseOffcanvas} to="/">
@@ -189,6 +190,7 @@ const NavBar = (props) => {
             />
 
             <Route path="/about-us" element={<AboutUs />} exact />
+            <Route path="/search/:key" element={<Search/>} exact />
             <Route
               path="/details/:id"
               element={<MoreDetails onShowCart={props.onShowCart} />}
