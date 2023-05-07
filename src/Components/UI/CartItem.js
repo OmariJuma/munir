@@ -5,18 +5,27 @@ const CartItem = (props) => {
 
   return (
     <li className={classes['cart-item']} key={props.key}>
-      <div>
+      <div className='row'>
         <div className={classes.imgNtitle}>
         <img className={classes.img} src={props.image} alt="a product item"/>
+        <div style={{display:"flex",flexDirection:"column"}}>
         <h4>{props.name}</h4>
-      </div>
+        <span className={classes.price}>Price Kes {(price*1).toLocaleString()}</span>
+
         <div className={classes.summary}>
-          <span className={classes.price}>Kes {price}</span>
-          <span className={classes.amount}>x {props.amount}</span>
+          </div>
         </div>
       </div>
-      <div className={classes.actions}>
+
+      </div>
+
+      <div className={`${"row me-0"} classes.actions`} style={{textAlign: "right",
+    justifyContent: "right"}}>
+        <span className={classes.price} style={{marginBottom:"10px"}}>SubTotal Kes {(price*props.amount).toLocaleString()}</span>
+
         <button onClick={props.onRemove}>−</button>
+        <span className={classes.amount}>x {props.amount}</span>
+
         <button onClick={props.onAdd}>+</button>
       </div>
     </li>

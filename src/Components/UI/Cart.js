@@ -7,16 +7,9 @@ import CartContext from '../store/cart-context';
 
 
 const Cart = (props) => {
-  // const cartItems = (
-  //   <ul className={classes["cart-items"]}>
-  //     {[{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }].map((item) => (
-  //       <li>{item.name}</li>
-  //     ))}
-  //   </ul>
-  // );
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `Kes ${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount =`${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -48,7 +41,7 @@ const Cart = (props) => {
      {!hasItems&&<h4>You have no items in the cart</h4>}
       <div className={classes.total}>
         <span>Total:</span>
-        <span>{totalAmount}</span>
+        <span>Kes {parseFloat(totalAmount).toLocaleString()}</span>
       </div>
       <div className={classes.actions}>
         <button className={classes["button--alt"]} onClick={props.onHideCart}>

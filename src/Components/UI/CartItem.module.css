@@ -31,6 +31,7 @@
     padding: 0.25rem 0.75rem;
     border-radius: 6px;
     color: #363636;
+    width:fit-content;
   }
   
   .actions {

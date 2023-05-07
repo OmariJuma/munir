@@ -79,7 +79,9 @@ const NavBar = (props) => {
 >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel-expand-">
-                <img src={logo} alt="logo" id="muneerLogo" />
+                <Navbar.Brand href="/" className="linkie bt-2">
+              <img src={logo} alt="logo" id="muneerLogo" />
+            </Navbar.Brand>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
