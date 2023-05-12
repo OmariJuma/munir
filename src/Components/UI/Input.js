@@ -27,7 +27,7 @@ const Input = (props) => {
     event.preventDefault();
     key = ref.current.value;
     await axios
-      .get(`https://test.muneerautomotive.co.ke/api/products/product/${key}`)
+      .get(`https://test.muneerautomotive.co.ke/api/products/someProducts/${key}`)
       .then((res) => {
         // console.log(res.data);
         setSearchResults(res.data);
@@ -49,8 +49,7 @@ const Input = (props) => {
     [key]
   );
 
-  return (
-    <form onSubmit={submitHandler}>
+  return (<form onSubmit={submitHandler}>
       <InputGroup className={`${"mb-3"} ${styles.inpt}`}>
         <Form.Control
           type="search"
