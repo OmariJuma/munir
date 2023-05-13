@@ -25,30 +25,28 @@ const Input = (props) => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    key = ref.current.value;
+    const searchQuery = ref.current.value;
+    const encodedQuery = encodeURIComponent(searchQuery);
+    console.log(encodedQuery);
+
     await axios
-      .get(`https://test.muneerautomotive.co.ke/api/products/someProducts/${key}`)
+      .get(`https://test.muneerautomotive.co.ke/api/products/someProducts/${encodedQuery}`)
       .then((res) => {
-        // console.log(res.data);
         setSearchResults(res.data);
-        data=res.data
-        navigate(`/search/${key}`, { state: data });
+        navigate(`/search/${encodedQuery}`, { state: searchResults });
 
-        console.log(data);
-          
-
+        console.log(searchResults);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  useEffect(
-    (e) => {
-      submitHandler();
-    },
-    [key]
-  );
-
+  
+  useEffect(() => {
+    submitHandler();
+  }, [submitHandler, key]);
+  
   return (<form onSubmit={submitHandler}>
       <InputGroup className={`${"mb-3"} ${styles.inpt}`}>
         <Form.Control

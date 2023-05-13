@@ -8,7 +8,7 @@ const Search = (props) => {
   return (
     <div className="container">
       <p>Search Results</p>
-      <Col xs={5} md={3} lg={3} xxl={3}>
+      {/* <Col xs={5} md={3} lg={3} xxl={3}>
         <div style={{ marginTop: "3rem" }}>
           <Caard
             id={state.id}
@@ -23,7 +23,8 @@ const Search = (props) => {
             product={true}
           />
         </div>
-      </Col>
+      </Col> */}
+      <p>data is = {state}</p>
     </div>
   );
 };
