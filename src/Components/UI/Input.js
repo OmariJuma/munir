@@ -23,20 +23,21 @@ const Input = (props) => {
     units: "",
   }
 
-  const submitHandler = async (event) => {
+  const submitHandler = async(event) => {
     event.preventDefault();
     const searchQuery = ref.current.value;
     const encodedQuery = encodeURIComponent(searchQuery);
-    console.log(encodedQuery);
 
     await axios
       .get(`https://test.muneerautomotive.co.ke/api/products/someProducts/${encodedQuery}`)
       .then((res) => {
+        if(res.data.length!==0){
         setSearchResults(res.data);
-        navigate(`/search/${encodedQuery}`, { state: searchResults });
-
-        console.log(searchResults);
-        console.log(res.data);
+        console.log(res.data[0]);
+        return navigate(`/search/${encodedQuery}`, { state: res.data });
+        }else{
+          alert("search did not match any product")
+        }
       })
       .catch((err) => {
         console.log(err);
