@@ -9,44 +9,17 @@ import { Link } from "react-router-dom";
 const Input = (props) => {
   const navigate = useNavigate();
   const ref = useRef();
-  var key = "";
-  const [searchResults, setSearchResults] = useState([]);
-  var data={
-    id: "1",
-    price: "1",
-    title: "1",
-    description: "1",
-    offer: "",
-    image: "",  
-    brand: "",
-    material: "",
-    units: "",
-  }
 
   const submitHandler = async(event) => {
     event.preventDefault();
     const searchQuery = ref.current.value;
     const encodedQuery = encodeURIComponent(searchQuery);
-
-    await axios
-      .get(`https://test.muneerautomotive.co.ke/api/products/someProducts/${encodedQuery}`)
-      .then((res) => {
-        if(res.data.length!==0){
-        setSearchResults(res.data);
-        console.log(res.data[0]);
-        return navigate(`/search/${encodedQuery}`, { state: res.data });
-        }else{
-          alert("search did not match any product")
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    navigate(`/search/${encodedQuery}`)
   };
   
   useEffect(() => {
     submitHandler();
-  }, [submitHandler, key]);
+  }, [submitHandler]);
   
   return (<form onSubmit={submitHandler}>
       <InputGroup className={`${"mb-3"} ${styles.inpt}`}>

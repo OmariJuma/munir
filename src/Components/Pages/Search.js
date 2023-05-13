@@ -1,16 +1,41 @@
-import { useLocation } from "react-router";
+import { useParams } from "react-router";
 import Caard from "../Caard";
 import { Col, Row } from "react-bootstrap";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Search = (props) => {
-  const location = useLocation();
-  const state = location.state;
-  console.log(state);
-  return (
+  // const location = useLocation();
+  // const state = location.state;
+  // console.log(state);
+  const { key } = useParams();
+  const [searchResults, setSearchResults] = useState([]);
+
+  const getRecords = async () => {
+    await axios
+      .get(
+        `https://test.muneerautomotive.co.ke/api/products/someProducts/${key}`
+      )
+      .then((res) => {
+        if (res.data.length !== 0) {
+          setSearchResults(res.data);
+          console.log(res.data);
+        } else {
+          alert("search did not match any product");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getRecords();
+  }, [key]);
+    return (
     <div className="container">
       <p>Search Results</p>
       <Row>
-        {state.map((state) => (
+        {searchResults.map((state) => (
           <Col xs={5} md={3} lg={3} xxl={3}>
             <div style={{ marginTop: "3rem" }}>
               <Caard
@@ -27,7 +52,7 @@ const Search = (props) => {
               />
             </div>
           </Col>
-        ))}
+         ))}
       </Row>
     </div>
   );
