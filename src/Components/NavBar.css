@@ -65,7 +65,7 @@
   margin: auto;
   border-radius: 10px;
   border: 2px black;
-  display:none;
+  /* display:none; */
 }
 input[type="text"] {
   padding-left: 10px;
@@ -79,13 +79,17 @@ input::placeholder {
   color:black;
 }
 @media screen and (min-width: 769px) {
+  #searchBtn{
+    display:none;
+  }
+  
   .navbar-nav {
     display: flex;
     /* gap: 2rem; */
   }
-  #search{
+  /* #search{
     display: none;
-  }
+  } */
   .cartIcon {
     gap:1.5rem;
     background-color: white;

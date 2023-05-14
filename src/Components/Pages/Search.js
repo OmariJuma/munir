@@ -41,7 +41,7 @@ const Search = (props) => {
   }, [key]);
   return (
     <div className="container">
-      <Input val={key}/>
+      {/* <Input val={key}/> */}
       <p>Search Results</p>
       {isLoading && <Spinner />}
       {failed && <NoInternet />}
