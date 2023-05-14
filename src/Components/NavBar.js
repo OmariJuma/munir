@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React, { useContext, lazy, Suspense, useState } from "react";
+import React, { useContext, lazy, Suspense, useState, useEffect } from "react";
 import {
   Link,
   BrowserRouter as Router,
@@ -35,6 +35,7 @@ const NavBar = (props) => {
   const [show, setShow] =useState(false);
   const handleOpenOffcanvas = () => setShow(true);
   const handleCloseOffcanvas = () => setShow(false);
+  
 
   const cartCtx = useContext(CartContext);
   const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
@@ -151,6 +152,8 @@ const NavBar = (props) => {
             
             
             <span className="cartIcon">
+            <Input onClose={handleCloseOffcanvas}/>
+
               <button>
                 <FaRegUserCircle />
               </button>

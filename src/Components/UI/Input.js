@@ -3,18 +3,21 @@ import { FaSearch } from "react-icons/fa";
 import styles from "./Input.module.css";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import Caard from "../Caard";
 import { Link } from "react-router-dom";
 const Input = (props) => {
   const navigate = useNavigate();
   const ref = useRef();
+  const location = useLocation();
 
   const submitHandler = async(event) => {
     event.preventDefault();
     const searchQuery = ref.current.value;
     const encodedQuery = encodeURIComponent(searchQuery);
-    navigate(`/search/${encodedQuery}`)
+    if(location.pathname !== `/search/`){
+      navigate(`/search/${encodedQuery}`)
+    }
   };
   
   useEffect(() => {

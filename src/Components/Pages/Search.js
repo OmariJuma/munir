@@ -6,18 +6,20 @@ import { useEffect, useState } from "react";
 import { v4 } from "uuid";
 import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
+import styles from "./Products.module.css";
+import Input from "../UI/Input";
+
 
 const Search = (props) => {
   const { key } = useParams();
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [failed, setFailed] = useState(false);
-
   const getRecords = async () => {
     setIsLoading(true)
     await axios
       .get(
-        `https://test.muneerautomotive.co.ke/api/products/someProducts/${key}`
+        `http://localhost:8080/api/products/someProducts/${key}`
       )
       .then((res) => {
         setIsLoading(false)
@@ -39,14 +41,15 @@ const Search = (props) => {
   }, [key]);
   return (
     <div className="container">
+      <Input val={key}/>
       <p>Search Results</p>
       {isLoading && <Spinner />}
       {failed && <NoInternet />}
 
-      {!isLoading&&<Row>
+      {!isLoading&&<Row className={`${styles.singleProduct}`}>
           {searchResults.map((state) => (
             <Col xs={5} md={3} lg={3} xxl={3}>
-              <div style={{ marginTop: "3rem" }}>
+              <div>
                 <Caard
                   key={v4()}
                   id={state.id}
