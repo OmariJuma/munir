@@ -12,6 +12,7 @@ import {
   BrowserRouter as Router,
   // BrowserRouter as Router,
   Route,
+  Navigate,
   Routes,
 } from "react-router-dom";
 import Crsl from "./../Components/Crsl";
@@ -26,6 +27,8 @@ import Spinner from "./UI/Spinner";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Search from "./Pages/Search";
 import MoreDetails from "./MoreDetails";
+import Login from "../Components/Pages/Login";
+import Profile from "../Components/Pages/Profile";
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
 const AboutUs = lazy(() => import("./Pages/AboutUs"));
@@ -39,6 +42,38 @@ const NavBar = (props) => {
   const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
+
+  //Login functionality
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = () => {
+      fetch("http://localhost:8080/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          throw new Error("authentication has been failed!");
+        })
+        .then((resObject) => {
+          setUser(resObject.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+
+  const profileHandler = () => {
+    <Navigate to="/profile"/>;
+  };
 
   return (
     <Suspense fallback={<Spinner />}>
@@ -151,11 +186,11 @@ const NavBar = (props) => {
             <span className="cartIcon">
               {/* <Input onClose={handleCloseOffcanvas}/> */}
               <button id="searchBtn" onClick={handleOpenOffcanvas}>
-                <FaSearch/>
+                <FaSearch />
               </button>
-              <button>
+              <Link to="/profile">
                 <FaRegUserCircle />
-              </button>
+              </Link>
               <button onClick={props.onShowCart}>
                 <FaCartPlus />
                 <span id="badge">{numberOfCartItems}</span>
@@ -165,6 +200,13 @@ const NavBar = (props) => {
         </Navbar>
         <div>
           <Routes>
+            <Route
+              path="/login"
+              element={user ? <Navigate to="/profile" /> : <Login />}
+            />
+            <Route path="/profile" element={user ? <Profile/> : <Navigate to="/login"/>} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
+
             <Route
               path="/products/rims"
               element={<Products />}
