@@ -63,6 +63,7 @@ const NavBar = (props) => {
         })
         .then((resObject) => {
           setUser(resObject.user);
+          console.log(resObject.user);
         })
         .catch((err) => {
           console.log(err);
@@ -71,9 +72,6 @@ const NavBar = (props) => {
     getUser();
   }, []);
 
-  const profileHandler = () => {
-    <Navigate to="/profile"/>;
-  };
 
   return (
     <Suspense fallback={<Spinner />}>
@@ -191,10 +189,12 @@ const NavBar = (props) => {
               <Link to="/profile">
                 <FaRegUserCircle />
               </Link>
+             {user && <p>Hi {user.displayName}</p>}
               <button onClick={props.onShowCart}>
                 <FaCartPlus />
                 <span id="badge">{numberOfCartItems}</span>
               </button>
+            {user && <img src={user.photos[0].value} alt="logo" id="muneerLogo" width={"25px"} height={"25px"}/>}  
             </span>
           </div>
         </Navbar>

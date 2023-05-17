@@ -1,5 +1,5 @@
 import Google from "../../assets/images/icons/google.png";
-import "./Login.css";
+import styles from "./Login.module.css";
 const Login = () => {
   const google = () => {
     window.open("http://localhost:8080/auth/google", "_self");
@@ -7,23 +7,23 @@ const Login = () => {
 
 
   return (
-    <div className="login">
-      <h1 className="loginTitle">Choose a Login Method</h1>
-      <div className="wrapper">
-        <div className="left">
-          <div className="loginButton google" onClick={google}>
-            <img src={Google} alt="" className="icon" />
+    <div className={styles.login}>
+      <h1 className={styles.loginTitle}>Choose a Login Method</h1>
+      <div className={styles.wrapper}>
+        <div className={styles.left}>
+          <div className={styles.loginButton_google} onClick={google}>
+            <img src={Google} alt="" className={styles.icon} />
             Google
           </div>
         </div>
-        <div className="center">
-          <div className="line" />
-          <div className="or">OR</div>
+        <div className={styles.center}>
+          <div className={styles.line} />
+          <div className={styles.or}>OR</div>
         </div>
-        <div className="right">
-          <input className="input" type="text" placeholder="Username" />
-          <input className="input" type="text" placeholder="Password" />
-          <button className="submit">Login</button>
+        <div className={styles.right}>
+          <input className={styles.input} type="text" placeholder="Username" />
+          <input className={styles.input} type="text" placeholder="Password" />
+          <button className={styles.submit}>Login</button>
         </div>
       </div>
     </div>
