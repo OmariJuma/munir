@@ -63,6 +63,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+  }
+  .google{
     background-color: #df4930;
 
   }
