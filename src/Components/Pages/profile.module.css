@@ -17,7 +17,7 @@
     width: 50%;
     padding: 1rem;
     border-radius: 5px;
-    background-color: var(--red);
+    background-color: var(--redish);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -25,4 +25,10 @@
     outline: none;
     margin: 2rem auto;
     display:block;
+}
+.logoutBtn:hover{
+    background-color: var(--red);
+}
+.logoutBtn span{
+    margin-right: 1rem;
 }

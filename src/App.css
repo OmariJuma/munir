@@ -49,9 +49,11 @@ h4 {
   --priVariant: #a6deef;
   --priBluish: #8fb9e5;
   --dark: #d9d9d9;
-  --redish: rgb(243, 178, 178);
+  --redish: rgb(247, 84, 84);
   --red: rgb(254, 48, 48);
   --orange: rgb(255, 139, 23);
+  --greenish: rgb(92, 241, 92);
+  --green:rgb(0, 255, 0);
   --white: #fff;
   --margins: 20px;
   --borderRadius: 20px;

@@ -1,15 +1,16 @@
 import { Row, Col, Card, ListGroup } from "react-bootstrap";
 import styles from "./profile.module.css";
-import axios from "axios";
+import { TbDoorEnter } from "react-icons/tb";
+
 const Profile = ({ details }) => {
   const logoutHandler = () => {
     window.location.href = "http://localhost:8080/auth/logout";
-  }
+  };
   return (
-    <div className="container-fluid" style={{gap:"2rem"}}>
+    <div className="container-fluid" style={{ gap: "2rem" }}>
       <Row>
         <Col md={6} lg={6} xxl={6} className={styles.card}>
-          <Card >
+          <Card>
             <ListGroup variant="flush">
               <Card.Title>
                 <ListGroup.Item>
@@ -18,7 +19,6 @@ const Profile = ({ details }) => {
               </Card.Title>
               <Card.Body>
                 <Card.Text>
-                  {" "}
                   <img
                     src={details.photos[0].value}
                     className={styles.profilePicture}
@@ -49,7 +49,16 @@ const Profile = ({ details }) => {
           </Card>
         </Col>
       </Row>
-      <button type="button" onClick={logoutHandler} className={styles.logoutBtn}>Logout</button>
+      <button
+        type="button"
+        onClick={logoutHandler}
+        className={styles.logoutBtn}
+      >
+        <span>
+          <TbDoorEnter />
+        </span>
+        Logout
+      </button>
     </div>
   );
 };

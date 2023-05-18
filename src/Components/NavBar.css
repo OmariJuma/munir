@@ -83,6 +83,24 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
 padding:3px;}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+.logoutDropdown{
+  background-color: var(--redish);
+  margin-right: 1rem;
+}
+.logoutDropdown:hover{
+  background-color: var(--red);
+}
+.logInDropdown{
+  background-color: var(--greenish);
+  margin-right: 1rem;
+}
+.logInDropdown:hover{
+  background-color: var(--green);
+}
 @media screen and (min-width: 769px) {
   #searchBtn{
     display:none;

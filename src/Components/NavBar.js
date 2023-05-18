@@ -29,6 +29,9 @@ import Search from "./Pages/Search";
 import MoreDetails from "./MoreDetails";
 import Login from "../Components/Pages/Login";
 import Profile from "../Components/Pages/Profile";
+import { Dropdown } from "react-bootstrap";
+import { TbDoorEnter, TbDoorExit } from "react-icons/tb";
+
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
 const AboutUs = lazy(() => import("./Pages/AboutUs"));
@@ -69,8 +72,16 @@ const NavBar = (props) => {
         });
     };
     getUser();
-  },[]);
+  }, []);
 
+  //logout functionality
+  const logoutHandler = () => {
+    window.location.href = "http://localhost:8080/auth/logout";
+  };
+
+  const logInHandler = () => {
+    window.location.href = "http://localhost:8080/auth/google";
+  };
 
   return (
     <Suspense fallback={<Spinner />}>
@@ -185,12 +196,43 @@ const NavBar = (props) => {
               <button id="searchBtn" onClick={handleOpenOffcanvas}>
                 <FaSearch />
               </button>
-              <Link to={user ? `/profile/${user.id}` : "/profile/:id"} className="profileIcon">
-                <FaRegUserCircle />
-                {user && <small  >Hi {user.name.familyName}</small>}
-
-              </Link>
-
+              <Dropdown>
+                <Dropdown.Toggle
+                  id="dropdown-button-dark-example1"
+                  as={Link}
+                  to={user ? `/profile/${user.id}` : "/profile/:id"}
+                  className="profileIcon"
+                >
+                  <FaRegUserCircle />
+                  {user && <small>Hi {user.name.familyName}</small>}
+                </Dropdown.Toggle>
+                <Dropdown.Menu style={{ padding: "5px", margin: "0 -4.5rem" }}>
+                  {user && (
+                    <Dropdown.Item
+                      as={Link}
+                      onClick={logoutHandler}
+                      className="logoutDropdown"
+                    >
+                      <span>
+                        <TbDoorEnter />
+                      </span>
+                      Logout
+                    </Dropdown.Item>
+                  )}
+                  {!user && (
+                    <Dropdown.Item
+                      as={Link}
+                      onClick={logInHandler}
+                      className="logInDropdown"
+                    >
+                      <span>
+                        <TbDoorExit />
+                      </span>
+                      SignUp /Login
+                    </Dropdown.Item>
+                  )}{" "}
+                </Dropdown.Menu>
+              </Dropdown>
               <button onClick={props.onShowCart}>
                 <FaCartPlus />
                 <span id="badge">{numberOfCartItems}</span>
@@ -202,9 +244,16 @@ const NavBar = (props) => {
           <Routes>
             <Route
               path="/login"
-              element={user ? <Navigate to={`/profile/${user.id}`} /> : <Login />}
+              element={
+                user ? <Navigate to={`/profile/${user.id}`} /> : <Login />
+              }
             />
-            <Route path="/profile/:id" element={user ? <Profile details={user}/> : <Navigate to="/login"/>} />
+            <Route
+              path="/profile/:id"
+              element={
+                user ? <Profile details={user} /> : <Navigate to="/login" />
+              }
+            />
             {/* <Route path="/profile" element={<Profile />} /> */}
 
             <Route
