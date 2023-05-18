@@ -63,6 +63,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #df4930;
+
   }
   
   .wrapper {
@@ -124,10 +126,6 @@
     font-weight: bold;
     margin-bottom: 20px;
     cursor: pointer;
-  }
-  
-  .google{
-    background-color: #df4930;
   }
   
   .icon{

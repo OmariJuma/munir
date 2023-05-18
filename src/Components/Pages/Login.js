@@ -11,7 +11,7 @@ const Login = () => {
       <h1 className={styles.loginTitle}>Choose a Login Method</h1>
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <div className={styles.loginButton_google} onClick={google}>
+          <div className={styles.loginButton} onClick={google}>
             <img src={Google} alt="" className={styles.icon} />
             Google
           </div>

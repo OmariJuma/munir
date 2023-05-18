@@ -63,14 +63,13 @@ const NavBar = (props) => {
         })
         .then((resObject) => {
           setUser(resObject.user);
-          console.log(resObject.user);
         })
         .catch((err) => {
           console.log(err);
         });
     };
     getUser();
-  }, []);
+  },[]);
 
 
   return (
@@ -186,15 +185,16 @@ const NavBar = (props) => {
               <button id="searchBtn" onClick={handleOpenOffcanvas}>
                 <FaSearch />
               </button>
-              <Link to="/profile">
+              <Link to={user ? `/profile/${user.id}` : "/profile/:id"} className="profileIcon">
                 <FaRegUserCircle />
+                {user && <small  >Hi {user.name.familyName}</small>}
+
               </Link>
-             {user && <p>Hi {user.displayName}</p>}
+
               <button onClick={props.onShowCart}>
                 <FaCartPlus />
                 <span id="badge">{numberOfCartItems}</span>
               </button>
-            {user && <img src={user.photos[0].value} alt="logo" id="muneerLogo" width={"25px"} height={"25px"}/>}  
             </span>
           </div>
         </Navbar>
@@ -202,9 +202,9 @@ const NavBar = (props) => {
           <Routes>
             <Route
               path="/login"
-              element={user ? <Navigate to="/profile" /> : <Login />}
+              element={user ? <Navigate to={`/profile/${user.id}`} /> : <Login />}
             />
-            <Route path="/profile" element={user ? <Profile/> : <Navigate to="/login"/>} />
+            <Route path="/profile/:id" element={user ? <Profile details={user}/> : <Navigate to="/login"/>} />
             {/* <Route path="/profile" element={<Profile />} /> */}
 
             <Route
