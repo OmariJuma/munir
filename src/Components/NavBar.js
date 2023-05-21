@@ -31,6 +31,7 @@ import Login from "../Components/Pages/Login";
 import Profile from "../Components/Pages/Profile";
 import { Dropdown } from "react-bootstrap";
 import { TbDoorEnter, TbDoorExit } from "react-icons/tb";
+import axios from "axios";
 
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
@@ -50,29 +51,32 @@ const NavBar = (props) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const getUser = () => {
-      fetch("http://localhost:8080/auth/login/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      })
-        .then((response) => {
-          if (response.status === 200) return response.json();
-          throw new Error("authentication has been failed!");
-        })
-        .then((resObject) => {
-          setUser(resObject.user);
-        })
-        .catch((err) => {
-          console.log(err);
+    const getUser = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/auth/login/success", {
+          withCredentials: true,
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
         });
+  
+        if (response.status === 200) {
+          console.log(response);
+          const resObject = response.data;
+          setUser(resObject.user);
+          console.log(resObject.user);
+        } else {
+          throw new Error("Authentication has failed!");
+        }
+      } catch (err) {
+        console.log(err);
+      }
     };
+  
     getUser();
   }, []);
+    console.log(user);
 
   //logout functionality
   const logoutHandler = () => {
