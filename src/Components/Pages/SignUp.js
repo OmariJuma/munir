@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Form, Row, InputGroup } from "react-bootstrap";
+import { Col, Form, Row, InputGroup,Card } from "react-bootstrap";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styles from "./SignUp.module.css";
@@ -52,8 +52,9 @@ const SignUp = (props) => {
 
   return (
     <div className="container">
-      <Form>
+      <Form >
         <h1>Sign Up</h1>
+        <Card className={styles.card}>
         <Row>
           <Col md={12} lg={12} xxl={12}>
             <Form.Group className="mb-3" controlId="firstName">
@@ -176,10 +177,14 @@ const SignUp = (props) => {
         >
           Submit
         </button>
-      </Form>
-      <div className="text-center">
-        If you have an account click here to <Link to="/login">log in</Link>
+        <br />
+        <div className="text-center">
+        If you have an account click here to <Link to="/login" style={{color:"blue"}}>log in</Link>
       </div>
+
+        </Card>
+
+      </Form>
     </div>
   );
 };

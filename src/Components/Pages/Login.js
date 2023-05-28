@@ -1,5 +1,5 @@
 import axios from "axios";
-import Google from "../../assets/images/icons/google.png";
+import Google from "../../assets/images/icons/icons8-google.svg";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -26,14 +26,13 @@ const Login = () => {
     event.preventDefault();
     axios
       .post("http://localhost:8080/api/users/login", {
-        email:signup.email,
-        password:signup.password
+        email: signup.email,
+        password: signup.password,
       })
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("token", response.data.token);
         navigate("/");
-
       })
       .catch((err) => {
         console.log(err);
@@ -42,33 +41,11 @@ const Login = () => {
 
   return (
     <>
+      <h1>Choose a Login Method to continue</h1>
+
       <div className={styles.login}>
-        <h1 className={styles.loginTitle}>Choose a Login Method</h1>
         <div className={styles.wrapper}>
-          <div className={styles.left}>
-            <div
-              className={styles.loginButton && styles.google}
-              onClick={google}
-            >
-              <img src={Google} alt="" className={styles.icon} />
-              Google
-            </div>
-          </div>
-          <div className={styles.center}>
-            <div className={styles.line} />
-            <div className={styles.or}>OR</div>
-          </div>
           <div className={styles.right}>
-            {/* <input
-              className={styles.input}
-              type="text"
-              placeholder="Username"
-            />
-            <input
-              className={styles.input}
-              type="text"
-              placeholder="Password"
-            /> */}
             <Col md={12} lg={12} xxl={12}>
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Enter Your Email</Form.Label>
@@ -80,6 +57,7 @@ const Login = () => {
                   minLength={7}
                   required
                   onChange={handleInputChange}
+                  className={styles.input}
                 />
               </Form.Group>
             </Col>
@@ -94,6 +72,7 @@ const Login = () => {
                     minLength={7}
                     required
                     onChange={handleInputChange}
+                    className={styles.input}
                   />
                   <InputGroup.Text
                     id="basic-addon2"
@@ -110,14 +89,34 @@ const Login = () => {
               </Form.Group>
             </Col>
 
-            <button className={styles.submit} onClick={submitHandler}>Login</button>
+            <button className={styles.submit} onClick={submitHandler}>
+              Login
+            </button>
           </div>
+          <div className={styles.center}>
+            <div className={styles.line} />
+            <div className={styles.or}>OR</div>
+          </div>
+          <div className={styles.left}>
+            <button
+              className={"btn btn-primary"}
+              style={{ width: "100%" }}
+              onClick={google}
+            >
+              <img src={Google} alt="" className={styles.icon} />
+              Login with Google account
+            </button>
+          </div>
+          <br/>
+
         </div>
+
       </div>
-      <div className="text-center">
+      <div className="text-center" style={{display:"block"}}>
         if you dont have an account click here to{" "}
-        <Link to="/signup">sign up</Link>
+        <Link to="/signup" style={{color:"blue"}}>sign up</Link>
       </div>
+
     </>
   );
 };
