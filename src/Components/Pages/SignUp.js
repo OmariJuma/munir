@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 import styles from "./SignUp.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import Google from "../../assets/images/icons/icons8-google.svg";
+
 const SignUp = (props) => {
+   const google = () => {
+    window.open("http://localhost:8080/auth/google", "_self");
+  };
+
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [isPassword2Shown, setIsPassword2Shown] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
@@ -52,10 +58,29 @@ const SignUp = (props) => {
 
   return (
     <div className="container">
-      <Form >
-        <h1>Sign Up</h1>
-        <Card className={styles.card}>
+              <h1 style={{margin:"2rem 0"}}>Choose Sign Up Method To Continue</h1>
+
+        <Card className={styles.card+" "+styles.left}>
         <Row>
+
+          <div className={styles.left}>
+            <button
+              className={"btn btn-primary"}
+              style={{ width: "100%" }}
+              onClick={google}
+            >
+              <img src={Google} alt="" className={styles.icon} />
+              Signup with Google account
+            </button>
+          </div>
+          <div className={styles.center}>
+            <div className={styles.line} />
+            <div className={styles.or}>OR</div>
+          </div>
+
+          <Form style={{marginTop:"3rem"}} className={styles.right}>
+          <h1>Sign Up </h1>
+
           <Col md={12} lg={12} xxl={12}>
             <Form.Group className="mb-3" controlId="firstName">
               <Form.Label>Enter First name</Form.Label>
@@ -84,9 +109,6 @@ const SignUp = (props) => {
               />
             </Form.Group>
           </Col>
-        </Row>
-
-        <Row>
           <Col md={12} lg={12} xxl={12}>
             <Form.Group className="mb-3" controlId="phoneNo">
               <Form.Label>Enter Your phone number</Form.Label>
@@ -127,6 +149,7 @@ const SignUp = (props) => {
                   required
                   onChange={handleInputChange}
                   className={`${isPasswordValid ? "" : styles.invalid}`}
+                  placeholder="type a strong password"
 
                 />
                 <InputGroup.Text
@@ -153,6 +176,8 @@ const SignUp = (props) => {
                   minLength={7}
                   required
                   onChange={handleInputChange}
+                  placeholder="Repeat the password"
+
                   className={`${isPasswordValid ? "" : styles.invalid}`}
                 />
                 <InputGroup.Text
@@ -168,7 +193,6 @@ const SignUp = (props) => {
 
             </Form.Group>
           </Col>
-        </Row>
         <button
           className="btn btn-primary"
           style={{ width: "100%" }}
@@ -177,14 +201,16 @@ const SignUp = (props) => {
         >
           Submit
         </button>
+        </Form>
+
         <br />
         <div className="text-center">
         If you have an account click here to <Link to="/login" style={{color:"blue"}}>log in</Link>
       </div>
+      </Row>
 
         </Card>
 
-      </Form>
     </div>
   );
 };
