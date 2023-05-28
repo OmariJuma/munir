@@ -32,6 +32,7 @@ import Profile from "../Components/Pages/Profile";
 import { Dropdown } from "react-bootstrap";
 import { TbDoorEnter, TbDoorExit } from "react-icons/tb";
 import axios from "axios";
+import SignUp from "./Pages/SignUp";
 
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
@@ -53,14 +54,17 @@ const NavBar = (props) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/auth/login/success", {
-          withCredentials: true,
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-          },
-        });
-  
+        const response = await axios.get(
+          "http://localhost:8080/auth/login/success",
+          {
+            withCredentials: true,
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
         if (response.status === 200) {
           console.log(response);
           const resObject = response.data;
@@ -73,10 +77,10 @@ const NavBar = (props) => {
         console.log(err);
       }
     };
-  
+
     getUser();
   }, []);
-    console.log(user);
+  console.log(user);
 
   //logout functionality
   const logoutHandler = () => {
@@ -252,6 +256,7 @@ const NavBar = (props) => {
                 user ? <Navigate to={`/profile/${user.id}`} /> : <Login />
               }
             />
+            <Route path="/signup" element={<SignUp />} />
             <Route
               path="/profile/:id"
               element={

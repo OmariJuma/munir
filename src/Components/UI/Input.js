@@ -1,17 +1,14 @@
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import styles from "./Input.module.css";
-import { useEffect, useState, useRef } from "react";
-import axios from "axios";
+import {  useRef } from "react";
 import { useLocation, useNavigate } from "react-router";
-import Caard from "../Caard";
-import { Link } from "react-router-dom";
 const Input = (props) => {
   const navigate = useNavigate();
   const ref = useRef();
   const location = useLocation();
 
-  const submitHandler = async(event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
     const searchQuery = ref.current.value;
     const encodedQuery = encodeURIComponent(searchQuery);
@@ -20,9 +17,9 @@ const Input = (props) => {
     }
   };
   
-  useEffect(() => {
-    submitHandler();
-  }, [submitHandler]);
+  // useEffect(() => {
+    // submitHandler();
+  // }, [submitHandler]);
   
   return (<form onSubmit={submitHandler}>
       <InputGroup className={`${"mb-3"} ${styles.inpt}`}>

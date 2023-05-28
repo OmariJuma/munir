@@ -1,0 +1,7 @@
+#strikeThru, #strikeThru1{
+    color:green;
+}
+.invalid{
+    color:red;
+    border-color: red;
+}

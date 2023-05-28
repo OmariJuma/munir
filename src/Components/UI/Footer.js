@@ -16,7 +16,7 @@ const Footer = () => {
         style={{ backgroundColor: "#ECEFF1" }}
       >
         {/* <!-- Section: Social media --> */}
-        <section
+        <div
           className="d-flex justify-content-between p-4 text-white"
           style={{ backgroundColor: "#21D192" }}
         >
@@ -46,11 +46,11 @@ const Footer = () => {
             </a>
           </div>
           {/* <!-- Right --> */}
-        </section>
+        </div>
         {/* <!-- Section: Social media --> */}
 
         {/* <!-- Section: Links  --> */}
-        <section className="">
+        <div className="">
           <div className="container text-center text-md-start mt-5">
             {/* <!-- Grid row --> */}
             <div className="row mt-3">
@@ -247,7 +247,7 @@ const Footer = () => {
             </div>
             {/* <!-- Grid row --> */}
           </div>
-        </section>
+        </div>
         {/* <!-- Section: Links  --> */}
 
         {/* <!-- Copyright --> */}
