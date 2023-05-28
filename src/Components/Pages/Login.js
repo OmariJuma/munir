@@ -7,7 +7,7 @@ import { FaEye } from "react-icons/fa";
 import { Col, Form, Row, InputGroup, Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
-const Login = () => {
+const Login = (props) => {
   const navigate = useNavigate();
   const google = () => {
     window.open("http://localhost:8080/auth/google", "_self");
@@ -32,6 +32,7 @@ const Login = () => {
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("token", response.data.token);
+        props.handleCallback(response.data);
         navigate("/");
       })
       .catch((err) => {

@@ -91,6 +91,11 @@ const NavBar = (props) => {
     window.location.href = "http://localhost:8080/auth/google";
   };
 
+  ////callback fxn
+  const callback=(childData)=>{
+     console.log(childData)
+  }
+
   return (
     <Suspense fallback={<Spinner />}>
       <Router>
@@ -253,10 +258,10 @@ const NavBar = (props) => {
             <Route
               path="/login"
               element={
-                user ? <Navigate to={`/profile/${user.id}`} /> : <Login />
+                user ? <Navigate to={`/profile/${user.id}`} /> : <Login handleCallback={callback}/>
               }
             />
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp handleCallback={callback}/>} />
             <Route
               path="/profile/:id"
               element={
