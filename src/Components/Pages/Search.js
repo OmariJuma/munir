@@ -42,7 +42,7 @@ const Search = (props) => {
   return (
     <div className="container">
       {/* <Input val={key}/> */}
-      <p>Search Results</p>
+      <h1 className="mt-3">Search Results</h1>
       {isLoading && <Spinner />}
       {failed && <NoInternet />}
 

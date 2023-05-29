@@ -1,6 +1,10 @@
 import { Card, Row, Col } from "react-bootstrap";
 import styles from "./AboutUs.module.css";
 import ig from "./../../assets/images/wheel1.jpeg";
+import ceo from "../../assets/images/People/Mr_Mahmoud.jpeg";
+import fashion from "../../assets/images/People/fashion.jpg";
+import man from "../../assets/images/People/man.avif";
+import bizman from "../../assets/images/People/bizman.avif";
 import {
   FaFacebook,
   FaInstagram,
@@ -29,11 +33,11 @@ const AboutUs = () => {
       <Row className={styles.div} style={{ margin: "auto" }}>
         <Col xm={12} sm={6} md={6} lg={3}>
           <Card className={styles.card}>
-            <Card.Img src={ig} />
+            <Card.Img src={ceo} />
             <Card.Title className={styles.title}>CEO & Founder</Card.Title>
 
             <Card.Body className={styles.desc}>
-              Mr. Mahmoud/ Mr. Mrefu
+              Mr. Mrefu
             </Card.Body>
             <Card.Footer className={styles.socials}>
               <a href="https://www.facebook.com" target={"_blank"}>
@@ -56,10 +60,10 @@ const AboutUs = () => {
         </Col>
         <Col xm={12} sm={6} md={6} lg={3}>
           <Card className={styles.card}>
-            <Card.Img src={ig} />
-            <Card.Title className={styles.title}>Mechanic</Card.Title>
+            <Card.Img src={fashion} />
+            <Card.Title className={styles.title}>Web Developer</Card.Title>
 
-            <Card.Body className={styles.desc}>Mr. John</Card.Body>
+            <Card.Body className={styles.desc}>Mr. Juma</Card.Body>
             <Card.Footer className={styles.socials}>
               <a href="https://www.facebook.com" target={"_blank"}>
                 <span className={styles.icon}>
@@ -81,7 +85,7 @@ const AboutUs = () => {
         </Col>
         <Col xm={12} sm={6} md={6} lg={3}>
           <Card className={styles.card}>
-            <Card.Img src={ig} />
+            <Card.Img src={bizman} />
             <Card.Title className={styles.title}>Customer Relation</Card.Title>
 
             <Card.Body className={styles.desc}>Idris</Card.Body>
@@ -106,7 +110,7 @@ const AboutUs = () => {
         </Col>
         <Col xm={12} sm={6} md={6} lg={3}>
           <Card className={styles.card}>
-            <Card.Img src={ig} />
+            <Card.Img src={man} />
             <Card.Title className={styles.title}>Mechanic</Card.Title>
 
             <Card.Body className={styles.desc}>Mr. Kamau</Card.Body>

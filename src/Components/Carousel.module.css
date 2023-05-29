@@ -29,6 +29,8 @@ margin: auto;
 #ceoTitle{
   color:var(--orange);
   opacity: 1;
+  font-size: 50px;
+
 }
 
 #ceoText{

@@ -4,6 +4,9 @@
 #h1 {
   color: red;
 }
+.card{
+  margin-bottom: 3rem;
+}
 .card img {
   height: 50vh;
 }
