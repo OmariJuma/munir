@@ -55,7 +55,7 @@ const NavBar = (props) => {
     const getUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/auth/login/success",
+          "https://test.muneerautomotive.co.ke/login/success",
           {
             withCredentials: true,
             headers: {
@@ -84,11 +84,11 @@ const NavBar = (props) => {
 
   //logout functionality
   const logoutHandler = () => {
-    window.location.href = "http://localhost:8080/auth/logout";
+    window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
   };
 
   const logInHandler = () => {
-    window.location.href = "http://localhost:8080/auth/google";
+    window.location.href = "https://test.muneerautomotive.co.ke/auth/google";
   };
 
   ////callback fxn

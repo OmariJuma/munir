@@ -9,7 +9,7 @@ import Google from "../../assets/images/icons/icons8-google.svg";
 
 const SignUp = (props) => {
    const google = () => {
-    window.open("http://localhost:8080/auth/google", "_self");
+    window.open("https://test.muneerautomotive.co.ke/auth/google", "_self");
   };
 
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -35,7 +35,7 @@ const SignUp = (props) => {
       if(signup.password === signup.confirmPassword){
         setIsPasswordValid(true);
         console.log(signup);
-        axios.post("http://localhost:8080/api/users/register",
+        axios.post("https://test.muneerautomotive.co.ke/api/users/register",
         {
             firstName: signup.firstName,
             secondName: signup.secondName,

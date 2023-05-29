@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 const Login = (props) => {
   const navigate = useNavigate();
   const google = () => {
-    window.open("http://localhost:8080/auth/google", "_self");
+    window.open("https://test.muneerautomotive.co.ke/auth/google", "_self");
   };
 
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -25,7 +25,7 @@ const Login = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/api/users/login", {
+      .post("test.muneerautomotive.co.ke/api/users/login", {
         email: signup.email,
         password: signup.password,
       })

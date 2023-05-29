@@ -19,7 +19,7 @@ const Search = (props) => {
     setIsLoading(true)
     await axios
       .get(
-        `http://localhost:8080/api/products/someProducts/${key}`
+        `https://test.muneerautomotive.co.ke/api/products/someProducts/${key}`
       )
       .then((res) => {
         setIsLoading(false)

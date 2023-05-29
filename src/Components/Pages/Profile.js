@@ -4,7 +4,7 @@ import { TbDoorEnter } from "react-icons/tb";
 
 const Profile = ({ details }) => {
   const logoutHandler = () => {
-    window.location.href = "http://localhost:8080/auth/logout";
+    window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
   };
   return (
     <div className="container-fluid" style={{ gap: "2rem" }}>
