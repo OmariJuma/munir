@@ -23,24 +23,31 @@
     font: inherit;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #8a2b06;
+    border: 1px solid var(--priColor);
     padding: 0.5rem 2rem;
     border-radius: 25px;
     margin-left: 1rem;
   }
   
-  .actions button:hover,
-  .actions button:active {
-    background-color: #5a1a01;
-    border-color: #5a1a01;
+  .actions .button:hover,
+  .actions .button:active {
+    background-color:  var(--priColor);
+    border-color: solid var(--priColor);
+    color: white;
+  }
+  .actions .button--alt:hover,
+  .actions .button--alt:active {
+    background-color:  var(--red);
+    border-color: solid var(--red);
     color: white;
   }
   
   .actions .button--alt {
-    color: #8a2b06;
+    color:  var(--red);
+    border-color:var(--red)
   }
   
   .actions .button {
-    background-color: #8a2b06;
+    background-color: var(--priColor);
     color: white;
   }

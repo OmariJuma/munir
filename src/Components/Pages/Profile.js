@@ -19,14 +19,27 @@ const Profile = ({ details }) => {
               </Card.Title>
               <Card.Body>
                 <Card.Text>
-                  <img
+                  {/* <img
                     src={details.photos[0].value}
                     className={styles.profilePicture}
                     alt="your profile"
-                  />
-                  <p>Name: {details.displayName}</p>
-                  <p>Email: {details.emails[0].value}</p>
-                  <p>Phone Number: </p>
+                  /> */}
+                  <p>
+                    Name:{" "}
+                    {details.displayName !== undefined && details.displayName}
+                    {details.details !== undefined &&
+                      details.details.displayName}
+                  </p>
+                  <p>
+                    Email:{" "}
+                    {details.emails !== undefined && details.emails[0].value}
+                    {details.details !== undefined &&
+                      details.details.emails[0].value}
+                  </p>
+                  <p>
+                    Phone Number:{" "}
+                    {details.details !== undefined && details.details.phoneNo}
+                  </p>
                 </Card.Text>
               </Card.Body>
             </ListGroup>

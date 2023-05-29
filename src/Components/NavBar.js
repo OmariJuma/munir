@@ -93,6 +93,8 @@ const NavBar = (props) => {
 
   ////callback fxn
   const callback=(childData)=>{
+    setUser(childData)
+    localStorage.setItem(childData.token)
      console.log(childData)
   }
 
@@ -217,7 +219,9 @@ const NavBar = (props) => {
                   className="profileIcon"
                 >
                   <FaRegUserCircle />
-                  {user && <small>Hi {user.name.familyName}</small>}
+                  {user && <small>Hi { user.name !== undefined &&user.name.familyName}
+                    {user.details !== undefined && user.details.firstName}
+                    </small>}
                 </Dropdown.Toggle>
                 <Dropdown.Menu style={{ padding: "5px", margin: "0 -4.5rem" }}>
                   {user && (
