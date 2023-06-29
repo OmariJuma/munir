@@ -66,10 +66,8 @@ const NavBar = (props) => {
         );
 
         if (response.status === 200) {
-          console.log(response);
           const resObject = response.data;
           setUser(resObject.user);
-          console.log(resObject.user);
         } else {
           throw new Error("Authentication has failed!");
         }
@@ -95,7 +93,7 @@ const NavBar = (props) => {
   const callback=(childData)=>{
     setUser(childData)
     localStorage.setItem(childData.token)
-     console.log(childData)
+    //  console.log(childData)
   }
 
   return (

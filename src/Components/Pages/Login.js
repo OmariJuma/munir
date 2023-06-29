@@ -25,12 +25,12 @@ const Login = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     axios
-      .post("test.muneerautomotive.co.ke/api/users/login", {
+      .post("https://test.muneerautomotive.co.ke/api/users/login", {
         email: signup.email,
         password: signup.password,
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         localStorage.setItem("token", response.data.token);
         props.handleCallback(response.data);
         navigate("/");
