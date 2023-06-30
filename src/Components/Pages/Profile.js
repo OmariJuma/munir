@@ -1,10 +1,21 @@
 import { Row, Col, Card, ListGroup } from "react-bootstrap";
 import styles from "./profile.module.css";
 import { TbDoorEnter } from "react-icons/tb";
+import { useNavigate } from "react-router";
+import CartContext from "../store/cart-context";
+import { useContext } from "react";
 
-const Profile = ({ details }) => {
+
+const Profile = ({ details, handleCallback }) => {
+  const navigate = useNavigate();
+  const { setUser } = useContext(CartContext);
+  // const logoutHandler = () => {
+  //   window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
+  // };
   const logoutHandler = () => {
-    window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
+    localStorage.removeItem("token");
+    setUser(null);
+    navigate("/")
   };
   return (
     <div className="container-fluid" style={{ gap: "2rem" }}>

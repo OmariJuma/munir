@@ -48,8 +48,8 @@ const NavBar = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  //Login functionality
-  const [user, setUser] = useState(null);
+  const {user, setUser}=useContext(CartContext);
+
 
   // useEffect(() => {
   //   const getUser = async () => {
@@ -91,12 +91,7 @@ const NavBar = (props) => {
   // };
 
   ////callback fxn
-  const callback=(childData)=>{
-    setUser(childData)
-    localStorage.setItem(childData.token)
-    //  console.log(childData)
-  }
-
+console.log("user from context "+user)
   return (
     <Suspense fallback={<Spinner />}>
       <Router>
@@ -261,10 +256,10 @@ const NavBar = (props) => {
             <Route
               path="/login"
               element={
-                user ? <Navigate to={`/profile/${user.id}`} /> : <Login handleCallback={callback}/>
+                user ? <Navigate to={`/profile/${user.id}`} /> : <Login />
               }
             />
-            <Route path="/signup" element={<SignUp handleCallback={callback}/>} />
+            <Route path="/signup" element={<SignUp />} />
             <Route
               path="/profile/:id"
               element={

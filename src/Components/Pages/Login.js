@@ -2,20 +2,22 @@ import axios from "axios";
 import Google from "../../assets/images/icons/icons8-google.svg";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { Col, Form, Row, InputGroup, Card, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import CartContext from "../store/cart-context";
+
 
 const Login = (props) => {
   const navigate = useNavigate();
+  const {setUser} = useContext(CartContext)
   const google = () => {
     window.open("https://test.muneerautomotive.co.ke/auth/google", "_self");
   };
 
   const [isPasswordShown, setIsPasswordShown] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(true)
-  const [accountExists, setAccountExists] = useState(true)
+  const [error, setError] = useState("");
   const handleInputChange = (event) => {
     setsignup({ ...signup, [event.target.name]: event.target.value });
   };
@@ -26,40 +28,45 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:8080/api/users/login", {
-        email: signup.email,
-        password: signup.password,
-      })
-      .then((response) => {
-        console.log(response);
-        if(response.data.auth===true)
-        {
-          setIsCorrect(true);
-          localStorage.setItem("token", response.data.token);
-          props.handleCallback(response.data);
-          navigate("/");  
-        }
-        if(response.data.accountExists===true){
-          setIsCorrect(false);
-          // console.log("Wrong email or password");
-          //show an alert 
-        }
-        if(response.data.accountExists===false){
-          setAccountExists(false)
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (
+      signup.email.trim().length > 6 &&
+      signup.email.includes(["@" && "."]) &&
+      signup.password.trim().length > 7
+    ) {
+      axios
+        .post("http://localhost:8080/api/users/login", {
+          email: signup.email,
+          password: signup.password,
+        })
+        .then((response) => {
+          if (response.data.auth === true) {
+            localStorage.setItem("token", response.data.token);
+            setUser(response.data);
+            navigate("/profile/"`${response.data.user._id}}`);
+          }
+          if (response.data.accountExists === true) {
+            setError(response.data.message);
+          }
+          if (response.data.accountExists === false) {
+            setError(response.data.message);
+          }
+        })
+        .catch((err) => {
+          setError("An error occured, please try again later");
+        });
+    } else if (!signup.email.includes(["@" || "."])) {
+      setError("Please enter a valid email address");
+    } else {
+      setError("Please fill in all the fields correctly");
+    }
   };
 
   return (
     <div className="container">
-      <h1 style={{margin:"2rem 0"}}>Choose a Login Method to continue</h1>
+      <h1 style={{ margin: "2rem 0" }}>Choose a Login Method to continue</h1>
 
       <Card className={styles.card}>
-      <div className={styles.left}>
+        <div className={styles.left}>
           <button
             className={"btn btn-primary"}
             style={{ width: "100%" }}
@@ -112,14 +119,20 @@ const Login = (props) => {
                   </span>
                 </InputGroup.Text>
               </InputGroup>
-              {!isCorrect && (
-                  <p style={{backgroundColor:"#ffdcdf" , height:"50px", textAlign:"center", paddingTop:"15px", borderColor: isCorrect ? "":"red",color: isCorrect ? "" : "red"}}
-                  >Email or password is incorrect, try again</p>
-                )}
-              {!accountExists && (
-                  <p style={{backgroundColor:"#ffdcdf" , height:"50px", textAlign:"center", paddingTop:"15px", borderColor: isCorrect ? "":"red",color: isCorrect ? "" : "red"}}
-                  >Sorry, this account does not exist</p>
-                )}
+              {error && (
+                <p
+                  style={{
+                    backgroundColor: "#ffdcdf",
+                    height: "50px",
+                    textAlign: "center",
+                    paddingTop: "15px",
+                    borderColor: "red",
+                    color: "red",
+                  }}
+                >
+                  {error}
+                </p>
+              )}
             </Form.Group>
           </Col>
 
