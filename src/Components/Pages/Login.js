@@ -4,7 +4,7 @@ import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
-import { Col, Form, Row, InputGroup, Card } from "react-bootstrap";
+import { Col, Form, Row, InputGroup, Card, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
 const Login = (props) => {
@@ -14,6 +14,8 @@ const Login = (props) => {
   };
 
   const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(true)
+  const [accountExists, setAccountExists] = useState(true)
   const handleInputChange = (event) => {
     setsignup({ ...signup, [event.target.name]: event.target.value });
   };
@@ -25,15 +27,27 @@ const Login = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     axios
-      .post("https://test.muneerautomotive.co.ke/api/users/login", {
+      .post("http://localhost:8080/api/users/login", {
         email: signup.email,
         password: signup.password,
       })
       .then((response) => {
-        // console.log(response.data);
-        localStorage.setItem("token", response.data.token);
-        props.handleCallback(response.data);
-        navigate("/");
+        console.log(response);
+        if(response.data.auth===true)
+        {
+          setIsCorrect(true);
+          localStorage.setItem("token", response.data.token);
+          props.handleCallback(response.data);
+          navigate("/");  
+        }
+        if(response.data.accountExists===true){
+          setIsCorrect(false);
+          // console.log("Wrong email or password");
+          //show an alert 
+        }
+        if(response.data.accountExists===false){
+          setAccountExists(false)
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -98,9 +112,14 @@ const Login = (props) => {
                   </span>
                 </InputGroup.Text>
               </InputGroup>
-              {/* {!isPasswordValid && (
-                  <p className={styles.invalid}>password do not match</p>
-                )} */}
+              {!isCorrect && (
+                  <p style={{backgroundColor:"#ffdcdf" , height:"50px", textAlign:"center", paddingTop:"15px", borderColor: isCorrect ? "":"red",color: isCorrect ? "" : "red"}}
+                  >Email or password is incorrect, try again</p>
+                )}
+              {!accountExists && (
+                  <p style={{backgroundColor:"#ffdcdf" , height:"50px", textAlign:"center", paddingTop:"15px", borderColor: isCorrect ? "":"red",color: isCorrect ? "" : "red"}}
+                  >Sorry, this account does not exist</p>
+                )}
             </Form.Group>
           </Col>
 

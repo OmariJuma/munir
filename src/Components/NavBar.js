@@ -51,43 +51,44 @@ const NavBar = (props) => {
   //Login functionality
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const getUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://test.muneerautomotive.co.ke/login/success",
-          {
-            withCredentials: true,
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-          }
-        );
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://test.muneerautomotive.co.ke/login/success",
+  //         {
+  //           withCredentials: true,
+  //           headers: {
+  //             Accept: "application/json",
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       );
 
-        if (response.status === 200) {
-          const resObject = response.data;
-          setUser(resObject.user);
-        } else {
-          throw new Error("Authentication has failed!");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
+  //       if (response.status === 200) {
+  //         const resObject = response.data;
+  //         console.log(resObject)
+  //         // setUser(resObject.user);
+  //       } else {
+  //         throw new Error("Authentication has failed!");
+  //       }
+  //     } catch (err) {
+  //       console.log("error --> "+err);
+  //     }
+  //   };
 
-    getUser();
-  }, []);
-  console.log(user);
+  //   getUser();
+  // }, []);
+  // console.log(user);
 
   //logout functionality
-  const logoutHandler = () => {
-    window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
-  };
+  // const logoutHandler = () => {
+  //   window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
+  // };
 
-  const logInHandler = () => {
-    window.location.href = "https://test.muneerautomotive.co.ke/auth/google";
-  };
+  // const logInHandler = () => {
+  //   window.location.href = "https://test.muneerautomotive.co.ke/auth/google";
+  // };
 
   ////callback fxn
   const callback=(childData)=>{
@@ -221,7 +222,7 @@ const NavBar = (props) => {
                     {user.details !== undefined && user.details.firstName}
                     </small>}
                 </Dropdown.Toggle>
-                <Dropdown.Menu style={{ padding: "5px", margin: "0 -4.5rem" }}>
+                {/* <Dropdown.Menu style={{ padding: "5px", margin: "0 -4.5rem" }}>
                   {user && (
                     <Dropdown.Item
                       as={Link}
@@ -246,7 +247,7 @@ const NavBar = (props) => {
                       SignUp /Login
                     </Dropdown.Item>
                   )}{" "}
-                </Dropdown.Menu>
+                </Dropdown.Menu> */}
               </Dropdown>
               <button onClick={props.onShowCart}>
                 <FaCartPlus />
