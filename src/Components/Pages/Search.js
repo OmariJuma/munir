@@ -8,6 +8,7 @@ import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
 import styles from "./Products.module.css";
 import Input from "../UI/Input";
+import Footer from "../UI/Footer";
 
 
 const Search = (props) => {
@@ -39,7 +40,7 @@ const Search = (props) => {
   useEffect(() => {
     getRecords();
   }, [key]);
-  return (
+  return (<>
     <div className="container">
       {/* <Input val={key}/> */}
       <h1 className="mt-3">Search Results</h1>
@@ -69,6 +70,8 @@ const Search = (props) => {
         </Row>
       }
     </div>
+    <Footer/>
+    </>
   );
 };
 

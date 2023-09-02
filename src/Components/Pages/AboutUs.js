@@ -19,6 +19,7 @@ import C from "./../../assets/images/spanners.png";
 import Map from "./../../assets/images/auto.png";
 import WhyUs from "./../WhyUs";
 import Testimonials from "../UI/Testimonials";
+import Footer from "../UI/Footer";
 
 const AboutUs = () => {
   useCountUp({
@@ -185,6 +186,7 @@ const AboutUs = () => {
         <Testimonials />
       </div>
       <MySwiper />
+      <Footer/>
     </div>
   );
 };

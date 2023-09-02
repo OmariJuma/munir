@@ -27,8 +27,6 @@ function App() {
         <SearchModal/>
         {/* <BreadCrumb/> */}
         <SidebarIcons />
-
-        <Footer/>
         {cartIsOpen && <Cart onHideCart={hideCart} />}
       </Suspense>
     </CartProvider>

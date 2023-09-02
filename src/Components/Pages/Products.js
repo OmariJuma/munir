@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { v4 } from 'uuid'
 import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
+import Footer from "../UI/Footer";
 
 const Products = () => {
   const [productArray, setProductArray] = useState([]);
@@ -155,6 +156,7 @@ const Products = () => {
           </Row>}
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

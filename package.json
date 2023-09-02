@@ -1,7 +1,6 @@
 {
   "name": "muneer-app",
   "version": "0.1.0",
-  "proxy": "https://test.muneerautomotive.co.ke",
   "private": true,
   "homepage": "/",
   "devServer": {

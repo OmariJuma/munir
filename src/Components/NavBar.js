@@ -26,13 +26,14 @@ import logo from "./../assets/images/icons/logo300by150.svg";
 import Spinner from "./UI/Spinner";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Search from "./Pages/Search";
-import MoreDetails from "./MoreDetails";
+import MoreDetails from "./Pages/MoreDetails";
 import Login from "../Components/Pages/Login";
 import Profile from "../Components/Pages/Profile";
 import { Dropdown } from "react-bootstrap";
 import { TbDoorEnter, TbDoorExit } from "react-icons/tb";
 import axios from "axios";
 import SignUp from "./Pages/SignUp";
+import HomePage from "./Pages/HomePage";
 
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
@@ -48,8 +49,7 @@ const NavBar = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  const {user, setUser}=useContext(CartContext);
-
+  const { user, setUser } = useContext(CartContext);
 
   // useEffect(() => {
   //   const getUser = async () => {
@@ -91,7 +91,7 @@ const NavBar = (props) => {
   // };
 
   ////callback fxn
-console.log("user from context "+user)
+  console.log("user from context " + user);
   return (
     <Suspense fallback={<Spinner />}>
       <Router>
@@ -213,9 +213,12 @@ console.log("user from context "+user)
                   className="profileIcon"
                 >
                   <FaRegUserCircle />
-                  {user && <small>Hi { user.name !== undefined &&user.name.familyName}
-                    {user.details !== undefined && user.details.firstName}
-                    </small>}
+                  {user && (
+                    <small>
+                      Hi {user.name !== undefined && user.name.familyName}
+                      {user.details !== undefined && user.details.firstName}
+                    </small>
+                  )}
                 </Dropdown.Toggle>
                 {/* <Dropdown.Menu style={{ padding: "5px", margin: "0 -4.5rem" }}>
                   {user && (
@@ -305,19 +308,7 @@ console.log("user from context "+user)
             <Route path="*" exact element={<Error404 />} />
             <Route
               path="/"
-              element={
-                <div className="Container-fluid">
-                  <Crsl />
-                  <Products />
-
-                  <Services />
-                  <WhyUs />
-
-                  <Success />
-
-                  <MySwiper />
-                </div>
-              }
+              element={<HomePage />}
               errorElement={<Error404 />}
               exact
             />

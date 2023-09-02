@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 
 const Caard = (props) => {
   const product = props.product;
-  const rating = 1;
-  const zeroStar = 0;
   const data = {
     id: props.id,
     price: props.price,
