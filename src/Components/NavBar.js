@@ -29,6 +29,7 @@ import SignUp from "./Pages/SignUp";
 import HomePage from "./Pages/HomePage";
 import Checkout from "./UI/Checkout";
 import UserContext from "./store/user-context";
+import Cart from "./UI/Cart";
 
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
@@ -36,8 +37,7 @@ const AboutUs = lazy(() => import("./Pages/AboutUs"));
 
 const NavBar = (props) => {
   const [show, setShow] = useState(false);
-  const handleOpenOffcanvas = () => setShow(true);
-  const handleCloseOffcanvas = () => setShow(false);
+  const [cartIsOpen, setCartIsOpen] = useState(false); // Manage cart state here
 
   const cartCtx = useContext(CartContext);
   const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
@@ -46,47 +46,16 @@ const NavBar = (props) => {
 
   const { user } = useContext(UserContext);
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://test.muneerautomotive.co.ke/login/success",
-  //         {
-  //           withCredentials: true,
-  //           headers: {
-  //             Accept: "application/json",
-  //             "Content-Type": "application/json",
-  //           },
-  //         }
-  //       );
+  const handleOpenOffcanvas = () => setShow(true);
+  const handleCloseOffcanvas = () => setShow(false);
 
-  //       if (response.status === 200) {
-  //         const resObject = response.data;
-  //         console.log(resObject)
-  //         // setUser(resObject.user);
-  //       } else {
-  //         throw new Error("Authentication has failed!");
-  //       }
-  //     } catch (err) {
-  //       console.log("error --> "+err);
-  //     }
-  //   };
+  const showCart = () => {
+    setCartIsOpen(true);
+  };
 
-  //   getUser();
-  // }, []);
-  // console.log(user);
-
-  //logout functionality
-  // const logoutHandler = () => {
-  //   window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
-  // };
-
-  // const logInHandler = () => {
-  //   window.location.href = "https://test.muneerautomotive.co.ke/auth/google";
-  // };
-
-  ////callback fxn
-  console.log("user from context " + user);
+  const hideCart = () => {
+    setCartIsOpen(false);
+  };
   return (
     <Suspense fallback={<Spinner />}>
       <Router>
@@ -215,34 +184,8 @@ const NavBar = (props) => {
                     </small>
                   )}
                 </Dropdown.Toggle>
-                {/* <Dropdown.Menu style={{ padding: "5px", margin: "0 -4.5rem" }}>
-                  {user && (
-                    <Dropdown.Item
-                      as={Link}
-                      onClick={logoutHandler}
-                      className="logoutDropdown"
-                    >
-                      <span>
-                        <TbDoorEnter />
-                      </span>
-                      Logout
-                    </Dropdown.Item>
-                  )}
-                  {!user && (
-                    <Dropdown.Item
-                      as={Link}
-                      onClick={logInHandler}
-                      className="logInDropdown"
-                    >
-                      <span>
-                        <TbDoorExit />
-                      </span>
-                      SignUp /Login
-                    </Dropdown.Item>
-                  )}{" "}
-                </Dropdown.Menu> */}
               </Dropdown>
-              <button onClick={props.onShowCart}>
+              <button onClick={showCart}>
                 <FaCartPlus />
                 <span id="badge">{numberOfCartItems}</span>
               </button>
@@ -297,11 +240,11 @@ const NavBar = (props) => {
             <Route path="/search/:key" element={<Search />} exact />
             <Route
               path="/details/:id"
-              element={<MoreDetails onShowCart={props.onShowCart} />}
+              element={<MoreDetails onShowCart={showCart} />}
               exact
             />
             {/* <Route path="/checkout" element={ user ?<Checkout/>: <Navigate to="/login"/>}/> */}
-            <Route path="/checkout" element={ <Checkout/>}/>
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" exact element={<Error404 />} />
             <Route
               path="/"
@@ -310,6 +253,7 @@ const NavBar = (props) => {
               exact
             />
           </Routes>
+          {cartIsOpen && <Cart onHideCart={hideCart} />}
         </div>
       </Router>
     </Suspense>

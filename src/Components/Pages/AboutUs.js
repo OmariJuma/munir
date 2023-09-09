@@ -17,7 +17,8 @@ import C from "./../../assets/images/spanners.png";
 import Map from "./../../assets/images/auto.png";
 import WhyUs from "./../WhyUs";
 import Testimonials from "../UI/Testimonials";
-import Footer from "../UI/Footer";
+import { lazy} from "react";
+const Footer = lazy(() => import("../UI/Footer"))
 
 const AboutUs = () => {
   useCountUp({

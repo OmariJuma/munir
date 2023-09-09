@@ -6,7 +6,8 @@ import styles from "./SignUp.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import Google from "../../assets/images/icons/icons8-google.svg";
-import Footer from "../UI/Footer";
+import { lazy } from "react";
+const Footer = lazy(()=>import("../UI/Footer"))
 
 const SignUp = (props) => {
   const google = () => {

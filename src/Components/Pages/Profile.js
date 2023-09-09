@@ -4,7 +4,8 @@ import { TbDoorEnter } from "react-icons/tb";
 import { useNavigate } from "react-router";
 import CartContext from "../store/cart-context";
 import { useContext } from "react";
-import Footer from "../UI/Footer";
+import { lazy} from "react";
+const Footer = lazy(()=>("../UI/Footer"))
 
 const Profile = ({ details, handleCallback }) => {
   const navigate = useNavigate();

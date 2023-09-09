@@ -1,11 +1,12 @@
-import React from "react";
+import { lazy} from "react";
 import Crsl from "../Crsl";
 import Products from "./Products";
 import Services from "../Services";
 import WhyUs from "../WhyUs";
 import Success from "../Success";
 import MySwiper from "../UI/MySwiper";
-import Footer from "../UI/Footer";
+const Footer = lazy(() => import("../UI/Footer"))
+
 const HomePage = () => {
   return (
     <>

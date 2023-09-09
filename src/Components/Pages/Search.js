@@ -7,7 +7,8 @@ import { v4 } from "uuid";
 import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
 import styles from "./Products.module.css";
-import Footer from "../UI/Footer";
+import { lazy } from "react";
+const Footer = lazy(()=>import("../UI/Footer"));
 
 
 const Search = (props) => {

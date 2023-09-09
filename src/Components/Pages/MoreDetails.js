@@ -9,7 +9,9 @@ import { useLocation } from "react-router";
 import { useContext, useRef,  } from "react";
 import CartContext from "../store/cart-context";
 import Input from "../UI/Input";
-import Footer from "../UI/Footer";
+import { lazy} from "react";
+const Footer = lazy(()=>import("../UI/Footer"));
+
 const MoreDetails = (props) => {
   const location = useLocation();
   const state = location.state;

@@ -10,7 +10,8 @@ import { FaCheck, FaLock, FaClone, FaAward } from "react-icons/fa";
 import { MdMoneyOff } from "react-icons/md";
 import Testimonials from "../UI/Testimonials";
 import MyForm from "../UI/MyForm";
-import Footer from "../UI/Footer";
+import { lazy} from "react";
+const Footer = lazy(() => import("../UI/Footer"))
 
 const BookingPage = () => {
   return (

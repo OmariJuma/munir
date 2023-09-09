@@ -6,8 +6,9 @@ import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { Col, Form, Row, InputGroup, Card, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import Footer from "../UI/Footer";
 import UserContext from "../store/user-context";
+import { lazy} from "react";
+const Footer = lazy(() => import("../UI/Footer"))
 
 const Login = (props) => {
   const navigate = useNavigate();

@@ -1,10 +1,12 @@
 import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import classes from "./Checkout.module.css";
-import Footer from "./Footer";
 import LipaNaMpesa from "../../assets/images/logos/lipa.png";
 import Ceo from "../../assets/images/People/Mr_Mahmoud.jpeg";
 import { useState } from "react";
 import axios from "axios";
+import { lazy } from "react";
+const Footer = lazy(() => import("./Footer"));
+
 
 const Checkout = () => {
   const [amount, setAmount] = useState(1);

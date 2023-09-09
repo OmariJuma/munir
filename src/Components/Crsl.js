@@ -9,8 +9,8 @@ const Crsl = () => {
   return (
     <Carousel>
       <Carousel.Item>
-        <img src={bugatti} alt="the home screen" id={styles.def} className={styles.img}/>
-        <img src={bugatti2} alt="the home screen" id={styles.sub} className={styles.img}/>
+        <img src={bugatti} alt="the home screen" id={styles.def} />
+        <img src={bugatti2} alt="the home screen" id={styles.sub} />
         <h1 style={{ color: "white", position: "absolute", top: "2rem",textAlign:"center",right:"0",left:"0" }} id={styles.crslH1}>
           Muneer Automotive, The home of Tires & Rims
         </h1>

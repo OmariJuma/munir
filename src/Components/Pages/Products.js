@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { v4 } from 'uuid'
 import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
+// import { lazy} from "react";
 
 const Products = () => {
   const [productArray, setProductArray] = useState([]);
