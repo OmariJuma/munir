@@ -1,6 +1,5 @@
 import { Card, Row, Col } from "react-bootstrap";
 import styles from "./AboutUs.module.css";
-import ig from "./../../assets/images/wheel1.jpeg";
 import ceo from "../../assets/images/People/Mr_Mahmoud.jpeg";
 import fashion from "../../assets/images/People/fashion.jpg";
 import man from "../../assets/images/People/man.avif";
@@ -8,7 +7,6 @@ import bizman from "../../assets/images/People/bizman.avif";
 import {
   FaFacebook,
   FaInstagram,
-  FaMapMarkerAlt,
   FaTiktok,
 } from "react-icons/fa";
 import Services from "../Services";
@@ -28,112 +26,39 @@ const AboutUs = () => {
     enableScrollSpy: true,
     // scrollSpyDelay: 1000,
   });
+  const personnel = [{position: "CEO & Founder", name: " Mr. Mrefu", image: ceo},{ position:"Web Developer", name:"Mr. Juma", image:fashion}, {position:"IdrisCustomer Relation",name:"Mr. Idris", image:bizman}, {position:" Mechanic", name:"Mr. Kamau", image:man}]
   return (
     <div>
       <h1 id={styles.h1}>Our Team</h1>
       <Row className={styles.div} style={{ margin: "auto" }}>
-        <Col xm={12} sm={6} md={6} lg={3}>
+        {personnel.map((person)=>(<Col xm={12} sm={6} md={6} lg={3}>
           <Card className={styles.card}>
-            <Card.Img src={ceo} />
-            <Card.Title className={styles.title}>CEO & Founder</Card.Title>
+            <Card.Img src={person.image} />
+            <Card.Title className={styles.title}>{person.position}</Card.Title>
 
             <Card.Body className={styles.desc}>
-              Mr. Mrefu
+              {person.name}
             </Card.Body>
             <Card.Footer className={styles.socials}>
-              <a href="https://www.facebook.com" target={"_blank"}>
+              <a href="https://www.facebook.com" target={"_blank"} rel="noeopener">
                 <span className={styles.icon}>
                   <FaFacebook />
                 </span>
               </a>
-              <a href="https://www.tiktok.com" target={"_blank"}>
+              <a href="https://www.tiktok.com" target={"_blank"} rel="noreffer">
                 <span className={styles.icon}>
                   <FaTiktok />
                 </span>
               </a>
-              <a href="https://www.instagram.com" target={"_blank"}>
+              <a href="https://www.instagram.com" target={"_blank"} rel="noreffer">
                 <span className={styles.icon}>
                   <FaInstagram />
                 </span>
               </a>
             </Card.Footer>
           </Card>
-        </Col>
-        <Col xm={12} sm={6} md={6} lg={3}>
-          <Card className={styles.card}>
-            <Card.Img src={fashion} />
-            <Card.Title className={styles.title}>Web Developer</Card.Title>
-
-            <Card.Body className={styles.desc}>Mr. Juma</Card.Body>
-            <Card.Footer className={styles.socials}>
-              <a href="https://www.facebook.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaFacebook />
-                </span>
-              </a>
-              <a href="https://www.tiktok.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaTiktok />
-                </span>
-              </a>
-              <a href="https://www.instagram.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaInstagram />
-                </span>
-              </a>
-            </Card.Footer>
-          </Card>
-        </Col>
-        <Col xm={12} sm={6} md={6} lg={3}>
-          <Card className={styles.card}>
-            <Card.Img src={bizman} />
-            <Card.Title className={styles.title}>Customer Relation</Card.Title>
-
-            <Card.Body className={styles.desc}>Idris</Card.Body>
-            <Card.Footer className={styles.socials}>
-              <a href="https://www.facebook.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaFacebook />
-                </span>
-              </a>
-              <a href="https://www.tiktok.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaTiktok />
-                </span>
-              </a>
-              <a href="https://www.instagram.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaInstagram />
-                </span>
-              </a>
-            </Card.Footer>
-          </Card>
-        </Col>
-        <Col xm={12} sm={6} md={6} lg={3}>
-          <Card className={styles.card}>
-            <Card.Img src={man} />
-            <Card.Title className={styles.title}>Mechanic</Card.Title>
-
-            <Card.Body className={styles.desc}>Mr. Kamau</Card.Body>
-            <Card.Footer className={styles.socials}>
-              <a href="https://www.facebook.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaFacebook />
-                </span>
-              </a>
-              <a href="https://www.tiktok.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaTiktok />
-                </span>
-              </a>
-              <a href="https://www.instagram.com" target={"_blank"}>
-                <span className={styles.icon}>
-                  <FaInstagram />
-                </span>
-              </a>
-            </Card.Footer>
-          </Card>
-        </Col>
+        </Col>))}
+        
       </Row>
       <Services />
       <WhyUs />

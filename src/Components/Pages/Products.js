@@ -9,13 +9,11 @@ import { Link } from "react-router-dom";
 import { v4 } from 'uuid'
 import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
-import Footer from "../UI/Footer";
 
 const Products = () => {
   const [productArray, setProductArray] = useState([]);
   const [rims, setRims] = useState([]);
   const [tyres, setTyres] = useState([]);
-  const [details, setDetails] = useState(false);
   const [isLoading, setIsLoading] = useState(false)
   const [failed, setFailed] = useState(false)
   useEffect(() => {
@@ -98,7 +96,7 @@ const Products = () => {
         {isLoading && <Spinner/>}
           {failed && <NoInternet/>}
          {!isLoading&& <Row className={`${styles.singleProduct}`}>
-            {productArray.map((prod) => (
+            {rims.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <div>
                   <Caard
@@ -134,7 +132,7 @@ const Products = () => {
         {isLoading && <Spinner/>}
           {failed && <NoInternet/>}
          {!isLoading&& <Row className={`${styles.singleProduct}`}>
-            {productArray.map((prod) => (
+            {tyres.map((prod) => (
               <Col xs={5} md={3} lg={3} xxl={3}>
                 <div>
                   <Caard
@@ -156,7 +154,7 @@ const Products = () => {
           </Row>}
         </div>
       </section>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

@@ -6,12 +6,12 @@ import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { Col, Form, Row, InputGroup, Card, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import CartContext from "../store/cart-context";
 import Footer from "../UI/Footer";
+import UserContext from "../store/user-context";
 
 const Login = (props) => {
   const navigate = useNavigate();
-  const { setUser } = useContext(CartContext);
+  const { user } = useContext(UserContext);
   const google = () => {
     window.open("https://test.muneerautomotive.co.ke/auth/google", "_self");
   };
@@ -41,13 +41,19 @@ const Login = (props) => {
         .then((response) => {
           if (response.data.auth === true) {
             localStorage.setItem("token", response.data.token);
-            setUser(response.data);
+            // user.userName = response.data.userName;
+            // user.secondName = response.data.secondName;
+            // user.email = response.data.email;
+            // user.phoneNo = response.data.phoneNo;
+            console.log(user)
             navigate("/profile/"`${response.data.user._id}}`);
           }
           if (response.data.accountExists === true) {
+            console.log("account does exist")
             setError(response.data.message);
           }
           if (response.data.accountExists === false) {
+            console.log("no account");
             setError(response.data.message);
           }
         })

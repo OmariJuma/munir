@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React, { useContext, lazy, Suspense, useState, useEffect } from "react";
+import React, { useContext, lazy, Suspense, useState } from "react";
 import {
   Link,
   BrowserRouter as Router,
@@ -15,11 +15,6 @@ import {
   Navigate,
   Routes,
 } from "react-router-dom";
-import Crsl from "./../Components/Crsl";
-import Services from "./../Components/Services";
-import Success from "./../Components/Success";
-import WhyUs from "./../Components/WhyUs";
-import MySwiper from "./../Components/UI/MySwiper";
 import Products from "./Pages/Products";
 import CartContext from "./store/cart-context";
 import logo from "./../assets/images/icons/logo300by150.svg";
@@ -30,10 +25,10 @@ import MoreDetails from "./Pages/MoreDetails";
 import Login from "../Components/Pages/Login";
 import Profile from "../Components/Pages/Profile";
 import { Dropdown } from "react-bootstrap";
-import { TbDoorEnter, TbDoorExit } from "react-icons/tb";
-import axios from "axios";
 import SignUp from "./Pages/SignUp";
 import HomePage from "./Pages/HomePage";
+import Checkout from "./UI/Checkout";
+import UserContext from "./store/user-context";
 
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
@@ -49,7 +44,7 @@ const NavBar = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  const { user, setUser } = useContext(CartContext);
+  const { user } = useContext(UserContext);
 
   // useEffect(() => {
   //   const getUser = async () => {
@@ -305,6 +300,8 @@ const NavBar = (props) => {
               element={<MoreDetails onShowCart={props.onShowCart} />}
               exact
             />
+            {/* <Route path="/checkout" element={ user ?<Checkout/>: <Navigate to="/login"/>}/> */}
+            <Route path="/checkout" element={ <Checkout/>}/>
             <Route path="*" exact element={<Error404 />} />
             <Route
               path="/"
