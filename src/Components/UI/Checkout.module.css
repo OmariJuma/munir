@@ -44,4 +44,20 @@
       border-radius: 50%; /* Makes it a circle */
     }
   }  /* Add any other existing styles here */
-  
+  .disclaimer{
+    text-align: justify;
+    padding:10px;
+    border-left: 4px solid red;
+    border-color: red;
+    & a{
+       background-color: white;
+       border-radius: 10px;
+       padding: 2px;
+       margin: 2px;
+    }
+  }
+  .disclaimer::before{
+    content: "Disclaimer";
+    font-size: 20px;
+    font-weight: bold;
+  }
