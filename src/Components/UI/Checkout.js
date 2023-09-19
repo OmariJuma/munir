@@ -1,17 +1,14 @@
 import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import classes from "./Checkout.module.css";
 import LipaNaMpesa from "../../assets/images/logos/lipa.png";
-import Ceo from "../../assets/images/People/Mr_Mahmoud.jpeg";
 import { useState } from "react";
 import axios from "axios";
 import { lazy } from "react";
-import counties from "../Utilities/counties";
-import constituencies from "../Utilities/Constituencies";
+import FilterLocation from "./filterLocation";
 const Footer = lazy(() => import("./Footer"));
 
 const Checkout = () => {
   const [amount, setAmount] = useState(1);
-  const [phone, setPhone] = useState(null);
   const [customerInfo, setCustomerInfo] = useState({
     firstName: "",
     secondName: "",
@@ -20,11 +17,6 @@ const Checkout = () => {
     email: "",
     address: "",
     addInfo: "",
-    county: {
-      countyName: "",
-      countyCode: "",
-    },
-    constituency: "",
   });
   const handleInputChange = (event) => {
     setCustomerInfo({
@@ -36,8 +28,8 @@ const Checkout = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/stk", {
-        phone: phone,
+      .post("http://localhost:8080/mpesa/stk", {
+        phone: customerInfo.phone,
         amount: amount,
       })
       .then((res) => {
@@ -67,7 +59,7 @@ const Checkout = () => {
           alt="Pay using mpesa"
         />
         <h2>Address</h2>
-        <Form className={classes.form}>
+        <Form className={classes.form} onSubmit={submitHandler}>
           <Row>
             <Col md={6} lg={6} xxl={6}>
               <Form.Group className="mb-3" controlId="formBasicInput">
@@ -103,12 +95,12 @@ const Checkout = () => {
               <Form.Group className="mb-3" controlId="formBasicInput">
                 <Form.Label>Mobile number</Form.Label>
                 <Form.Control
-                  type="text"
-                  name="firstName"
-                  placeholder="John"
+                  type="number"
+                  name="phone"
+                  placeholder="07xxxxxxxx"
                   value={customerInfo.phone}
                   onChange={handleInputChange}
-                  minLength={3}
+                  minLength={10}
                   required
                 />
               </Form.Group>
@@ -157,58 +149,8 @@ const Checkout = () => {
               </Form.Group>
             </Col>
           </Row>
-          <Row>
-            <Col md={6} lg={6} xxl={6}>
-              <Form.Group className="mb-3" controlId="countyAndConstituency">
-                <Form.Label>Select County</Form.Label>
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  name="county"
-                  value={customerInfo.county}
-                  onChange={handleInputChange}
-                >
-                  <option value="">Open this menu</option>
-                  {counties.map((county) => (
-                    <option key={county.code} value={county.county}>
-                      {county.county}
-                    </option>
-                  ))}
-                </select>
-              </Form.Group>
-            </Col>
-            <Col md={6} lg={6} xxl={6}>
-              <Col md={6} lg={6} xxl={6}>
-                <Form.Group className="mb-3" controlId="formBasicInput">
-                  <Form.Label>City/ Constituency/ Location</Form.Label>
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                    name="constituency" // Set the name attribute to "constituency"
-                    value={customerInfo.constituency} // Set the selected value to customerInfo.constituency
-                    onChange={handleInputChange} // Handle the change event
-                  >
-                    <option value="">Open this select menu</option>
-                    {constituencies
-                      .filter(
-                        (constituency) =>
-                          constituency["county-code"] ===
-                          customerInfo.county.countyCode
-                      )
-                      .map((constituency) => (
-                        <option
-                          key={constituency.code}
-                          value={constituency.constituency}
-                        >
-                          {constituency.constituency}
-                        </option>
-                      ))}
-                  </select>{" "}
-                </Form.Group>
-              </Col>
-            </Col>
-          </Row>
-          <Button type="submit" onClick={submitHandler}>
+          <FilterLocation />
+          <Button type="submit">
             Pay Ksh 1000
           </Button>
         </Form>
