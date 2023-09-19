@@ -4,6 +4,7 @@ import ig from "./../assets/images/notes.jpg";
 import client from "./../assets/images/client.png";
 import call from "./../assets/images/realPhone.png";
 import mechanic from "./../assets/images/spanners.png";
+import { motion } from "framer-motion";
 
 import styles from "./WhyUs.module.css";
 const WhyUs = (props) => {
@@ -34,24 +35,41 @@ const WhyUs = (props) => {
     },
   ];
 
-  return (<div>
-          <h2>Why Us</h2>
+  return (
+    <div>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeInOut" }}
+        viewport={{ once: false }}
+        id={styles.h2}
+      >
+        Why Us
+      </motion.h2>
 
-     <div  className="row" style={{justifyContent:'center',gap:'2rem'}}>
-
-      {reasons.map((i) => (
-        <Card className={`${"text-white"} ${styles.whyus}`} key={i.id} style={{width:"250px",padding:"0"}}>
-          <Card.Img src={i.image} alt="Card image" />
-          <Card.ImgOverlay>
-            <Card.Title>{i.title}</Card.Title>
-            <Card.Text>
-              {i.text}
-            </Card.Text>
-          </Card.ImgOverlay>
-        </Card>
-      ))}
+      <div className="row" style={{ justifyContent: "center", gap: "2rem" }}>
+        {reasons.map((i) => (
+          <Card
+            className={`${"text-white"} ${styles.whyus}`}
+            key={i.id}
+            style={{ width: "250px", padding: "0" }}
+          >
+            <motion.div
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ ease: "easeInOut", delay: 0.1 }}
+              viewport={{ once: false }}
+            >
+              <Card.Img src={i.image} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title>{i.title}</Card.Title>
+                <Card.Text>{i.text}</Card.Text>
+              </Card.ImgOverlay>
+            </motion.div>
+          </Card>
+        ))}
       </div>
-</div>
+    </div>
   );
 };
 

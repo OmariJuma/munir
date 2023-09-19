@@ -27,15 +27,26 @@ const Checkout = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:8080/mpesa/stk", {
-        phone: customerInfo.phone,
-        amount: amount,
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
+    if (
+      customerInfo.firstName.trim().length >= 2 &&
+      customerInfo.secondName.trim().length >= 2 &&
+      customerInfo.email.trim().includes("@").length !== 0 &&
+      customerInfo.phone.length == 10 &&
+      customerInfo.address.trim().length>=5
+    ) {
+      axios
+        .post("http://localhost:8080/mpesa/stk", {
+          phone: customerInfo.phone,
+          amount: amount,
+        })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
+    }
+    else{
+      alert("Please fill in all the required fields")
+    }
   };
   console.log(customerInfo.county);
   return (
@@ -50,7 +61,7 @@ const Checkout = () => {
           <a href="tel:+254707686784">+254707686784</a>
           for further arrangements. <br />
           We use third-party courier services such naekana, G4s, etc to deliver
-          your goods. Hence, you will be required to pick up your order at their
+          your goods. Hence, you may be required to pick up your order at their
           office.
         </p>
         <Image
@@ -114,7 +125,6 @@ const Checkout = () => {
                   onChange={handleInputChange}
                   name="secondName"
                   value={customerInfo.altPhone}
-                  required
                   minLength={3}
                 />
               </Form.Group>
@@ -150,9 +160,7 @@ const Checkout = () => {
             </Col>
           </Row>
           <FilterLocation />
-          <Button type="submit">
-            Pay Ksh 1000
-          </Button>
+          <Button type="submit">Pay Ksh 1000</Button>
         </Form>
       </div>
       <Footer />
