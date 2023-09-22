@@ -1,0 +1,43 @@
+.myContainer {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  #cont{
+      margin-top: 2rem;
+      text-align: center;
+      background-color: var(--dark);
+  }
+  .image {
+    height: 100%;
+    border-radius: 0;
+  }
+  .card {
+  background-color: #f9f9f9;  }
+  .title{
+    text-align: center;
+  }
+ .afterBody{
+  color: white;
+ }
+ .beforeBody{
+  color: white;
+
+ }
+ .h1{
+    text-align: center;
+    margin: 2rem 0;
+    color: rgb(1, 221, 1);
+    text-decoration: underline;
+ }
+ .strong{
+  text-align: center;
+ }
+ .beforeCard, .beforeImage{
+background-color: var(--priColor);
+border-radius: 0 5rem;
+ }
+ .afterCard, .afterImage{
+  background-color: red;
+  border-radius: 5rem 0;
+   }
+ 

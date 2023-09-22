@@ -30,6 +30,7 @@ import HomePage from "./Pages/HomePage";
 import Checkout from "./UI/Checkout";
 import UserContext from "./store/user-context";
 import Cart from "./UI/Cart";
+import BeforeAfter from "./Pages/BeforeAfter";
 
 const Error404 = lazy(() => import("./Pages/Error404.js"));
 const BookingPage = lazy(() => import("./Pages/BookingPage"));
@@ -232,6 +233,12 @@ const NavBar = (props) => {
             <Route
               path="/booking"
               element={<BookingPage />}
+              exact
+              errorElement={<Error404 />}
+            />
+            <Route
+              path="/beforeAfter"
+              element={<BeforeAfter />}
               exact
               errorElement={<Error404 />}
             />

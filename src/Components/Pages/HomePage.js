@@ -15,7 +15,6 @@ const HomePage = () => {
         <Products />
         <Services />
         <WhyUs />
-        <Success />
         <MySwiper />
       </div>
       <Footer />
