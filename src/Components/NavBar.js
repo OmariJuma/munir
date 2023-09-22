@@ -6,35 +6,20 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "../App.css";
 import "./NavBar.css";
 import Input from "./UI/Input";
-import React, { useContext, lazy, Suspense, useState } from "react";
+import React, { useContext, Suspense, useState } from "react";
 import {
   Link,
   BrowserRouter as Router,
   // BrowserRouter as Router,
-  Route,
-  Navigate,
-  Routes,
 } from "react-router-dom";
-import Products from "./Pages/Products";
 import CartContext from "./store/cart-context";
 import logo from "./../assets/images/icons/logo300by150.svg";
 import Spinner from "./UI/Spinner";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Search from "./Pages/Search";
-import MoreDetails from "./Pages/MoreDetails";
-import Login from "../Components/Pages/Login";
-import Profile from "../Components/Pages/Profile";
 import { Dropdown } from "react-bootstrap";
-import SignUp from "./Pages/SignUp";
-import HomePage from "./Pages/HomePage";
-import Checkout from "./UI/Checkout";
 import UserContext from "./store/user-context";
 import Cart from "./UI/Cart";
-import BeforeAfter from "./Pages/BeforeAfter";
-
-const Error404 = lazy(() => import("./Pages/Error404.js"));
-const BookingPage = lazy(() => import("./Pages/BookingPage"));
-const AboutUs = lazy(() => import("./Pages/AboutUs"));
+import MyRoutes from "./Utilities/Routes";
 
 const NavBar = (props) => {
   const [show, setShow] = useState(false);
@@ -194,72 +179,7 @@ const NavBar = (props) => {
           </div>
         </Navbar>
         <div>
-          <Routes>
-            <Route
-              path="/login"
-              element={
-                user ? <Navigate to={`/profile/${user.id}`} /> : <Login />
-              }
-            />
-            <Route path="/signup" element={<SignUp />} />
-            <Route
-              path="/profile/:id"
-              element={
-                user ? <Profile details={user} /> : <Navigate to="/login" />
-              }
-            />
-            {/* <Route path="/profile" element={<Profile />} /> */}
-
-            <Route
-              path="/products/rims"
-              element={<Products />}
-              exact
-              errorElement={<Error404 />}
-            />
-
-            <Route
-              path="/products/tyres"
-              element={<Products />}
-              exact
-              errorElement={<Error404 />}
-            />
-            <Route
-              path="/products"
-              element={<Products />}
-              exact
-              errorElement={<Error404 />}
-            />
-
-            <Route
-              path="/booking"
-              element={<BookingPage />}
-              exact
-              errorElement={<Error404 />}
-            />
-            <Route
-              path="/beforeAfter"
-              element={<BeforeAfter />}
-              exact
-              errorElement={<Error404 />}
-            />
-
-            <Route path="/about-us" element={<AboutUs />} exact />
-            <Route path="/search/:key" element={<Search />} exact />
-            <Route
-              path="/details/:id"
-              element={<MoreDetails onShowCart={showCart} />}
-              exact
-            />
-            {/* <Route path="/checkout" element={ user ?<Checkout/>: <Navigate to="/login"/>}/> */}
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="*" exact element={<Error404 />} />
-            <Route
-              path="/"
-              element={<HomePage />}
-              errorElement={<Error404 />}
-              exact
-            />
-          </Routes>
+          <MyRoutes user={user} showCart={showCart}/>
           {cartIsOpen && <Cart onHideCart={hideCart} />}
         </div>
       </Router>
