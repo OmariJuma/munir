@@ -22,6 +22,7 @@ import { Card, Row, Col } from "react-bootstrap";
 import styles from "./BeforeAfter.module.css";
 import styles2 from "./GalleryMenu.module.css";
 import { Link } from "react-router-dom";
+import Footer from "../UI/Footer";
 
 const GalleryMenu = () => {
   const carBrands = [
@@ -47,6 +48,8 @@ const GalleryMenu = () => {
   ];
   return (
     <>
+    <h1 className={styles2.h1}>Please click on a brand to see our work</h1>
+    <hr className={styles2.hr}/>
       <Row className="container" style={{ margin: "auto", marginTop: "2rem" }}>
         {carBrands.map((brand) => (
           <Col sm={6} md={6} lg={4} xl={3} className={styles.myContainer}>
@@ -65,6 +68,7 @@ const GalleryMenu = () => {
           </Col>
         ))}
       </Row>
+      <Footer/>
     </>
   );
 };

@@ -56,8 +56,6 @@ const Checkout = () => {
         <p className={classes.disclaimer}>
           : Dear customer, we only support payments via mpesa, If you want to
           make purchase using other payment options please contact us on{" "}
-          <a href="tel:+254722174444">+254722174444</a>
-          or
           <a href="tel:+254707686784">+254707686784</a>
           for further arrangements. <br />
           We use third-party courier services such naekana, G4s, etc to deliver

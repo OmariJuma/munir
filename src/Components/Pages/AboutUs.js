@@ -37,9 +37,10 @@ const AboutUs = () => {
         {personnel.map((person) => (
           <Col xm={12} sm={6} md={6} lg={3}>
             <motion.div
-              initial={{ opacity: 0, x: -200 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             >
               <Card className={styles.card}>
                 <Card.Img src={person.image} />
@@ -88,10 +89,10 @@ const AboutUs = () => {
         className={`${styles.overlayDiv} "bg-dark text-white text-center justify-center "`}
       >
         <motion.div
-          initial={{ opacity: 0, x: 200 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ ease: "easeInOut" }}
-          viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
         >
           <Card.Img src={C} alt="Card image" id={styles.img} />
           <Card.ImgOverlay>
@@ -128,10 +129,10 @@ const AboutUs = () => {
         </motion.div>
       </Card>{" "}
       <motion.div
-        initial={{ opacity: 0, x: 200 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ ease: "easeInOut" }}
-        viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
       >
         <p id={styles.loc}>Find us today</p>
         <h4 id={styles.h4}>Our location</h4>
@@ -145,10 +146,10 @@ const AboutUs = () => {
         </a>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, x: 200 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ ease: "easeInOut" }}
-        viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
         style={{ marginTop: "4rem", marginBottom: "3rem" }}
       >
         <Testimonials />

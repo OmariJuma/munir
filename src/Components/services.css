@@ -32,16 +32,16 @@
 .textArea h2{
 	margin-bottom: 1rem;
 	color:black;
-}.textArea h2:hover::after{
+}
+/* .textArea h2:hover::after{
 	display: block;
 	content: '--------';
 	margin:-1rem 0 2rem 0;
 	width:40%;
 	height: 3px;
 	color:rgb(56, 54, 54);
-	/* transform: scaleX(1); */
 	animation: Rotate 1.5s linear infinite;
-}
+} */
 .textArea h2::before{
 	content: '// ';
 	color:red;

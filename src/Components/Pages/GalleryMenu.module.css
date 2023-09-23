@@ -12,3 +12,15 @@
 .image{
     height: 200px;
 }
+.hr{
+    width: 200px;
+    color:black;
+    margin: auto;
+    opacity: 1;
+    border: 5px solid;
+    border-radius: 5px;
+}
+.h1{
+    margin-top: 2rem;
+    color: black;
+}

@@ -38,10 +38,10 @@ const WhyUs = (props) => {
   return (
     <div>
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeInOut" }}
-        viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
         id={styles.h2}
       >
         Why Us
@@ -55,10 +55,10 @@ const WhyUs = (props) => {
             style={{ width: "250px", padding: "0" }}
           >
             <motion.div
-              initial={{ opacity: 0, x: 200 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ ease: "easeInOut", delay: 0.1 }}
-              viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             >
               <Card.Img src={i.image} alt="Card image" />
               <Card.ImgOverlay>

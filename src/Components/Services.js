@@ -8,10 +8,10 @@ const Services = () => {
   return (
     <div className="holder">
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeInOut" }}
-        viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
         className="text-center 
     servicesTitle"
       >
@@ -23,19 +23,20 @@ const Services = () => {
           style={{ margin: "auto", justifyContent: "center" }}
         >
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeInOut" }}
-            viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="col-sm-12 col-md-4 col--lg-4"
           >
             <img src={lottie} id="lottie" alt="" />
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="col-sm-12 col-md-8 col-lg-8 textArea"
           >
             <h2>We Sell Tyres</h2>
@@ -46,10 +47,10 @@ const Services = () => {
             </p>
             <p>We have the following types of tires namely:</p>
             <div className="rimTypes">
-              <ButtonCustom text="All Terrain" />
-              <ButtonCustom text="Mud Terrain" />
-              <ButtonCustom text="Normal Tyre" />
-              <ButtonCustom text="Commercial Tyres" />
+              <ButtonCustom variant="tyres" text="All Terrain" />
+              <ButtonCustom variant="tyres" text="Mud Terrain" />
+              <ButtonCustom variant="tyres" text="Normal Tyre" />
+              <ButtonCustom variant="tyres" text="Commercial Tyres" />
             </div>
           </motion.div>
         </div>
@@ -59,10 +60,10 @@ const Services = () => {
           style={{ margin: "auto", justifyContent: "center" }}
         >
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeInOut" }}
-            viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="col-sm-12 col-md-8 col-lg-8 textArea"
           >
             <h2>Dealers In Rims</h2>
@@ -71,19 +72,19 @@ const Services = () => {
               low discounted prices. Our enterprise has a variety of rims that
               you can choose from.{" "}
             </p>
-            <p>We have the following types of tires namely:</p>
+            <p>We have the following types of rims namely:</p>
             <div className="rimTypes">
-              <ButtonCustom variant={false} text="Normal rim" />
-              <ButtonCustom variant={false} text="Small Offset" />
-              <ButtonCustom variant={false} text="Offset" />
-              <ButtonCustom text="All sizes are available" />
+              <ButtonCustom variant="rims" text="Normal rim" />
+              <ButtonCustom variant="rims" text="Small Offset" />
+              <ButtonCustom variant="rims" text="Offset" />
+              <ButtonCustom variant="rims" text="All sizes are available" />
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeInOut" }}
-            viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="col-sm-12 col-md-4 col--lg-4"
           >
             <img src={lottie2} id="lottie" alt="" />
@@ -94,20 +95,20 @@ const Services = () => {
           style={{ margin: "auto", justifyContent: "center" }}
         >
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeInOut" }}
-            viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="col-sm-12 col-md-4 col--lg-4"
           >
             <img src={lottie} id="lottie" alt="" />
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeInOut" }}
-            viewport={{ once: false }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{delay:"0.25", ease:"easeIn"}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="col-sm-12 col-md-8 col-lg-8 textArea"
           >
             <h2>Booking</h2>
@@ -120,7 +121,7 @@ const Services = () => {
               FREE!!
             </p>
             <div className="rimTypes">
-              <ButtonCustom variant={false} text="Schedule Booking" />
+              <ButtonCustom variant="booking" text="Schedule Booking" />
             </div>
           </motion.div>
         </div>

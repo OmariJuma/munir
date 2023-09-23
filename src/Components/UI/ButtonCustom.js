@@ -9,7 +9,7 @@ const ButtonCustom = (props) => {
   const onClickHandler = () => {};
   return (
     <>
-      {!variant && (
+      {variant =="tyres" && (
         <Link
           style={{ color: "red", border: "2px solid red" }}
           id={styles.btn}
@@ -18,11 +18,22 @@ const ButtonCustom = (props) => {
           {props.text}
         </Link>
       )}
-      {variant && (
+      {variant=="rims" && (
         <Link
           className={styles.variant}
           id={styles.btn}
           to="/products/rims"
+
+          onClick={onClickHandler}
+        >
+          {props.text}
+        </Link>
+      )}
+      {variant=="booking" && (
+        <Link
+          className={styles.variant}
+          id={styles.btn}
+          to="/booking"
 
           onClick={onClickHandler}
         >

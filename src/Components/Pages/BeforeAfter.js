@@ -17,6 +17,7 @@ import b7 from "../../assets/images/before and after/b7.jpeg";
 import a8 from "../../assets/images/before and after/a8.jpeg";
 import b8 from "../../assets/images/before and after/b8.jpeg";
 import styles from "./BeforeAfter.module.css";
+import Footer from "../UI/Footer";
 
 const BeforeAfter = () => {
   const b4Naft = [
@@ -31,7 +32,7 @@ const BeforeAfter = () => {
   ];
 
   return (
-    <div >
+    <>
       <h1 className={styles.h1}>Success Stories</h1>
       <p className={styles.strong}>
         Below is a gallery of our clients' vehicles before and after
@@ -71,7 +72,8 @@ const BeforeAfter = () => {
           ))}
         </Row>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };
 export default BeforeAfter;

@@ -40,7 +40,7 @@ const BookingPage = () => {
 
     
     <MyForm/>
-      <h6>
+      <h6 style={{textAlign:"center", margin:"3rem 0"}}>
         If you already have a booking <a href="/index" id={styles.link}>click here</a>
       </h6>
       <h2>
