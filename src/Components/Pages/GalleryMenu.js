@@ -26,6 +26,11 @@ import Footer from "../UI/Footer";
 
 const GalleryMenu = () => {
   const carBrands = [
+    { name: "Toyota", image: Toyota },
+    { name: "Nissan", image: Nissan },
+    { name: "Suzuki", image: Suzuki },
+    { name: "Subaru", image: Subaru },
+    { name: "Mazda", image: Mazda },
     { name: "Audi", image: Audi },
     { name: "BMW", image: BMW },
     { name: "Chevrolet", image: Chevrolet },
@@ -34,22 +39,17 @@ const GalleryMenu = () => {
     { name: "Jeep", image: Jeep },
     { name: "Land Rover", image: LandRover },
     { name: "Lexus", image: Lexus },
-    { name: "Mazda", image: Mazda },
     { name: "Mercedes Benz", image: Mercedesbenz },
     { name: "Mitsubishi", image: Mitsubishi },
-    { name: "Nissan", image: Nissan },
     { name: "Porsche", image: Porsche },
-    { name: "Subaru", image: Subaru },
-    { name: "Suzuki", image: Suzuki },
     { name: "Tata", image: Tata },
-    { name: "Toyota", image: Toyota },
     { name: "Volkswagen", image: Volkswagen },
     { name: "Volvo", image: Volvo },
   ];
   return (
     <>
-    <h1 className={styles2.h1}>Please click on a brand to see our work</h1>
-    <hr className={styles2.hr}/>
+      <h1 className={styles2.h1}>Please click on a brand to see our work</h1>
+      <hr className={styles2.hr} />
       <Row className="container" style={{ margin: "auto", marginTop: "2rem" }}>
         {carBrands.map((brand) => (
           <Col sm={6} md={6} lg={4} xl={3} className={styles.myContainer}>
@@ -68,7 +68,7 @@ const GalleryMenu = () => {
           </Col>
         ))}
       </Row>
-      <Footer/>
+      <Footer />
     </>
   );
 };

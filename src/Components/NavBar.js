@@ -20,6 +20,7 @@ import { Dropdown } from "react-bootstrap";
 import UserContext from "./store/user-context";
 import Cart from "./UI/Cart";
 import MyRoutes from "./Utilities/Routes";
+import Marquee from "react-fast-marquee";
 
 const NavBar = (props) => {
   const [show, setShow] = useState(false);
@@ -188,8 +189,53 @@ const NavBar = (props) => {
             </span>
           </div>
         </Navbar>
+        <Marquee
+          speed={100}
+          pauseOnHover={true}
+          pauseOnClick={true}
+          className="marquee"
+        >
+          <span>
+            <h1 className="marquee-deals">
+              We deal with this and other brands🤯
+            </h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Maxxis</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">BF-Goodrich</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Achilles</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">BridgeStone</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Jk Tyre</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Comforser</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">A-plus</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Petromax</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Gt-Radial</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">Dunlop</h1>
+          </span>
+          <span>
+            <h1 className="marquee-text">JoyRoad</h1>
+          </span>
+        </Marquee>
         <div>
-          <MyRoutes user={user} showCart={showCart}/>
+          <MyRoutes user={user} showCart={showCart} />
           {cartIsOpen && <Cart onHideCart={hideCart} />}
         </div>
       </Router>
