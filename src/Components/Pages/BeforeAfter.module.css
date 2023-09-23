@@ -25,19 +25,42 @@
  }
  .h1{
     text-align: center;
-    margin: 2rem 0;
-    color: rgb(1, 221, 1);
-    text-decoration: underline;
+    margin-top: 2rem;
+    color: black;
  }
+ .h1None{
+  font-size: 28px;
+  margin-top: 2rem;
+    color: black;
+    font-weight: bold;
+    line-height: 28px;
+ }
+ .hr{
+  width: 200px;
+  color:black;
+  margin: auto;
+  opacity: 1;
+  border: 5px solid;
+  border-radius: 5px;
+}
+
  .strong{
   text-align: center;
+  font-size: large;
+  margin-top: 2rem;
  }
  .beforeCard, .beforeImage{
 background-color: var(--priColor);
 border-radius: 0 5rem;
+box-shadow: 0 0 6px 2px var(--priColor);
  }
  .afterCard, .afterImage{
   background-color: red;
   border-radius: 5rem 0;
+  box-shadow: 0 0 6px 2px red;
    }
+    .beforeCard:hover, .afterCard:hover{
+      transform: scale(1.08025);
+      transition: 0.3s ease-in-out
+    }
  
