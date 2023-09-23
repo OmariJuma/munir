@@ -1,0 +1,14 @@
+.card{
+    box-shadow: 0 0 6px 2px var(--priColor);
+}
+.card:hover{
+    transform: scale(1.08025);
+    transition: 0.3s ease-in-out
+}
+.body{
+    /* background-color: red; */
+    border-radius: 0 0 0.375rem 0.375rem;
+}
+.image{
+    height: 200px;
+}

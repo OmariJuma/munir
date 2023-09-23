@@ -1,6 +1,7 @@
 import HomePage from "../Pages/HomePage";
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import GalleryMenu from "../Pages/GalleryMenu";
 const Error404 = lazy(() => import("../Pages/Error404.js"));
 const BookingPage = lazy(() => import("../Pages/BookingPage"));
 const AboutUs = lazy(() => import("../Pages/AboutUs"));
@@ -54,6 +55,12 @@ const MyRoutes = ({ user, showCart }) => (
     />
     <Route
       path="/beforeAfter"
+      element={<GalleryMenu />}
+      exact
+      errorElement={<Error404 />}
+    />
+    <Route
+      path="/beforeAfter/:id"
       element={<BeforeAfter />}
       exact
       errorElement={<Error404 />}

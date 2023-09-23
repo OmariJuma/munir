@@ -146,6 +146,16 @@ const NavBar = (props) => {
                       About us
                     </Nav.Link>
                   </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link
+                      as={Link}
+                      to="/beforeAfter"
+                      onClick={handleCloseOffcanvas}
+                      eventKey="link-2"
+                    >
+                      Before Vs After
+                    </Nav.Link>
+                  </Nav.Item>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
