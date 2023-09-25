@@ -2,13 +2,13 @@ import HomePage from "../Pages/HomePage";
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import GalleryMenu from "../Pages/GalleryMenu";
+import Login from "../Pages/Login";
+import Profile from "../Pages/Profile";
 const Error404 = lazy(() => import("../Pages/Error404.js"));
 const BookingPage = lazy(() => import("../Pages/BookingPage"));
 const AboutUs = lazy(() => import("../Pages/AboutUs"));
-const Login = lazy(() => import("../Pages/Login"));
 const MoreDetails = lazy(() => import("../Pages/MoreDetails"));
 const Products = lazy(() => import("../Pages/Products"));
-const Profile = lazy(() => import("../Pages/Profile"));
 const Search = lazy(() => import("../Pages/Search"));
 const SignUp = lazy(() => import("../Pages/SignUp"));
 const Checkout = lazy(() => import("../UI/Checkout"));
@@ -18,12 +18,12 @@ const MyRoutes = ({ user, showCart }) => (
   <Routes>
     <Route
       path="/login"
-      element={user ? <Navigate to={`/profile/${user.id}`} /> : <Login />}
+      element={user?.email ? <Navigate to={`/profile/${user.id}`} /> : <Login />}
     />
     <Route path="/signup" element={<SignUp />} />
     <Route
       path="/profile/:id"
-      element={user ? <Profile details={user} /> : <Navigate to="/login" />}
+      element={user?.userName ? <Profile details={user} /> : <Navigate to="/login" />}
     />
     {/* <Route path="/profile" element={<Profile />} /> */}
 

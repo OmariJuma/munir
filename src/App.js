@@ -1,4 +1,4 @@
-import {Suspense } from "react";
+import { Suspense } from "react";
 import "./App.css";
 import NavBar from "./Components/NavBar";
 import CartProvider from "./Components/store/CartProvider";
@@ -9,10 +9,9 @@ import SearchModal from "./Components/UI/SearchModal";
 import UserProvider from "./Components/store/UserProvider";
 // import BreadCrumb from "./Components/UI/BreadCrumb";
 function App() {
-
   return (
-    <UserProvider>
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <UserProvider>
         <CartProvider>
           <Suspense fallback={<Spinner />}>
             <NavBar />
@@ -21,8 +20,8 @@ function App() {
             <SidebarIcons />
           </Suspense>
         </CartProvider>
-      </ErrorBoundary>
-    </UserProvider>
+      </UserProvider>
+    </ErrorBoundary>
   );
 }
 

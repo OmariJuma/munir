@@ -1,26 +1,27 @@
 import { Row, Col, Card, ListGroup } from "react-bootstrap";
 import styles from "./profile.module.css";
 import { TbDoorEnter } from "react-icons/tb";
-import { useNavigate } from "react-router";
 import CartContext from "../store/cart-context";
 import { useContext } from "react";
-import { lazy} from "react";
-const Footer = lazy(()=>("../UI/Footer"))
-
-const Profile = ({ details, handleCallback }) => {
-  const navigate = useNavigate();
-  const { setUser } = useContext(CartContext);
+import Footer from "../UI/Footer";
+const Profile = ({ details }) => {
+  const {  setUser } = useContext(CartContext);
   // const logoutHandler = () => {
   //   window.location.href = "https://test.muneerautomotive.co.ke/auth/logout";
   // };
   const logoutHandler = () => {
     localStorage.removeItem("token");
-    setUser(null);
-    navigate("/");
+    setUser({
+      userName: null,
+      firstName: null,
+      phoneNo: null,
+      email: null,
+    });
+    window.location.reload();
   };
   return (
     <>
-      <div className="container-fluid" style={{ gap: "2rem" }}>
+   <div className="container-fluid" style={{ gap: "2rem" }}>
         <Row>
           <Col md={6} lg={6} xxl={6} className={styles.card}>
             <Card>
@@ -39,19 +40,21 @@ const Profile = ({ details, handleCallback }) => {
                   /> */}
                     <p>
                       Name:{" "}
-                      {details.displayName !== undefined && details.displayName}
+                      {/* {details.displayName !== undefined && details.userName}
                       {details.details !== undefined &&
-                        details.details.displayName}
+                        details.details.displayName} */}
+                      {details.userName && details.userName}
                     </p>
                     <p>
                       Email:{" "}
                       {details.emails !== undefined && details.emails[0].value}
                       {details.details !== undefined &&
                         details.details.emails[0].value}
+                      {details.email.value && details.email.value}
                     </p>
                     <p>
                       Phone Number:{" "}
-                      {details.details !== undefined && details.details.phoneNo}
+                      {details.details !== undefined && details.phoneNo}
                     </p>
                   </Card.Text>
                 </Card.Body>
@@ -85,6 +88,7 @@ const Profile = ({ details, handleCallback }) => {
           </span>
           Logout
         </button>
+        
       </div>
       <Footer />
     </>

@@ -4,15 +4,15 @@ import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa";
-import { Col, Form, Row, InputGroup, Card, Alert } from "react-bootstrap";
+import { Col, Form,  InputGroup, Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import UserContext from "../store/user-context";
-import { lazy} from "react";
-const Footer = lazy(() => import("../UI/Footer"))
+import { lazy } from "react";
+const Footer = lazy(() => import("../UI/Footer"));
 
 const Login = (props) => {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const google = () => {
     window.open("https://test.muneerautomotive.co.ke/auth/google", "_self");
   };
@@ -40,18 +40,16 @@ const Login = (props) => {
           password: signup.password,
         })
         .then((response) => {
-          if (response.data.auth === true) {
+          if (response.data.auth) {
             localStorage.setItem("token", response.data.token);
-            // user.userName = response.data.userName;
-            // user.secondName = response.data.secondName;
-            // user.email = response.data.email;
-            // user.phoneNo = response.data.phoneNo;
-            console.log(user)
-            navigate("/profile/"`${response.data.user._id}}`);
-          }
-          if (response.data.accountExists === true) {
-            console.log("account does exist")
-            setError(response.data.message);
+            console.log(response.data.details.displayName);
+            setUser({
+              userName: response.data.details.displayName,
+              firstName: response.data.details.firstName,
+              email: response.data.details.emails[0],
+              phoneNo: response.data.details.phoneNo,
+            });
+            navigate(`/profile/${response.data.id}`);
           }
           if (response.data.accountExists === false) {
             console.log("no account");
@@ -59,6 +57,7 @@ const Login = (props) => {
           }
         })
         .catch((err) => {
+          console.log(err);
           setError("An error occured, please try again later");
         });
     } else if (!signup.email.includes(["@" || "."])) {

@@ -21,17 +21,21 @@ import UserContext from "./store/user-context";
 import Cart from "./UI/Cart";
 import MyRoutes from "./Utilities/Routes";
 import Marquee from "react-fast-marquee";
+import { useEffect } from "react";
 
 const NavBar = (props) => {
+  const { user } = useContext(UserContext);
   const [show, setShow] = useState(false);
   const [cartIsOpen, setCartIsOpen] = useState(false); // Manage cart state here
+  
+  useEffect(() => {
+    console.log("In navbar User state updated:", user);
+  }, [user]);
 
   const cartCtx = useContext(CartContext);
   const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.amount;
-  }, 0);
-
-  const { user } = useContext(UserContext);
+  }, 0);  
 
   const handleOpenOffcanvas = () => setShow(true);
   const handleCloseOffcanvas = () => setShow(false);
@@ -170,14 +174,14 @@ const NavBar = (props) => {
                 <Dropdown.Toggle
                   id="dropdown-button-dark-example1"
                   as={Link}
-                  to={user ? `/profile/${user.id}` : "/profile/:id"}
+                  to={user?.email ? `/profile/${user.id}` : "/login"}
                   className="profileIcon"
                 >
                   <FaRegUserCircle />
-                  {user && (
+                  {user?.email && (
                     <small>
-                      Hi {user.name !== undefined && user.name.familyName}
-                      {user.details !== undefined && user.details.firstName}
+                      Hi {user?.name !== undefined && user.name.familyName}
+                      {user?.details !== undefined && user.details.firstName}
                     </small>
                   )}
                 </Dropdown.Toggle>

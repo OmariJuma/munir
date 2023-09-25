@@ -1,5 +1,4 @@
 import React from "react";
-//create a context for user credentials
 
 const UserContext = React.createContext({
   user: {
@@ -8,6 +7,7 @@ const UserContext = React.createContext({
     phoneNo: null,
     email: null,
   },
+  setUser: () => {}, // Placeholder function
 });
 
 export default UserContext;
