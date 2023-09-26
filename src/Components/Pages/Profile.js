@@ -54,7 +54,7 @@ const Profile = ({ details }) => {
                     </p>
                     <p>
                       Phone Number:{" "}
-                      {details.details !== undefined && details.phoneNo}
+                      {details.phoneNo !== undefined && details.phoneNo}
                     </p>
                   </Card.Text>
                 </Card.Body>

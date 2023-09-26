@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import GalleryMenu from "../Pages/GalleryMenu";
 import Login from "../Pages/Login";
 import Profile from "../Pages/Profile";
+import ProductFilter from "../Pages/ProductFilter";
 const Error404 = lazy(() => import("../Pages/Error404.js"));
 const BookingPage = lazy(() => import("../Pages/BookingPage"));
 const AboutUs = lazy(() => import("../Pages/AboutUs"));
@@ -43,6 +44,12 @@ const MyRoutes = ({ user, showCart }) => (
     <Route
       path="/products"
       element={<Products />}
+      exact
+      errorElement={<Error404 />}
+    />
+    <Route
+      path="/test"
+      element={<ProductFilter />}
       exact
       errorElement={<Error404 />}
     />
