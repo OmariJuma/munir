@@ -33,14 +33,15 @@ const AboutUs = () => {
   return (
     <div>
       <h1 id={styles.h1}>Our Team</h1>
+      <hr className={styles.hr} />
       <Row className={styles.div} style={{ margin: "auto" }}>
         {personnel.map((person) => (
           <Col xm={12} sm={6} md={6} lg={3}>
             <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            transition={{delay:"0.25", ease:"easeIn"}}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ delay: "0.25", ease: "easeIn" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
               <Card className={styles.card}>
                 <Card.Img src={person.image} />
@@ -89,13 +90,20 @@ const AboutUs = () => {
         className={`${styles.overlayDiv} "bg-dark text-white text-center justify-center "`}
       >
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            transition={{delay:"0.25", ease:"easeIn"}}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ delay: "0.25", ease: "easeIn" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
           <Card.Img src={C} alt="Card image" id={styles.img} />
-          <Card.ImgOverlay>
+          <Card.ImgOverlay
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <Col xm={12} sm={12} md={12}>
               <h4 id={styles.journey}>Its our journey</h4>
             </Col>
@@ -129,27 +137,27 @@ const AboutUs = () => {
         </motion.div>
       </Card>{" "}
       <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            transition={{delay:"0.25", ease:"easeIn"}}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ delay: "0.25", ease: "easeIn" }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
       >
         <p id={styles.loc}>Find us today</p>
         <h4 id={styles.h4}>Our location</h4>
         <p id={styles.a}>We located along Kirinya Rd Next to kenya canvas</p>
-        <a
-          href="https://www.google.com/maps/place/Muneer+Auto+tyres+Limited/@-1.2799975,36.8234224,17z/data=!4m14!1m7!3m6!1s0x182f1176595e53e1:0xc94667e686bce87a!2sMuneer+Auto+tyres+Limited!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7!3m5!1s0x182f1176595e53e1:0xc94667e686bce87a!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <img src={Map} alt="map" id={styles.map} />
-        </a>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d997.2052160790545!2d36.8234747!3d-1.2812002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1176595e53e1%3A0xc94667e686bce87a!2sMuneer%20Auto%20tyres%20Limited!5e0!3m2!1sen!2ske!4v1695801503309!5m2!1sen!2ske"
+          style={{ border: 0 }}
+          allowfullscreen=""
+          title="Muneer Auto Tyres"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>{" "}
       </motion.div>
       <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            transition={{delay:"0.25", ease:"easeIn"}}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ delay: "0.25", ease: "easeIn" }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         style={{ marginTop: "4rem", marginBottom: "3rem" }}
       >
         <Testimonials />

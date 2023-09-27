@@ -30,20 +30,20 @@ const MyRoutes = ({ user, showCart }) => (
 
     <Route
       path="/products/rims"
-      element={<Products />}
+      element={<ProductFilter filter={"rims"}/>}
       exact
       errorElement={<Error404 />}
     />
 
     <Route
       path="/products/tyres"
-      element={<Products />}
+      element={<ProductFilter filter={"tyres"}/>}
       exact
       errorElement={<Error404 />}
     />
     <Route
       path="/products"
-      element={<Products />}
+      element={<ProductFilter filter={"all"}/>}
       exact
       errorElement={<Error404 />}
     />

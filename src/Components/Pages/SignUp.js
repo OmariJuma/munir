@@ -43,7 +43,6 @@ const SignUp = (props) => {
     ) {
       if (signup.password === signup.confirmPassword) {
         setIsPasswordValid(true);
-        console.log(signup);
         axios
           .post("http://localhost:8080/api/users/register", {
             userName: signup.firstName,
@@ -53,7 +52,6 @@ const SignUp = (props) => {
             password: signup.password,
           })
           .then((response) => {
-            console.log(response.data);
             navigate("/login");
           })
           .catch((err) => {
@@ -68,11 +66,11 @@ const SignUp = (props) => {
   return (
     <>
       <div className="container">
-        <h1 style={{ margin: "2rem 0" }}>Choose Sign Up Method To Continue</h1>
+        <h1 style={{ margin: "2rem 0" }}>Sign Up To Continue</h1>
 
         <Card className={styles.card + " " + styles.left}>
           <Row>
-            <div className={styles.left}>
+            {/* <div className={styles.left}>
               <button
                 className={"btn btn-primary"}
                 style={{ width: "100%" }}
@@ -85,7 +83,7 @@ const SignUp = (props) => {
             <div className={styles.center}>
               <div className={styles.line} />
               <div className={styles.or}>OR</div>
-            </div>
+            </div> */}
 
             <Form style={{ marginTop: "3rem" }} className={styles.right}>
               <h1>Sign Up </h1>

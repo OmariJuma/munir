@@ -9,11 +9,7 @@ const UserProvider = ({ children }) => {
     email: null,
   });
 
-  useEffect(() => {
-    // This effect will run when the 'user' state is updated
-    console.log("provider User state updated:", user);
-  }, [user]); // Specify 'user' as a dependency
-
+ 
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}

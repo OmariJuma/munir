@@ -50,7 +50,6 @@ export const ButtonCart = (props) => {
   const onClickHandler = (e) => {
     e.preventDefault();
     setIsAddedToCart(true);
-    console.log("Added to cart");
   };
 
   return (

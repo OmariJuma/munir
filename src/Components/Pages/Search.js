@@ -26,7 +26,6 @@ const Search = (props) => {
         setIsLoading(false)
         if (res.data.length !== 0) {
           setSearchResults(res.data);
-          console.log(res.data);
         } else {
           alert("search did not match any product");
         }
@@ -34,7 +33,6 @@ const Search = (props) => {
       .catch((err) => {
         setIsLoading(false)
         setFailed(true)
-        console.log(err);
       });
   };
   useEffect(() => {

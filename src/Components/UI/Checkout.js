@@ -48,7 +48,6 @@ const Checkout = () => {
       alert("Please fill in all the required fields")
     }
   };
-  console.log(customerInfo.county);
   return (
     <>
       <div className={classes.checkoutContent}>

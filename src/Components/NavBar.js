@@ -29,7 +29,6 @@ const NavBar = (props) => {
   const [cartIsOpen, setCartIsOpen] = useState(false); // Manage cart state here
   
   useEffect(() => {
-    console.log("In navbar User state updated:", user);
   }, [user]);
 
   const cartCtx = useContext(CartContext);

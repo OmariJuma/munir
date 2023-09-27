@@ -42,7 +42,6 @@ const Login = (props) => {
         .then((response) => {
           if (response.data.auth) {
             localStorage.setItem("token", response.data.token);
-            console.log(response.data.details.displayName);
             setUser({
               userName: response.data.details.displayName,
               firstName: response.data.details.firstName,
@@ -52,12 +51,10 @@ const Login = (props) => {
             navigate(`/profile/${response.data.id}`);
           }
           if (response.data.accountExists === false) {
-            console.log("no account");
             setError(response.data.message);
           }
         })
         .catch((err) => {
-          console.log(err);
           setError("An error occured, please try again later");
         });
     } else if (!signup.email.includes(["@" || "."])) {
@@ -70,10 +67,10 @@ const Login = (props) => {
   return (
     <>
       <div className="container">
-        <h1 style={{ margin: "2rem 0" }}>Choose a Login Method to continue</h1>
+        <h1 style={{ margin: "2rem 0" }}>Login to continue</h1>
 
         <Card className={styles.card}>
-          <div className={styles.left}>
+          {/* <div className={styles.left}>
             <button
               className={"btn btn-primary"}
               style={{ width: "100%" }}
@@ -86,7 +83,7 @@ const Login = (props) => {
           <div className={styles.center}>
             <div className={styles.line} />
             <div className={styles.or}>OR</div>
-          </div>
+          </div> */}
 
           <div className={styles.right}>
             <Col md={12} lg={12} xxl={12}>

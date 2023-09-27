@@ -4,7 +4,6 @@
 
 .card {
   display: flex;
-
   padding: 2rem;
   width: 70%;
   justify-content: center;
@@ -166,4 +165,9 @@
     height: 0.5px;
     width: auto;
   }
+}
+@media screen and (max-width:767px) {
+ .card{
+  width: 100%;
+ }
 }
