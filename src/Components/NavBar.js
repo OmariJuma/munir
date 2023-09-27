@@ -104,7 +104,7 @@ const NavBar = (props) => {
                       Home
                     </Nav.Link>
                   </Nav.Item>
-                  <NavDropdown title="Products" id="nav-dropdown">
+                  <NavDropdown title="Products" id="nav-dropdown" style={{textAlign:"center"}}>
                     <NavDropdown.Item
                       as={Link}
                       onClick={handleCloseOffcanvas}
@@ -120,14 +120,6 @@ const NavBar = (props) => {
                       eventKey="4.2"
                     >
                       Tyres
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      as={Link}
-                      to="/products"
-                      onClick={handleCloseOffcanvas}
-                      eventKey="4.3"
-                    >
-                      Rims and Tyres
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Item>
