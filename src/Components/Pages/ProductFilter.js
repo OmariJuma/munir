@@ -54,13 +54,21 @@ const ProductFilter = ({ filter }) => {
     getTyres();
     getRims();
   }, []);
-  const [mySize, setMySize] = useState("")
-  const [myWidth, setMyWidth] = useState("")
-  const [myRatio, setMyRatio] = useState("")
-  const size = [12,13,14,15,16,17,18,19,20,21,22]
-  const width = [155, 165, 175, 185, 195, 205, 215, 225, 235, 245, 255, 265, 275, 285, 295, 305, 315]
-  const ratio = [10.5, 30, 35,40,45,50,55,60,65,70,75,80,85]
-  
+  //States for tyres
+  const [mySize, setMySize] = useState("");
+  const [myWidth, setMyWidth] = useState("");
+  const [myRatio, setMyRatio] = useState("");
+  //states for rims
+  const [myOffset, setMyOffset] = useState("");
+  const [myRimSize, setMyRimSize] = useState();
+
+  const size = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+  const width = [
+    155, 165, 175, 185, 195, 205, 215, 225, 235, 245, 255, 265, 275, 285, 295,
+    305, 315,
+  ];
+  const ratio = [10.5, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85];
+  const offset = ["normal", "small-offset", "large-offset"];
 
   return (
     <>
@@ -72,55 +80,99 @@ const ProductFilter = ({ filter }) => {
             </Card.Title>
             <div className={styles.filterBody}>
               <div className={styles.filterBodyContent}>
-              <Form.Group className="mb-3" controlId="filterBySize">
-                <Form.Label>Select {active} Dimension</Form.Label>
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  name="size"
-                  value={myWidth}
-                  onChange={(e)=>setMyWidth(e.target.value)}
-                >
-                  <option value="">Select Size</option>
-                  {width.map((eachSize) => (
-                    <option key={uuid()} value={eachSize}>
-                      {eachSize}
-                    </option>
-                  ))}
-                </select>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="filterBySize">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  name="size"
-                  value={myRatio}
-                  onChange={(e)=>setMyRatio(e.target.value)}
-                >
-                  <option value="">Select Ratio</option>
-                  {ratio.map((eachSize) => (
-                    <option key={uuid()} value={eachSize}>
-                      {eachSize}
-                    </option>
-                  ))}
-                </select>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="filterBySize">
-                <select
-                  className="form-select"
-                  aria-label="Default select example"
-                  name="size"
-                  value={mySize}
-                  onChange={(e)=>setMySize(e.target.value)}
-                >
-                  <option value="">Select Width</option>
-                  {size.map((eachSize) => (
-                    <option key={uuid()} value={eachSize}>
-                      {eachSize}
-                    </option>
-                  ))}
-                </select>
-              </Form.Group>
+                {/* Drop down filters for tyres */}
+
+                {active === "tyres" && (
+                  <>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <Form.Label>Select {active} Dimensions</Form.Label>
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="size"
+                        value={myWidth}
+                        onChange={(e) => setMyWidth(e.target.value)}
+                      >
+                        <option value="">Select Size</option>
+                        {width.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="size"
+                        value={myRatio}
+                        onChange={(e) => setMyRatio(e.target.value)}
+                      >
+                        <option value="">Select Ratio</option>
+                        {ratio.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="size"
+                        value={mySize}
+                        onChange={(e) => setMySize(e.target.value)}
+                      >
+                        <option value="">Select Width</option>
+                        {size.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
+                  </>
+                )}
+                {/* Drop down filters for rims */}
+                {active === "rims" && (
+                  <>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <Form.Label>Select {active} Dimensions</Form.Label>
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="size"
+                        value={myRimSize}
+                        onChange={(e) => setMyRimSize(e.target.value)}
+                      >
+                        <option value="">Select rim Size</option>
+                        {size.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="size"
+                        value={myOffset}
+                        onChange={(e) => setMyOffset(e.target.value)}
+                      >
+                        <option value="">Select rim Offset</option>
+                        {offset.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -131,6 +183,7 @@ const ProductFilter = ({ filter }) => {
               className={`${styles.filterBody}${" "}${styles.productsTitle}`}
             >
               <div className={styles.filterBodyContent}>
+                <p> You are seeing results for</p>
                 <ul>
                   <li
                     onClick={() => setActive("rims")}

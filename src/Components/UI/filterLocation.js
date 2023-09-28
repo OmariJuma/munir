@@ -1,5 +1,5 @@
 import { Col, Form, Row } from "react-bootstrap";
-import classes from "./Checkout.module.css";
+import styles from "./Checkout.module.css";
 import { useState, useEffect } from "react";
 import counties from "../Utilities/counties";
 import constituencies from "../Utilities/Constituencies";
