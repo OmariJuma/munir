@@ -9,7 +9,6 @@ const Error404 = lazy(() => import("../Pages/Error404.js"));
 const BookingPage = lazy(() => import("../Pages/BookingPage"));
 const AboutUs = lazy(() => import("../Pages/AboutUs"));
 const MoreDetails = lazy(() => import("../Pages/MoreDetails"));
-const Products = lazy(() => import("../Pages/Products"));
 const Search = lazy(() => import("../Pages/Search"));
 const SignUp = lazy(() => import("../Pages/SignUp"));
 const Checkout = lazy(() => import("../UI/Checkout"));
