@@ -20,3 +20,6 @@
   .link{
     color:blue
   }
+  .termsContainer ol li{
+    list-style-type:upper-alpha;
+  }

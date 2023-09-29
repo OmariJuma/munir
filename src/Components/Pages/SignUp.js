@@ -13,7 +13,7 @@ const SignUp = (props) => {
   const google = () => {
     window.open("https://test.muneerautomotive.co.ke/auth/google", "_self");
   };
-
+  const [error, setError] = useState("");
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [isPassword2Shown, setIsPassword2Shown] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
@@ -40,10 +40,12 @@ const SignUp = (props) => {
       signup.phoneNo.trim().length > 9 &&
       signup.email.trim().length > 7 &&
       signup.password.trim().length > 7 &&
-      signup.confirmPassword.trim().length > 7
+      signup.confirmPassword.trim().length > 7 &&
+      isChecked === true
     ) {
       if (signup.password === signup.confirmPassword) {
         setIsPasswordValid(true);
+        setError(null);
         axios
           .post("http://localhost:8080/api/users/register", {
             userName: signup.firstName,
@@ -51,6 +53,7 @@ const SignUp = (props) => {
             phoneNo: signup.phoneNo,
             email: signup.email,
             password: signup.password,
+            consent: isChecked,
           })
           .then((response) => {
             navigate("/login");
@@ -58,9 +61,23 @@ const SignUp = (props) => {
           .catch((err) => {
             console.log(err);
           });
-      } else {
-        setIsPasswordValid(false);
       }
+    } else if (
+      signup.firstName.trim().length < 2 &&
+      signup.secondName.trim().length < 2 &&
+      signup.phoneNo.trim().length < 9 &&
+      signup.email.trim().length < 7 &&
+      signup.password.trim().length < 7 &&
+      signup.confirmPassword.trim().length < 7 &&
+      isChecked === false
+    ) {
+      setError("Please fill in all the fields correctly");
+    } else if (!signup.email.includes(["@" || "."])) {
+      setError("Please enter a valid email address");
+    } else if (isChecked === false) {
+      setError(
+        "You have neither agreed to our terms and conditions nor our privacy policy"
+      );
     }
   };
 
@@ -204,7 +221,11 @@ const SignUp = (props) => {
                 </Form.Group>
               </Col>
               <Col md={12} lg={12} xxl={12}>
-                <Form.Group className="mb-3" controlId="confirmPassword" >
+                <Form.Group
+                  className="mb-3"
+                  controlId="confirmPassword"
+                  id={styles.checkbox}
+                >
                   <InputGroup.Checkbox
                     checked={isChecked} // Use the 'checked' attribute to manage the checkbox state
                     onChange={(e) => setIsChecked(e.target.checked)} // Update 'isChecked' state
@@ -212,10 +233,32 @@ const SignUp = (props) => {
                   />
                   <Form.Label>
                     Click to agree to our{" "}
-                    <Link to="/termsAndConditions">Terms and Conditions</Link>
+                    <Link to="/termsAndConditions" className={styles.link}>
+                      Terms and Conditions
+                    </Link>{" "}
+                    and
+                    <Link to="/privacyPolicy" className={styles.link}>
+                      {" "}
+                      Privacy Policy
+                    </Link>
                   </Form.Label>
                 </Form.Group>
               </Col>
+              {error && (
+                <p
+                  style={{
+                    width: "100%",
+                    backgroundColor: "#ffdcdf",
+                    height: "50px",
+                    textAlign: "center",
+                    paddingTop: "15px",
+                    borderColor: "red",
+                    color: "red",
+                  }}
+                >
+                  {error}
+                </p>
+              )}
               <button
                 className="btn btn-primary"
                 style={{ width: "100%" }}

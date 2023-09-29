@@ -26,7 +26,6 @@
 }
 .brand {
   background-color: transparent;
-
 }
 
 .nav-link:hover {
@@ -35,10 +34,6 @@
   font-weight: 500;
 }
 
-.navbar-brand:hover {
-  color: white;
-  background-color: var(--priBluish);
-}
 .cartIcon {
   display: flex;
   gap: 1.5rem;

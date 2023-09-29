@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Profile from "../Pages/Profile";
 import ProductFilter from "../Pages/ProductFilter";
 import TermsAndConditions from "../Pages/TermsAndConditions";
+import Privacypolicy from "../Pages/PrivacyPolicy";
 const Error404 = lazy(() => import("../Pages/Error404.js"));
 const BookingPage = lazy(() => import("../Pages/BookingPage"));
 const AboutUs = lazy(() => import("../Pages/AboutUs"));
@@ -26,8 +27,6 @@ const MyRoutes = ({ user, showCart }) => (
       path="/profile/:id"
       element={user?.userName ? <Profile details={user} /> : <Navigate to="/login" />}
     />
-    {/* <Route path="/profile" element={<Profile />} /> */}
-
     <Route
       path="/products/rims"
       element={<ProductFilter filter={"rims"}/>}
@@ -82,6 +81,7 @@ const MyRoutes = ({ user, showCart }) => (
     />
     <Route path="/checkout" element={user?.email ? <Checkout /> : <Navigate to="/login"/>} />
     <Route path="/termsAndConditions" element={<TermsAndConditions/>} />
+    <Route path="/privacypolicy" element={<Privacypolicy/>} />
     <Route path="*" exact element={<Error404 />} />
     <Route path="/" element={<HomePage />} errorElement={<Error404 />} exact />
   </Routes>

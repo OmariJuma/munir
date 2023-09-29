@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,22 +29,37 @@ const Footer = () => {
 
           {/* <!-- Right --> */}
           <div>
-            <a href="https://www.tiktok.com/@mahmudawadh2" target="_blank" rel="noreferrer" className="text-white me-4">
+            <Link
+              to="https://www.tiktok.com/@mahmudawadh2"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white me-4"
+            >
               <span>
                 <FaTiktok />
               </span>
-            </a>
+            </Link>
 
-            <a href="www.facebook.com" target="_blank" rel="noreferrer" className="text-white me-4">
+            <Link
+              to="www.facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white me-4"
+            >
               <span>
                 <FaFacebookF />
               </span>
-            </a>
-            <a href="www.twitter.com" target="_blank" rel="noreferrer" className="text-white me-4">
+            </Link>
+            <Link
+              to="www.twitter.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white me-4"
+            >
               <span>
                 <FaTwitter />
               </span>
-            </a>
+            </Link>
           </div>
           {/* <!-- Right --> */}
         </div>
@@ -120,42 +136,47 @@ const Footer = () => {
                   }}
                 />
                 <p>
-                  <a href="/booking" className="text-dark">
+                  <Link to="/booking" className="text-dark">
                     Book an Appointment
-                  </a>
+                  </Link>
                 </p>
 
                 <p>
-                  <a href="/products/tyres" className="text-dark">
+                  <Link to="/products/tyres" className="text-dark">
                     Commercial Tyres
-                  </a>
+                  </Link>
                 </p>
                 <p>
-                  <a href="/products/tyres" className="text-dark">
+                  <Link to="/products/tyres" className="text-dark">
                     All Terrain Tyres
-                  </a>
+                  </Link>
                 </p>
                 <p>
-                  <a href="/products/tyres" className="text-dark">
+                  <Link to="/products/tyres" className="text-dark">
                     Mud Terrain Tyres
-                  </a>
+                  </Link>
                 </p>
 
                 <p>
-                  <a href="/products/tyres" className="text-dark">
-                    Highway Tyres/ Saloon Normal Tyres
-                  </a>
+                  <Link to="/products/tyres" className="text-dark">
+                    Highway Tyres
+                  </Link>
                 </p>
                 <p>
-                  <a href="/products/rims" className="text-dark">
+                  <Link to="/products/rims" className="text-dark">
                     Normal Rims{" "}
-                  </a>
+                  </Link>
                 </p>
 
                 <p>
-                  <a href="/products/rims" className="text-dark">
-                    Offset
-                  </a>
+                  <Link to="/products/rims" className="text-dark">
+                    small-Offset rims
+                  </Link>
+                </p>
+                <p>
+                  <Link to="/products/rims" className="text-dark">
+                    Offset rims
+                  </Link>
                 </p>
               </div>
               {/* <!-- Grid column --> */}
@@ -173,24 +194,34 @@ const Footer = () => {
                   }}
                 />
                 <p>
-                  <a href="/" className="text-dark">
+                  <Link to="/" className="text-dark">
                     Home
-                  </a>
+                  </Link>
                 </p>
                 <p>
-                  <a href="/products/tyres" className="text-dark">
+                  <Link to="/products/tyres" className="text-dark">
                     Tyres
-                  </a>
+                  </Link>
                 </p>
                 <p>
-                  <a href="/products/rims" className="text-dark">
+                  <Link to="/products/rims" className="text-dark">
                     Rims
-                  </a>
+                  </Link>
                 </p>
                 <p>
-                  <a href="/about-us" className="text-dark">
+                  <Link to="/about-us" className="text-dark">
                     About Us
-                  </a>
+                  </Link>
+                </p>
+                <p>
+                  <Link to="/termsAndConditions" className="text-dark">
+                    Terms and Conditions
+                  </Link>
+                </p>
+                <p>
+                  <Link to="/privacyPolicy" className="text-dark">
+                    Privacy Policy
+                  </Link>
                 </p>
               </div>
               {/* <!-- Grid column --> */}
@@ -209,39 +240,41 @@ const Footer = () => {
                 />
                 <br />
 
-                <a
-                  href="https://www.google.com/maps/place/Muneer+Auto+tyres+Limited/@-1.2799975,36.8234224,17z/data=!4m14!1m7!3m6!1s0x182f1176595e53e1:0xc94667e686bce87a!2sMuneer+Auto+tyres+Limited!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7!3m5!1s0x182f1176595e53e1:0xc94667e686bce87a!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7"
-                  target="_blank" rel="noreferrer"               
+                <Link
+                  to="https://www.google.com/maps/place/Muneer+Auto+tyres+Limited/@-1.2799975,36.8234224,17z/data=!4m14!1m7!3m6!1s0x182f1176595e53e1:0xc94667e686bce87a!2sMuneer+Auto+tyres+Limited!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7!3m5!1s0x182f1176595e53e1:0xc94667e686bce87a!8m2!3d-1.2799145!4d36.8244032!16s%2Fg%2F11sf5rs3d7"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <span>
                     <FaMapMarkerAlt />
-                  </span>34 Kirinyaga Rd Next To Kenya Canvas, Nairobi Kenya
-                </a>
+                  </span>
+                  34 Kirinyaga Rd Next To Kenya Canvas, Nairobi Kenya
+                </Link>
                 <br />
-<br />
-                <a href="email:info@gmail.com">
+                <br />
+                <Link to="email:muneerautomotive@gmail.com">
                   <span>
                     <FaEnvelope />
                   </span>{" "}
-                  info@example.com
-                </a>
+                  muneerautomotive@gmail.com{" "}
+                </Link>
                 <br />
                 <br />
 
-                <a href="tel:+254722174444">
+                <Link to="tel:+254722174444">
                   <span>
                     <FaPhone />
                   </span>{" "}
                   +254722174444
-                </a>
+                </Link>
                 <br />
                 <br />
-                <a href="tel:+254707686784">
+                <Link to="tel:+254707686784">
                   <span>
                     <FaPhone />
                   </span>{" "}
                   +254707686784
-                </a>
+                </Link>
               </div>
               {/* <!-- Grid column --> */}
             </div>
@@ -256,9 +289,9 @@ const Footer = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           © 2023 Copyright:
-          <a className="text-dark" href="/">
+          <Link className="text-dark" to="/">
             Muneer Automotive
-          </a>
+          </Link>
         </div>
         {/* <!-- Copyright --> */}
       </footer>

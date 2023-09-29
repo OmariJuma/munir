@@ -34,6 +34,7 @@ const Login = (props) => {
       signup.email.includes(["@" && "."]) &&
       signup.password.trim().length > 7
     ) {
+      setError(null)
       axios
         .post("http://localhost:8080/api/users/login", {
           email: signup.email,
@@ -57,10 +58,13 @@ const Login = (props) => {
         .catch((err) => {
           setError("An error occured, please try again later");
         });
-    } else if (!signup.email.includes(["@" || "."])) {
-      setError("Please enter a valid email address");
-    } else {
+    } else if(signup.email.trim().length < 6 &&
+    !signup.email.includes(["@" && "."]) &&
+    signup.password.trim().length < 7) {
       setError("Please fill in all the fields correctly");
+    } 
+    else if (!signup.email.includes(["@" || "."])) {
+      setError("Please enter a valid email address");
     }
   };
 
