@@ -67,7 +67,7 @@ const Login = (props) => {
   return (
     <>
       <div className="container">
-        <h1 style={{ margin: "2rem 0" }}>Login to continue</h1>
+        {/* <h1 style={{ margin: "2rem 0" }}>Login to continue</h1> */}
 
         <Card className={styles.card}>
           {/* <div className={styles.left}>
@@ -87,7 +87,7 @@ const Login = (props) => {
 
           <div className={styles.right}>
             <Col md={12} lg={12} xxl={12}>
-              <h2>Login via email</h2>
+              <h1>Login to continue</h1>
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Enter Your Email</Form.Label>
                 <Form.Control
@@ -150,7 +150,7 @@ const Login = (props) => {
             </button>
           </div>
           <br />
-          <div className="text-center" style={{ display: "block" }}>
+          <div className="text-center" style={{ display: "block", marginBottom:"1rem" }}>
             if you dont have an account click here to{" "}
             <Link to="/signup" style={{ color: "blue" }}>
               sign up

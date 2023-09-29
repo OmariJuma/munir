@@ -1,0 +1,22 @@
+.termsContainer{
+    padding:10px;
+    text-align: left;
+}
+.termsContainer p{
+    font-size: large;
+}
+.hr{
+    width: 150px;
+    color:black;
+    margin: auto;
+    opacity: 1;
+    border: 5px solid;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+  }
+  .termsContainer h3{
+    margin-top: 3rem;
+  }
+  .link{
+    color:blue
+  }

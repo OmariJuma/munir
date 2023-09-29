@@ -7,7 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import Google from "../../assets/images/icons/icons8-google.svg";
 import { lazy } from "react";
-const Footer = lazy(()=>import("../UI/Footer"))
+const Footer = lazy(() => import("../UI/Footer"));
 
 const SignUp = (props) => {
   const google = () => {
@@ -17,6 +17,7 @@ const SignUp = (props) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [isPassword2Shown, setIsPassword2Shown] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
   const [signup, setsignup] = useState({
     firstName: "",
@@ -66,7 +67,7 @@ const SignUp = (props) => {
   return (
     <>
       <div className="container">
-        <h1 style={{ margin: "2rem 0" }}>Sign Up To Continue</h1>
+        {/* <h1 style={{ margin: "2rem 0" }}>Sign Up To Continue</h1> */}
 
         <Card className={styles.card + " " + styles.left}>
           <Row>
@@ -86,7 +87,7 @@ const SignUp = (props) => {
             </div> */}
 
             <Form style={{ marginTop: "3rem" }} className={styles.right}>
-              <h1>Sign Up </h1>
+              <h1>Create an Account To Continue</h1>
 
               <Col md={12} lg={12} xxl={12}>
                 <Form.Group className="mb-3" controlId="firstName">
@@ -200,6 +201,19 @@ const SignUp = (props) => {
                   {!isPasswordValid && (
                     <p className={styles.invalid}>password do not match</p>
                   )}
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12} xxl={12}>
+                <Form.Group className="mb-3" controlId="confirmPassword" >
+                  <InputGroup.Checkbox
+                    checked={isChecked} // Use the 'checked' attribute to manage the checkbox state
+                    onChange={(e) => setIsChecked(e.target.checked)} // Update 'isChecked' state
+                    required
+                  />
+                  <Form.Label>
+                    Click to agree to our{" "}
+                    <Link to="/termsAndConditions">Terms and Conditions</Link>
+                  </Form.Label>
                 </Form.Group>
               </Col>
               <button
