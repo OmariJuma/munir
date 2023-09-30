@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import Google from "../../assets/images/icons/icons8-google.svg";
 import { lazy } from "react";
+import { toast } from "react-toastify";
 const Footer = lazy(() => import("../UI/Footer"));
 
 const SignUp = (props) => {
@@ -56,6 +57,7 @@ const SignUp = (props) => {
             consent: isChecked,
           })
           .then((response) => {
+            toast("Account created successfully")
             navigate("/login");
           })
           .catch((err) => {
@@ -71,13 +73,14 @@ const SignUp = (props) => {
       signup.confirmPassword.trim().length < 7 &&
       isChecked === false
     ) {
+      toast("Please fill in all the fields correctly");
       setError("Please fill in all the fields correctly");
     } else if (!signup.email.includes(["@" || "."])) {
+      toast("Please enter a valid email address");
       setError("Please enter a valid email address");
     } else if (isChecked === false) {
-      setError(
-        "You have neither agreed to our terms and conditions nor our privacy policy"
-      );
+      toast("You have neither agreed to our terms and conditions nor our privacy policy");
+      setError("You have neither agreed to our terms and conditions nor our privacy policy");
     }
   };
 

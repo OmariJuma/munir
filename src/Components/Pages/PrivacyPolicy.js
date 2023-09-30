@@ -276,7 +276,7 @@ const Privacypolicy = () => {
         <p>
           {" "}
           You can close your account by sending an{" "}
-          <a href="email:muneerautomotive@gmail.com" className={styles.link}>
+          <a href="mailto:muneerautomotive@gmail.com" className={styles.link}>
             muneerautomotive@gmail.comm
           </a>{" "}
           with the Subject <strong>Account Closure</strong> then you provide

@@ -252,7 +252,7 @@ const Footer = () => {
                 </Link>
                 <br />
                 <br />
-                <Link to="email:muneerautomotive@gmail.com">
+                <Link to="mailto:muneerautomotive@gmail.com">
                   <span>
                     <FaEnvelope />
                   </span>{" "}

@@ -127,7 +127,7 @@ const TermsAndConditions = () => {
         <a href="tel:254707686784" className={styles.link}>
           +254707686784
         </a>
-        or through email <a href="email:muneerautomotive@gmail.com" className={styles.link}>muneerautomotive@gmail.com</a>
+        or through email <a href="mailto:muneerautomotive@gmail.com" className={styles.link}>muneerautomotive@gmail.com</a>
       </p>
       <h3> 19. Related Information</h3>
         <Link to="/privacyPolicy" className={styles.link}>

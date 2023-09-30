@@ -1,11 +1,12 @@
-import { Form, Row, Col, Button} from "react-bootstrap";
+import { Form, Row, Col, Button } from "react-bootstrap";
 import styles from "./MyForm.module.css";
 import calend from "./../../assets/images/icons/calend.png";
 import { useRef, useState } from "react";
 import data from "./../../fire";
 import { set, ref } from "firebase/database";
 import uuid from "react-uuid";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 const MyForm = (props) => {
   const form = useRef();
   const [bookingInfo, setBookingInfo] = useState({
@@ -57,31 +58,30 @@ const MyForm = (props) => {
       post();
       emailjs
         .sendForm(
-          "service_14tu8ej",
+          "service_r5gm9q1",
           "template_5dq8ibe",
           form.current,
           "YUE9-soFT-BCwlqAu"
         )
         .then((response) => {
-          console.log("SUCCESS!", response.status, response.text);
+          toast("SUCCESS! You have sent the booking request");
+          setBookingInfo({
+            firstName: "",
+            secondName: "",
+            phoneNo: "",
+            email: "",
+            regNo: "",
+            make: "",
+            model: "",
+            date: "",
+            time: "",
+          });
         })
         .catch((err) => {
-          console.log("FAILED...", err);
+         toast("Please try again an error has occurred")
         });
-      alert("Booking success");
-      setBookingInfo({
-        firstName: "",
-        secondName: "",
-        phoneNo: "",
-        email: "",
-        regNo: "",
-        make: "",
-        model: "",
-        date: "",
-        time: "",
-      });
     } else {
-      return alert("an error has occured");
+      return toast("Please try again an error has occurred");
     }
   };
   return (

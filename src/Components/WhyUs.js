@@ -36,7 +36,7 @@ const WhyUs = (props) => {
   ];
 
   return (
-    <div>
+    <div style={{marginBottom:"2rem"}}>
       <motion.h2
             initial={{ opacity: 0, y: 20 }}
             transition={{delay:"0.25", ease:"easeIn"}}

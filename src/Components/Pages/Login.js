@@ -8,6 +8,7 @@ import { Col, Form,  InputGroup, Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import UserContext from "../store/user-context";
 import { lazy } from "react";
+import { toast } from "react-toastify";
 const Footer = lazy(() => import("../UI/Footer"));
 
 const Login = (props) => {
@@ -42,6 +43,7 @@ const Login = (props) => {
         })
         .then((response) => {
           if (response.data.auth) {
+            toast("You have logged in successfully")
             localStorage.setItem("token", response.data.token);
             setUser({
               userName: response.data.details.displayName,
@@ -52,18 +54,22 @@ const Login = (props) => {
             navigate(`/profile/${response.data.id}`);
           }
           if (response.data.accountExists === false) {
+            toast(response.data.message)
             setError(response.data.message);
           }
         })
         .catch((err) => {
+          toast("An error occured, please try again later")
           setError("An error occured, please try again later");
         });
     } else if(signup.email.trim().length < 6 &&
     !signup.email.includes(["@" && "."]) &&
     signup.password.trim().length < 7) {
+      toast("Please fill in all the fields correctly");
       setError("Please fill in all the fields correctly");
     } 
     else if (!signup.email.includes(["@" || "."])) {
+      toast("Please enter a valid email address");
       setError("Please enter a valid email address");
     }
   };

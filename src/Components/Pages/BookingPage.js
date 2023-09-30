@@ -40,9 +40,6 @@ const BookingPage = () => {
 
     
     <MyForm/>
-      <h6 style={{textAlign:"center", margin:"3rem 0"}}>
-        If you already have a booking <a href="/index" id={styles.link}>click here</a>
-      </h6>
       <h2>
         Safety of your data <span id={styles.safety}>is our top priority</span>
       </h2>
