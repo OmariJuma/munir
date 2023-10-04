@@ -106,7 +106,7 @@ const MoreDetails = (props) => {
                   </ListGroup.Item>
                   <Button className="bg-success">
                     <ReactWhatsapp
-                      number="+254791567672"
+                      number="+254707686784"
                       message={`Hi, I want to purchase this Product: ${
                         state.title
                       }, Price: ${state.price}, Units: ${1}, Brand: ${
