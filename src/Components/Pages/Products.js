@@ -62,7 +62,7 @@ const Products = () => {
           {failed && <NoInternet/>}
          {!isLoading&& <Row className={`${styles.singleProduct}`}>
             {productArray.map((prod) => (
-              <Col xs={5} md={3} lg={3} xxl={3}>
+              <Col xs={5} md={3} lg={3} xxl={3} style={{marginBottom:"2rem"}}>
                 <div>
                   <Caard
                     key={v4()}
@@ -98,7 +98,7 @@ const Products = () => {
           {failed && <NoInternet/>}
          {!isLoading&& <Row className={`${styles.singleProduct}`}>
             {rims.map((prod) => (
-              <Col xs={5} md={3} lg={3} xxl={3}>
+              <Col xs={5} md={3} lg={3} xxl={3} style={{marginBottom:"2rem"}}>
                 <div>
                   <Caard
                     key={v4()}

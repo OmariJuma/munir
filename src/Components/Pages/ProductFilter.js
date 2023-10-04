@@ -58,6 +58,7 @@ const ProductFilter = ({ filter }) => {
   const [mySize, setMySize] = useState("");
   const [myWidth, setMyWidth] = useState("");
   const [myRatio, setMyRatio] = useState("");
+  const [myTerrain, setMyTerrain] = useState("");
   //states for rims
   const [myOffset, setMyOffset] = useState("");
   const [myRimSize, setMyRimSize] = useState();
@@ -69,14 +70,39 @@ const ProductFilter = ({ filter }) => {
   ];
   const ratio = [10.5, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85];
   const offset = ["normal", "small-offset", "large-offset"];
+  const terrain =[ "All Terrain", "Highway Terrain", "Mud Terrain"];
 
+  const filterTyres = (product) => {
+    if (
+      (!Number(mySize) || Number(product.size) === Number(mySize)) &&
+      (!Number(myWidth) || Number(product.width) === Number(myWidth)) &&
+      (!Number(myRatio) || Number(product.ratio) === Number(myRatio))&&
+      (!myTerrain || product.terrain === myTerrain)
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  const filterRims = (product) => {
+    if (
+      (!Number(myRimSize) || Number(product.size) === Number(myRimSize)) &&
+      (!myOffset || product.offset === myOffset)
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  const filteredTyres = tyres.filter(filterTyres);
+  const filteredRims = rims.filter(filterRims);
   return (
     <>
       <Row>
         <Col xm={12} sm={12} md={4} lg={3} style={{ padding: 0 }}>
           <div className={styles.filter}>
             <Card.Title className={styles.filterTitle}>
-              <h4 className="text-center">Filter {active}</h4>
+              <h4 className="text-center">Apply Filtering on {active}</h4>
             </Card.Title>
             <div className={styles.filterBody}>
               <div className={styles.filterBodyContent}>
@@ -93,7 +119,7 @@ const ProductFilter = ({ filter }) => {
                         value={myWidth}
                         onChange={(e) => setMyWidth(e.target.value)}
                       >
-                        <option value="">Select Size</option>
+                        <option value="">Select Width</option>
                         {width.map((eachSize) => (
                           <option key={uuid()} value={eachSize}>
                             {eachSize}
@@ -125,8 +151,24 @@ const ProductFilter = ({ filter }) => {
                         value={mySize}
                         onChange={(e) => setMySize(e.target.value)}
                       >
-                        <option value="">Select Width</option>
+                        <option value="">Select Size</option>
                         {size.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="size"
+                        value={myTerrain}
+                        onChange={(e) => setMyTerrain(e.target.value)}
+                      >
+                        <option value="">Select Terrain</option>
+                        {terrain.map((eachSize) => (
                           <option key={uuid()} value={eachSize}>
                             {eachSize}
                           </option>
@@ -212,7 +254,7 @@ const ProductFilter = ({ filter }) => {
               {!isLoading && (
                 <Row className={`${styles.singleProduct}`}>
                   {active === "tyres" &&
-                    tyres.map((prod) => (
+                    filteredTyres.map((prod) => (
                       <Col xs={5} md={3} lg={3} xxl={3}>
                         <div>
                           <Caard
@@ -232,7 +274,7 @@ const ProductFilter = ({ filter }) => {
                       </Col>
                     ))}
                   {active === "rims" &&
-                    rims.map((prod) => (
+                    filteredRims.map((prod) => (
                       <Col xs={5} md={3} lg={3} xxl={3}>
                         <div>
                           <Caard
