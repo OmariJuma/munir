@@ -1,18 +1,19 @@
 import "./MoreDetails.css";
-import { Card, Carousel, Col, Row, ListGroup } from "react-bootstrap";
+import { Card, Carousel, Col, Row, ListGroup, Button } from "react-bootstrap";
 import Rating from "../UI/Rating";
 import { ButtonCart } from "../UI/ButtonCustom";
 import { FaCheck, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { SiNamecheap } from "react-icons/si";
 import { TbBrandSketch } from "react-icons/tb";
 import { useLocation } from "react-router";
-import { useContext, useRef,  } from "react";
+import { useContext, useRef } from "react";
 import CartContext from "../store/cart-context";
 import Input from "../UI/Input";
-import { lazy} from "react";
-import ReactWhatsapp from 'react-whatsapp';
+import { lazy } from "react";
+import ReactWhatsapp from "react-whatsapp";
 import { FaWhatsapp } from "react-icons/fa";
-const Footer = lazy(()=>import("../UI/Footer"));
+import Warranty from "../../assets/images/icons/warranty.png";
+const Footer = lazy(() => import("../UI/Footer"));
 
 const MoreDetails = (props) => {
   const location = useLocation();
@@ -40,11 +41,7 @@ const MoreDetails = (props) => {
 
   return (
     <>
-      <div
-        className="container"
-        ref={topRef}
-        style={{ backgroundColor: "#f9f9f9" }}
-      >
+      <div className="container" ref={topRef}>
         <div id="inp">
           <Input />
         </div>
@@ -73,13 +70,6 @@ const MoreDetails = (props) => {
               <Card.Body>
                 <Card.Header>
                   <span className="faicon">
-                  <ReactWhatsapp number="+254791567672" message="Hello World!!!" >
-                    <FaWhatsapp />
-                    Order on Whatsapp
-                    </ReactWhatsapp>
-                  </span>
-                  <br />
-                  <span className="faicon">
                     <SiNamecheap />
                   </span>
                   <b style={{ marginRight: "1rem" }}>Name:</b> {state.title}{" "}
@@ -102,23 +92,33 @@ const MoreDetails = (props) => {
                     </strong>
                     <s style={{ color: "red" }}>KSH {offer}</s>
                   </ListGroup.Item>
-                  <ListGroup.Item>
+                  <ListGroup.Item className="warrantyContainer">
                     <span className="faicon">
                       <FaClock />
                     </span>
-                    <b style={{ marginRight: "1rem" }}>Warranty</b>
-                    5 years <br />
+                    <b style={{ marginRight: "1rem" }}>Warranty</b> <br />
+                    <img src={Warranty} id="warranty" alt="One year warranty" />
+                    <br />
                   </ListGroup.Item>
-                  <ListGroup.Item>
-                    <span className="faicon">
-                      <FaCheck />
-                    </span>
-                    <b style={{ marginRight: "1rem" }}>Instock </b>
-                    {state.units} <br />
-                  </ListGroup.Item>
+
                   <ListGroup.Item>
                     <Rating />
                   </ListGroup.Item>
+                  <Button className="bg-success">
+                    <ReactWhatsapp
+                      number="+254791567672"
+                      message={`Hi, I want to purchase this Product: ${
+                        state.title
+                      }, Price: ${state.price}, Units: ${1}, Brand: ${
+                        state.brand
+                      }  url-> ${window.location.href}`}
+                      style={{ color: "white", gap: "20px" }}
+                    >
+                      <FaWhatsapp style={{ color: "white" }} />
+                      Order on Whatsapp
+                    </ReactWhatsapp>
+                  </Button>
+                  <br />
                   <ButtonCart
                     text="Add To Cart"
                     onShowCart={props.onShowCart}
@@ -132,16 +132,16 @@ const MoreDetails = (props) => {
           </Col>
         </Row>
         <Row>
-          <Col xm={12} sm={12} md={6} lg={6} xxl={6}>
+          <Col>
             <Card style={{ marginTop: "2rem" }}>
               <Card.Body>
                 <Card.Header>product Details</Card.Header>
                 <Card.Text>{state.description}</Card.Text>
               </Card.Body>
-            </Card>
-          </Col>
-          <Col xm={12} sm={12} md={6} lg={6} xxl={6}>
-            <Card style={{ marginTop: "2rem" }}>
+              {/* </Card> */}
+              {/* </Col>
+          <Col xm={12} sm={12} md={6} lg={6} xxl={6}> */}
+              {/* <Card style={{ marginTop: "2rem" }}> */}
               <Card.Body>
                 <Card.Header>Product Specification</Card.Header>
                 <ListGroup variant="flush">

@@ -30,7 +30,16 @@ border-radius: var(--borderRadius);
     float: right;
     color: var(--red);
   }
-  
+  .warrantyContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:flex-start;
+  }
+  #warranty{
+    width:fit-content;
+    height:150px
+  }
 @media screen and (max-width:596px) {
     .more-details img{
         width:95vw;
