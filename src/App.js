@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { render } from 'react-dom';
 import "./App.css";
 import NavBar from "./Components/NavBar";
 import CartProvider from "./Components/store/CartProvider";

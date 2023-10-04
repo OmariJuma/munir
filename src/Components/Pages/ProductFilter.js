@@ -9,13 +9,14 @@ import { v4 } from "uuid";
 import Caard from "../Caard";
 import Footer from "../UI/Footer";
 import uuid from "react-uuid";
+import Nodata from "../../assets/images/animations/no data.svg";
 
 const ProductFilter = ({ filter }) => {
   const [rims, setRims] = useState([]);
   const [tyres, setTyres] = useState([]);
-  const [active, setActive] = useState("tyres");
   const [isLoading, setIsLoading] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [active, setActive] = useState("tyres");
   const getTyres = async () => {
     setIsLoading(true);
     axios
@@ -62,6 +63,7 @@ const ProductFilter = ({ filter }) => {
   //states for rims
   const [myOffset, setMyOffset] = useState("");
   const [myRimSize, setMyRimSize] = useState();
+  const [myHoles, setMyHoles] = useState("");
 
   const size = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
   const width = [
@@ -70,13 +72,13 @@ const ProductFilter = ({ filter }) => {
   ];
   const ratio = [10.5, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85];
   const offset = ["normal", "small-offset", "large-offset"];
-  const terrain =[ "All Terrain", "Highway Terrain", "Mud Terrain"];
-
+  const terrain = ["All Terrain", "Highway Terrain", "Mud Terrain"];
+  const holes = [4, 5, 6, 8];
   const filterTyres = (product) => {
     if (
       (!Number(mySize) || Number(product.size) === Number(mySize)) &&
       (!Number(myWidth) || Number(product.width) === Number(myWidth)) &&
-      (!Number(myRatio) || Number(product.ratio) === Number(myRatio))&&
+      (!Number(myRatio) || Number(product.ratio) === Number(myRatio)) &&
       (!myTerrain || product.terrain === myTerrain)
     ) {
       return true;
@@ -87,7 +89,8 @@ const ProductFilter = ({ filter }) => {
   const filterRims = (product) => {
     if (
       (!Number(myRimSize) || Number(product.size) === Number(myRimSize)) &&
-      (!myOffset || product.offset === myOffset)
+      (!myOffset || product.offset === myOffset) &&
+      (!Number(myHoles) || Number(product.holesNo) === Number(myHoles))
     ) {
       return true;
     }
@@ -99,8 +102,35 @@ const ProductFilter = ({ filter }) => {
   return (
     <>
       <Row>
-        <Col xm={12} sm={12} md={4} lg={3} style={{ padding: 0 }}>
+        <Col xs={12} sm={12} md={4} lg={3} style={{ padding: 0 }}>
           <div className={styles.filter}>
+          <div
+              className={`${styles.filterBody}${" "}${styles.productsTitle}`}
+            >
+              <div className={styles.filterBodyContent}>
+                <p> You are seeing results for</p>
+                <ul>
+                  <li
+                    onClick={() => setActive("rims")}
+                    className={`${styles.li} ${
+                      active === "rims" ? styles.activeCategory : ""
+                    }`}
+                  >
+                    <GiCartwheel />
+                    Rim
+                  </li>
+                  <li
+                    onClick={() => setActive("tyres")}
+                    className={`${styles.li} ${
+                      active === "tyres" ? styles.activeCategory : ""
+                    }`}
+                  >
+                    <GiCarWheel />
+                    Tyre
+                  </li>
+                </ul>
+              </div>
+            </div>
             <Card.Title className={styles.filterTitle}>
               <h4 className="text-center">Apply Filtering on {active}</h4>
             </Card.Title>
@@ -213,49 +243,55 @@ const ProductFilter = ({ filter }) => {
                         ))}
                       </select>
                     </Form.Group>
+                    <Form.Group className="mb-3" controlId="filterBySize">
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="holes"
+                        value={myHoles}
+                        onChange={(e) => setMyHoles(e.target.value)}
+                      >
+                        <option value="">Select rim holes</option>
+                        {holes.map((eachSize) => (
+                          <option key={uuid()} value={eachSize}>
+                            {eachSize}
+                          </option>
+                        ))}
+                      </select>
+                    </Form.Group>
                   </>
                 )}
               </div>
             </div>
           </div>
         </Col>
-        <Col xm={12} sm={12} md={8} lg={9} style={{ padding: 0 }}>
+        <Col xs={12} sm={12} md={8} lg={9} style={{ padding: 0 }}>
           <section>
-            <div
-              className={`${styles.filterBody}${" "}${styles.productsTitle}`}
-            >
-              <div className={styles.filterBodyContent}>
-                <p> You are seeing results for</p>
-                <ul>
-                  <li
-                    onClick={() => setActive("rims")}
-                    className={`${styles.li} ${
-                      active === "rims" ? styles.activeCategory : ""
-                    }`}
-                  >
-                    <GiCartwheel />
-                    Rim
-                  </li>
-                  <li
-                    onClick={() => setActive("tyres")}
-                    className={`${styles.li} ${
-                      active === "tyres" ? styles.activeCategory : ""
-                    }`}
-                  >
-                    <GiCarWheel />
-                    Tyre
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div className="container-flex">
               {isLoading && <Spinner />}
               {failed && <NoInternet />}
+              {!isLoading &&
+                filteredTyres.length === 0 &&
+                active === "tyres" && (
+                  <>
+                    <h4 className="text-center">
+                      No tires matching the filter
+                    </h4>
+                    <img src={Nodata} alt="No data" className={styles.noData} />
+                  </>
+                )}
+              {!isLoading && filteredRims.length === 0 && active === "rims" && (
+                <>
+                  <h4 className="text-center">No rims matching the filter</h4>
+                  <img src={Nodata} alt="No data" className={styles.noData} />
+                </>
+              )}
               {!isLoading && (
                 <Row className={`${styles.singleProduct}`}>
                   {active === "tyres" &&
+                    filteredTyres.length > 0 &&
                     filteredTyres.map((prod) => (
-                      <Col xs={5} md={3} lg={3} xxl={3}>
+                      <Col xs={5} md={3} lg={3} xxl={3} style={{marginBottom:"2rem"}}>
                         <div>
                           <Caard
                             key={v4()}
@@ -274,8 +310,9 @@ const ProductFilter = ({ filter }) => {
                       </Col>
                     ))}
                   {active === "rims" &&
+                    filteredRims.length > 0 &&
                     filteredRims.map((prod) => (
-                      <Col xs={5} md={3} lg={3} xxl={3}>
+                      <Col xs={5} md={3} lg={3} xxl={3} style={{marginBottom:"2rem"}}>
                         <div>
                           <Caard
                             key={v4()}

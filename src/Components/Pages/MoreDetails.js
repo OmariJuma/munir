@@ -10,6 +10,8 @@ import { useContext, useRef,  } from "react";
 import CartContext from "../store/cart-context";
 import Input from "../UI/Input";
 import { lazy} from "react";
+import ReactWhatsapp from 'react-whatsapp';
+import { FaWhatsapp } from "react-icons/fa";
 const Footer = lazy(()=>import("../UI/Footer"));
 
 const MoreDetails = (props) => {
@@ -70,6 +72,13 @@ const MoreDetails = (props) => {
             <Card>
               <Card.Body>
                 <Card.Header>
+                  <span className="faicon">
+                  <ReactWhatsapp number="+254791567672" message="Hello World!!!" >
+                    <FaWhatsapp />
+                    Order on Whatsapp
+                    </ReactWhatsapp>
+                  </span>
+                  <br />
                   <span className="faicon">
                     <SiNamecheap />
                   </span>
