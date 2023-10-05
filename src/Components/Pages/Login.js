@@ -37,7 +37,7 @@ const Login = (props) => {
     ) {
       setError(null)
       axios
-        .post("http://localhost:8080/api/users/login", {
+        .post("https://test.muneerautomotive.co.ke/api/users/login", {
           email: signup.email,
           password: signup.password,
         })

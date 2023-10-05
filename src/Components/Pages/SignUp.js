@@ -48,7 +48,7 @@ const SignUp = (props) => {
         setIsPasswordValid(true);
         setError(null);
         axios
-          .post("http://localhost:8080/api/users/register", {
+          .post("https://test.muneerautomotive.co.ke/api/users/register", {
             userName: signup.firstName,
             secondName: signup.secondName,
             phoneNo: signup.phoneNo,
