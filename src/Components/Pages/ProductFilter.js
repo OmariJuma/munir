@@ -104,7 +104,7 @@ const ProductFilter = ({ filter }) => {
       <Row>
         <Col xs={12} sm={12} md={4} lg={3} style={{ padding: 0 }}>
           <div className={styles.filter}>
-          <div
+            <div
               className={`${styles.filterBody}${" "}${styles.productsTitle}`}
             >
               <div className={styles.filterBodyContent}>
@@ -269,8 +269,9 @@ const ProductFilter = ({ filter }) => {
           <section>
             <div className="container-flex">
               {isLoading && <Spinner />}
-              {failed && <NoInternet />}
-              {!isLoading &&
+              {failed &&<div style={{marginTop:"5rem"}}> <NoInternet /></div>}
+              {!failed &&
+                !isLoading &&
                 filteredTyres.length === 0 &&
                 active === "tyres" && (
                   <>
@@ -280,7 +281,7 @@ const ProductFilter = ({ filter }) => {
                     <img src={Nodata} alt="No data" className={styles.noData} />
                   </>
                 )}
-              {!isLoading && filteredRims.length === 0 && active === "rims" && (
+              {!failed && !isLoading && filteredRims.length === 0 && active === "rims" && (
                 <>
                   <h4 className="text-center">No rims matching the filter</h4>
                   <img src={Nodata} alt="No data" className={styles.noData} />
@@ -291,7 +292,13 @@ const ProductFilter = ({ filter }) => {
                   {active === "tyres" &&
                     filteredTyres.length > 0 &&
                     filteredTyres.map((prod) => (
-                      <Col xs={5} md={3} lg={3} xxl={3} style={{marginBottom:"2rem"}}>
+                      <Col
+                        xs={5}
+                        md={3}
+                        lg={3}
+                        xxl={3}
+                        style={{ marginBottom: "2rem" }}
+                      >
                         <div>
                           <Caard
                             key={v4()}
@@ -312,7 +319,13 @@ const ProductFilter = ({ filter }) => {
                   {active === "rims" &&
                     filteredRims.length > 0 &&
                     filteredRims.map((prod) => (
-                      <Col xs={5} md={3} lg={3} xxl={3} style={{marginBottom:"2rem"}}>
+                      <Col
+                        xs={5}
+                        md={3}
+                        lg={3}
+                        xxl={3}
+                        style={{ marginBottom: "2rem" }}
+                      >
                         <div>
                           <Caard
                             key={v4()}
