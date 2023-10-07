@@ -1,0 +1,31 @@
+/* ImageModal.css */
+
+/* Style for the custom modal */
+/* .customModal {
+    max-width: 90%; /* Limit the modal's maximum width 
+  } */
+  
+  /* Style for the modal body */
+  .modalBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for the custom image */
+  .customImage {
+    max-width: 100%; /* Ensure the image fits within the modal */
+    max-height: 70vh; /* Limit the image's maximum height to 70% of the viewport height */
+  }
+  
+  /* Media query for small screens (e.g., phones) */
+  @media (max-width: 576px) {
+    .customModal {
+      max-width: 100%; /* Make the modal full-width on small screens */
+    }
+  
+    .customImage {
+      max-height: 50vh; /* Adjust the image's maximum height for smaller screens */
+    }
+  }
+  

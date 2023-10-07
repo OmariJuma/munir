@@ -7,6 +7,7 @@ import Profile from "../Pages/Profile";
 import ProductFilter from "../Pages/ProductFilter";
 import TermsAndConditions from "../Pages/TermsAndConditions";
 import Privacypolicy from "../Pages/PrivacyPolicy";
+import ProductUi from "../UI/ImageGallery/ProductUi";
 const Error404 = lazy(() => import("../Pages/Error404.js"));
 const BookingPage = lazy(() => import("../Pages/BookingPage"));
 const AboutUs = lazy(() => import("../Pages/AboutUs"));
@@ -48,7 +49,7 @@ const MyRoutes = ({ user, showCart }) => (
     />
     <Route
       path="/test"
-      element={<ProductFilter />}
+      element={<ProductUi />}
       exact
       errorElement={<Error404 />}
     />

@@ -1,9 +1,9 @@
 import { lazy} from "react";
 import Crsl from "../Crsl";
-import Products from "./Products";
 import Services from "../Services";
 import WhyUs from "../WhyUs";
 import MySwiper from "../UI/MySwiper";
+import ProductUi from "../UI/ImageGallery/ProductUi";
 const Footer = lazy(() => import("../UI/Footer"))
 
 const HomePage = () => {
@@ -11,7 +11,8 @@ const HomePage = () => {
     <>
       <div className="Container-fluid">
         <Crsl />
-        <Products />
+        {/* <Products /> */}
+<ProductUi/>
         <Services />
         <WhyUs />
         <MySwiper />

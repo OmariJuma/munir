@@ -1,0 +1,21 @@
+.imageGallery{
+    justify-content: center;
+    width: 100%;
+    margin:0;
+}
+.imageGalleryItem{
+    width:auto;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    gap:2rem;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 1rem;
+    box-sizing:border-box;
+}
+.imageGalleryButton{
+    width:100%;
+    margin: 2rem auto;
+}
