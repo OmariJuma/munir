@@ -14,8 +14,7 @@
   
   /* Style for the custom image */
   .customImage {
-    max-width: 100%; /* Ensure the image fits within the modal */
-    max-height: 70vh; /* Limit the image's maximum height to 70% of the viewport height */
+    object-fit: cover; /* Maintain the aspect ratio and cover the container */
   }
   
   /* Media query for small screens (e.g., phones) */
