@@ -1,18 +1,19 @@
-import { lazy} from "react";
+import { lazy } from "react";
 import Crsl from "../Crsl";
 import Services from "../Services";
 import WhyUs from "../WhyUs";
 import MySwiper from "../UI/MySwiper";
 import ProductUi from "../UI/ImageGallery/ProductUi";
-const Footer = lazy(() => import("../UI/Footer"))
+import VehicleSelect from "../UI/VehicleSelect";
+const Footer = lazy(() => import("../UI/Footer"));
 
 const HomePage = () => {
   return (
     <>
       <div className="Container-fluid">
         <Crsl />
-        {/* <Products /> */}
-<ProductUi/>
+        <VehicleSelect/>
+        <ProductUi />
         <Services />
         <WhyUs />
         <MySwiper />

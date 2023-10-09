@@ -1,15 +1,15 @@
 import styles from "./ProductFilter.module.css";
 import { GiCartwheel, GiCarWheel } from "react-icons/gi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
 import { Row, Col, Card, Form } from "react-bootstrap";
 import axios from "axios";
 import Spinner from "../UI/Spinner";
 import NoInternet from "../UI/NoInternet";
 import { v4 } from "uuid";
 import Caard from "../Caard";
-import Footer from "../UI/Footer";
 import uuid from "react-uuid";
 import Nodata from "../../assets/images/animations/no data.svg";
+const Footer = lazy(() => import("../UI/Footer"));
 
 const ProductFilter = ({ filter }) => {
   const [rims, setRims] = useState([]);

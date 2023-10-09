@@ -1,0 +1,42 @@
+.vehicleSelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.vehicleSelectorSelect {
+  /* height: 100%; */
+  width: 30%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+.vehicleSearch {
+  width: 30%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--priColor);
+  text-align: center;
+  color: white;
+}
+.vehicleSearch:hover {
+  background-color: #068bb4;
+  color: white;
+}
