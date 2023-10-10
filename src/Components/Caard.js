@@ -7,7 +7,7 @@ const Caard = (props) => {
   const product = props.product;
   const data = {
     id: props.id,
-    price: props.price,
+    // price: props.price,
     title: props.title,
     description: props.description,
     offer: props.offer,
@@ -26,17 +26,25 @@ const Caard = (props) => {
               <div id="aboveCardContainer">
                 <h5 id="aboveCard">{props.title}</h5>
               </div>
-              <Card.Img src={`https://test.muneerautomotive.co.ke/${props.image}`}/>
-              <Card.Body id={"cardBody"}>
-                <Card.Text style={{ marginBottom: "2rem" }}>
-                  {props.description.slice(0, 25)}...
-                  <div className="priceNstrike">
-                    <strong>KSH {props.price}</strong>
-                    <s>KSH {props.offer}</s>
-                  </div>
-                  <Rating />
-                </Card.Text>
-              </Card.Body>
+              <Card.Img
+                src={`https://test.muneerautomotive.co.ke/${props.image}`}
+              />
+              {props.category === "rims" ? (
+                ""
+              ) : (
+                <Card.Body id={"cardBody"}>
+                  <Card.Text style={{ marginBottom: "2rem" }}>
+                    <>
+                      {props.description.slice(0, 25) + "..."}
+                      <div className="priceNstrike">
+                        <strong>KSH {props.price}</strong>
+                        <s>KSH {props.offer}</s>
+                      </div>
+                      <Rating />
+                    </>
+                  </Card.Text>
+                </Card.Body>
+              )}
               {/* <ButtonCustom text='view product'/> */}
             </Card>
           </Link>

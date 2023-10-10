@@ -331,8 +331,7 @@ const ProductFilter = ({ filter }) => {
                             key={v4()}
                             id={prod.id}
                             title={prod.name}
-                            price={prod.price}
-                            offer={Math.floor(1.1 * prod.price)}
+                            category="rims"
                             description={prod.description}
                             image={prod.image}
                             brand={prod.brand}

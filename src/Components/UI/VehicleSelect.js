@@ -7,12 +7,8 @@ const VehicleSelect = () => {
   const [vehicle, setVehicle] = useState('');
 
   return (
-    <div>
-      <div className={styles.vehicleSelector}>
+        <Form className={styles.vehicleSelector}>
         <h3 className={styles.vehicleSelectorHeading}>Select Your Vehicle</h3>
-
-        {/* Dropdown select for choosing a vehicle brand */}
-        <Form>
         <select
           className={styles.vehicleSelectorSelect}
           value={vehicle}
@@ -31,8 +27,7 @@ const VehicleSelect = () => {
           Shop for vehicle
         </Link>
         </Form>
-      </div>
-    </div>
+      
   );
 };
 
