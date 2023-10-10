@@ -5,6 +5,7 @@ import WhyUs from "../WhyUs";
 import MySwiper from "../UI/MySwiper";
 import ProductUi from "../UI/ImageGallery/ProductUi";
 import VehicleSelect from "../UI/VehicleSelect";
+import RimGallery from "../UI/RimGallery/RimGallery";
 const Footer = lazy(() => import("../UI/Footer"));
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
         <Crsl />
         <VehicleSelect/>
         <ProductUi />
+        <RimGallery/>
         <Services />
         <WhyUs />
         <MySwiper />

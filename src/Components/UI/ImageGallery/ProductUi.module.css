@@ -6,4 +6,8 @@
     height: 250px;
     object-fit: cover; /* Maintain the aspect ratio and cover the container */
   }
-  
+  .responsiveImage:hover{
+    cursor: pointer;
+    transform: scale(1.08025);
+    transition: 0.25s ease-in-out;
+  }

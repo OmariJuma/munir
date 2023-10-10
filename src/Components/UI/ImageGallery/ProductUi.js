@@ -43,7 +43,7 @@ const ProductUi = () => {
   ));
 
   return (
-    <section style={{ margin: "3rem 0" }}>
+    <section style={{margin:"5rem 0 2rem 0"}}>
       <h1>Happy Customers</h1>
       {/* Render the image elements */}
       <Row style={{ rowGap: "2rem" }}>{imageElements}</Row>

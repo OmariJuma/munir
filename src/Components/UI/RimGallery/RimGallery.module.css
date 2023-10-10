@@ -1,0 +1,56 @@
+.overlayContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.RimGalleryContainer {
+  border-radius: 20px;
+}
+.goArrow{
+  display: none;    
+}
+.title{
+  font-weight: bold;
+text-align: center;
+}
+.RimGalleryContainer:hover {
+    transform: scale(1.08025);
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+    .goArrow{
+      display: block;
+      opacity: 1;
+      margin-left: 0.5rem;
+    }
+    ::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      opacity: 0.3;
+    }
+    .title{
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .img{
+      opacity: 0.9;
+    }
+  }
+@media screen and (max-width:768px) {
+  .overlayContainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
