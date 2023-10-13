@@ -9,6 +9,8 @@ import { v4 } from "uuid";
 import Caard from "../Caard";
 import uuid from "react-uuid";
 import Nodata from "../../assets/images/animations/no data.svg";
+import { useLocation, useSearchParams } from "react-router-dom";
+
 const Footer = lazy(() => import("../UI/Footer"));
 
 const ProductFilter = ({ filter }) => {
@@ -17,6 +19,13 @@ const ProductFilter = ({ filter }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [failed, setFailed] = useState(false);
   const [active, setActive] = useState("tyres");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  //scroll to top on page change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const getTyres = async () => {
     setIsLoading(true);
     axios
@@ -62,7 +71,7 @@ const ProductFilter = ({ filter }) => {
   const [myTerrain, setMyTerrain] = useState("");
   //states for rims
   const [myOffset, setMyOffset] = useState("");
-  const [myRimSize, setMyRimSize] = useState();
+  const [myRimSize, setMyRimSize] = useState(searchParams.get("size") || "");
   const [myHoles, setMyHoles] = useState("");
 
   const size = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
@@ -99,6 +108,7 @@ const ProductFilter = ({ filter }) => {
 
   const filteredTyres = tyres.filter(filterTyres);
   const filteredRims = rims.filter(filterRims);
+  console.log(filteredRims);
   return (
     <>
       <Row>
@@ -137,7 +147,9 @@ const ProductFilter = ({ filter }) => {
             <div className={styles.filterBody}>
               <div className={styles.filterBodyContent}>
                 {/* Drop down filters for tyres */}
-
+                {active === "rims" && (myRimSize|| myOffset || myHoles) &&(
+                  <h5 className="text-left">Price: {filteredRims[0]?.price || null}</h5>
+                )}
                 {active === "tyres" && (
                   <>
                     <Form.Group className="mb-3" controlId="filterBySize">
@@ -269,7 +281,12 @@ const ProductFilter = ({ filter }) => {
           <section>
             <div className="container-flex">
               {isLoading && <Spinner />}
-              {failed &&<div style={{marginTop:"5rem"}}> <NoInternet /></div>}
+              {failed && (
+                <div style={{ marginTop: "5rem" }}>
+                  {" "}
+                  <NoInternet />
+                </div>
+              )}
               {!failed &&
                 !isLoading &&
                 filteredTyres.length === 0 &&
@@ -281,12 +298,15 @@ const ProductFilter = ({ filter }) => {
                     <img src={Nodata} alt="No data" className={styles.noData} />
                   </>
                 )}
-              {!failed && !isLoading && filteredRims.length === 0 && active === "rims" && (
-                <>
-                  <h4 className="text-center">No rims matching the filter</h4>
-                  <img src={Nodata} alt="No data" className={styles.noData} />
-                </>
-              )}
+              {!failed &&
+                !isLoading &&
+                filteredRims.length === 0 &&
+                active === "rims" && (
+                  <>
+                    <h4 className="text-center">No rims matching the filter</h4>
+                    <img src={Nodata} alt="No data" className={styles.noData} />
+                  </>
+                )}
               {!isLoading && (
                 <Row className={`${styles.singleProduct}`}>
                   {active === "tyres" &&
@@ -298,6 +318,7 @@ const ProductFilter = ({ filter }) => {
                         lg={3}
                         xxl={3}
                         style={{ marginBottom: "2rem" }}
+                        key={uuid()}
                       >
                         <div>
                           <Caard
@@ -325,6 +346,7 @@ const ProductFilter = ({ filter }) => {
                         lg={3}
                         xxl={3}
                         style={{ marginBottom: "2rem" }}
+                        key={uuid()}
                       >
                         <div>
                           <Caard
