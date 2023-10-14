@@ -108,7 +108,6 @@ const ProductFilter = ({ filter }) => {
 
   const filteredTyres = tyres.filter(filterTyres);
   const filteredRims = rims.filter(filterRims);
-  console.log(filteredRims);
   return (
     <>
       <Row>

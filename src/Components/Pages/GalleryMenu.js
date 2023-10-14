@@ -23,6 +23,7 @@ import styles from "./BeforeAfter.module.css";
 import styles2 from "./GalleryMenu.module.css";
 import { Link } from "react-router-dom";
 import Footer from "../UI/Footer";
+import { v4 } from "uuid";
 
 const GalleryMenu = () => {
   const carBrands = [
@@ -52,7 +53,7 @@ const GalleryMenu = () => {
       <hr className={styles2.hr} />
       <Row className="container" style={{ margin: "auto", marginTop: "2rem" }}>
         {carBrands.map((brand) => (
-          <Col sm={6} md={6} lg={4} xl={3} className={styles.myContainer}>
+          <Col sm={6} md={6} lg={4} xl={3} className={styles.myContainer} key={v4()}>
             <Link to={`${"/beforeAfter/"}${brand.name}`}>
               <Card className={styles2.card}>
                 <Card.Img

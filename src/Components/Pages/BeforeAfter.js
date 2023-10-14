@@ -19,6 +19,9 @@ import b8 from "../../assets/images/before and after/b8.jpeg";
 import styles from "./BeforeAfter.module.css";
 import Footer from "../UI/Footer";
 import { useParams } from "react-router";
+import ImageModal from "../UI/ImageGallery/ImageModal";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const BeforeAfter = () => {
   const b4Naft = [
@@ -31,11 +34,29 @@ const BeforeAfter = () => {
     { id: uuidv4(), a: a7, b: b7, brand: "Nissan" },
     { id: uuidv4(), a: a8, b: b8, brand: "Mercedes Benz" },
   ];
+  //display the modal
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageClick = (imageName) => {
+    setSelectedImage(imageName);
+    setModalShow(true);
+  };
+  //scroll to top on page change
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   const param = useParams();
   const filtered = b4Naft.filter((val) => val.brand === param.id);
   const displayFiltered = () => {
     if (filtered.length === 0) {
-      return <p className={styles.h1None}>Apologies, we have no images for {param.id} but you can check the images from other car brands</p>;
+      return (
+        <p className={styles.h1None}>
+          Apologies, we have no images for {param.id} but you can check the
+          images from other car brands
+        </p>
+      );
     } else {
       return (
         <>
@@ -43,24 +64,25 @@ const BeforeAfter = () => {
           <h1 className={styles.h1}>Welcome to our Gallery</h1>
           <hr className={styles.hr} />
           <p className={styles.strong}>
-            Below is a gallery of our clients' {param.id} vehicles before and after coming
-            to us
+            Below is a gallery of our clients' {param.id} vehicles before and
+            after coming to us
           </p>
           <Row style={{ marginTop: "2rem" }}>
             {filtered.map((vals) => (
               <>
                 <Col
-                  sm={12}
+                  xs={6}
                   md={6}
                   lg={3}
                   xl={3}
-                  key={vals.id}
+                  key={uuidv4()}
                   className={styles.myContainer}
                 >
                   <Card className={styles.beforeCard}>
                     <Card.Img
                       src={vals.b}
                       className={`${styles.image} ${styles.beforeImage}`}
+                      onClick={() => handleImageClick(vals.b)}
                       alt="before the car got new rims/ tyres"
                     />
                     <Card.Body className={styles.beforeBody}>
@@ -68,17 +90,12 @@ const BeforeAfter = () => {
                     </Card.Body>
                   </Card>
                 </Col>
-                <Col
-                  sm={12}
-                  md={6}
-                  lg={3}
-                  xl={3}
-                  className={styles.myContainer}
-                >
+                <Col xs={6} md={6} lg={3} xl={3} className={styles.myContainer}>
                   <Card className={styles.afterCard}>
                     <Card.Img
                       src={vals.a}
                       loading="lazy"
+                      onClick={() => handleImageClick(vals.a)}
                       className={`${styles.image} ${styles.afterImage}`}
                       alt="after the car was fitted with the rims/ tyres"
                     />
@@ -96,7 +113,16 @@ const BeforeAfter = () => {
   };
   return (
     <>
-      <div className="container">{displayFiltered()}</div>
+      <div className="container">
+        {displayFiltered()}
+        {modalShow && (
+          <ImageModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            image={selectedImage}
+          />
+        )}
+      </div>
       <Footer />
     </>
   );
