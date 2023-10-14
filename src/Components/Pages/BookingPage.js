@@ -131,7 +131,7 @@ const BookingPage = () => {
 </div>
 </Carousel.Item>
       </Carousel> */}
-      <section id="swiping">
+      <section style={{marginBottom:"2rem"}}>
         <Testimonials/>
       </section>
       <Footer/>

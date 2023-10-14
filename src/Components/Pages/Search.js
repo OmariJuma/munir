@@ -47,8 +47,7 @@ const Search = (props) => {
 
       {!isLoading&&<Row className={`${styles.singleProduct}`}>
           {searchResults.map((state) => (
-            <Col xs={5} md={3} lg={3} xxl={3}>
-              <div>
+            <Col xs={5} md={3} lg={3} xxl={3} style={{marginTop:"2rem"}}>
                 <Caard
                   key={v4()}
                   id={state.id}
@@ -62,7 +61,6 @@ const Search = (props) => {
                   units={state.units}
                   product={true}
                 />
-              </div>
             </Col>
           ))}
         </Row>

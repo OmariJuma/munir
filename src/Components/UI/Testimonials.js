@@ -11,7 +11,7 @@ import a2 from "./../../assets/images/before and after/a2.jpeg";
 import a1 from "./../../assets/images/before and after/a1.jpeg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { v4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 // Import Swiper styles
 import "swiper/css";
@@ -34,35 +34,68 @@ const Testimonials = () => {
     },
   };
   const testimonials = [
-  {
-    id: v4(),
-    name: "Ms. Sarah",
-    image: a1,
-    message:"Muneer's shop is a true gem! Their wide selection of rims and tires, along with exceptional customer service, keeps me coming back. The quality of their products and the amazing discounts are unbeatable. I can't recommend them enough!"
-  },
-  {
-    id: v4(),
-    name: "Mr. David",
-    image: a2,
-    message:"I've been a loyal customer of Muneer for years now, and they never disappoint. From their stylish rims to top-notch tires, their products are top of the line. The personalized service I receive and the cost savings are simply unmatched."
-  },
-  {
-    id: v4(),
-    name: "Ms. Emily",
-    image: a3,
-    message:"Muneer's automotive shop is the place to go for all your tire and rim needs. Not only do they offer a fantastic range of products, but their staff is knowledgeable and always ready to help. Plus, their discounts make every purchase a great deal."
-  },
-  {
-    id: v4(),
-    name: "Mr. Michael",
-    image: a4,
-    message:"Muneer's shop has transformed my car's look with their incredible rims. The quality of their products is superb, and the discounts they offer are a pleasant surprise. I've recommended them to all my friends."
-  },
+  
+    {
+      id: uuidv4(),
+      name: "Mr. John",
+      image: a1,
+      message:
+        "Muneer's rims and tires gave my car a stylish makeover. I get compliments wherever I go!"
+    },
+    {
+      id: uuidv4(),
+      name: "Ms. Emily",
+      image: a2,
+      message:
+        "Muneer's high-quality tires provided me with exceptional traction during a snowy winter. I felt safe on the road."
+    },
+    {
+      id: uuidv4(),
+      name: "Mr Adbul",
+      image: a3,
+      message:
+        "I've never experienced such a smooth ride until I upgraded my rims with Muneer's products. It's a game-changer!"
+    },
+    {
+      id: uuidv4(),
+      name: "Ms. Faith",
+      image: a4,
+      message:
+        "The prices at Muneer are unbeatable, and the service is exceptional. I got the best deal on my new tires."
+    },
+    {
+      id: uuidv4(),
+      name: "Mr Michael",
+      image: a5,
+      message:
+        "Muneer's staff helped me choose the perfect rims for my car. The transformation is jaw-dropping."
+    },
+    {
+      id: uuidv4(),
+      name: "Ms. Eva",
+      image: a6,
+      message:
+        "Muneer's team goes above and beyond to ensure every customer is satisfied. I couldn't be happier with their service."
+    },
+    {
+      id: uuidv4(),
+      name: "Mr. Lee",
+      image: a7,
+      message:
+        "I trust Muneer for all my tire needs. Their expertise and quality products make them my first choice."
+    },
+    {
+      id: uuidv4(),
+      name: "Ms. Jane",
+      image: a8,
+      message:
+        "Muneer's rims and tires have given my vehicle a unique and stylish look. I'm thrilled with the results!"
+    },
 ]
   return (
     <>
       {" "}
-      <header>Our Happy Clients Testimonials</header>
+      <header>Our Happy Clients' Testimonials</header>
       <hr className={styles.hr} />
       <Swiper
         style={{ padding: "0 10px", height: "auto" }}
