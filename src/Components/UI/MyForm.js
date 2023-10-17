@@ -2,9 +2,7 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import styles from "./MyForm.module.css";
 import calend from "./../../assets/images/icons/calend.png";
 import { useRef, useState } from "react";
-import data from "./../../fire";
-import { set, ref } from "firebase/database";
-import uuid from "react-uuid";
+import axios from "axios";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 const MyForm = (props) => {
@@ -29,21 +27,7 @@ const MyForm = (props) => {
   const handleInputChange = (event) => {
     setBookingInfo({ ...bookingInfo, [event.target.name]: event.target.value });
   };
-  const post = async () => {
-    const db = data;
-    set(ref(db, "/booking/" + `${uuid()}`), {
-      firtsName: bookingInfo.firstName,
-      secondName: bookingInfo.secondName,
-      email: bookingInfo.email,
-      regNo: bookingInfo.regNo,
-      make: bookingInfo.make,
-      model: bookingInfo.model,
-      date: bookingInfo.date,
-      time: bookingInfo.time,
-    });
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit =async (event) => {
     event.preventDefault();
     if (
       bookingInfo.firstName.trim().length >= 2 &&
@@ -55,7 +39,14 @@ const MyForm = (props) => {
       bookingInfo.date >= currentDate &&
       bookingInfo.time !== 0
     ) {
-      post();
+        await axios
+          .post("https://test.muneerautomotive.co.ke/api/booking", bookingInfo)
+          .then((res) => {
+            toast(res.data)
+          })
+          .catch((error) =>{
+        toast(error.message)
+      })
       emailjs
         .sendForm(
           "service_r5gm9q1",
@@ -78,7 +69,7 @@ const MyForm = (props) => {
           });
         })
         .catch((err) => {
-         toast("Please try again an error has occurred")
+          toast("Please try again an error has occurred");
         });
     } else {
       return toast("Please try again an error has occurred");
