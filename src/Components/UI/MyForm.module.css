@@ -1,28 +1,33 @@
 .frmBooking {
-    background-color: #39bce5;
-    border-radius: var(--borderRadius);
-    padding: 20px;
-    position: relative;
-    margin: -5px 20px 20px 20px;
-    box-shadow: 0 0 5px 5px var(--dark);
-  }
-  input[type="text"] {
-    background-color: white;
-    opacity: 1;
-  }
-  #btn{
-    width: 100%;
-    box-shadow: 0 0 5px var(--dark);
-    }
-    .titleHolder {
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      /* gap: 1rem; */
-    }
-    .titleHolder img {
-      width: 50px;
-      height: 50px;
-    }
-          
+  background-color: #39bce5;
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  position: relative;
+  margin: -5px 20px 20px 20px;
+  box-shadow: 0 0 5px 5px var(--dark);
+}
+input[type="text"] {
+  background-color: white;
+  opacity: 1;
+}
+#btn {
+  width: 100%;
+  box-shadow: 0 0 5px var(--dark);
+}
+.titleHolder {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* gap: 1rem; */
+}
+.titleHolder img {
+  width: 50px;
+  height: 50px;
+}
+#disabled {
+  background-color: #757575;
+  color: white;
+  width: 100%;
+  opacity: 1;
+}

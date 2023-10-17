@@ -5,8 +5,11 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { ThreeDots } from "react-loading-icons";
+
 const MyForm = (props) => {
   const form = useRef();
+  const [loading, setLoading] = useState(false);
   const [bookingInfo, setBookingInfo] = useState({
     firstName: "",
     secondName: "",
@@ -27,7 +30,8 @@ const MyForm = (props) => {
   const handleInputChange = (event) => {
     setBookingInfo({ ...bookingInfo, [event.target.name]: event.target.value });
   };
-  const handleSubmit =async (event) => {
+  const handleSubmit = async (event) => {
+    setLoading(true);
     event.preventDefault();
     if (
       bookingInfo.firstName.trim().length >= 2 &&
@@ -39,14 +43,15 @@ const MyForm = (props) => {
       bookingInfo.date >= currentDate &&
       bookingInfo.time !== 0
     ) {
-        await axios
-          .post("https://test.muneerautomotive.co.ke/api/booking", bookingInfo)
-          .then((res) => {
-            toast(res.data)
-          })
-          .catch((error) =>{
-        toast(error.message)
-      })
+      await axios
+        .post("https://test.muneerautomotive.co.ke/api/booking", bookingInfo)
+        .then((res) => {
+          toast(res.data);
+        })
+        .catch((error) => {
+          setLoading(false);
+          toast(error.message);
+        });
       emailjs
         .sendForm(
           "service_r5gm9q1",
@@ -55,6 +60,7 @@ const MyForm = (props) => {
           "YUE9-soFT-BCwlqAu"
         )
         .then((response) => {
+          setLoading(false);
           toast("SUCCESS! You have sent the booking request");
           setBookingInfo({
             firstName: "",
@@ -72,6 +78,7 @@ const MyForm = (props) => {
           toast("Please try again an error has occurred");
         });
     } else {
+      setLoading(false);
       return toast("Please try again an error has occurred");
     }
   };
@@ -222,9 +229,15 @@ const MyForm = (props) => {
         </Form.Group>
       </Row>
 
-      <Button variant="primary" id={styles.btn} type="submit">
-        Submit
-      </Button>
+      {!loading ? (
+        <Button variant="primary" id={styles.btn} type="submit">
+          Submit
+        </Button>
+      ) : (
+        <Button disabled className="m-auto" id={styles.disabled}>
+          <ThreeDots color="#ffff"/>{" "}
+        </Button>
+      )}
     </Form>
   );
 };
