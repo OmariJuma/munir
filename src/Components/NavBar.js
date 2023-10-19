@@ -145,11 +145,11 @@ const NavBar = (props) => {
                   <Nav.Item>
                     <Nav.Link
                       as={Link}
-                      to="/beforeAfter"
+                      to="/gallery"
                       onClick={handleCloseOffcanvas}
                       eventKey="link-2"
                     >
-                      Before Vs After
+                      Gallery
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>
