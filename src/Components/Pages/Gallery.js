@@ -65,7 +65,8 @@ function Gallery() {
   const fetchImages = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:8080/gallery`);
+      // const res = await axios.get(`http://localhost:8080/gallery`);
+      const res = await axios.get(`https://test.muneerautomotive.co.ke/gallery`);
       setImages(res.data?.images);
     } catch (error) {
       setError(error.message);
@@ -98,10 +99,12 @@ function Gallery() {
               <Col key={uuidv4()} xs={6} sm={6} md={4} lg={3} xl={3}>
                 <Card className={styles.galleryContainer}>
                   <Card.Img
-                    src={`http://localhost:8080${image.url}`}
+                    // src={`http://localhost:8080${image.url}`}
+                    src={`https://test.muneerautomotive.co.ke${image.url}`}
                     alt={`Image ${image.name}`}
                     className={styles.img}
-                    onClick={() => handleImageClick(`http://localhost:8080${image.url}`)}
+                    // onClick={() => handleImageClick(`http://localhost:8080${image.url}`)}
+                    onClick={() => handleImageClick(`https://test.muneerautomotive.co.ke${image.url}`)}
 
                   />
                 </Card>

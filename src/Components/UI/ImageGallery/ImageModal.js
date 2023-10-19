@@ -15,9 +15,9 @@ const ImageModal = (props) => {
       <Modal.Body className={styles.modalBody}> {/* Apply a custom class to the modal body */}
         <img src={props.image} alt="modal" className={styles.customImage} />
       </Modal.Body>
-      <Modal.Footer>
+      {/* <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
   );
 };

@@ -1,11 +1,10 @@
-/* ImageModal.css */
-
-/* Style for the custom modal */
-/* .customModal {
-    max-width: 90%; /* Limit the modal's maximum width 
-  } */
-  
   /* Style for the modal body */
+  .customModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
   .modalBody {
     display: flex;
     justify-content: center;
@@ -14,7 +13,9 @@
   
   /* Style for the custom image */
   .customImage {
-    object-fit: cover; /* Maintain the aspect ratio and cover the container */
+    aspect-ratio: 1/1;
+    height: 80vh;
+    object-fit: fill; /* Maintain the aspect ratio and cover the container */
   }
   
   /* Media query for small screens (e.g., phones) */
