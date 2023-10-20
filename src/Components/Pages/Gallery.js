@@ -8,7 +8,7 @@ import NoInternet from "../UI/NoInternet";
 import Spinner from "../UI/Spinner";
 import { FaCamera } from "react-icons/fa";
 import ImageModal from "../UI/ImageGallery/ImageModal";
-
+import Footer from "../UI/Footer";
 
 function Gallery() {
   const [images, setImages] = useState([]);
@@ -46,19 +46,21 @@ function Gallery() {
       );
     }
     return (
-      <div className={styles.paginationButtons}>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            setCurrentPage(currentPage - 1);
-            window.scrollTo(0, 0); // Scroll to the top when navigating to a new page
-          }}
-          disabled={currentPage === 1}
-        >
-          Previous Page
-        </Button>
-        {pages}
-      </div>
+      <>
+        <div className={styles.paginationButtons}>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              setCurrentPage(currentPage - 1);
+              window.scrollTo(0, 0); // Scroll to the top when navigating to a new page
+            }}
+            disabled={currentPage === 1}
+          >
+            Previous Page
+          </Button>
+          {pages}
+        </div>
+      </>
     );
   };
 
@@ -66,7 +68,9 @@ function Gallery() {
     try {
       setLoading(true);
       // const res = await axios.get(`http://localhost:8080/gallery`);
-      const res = await axios.get(`https://test.muneerautomotive.co.ke/gallery`);
+      const res = await axios.get(
+        `https://test.muneerautomotive.co.ke/gallery`
+      );
       setImages(res.data?.images);
     } catch (error) {
       setError(error.message);
@@ -75,12 +79,12 @@ function Gallery() {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     fetchImages();
   }, []);
-
-  return (
+  
+  return (<>
     <Container fluid>
       {error && !loading && (
         <>
@@ -90,10 +94,15 @@ function Gallery() {
       )}
 
       {loading && !error ? (
-        <Spinner/>
-      ) : (
-        <>
-          <h1 className="mt-3">Image Gallery <span><FaCamera color="#39bce5"/></span></h1>
+        <Spinner />
+        ) : (
+          <>
+          <h1 className="mt-3">
+            Image Gallery{" "}
+            <span>
+              <FaCamera color="#39bce5" />
+            </span>
+          </h1>
           <Row className={styles.overlayContainer}>
             {imagesToDisplay.map((image) => (
               <Col key={uuidv4()} xs={6} sm={6} md={4} lg={3} xl={3}>
@@ -104,8 +113,11 @@ function Gallery() {
                     alt={`Image ${image.name}`}
                     className={styles.img}
                     // onClick={() => handleImageClick(`http://localhost:8080${image.url}`)}
-                    onClick={() => handleImageClick(`https://test.muneerautomotive.co.ke${image.url}`)}
-
+                    onClick={() =>
+                      handleImageClick(
+                        `https://test.muneerautomotive.co.ke${image.url}`
+                      )
+                    }
                   />
                 </Card>
               </Col>
@@ -114,15 +126,17 @@ function Gallery() {
           {buttons()}
         </>
       )}
-        {modalShow && (
+      {modalShow && (
         <ImageModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-          image={selectedImage}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        image={selectedImage}
         />
       )}
     </Container>
-  );
+    <Footer />
+</>
+    );
 }
 
 export default Gallery;
