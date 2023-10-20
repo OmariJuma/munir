@@ -13,9 +13,9 @@
   
   /* Style for the custom image */
   .customImage {
-    aspect-ratio: 1/1;
-    height: 80vh;
-    object-fit: fill; /* Maintain the aspect ratio and cover the container */
+    aspect-ratio:1/1;
+    /* height: 80vh; */
+    object-fit:fill; /* Maintain the aspect ratio and cover the container */
   }
   
   /* Media query for small screens (e.g., phones) */

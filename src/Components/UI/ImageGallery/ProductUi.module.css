@@ -2,9 +2,9 @@
     /* position: absolute; */
     top: 0;
     left: 0;
-    /* width: 100%; */
-    height: 250px;
-    object-fit: cover; /* Maintain the aspect ratio and cover the container */
+    /* width: auto; */
+    height: 300px;
+    object-fit: fill; /* Maintain the aspect ratio and cover the container */
   }
   .responsiveImage:hover{
     cursor: pointer;
