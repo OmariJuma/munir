@@ -37,7 +37,7 @@ const ProductUi = () => {
   const getImages = async () => {
     try {
       const res = await axios.get(
-        `https://test.muneerautomotive.co.ke/gallery?itemsPerPage=12&page=1`
+        `https://test.muneerautomotive.co.ke/gallery?itemsPerPage=8&page=1`
       );
       setCarImages(res.data?.images);
       setLoading(false);

@@ -27,8 +27,8 @@ const AboutUs = () => {
   const personnel = [
     { position: "CEO & Founder", name: " Mr. Mrefu", image: ceo },
     { position: "Web Developer", name: "Mr. Juma", image: fashion },
-    { position: "IdrisCustomer Relation", name: "Mr. Idris", image: bizman },
-    { position: " Mechanic", name: "Mr. Kamau", image: man },
+    { position: "Sales Man & Customer Service", name: "Mr. Jamil", image: bizman },
+    { position: " Mechanic", name: "Mr. Peter", image: man },
   ];
   return (
     <div>
